@@ -410,3 +410,2297 @@ Completed 200 OK in 28ms (Views: 0.3ms | ActiveRecord: 14.7ms)
   ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
   [1m[36mApiUser Update (27.3ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "e7888704-82e5-459e-9f96-3c2084c8584c"], ["id", 1]]
   ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started POST "/login.json" for ::1 at 2019-10-01 13:09:14 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28
+Completed 200 OK in 194ms (Views: 0.3ms | ActiveRecord: 7.8ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 13:09:46 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 13:10:07 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "e7888704-82e5-459e-9f96-3c2084c8584c"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:34
+  [1m[36mApiUser Update (37.3ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "4312c982-8422-4697-8f9d-e96fa026b4fb"], ["id", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:74
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:40
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:40
+Completed 200 OK in 48ms (Views: 0.2ms | ActiveRecord: 39.0ms)
+
+
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (3.8ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "4e0875a1-d29d-46de-9071-a6add7a0f68e"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started POST "/login.json" for ::1 at 2019-10-01 13:48:46 +0330
+  
+ActionController::RoutingError (uninitialized constant ApplicationController::JwtRescuer):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 13:50:03 +0330
+  
+ActionController::RoutingError (uninitialized constant ApplicationController::JwtRescuer):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 13:50:23 +0330
+  
+ActionController::RoutingError (uninitialized constant ApplicationController::JwtRescuer):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 13:51:05 +0330
+  
+ActionController::RoutingError (uninitialized constant ApplicationController::Rescuer):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 13:52:31 +0330
+  
+ActionController::RoutingError (uninitialized constant ApplicationController::Rescuers):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 13:52:44 +0330
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (undefined method `rescue_from' for JwtRescuer:Module
+Did you mean?  rescue):
+  
+app/lib/rescuers/jwt_rescuer.rb:2:in `<module:JwtRescuer>'
+app/lib/rescuers/jwt_rescuer.rb:1:in `<main>'
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 13:54:17 +0330
+  
+LoadError (Unable to autoload constant Rescuers::JwtRescuer, expected /home/azhir/works/final/cafe/app/lib/rescuers/jwt_rescuer.rb to define it):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 13:54:37 +0330
+  
+SyntaxError (/home/azhir/works/final/cafe/app/lib/rescuers/jwt_rescuer.rb:1: syntax error, unexpected '<'
+module JwtRescuer < ActionController::API
+                  ^):
+  
+app/lib/rescuers/jwt_rescuer.rb:1: syntax error, unexpected '<'
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 13:55:40 +0330
+  
+ActionController::RoutingError (undefined method `rescue_from' for JwtRescuer:Module
+Did you mean?  rescue):
+  
+app/lib/rescuers/jwt_rescuer.rb:2:in `<module:JwtRescuer>'
+app/lib/rescuers/jwt_rescuer.rb:1:in `<main>'
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 13:56:01 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:31
+Completed 200 OK in 208ms (Views: 0.2ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 13:57:30 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 191ms (Views: 0.3ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 13:57:36 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 401 Unauthorized in 185ms (Views: 0.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 13:57:40 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 401 Unauthorized in 164ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 13:57:45 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 187ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 13:57:46 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 162ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 13:57:48 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 165ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 13:57:49 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 181ms (Views: 0.2ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 13:57:50 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 165ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 13:57:52 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 162ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 13:57:53 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 172ms (Views: 0.2ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 13:57:54 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 173ms (Views: 0.2ms | ActiveRecord: 3.7ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 13:57:59 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "4e0875a1-d29d-46de-9071-a6add7a0f68e"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:34
+  [1m[36mApiUser Update (11.3ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "697fc8c7-62bd-4c2a-a500-82b42c0807e5"], ["id", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:74
+  [1m[35m (3.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:40
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:40
+Completed 200 OK in 35ms (Views: 0.3ms | ActiveRecord: 17.2ms)
+
+
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (7.7ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "ae8d8cda-5548-4e61-8a00-4aae6d62da4d"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started DELETE "/logout.json" for ::1 at 2019-10-01 13:58:02 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "4e0875a1-d29d-46de-9071-a6add7a0f68e"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:34
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 2.2ms)
+
+
+  [1m[36mCACHE ApiUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (13.9ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "bbbe105b-4aa3-4e80-bcbe-f9f107fa531b"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started POST "/login.json" for ::1 at 2019-10-01 13:58:07 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 186ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 13:58:23 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 401 Unauthorized in 163ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 13:58:27 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 13:58:33 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 13:58:47 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+Completed 200 OK in 178ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 13:58:50 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "bbbe105b-4aa3-4e80-bcbe-f9f107fa531b"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:34
+  [1m[36mApiUser Update (33.5ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "831561a4-6c13-4a3a-a00f-5dd288ba676e"], ["id", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:74
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:40
+Completed 200 OK in 43ms (Views: 0.4ms | ActiveRecord: 35.0ms)
+
+
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (4.4ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "291b62ab-cafb-4f76-93e7-05477e82f0dd"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started POST "/login.json" for ::1 at 2019-10-01 14:00:56 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+Completed 200 OK in 205ms (Views: 0.2ms | ActiveRecord: 4.6ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:00:59 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "291b62ab-cafb-4f76-93e7-05477e82f0dd"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:34
+  [1m[36mApiUser Update (11.9ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "1363544a-c1b2-4667-b77d-283144769894"], ["id", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:74
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:40
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:40
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 14.3ms)
+
+
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (36.4ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "6013e037-b7ef-4a1e-8368-b518bf27cc35"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:07:23 +0330
+  
+ActionController::RoutingError (uninitialized constant Error::JwtToken::Wrong):
+  
+app/controllers/application_controller.rb:10:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:08:23 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `chech_authorization_token' for #<DeviseApi::SessionsController:0x000055dc1c7758c8>
+Did you mean?  check_authorization_token):
+  
+activesupport (5.2.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.3) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.3) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (2.0.7) lib/rack/builder.rb:153:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware.rb:23:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:08:56 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `chech_authorization_token' for #<DeviseApi::SessionsController:0x000055dc1bc6f050>
+Did you mean?  check_authorization_token):
+  
+activesupport (5.2.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.3) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.3) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (2.0.7) lib/rack/builder.rb:153:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware.rb:23:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:09:03 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 168ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `chech_authorization_token' for #<DeviseApi::SessionsController:0x000055dc1b704a98>
+Did you mean?  check_authorization_token):
+  
+activesupport (5.2.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.3) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.3) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (2.0.7) lib/rack/builder.rb:153:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware.rb:23:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:09:07 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:09:10 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 14:09:20 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 14:10:25 +0330
+  
+ActionController::RoutingError (uninitialized constant ApplicationController::JwtRescuer):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 14:10:48 +0330
+  
+LoadError (Unable to autoload constant Rescuers::JwtRescuer, expected /home/azhir/works/final/cafe/app/lib/rescuers/jwt_rescuer.rb to define it):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 14:11:29 +0330
+  
+LoadError (Unable to autoload constant Rescuers::JwtRescuer, expected /home/azhir/works/final/cafe/app/lib/rescuers/jwt_rescuer.rb to define it):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 14:11:38 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined method `jwt_token_absence' for class `#<Class:#<DeviseApi::SessionsController:0x000055dc1ca59b20>>'):
+  
+activesupport (5.2.3) lib/active_support/rescuable.rb:106:in `method'
+activesupport (5.2.3) lib/active_support/rescuable.rb:106:in `handler_for_rescue'
+activesupport (5.2.3) lib/active_support/rescuable.rb:91:in `rescue_with_handler'
+activesupport (5.2.3) lib/active_support/rescuable.rb:165:in `rescue_with_handler'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:25:in `rescue in process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:21:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (2.0.7) lib/rack/builder.rb:153:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware.rb:23:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/login.json" for ::1 at 2019-10-01 14:12:07 +0330
+  
+TypeError (:Rescuers is not a class/module):
+  
+app/controllers/application_controller.rb:10:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 14:15:49 +0330
+  
+LoadError (Unable to autoload constant Rescuers::JwtRescuer, expected /home/azhir/works/final/cafe/app/lib/rescuers/jwt_rescuer.rb to define it):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 14:16:39 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 14:17:08 +0330
+  
+ArgumentError (A copy of Rescuers has been removed from the module tree but is still active!):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 14:17:21 +0330
+  
+ArgumentError (A copy of Rescuers has been removed from the module tree but is still active!):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 14:18:25 +0330
+  
+ArgumentError (A copy of Rescuers has been removed from the module tree but is still active!):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 14:18:30 +0330
+  
+ArgumentError (A copy of Rescuers has been removed from the module tree but is still active!):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 14:18:50 +0330
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ArgumentError (A copy of Rescuers has been removed from the module tree but is still active!):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 14:19:16 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:19:26 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:19:29 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:19:31 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:19:32 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:19:35 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:19:37 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:19:40 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:19:40 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 14:19:43 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:19:46 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:19:47 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:19:48 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:20:03 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:20:27 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:20:56 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/devise_api/sessions_controller.rb:69:in `decode_token'
+app/controllers/devise_api/sessions_controller.rb:34:in `destroy'
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:21:15 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 14:22:45 +0330
+  
+ActionController::RoutingError (undefined method `skip_perpend_before_action' for DeviseApi::SessionsController:Class
+Did you mean?  skip_parameter_encoding):
+  
+app/controllers/devise_api/sessions_controller.rb:4:in `<class:SessionsController>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started POST "/login.json" for ::1 at 2019-10-01 14:22:56 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 203ms (Views: 0.2ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 14:23:06 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 14:23:14 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 198ms (Views: 0.2ms | ActiveRecord: 5.5ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:23:17 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "6013e037-b7ef-4a1e-8368-b518bf27cc35"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:36
+  [1m[36mApiUser Update (20.4ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "058c2a44-f16d-431d-8983-8786b2f0a048"], ["id", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:76
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:42
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:42
+Completed 200 OK in 55ms (Views: 0.2ms | ActiveRecord: 22.0ms)
+
+
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (28.9ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "46278415-59e7-40bb-9b5f-df796939f0e8"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:23:20 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "6013e037-b7ef-4a1e-8368-b518bf27cc35"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:36
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mCACHE ApiUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (30.8ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "8a9a3887-7b55-494c-b561-2010c4f9e414"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started POST "/login.json" for ::1 at 2019-10-01 14:23:38 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 195ms (Views: 0.2ms | ActiveRecord: 4.9ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:23:41 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "8a9a3887-7b55-494c-b561-2010c4f9e414"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:32
+  [1m[36mApiUser Update (205.9ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "9fa74990-f12e-4ca1-bd40-0dd890148cc7"], ["id", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:72
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:38
+Completed 200 OK in 216ms (Views: 0.2ms | ActiveRecord: 207.5ms)
+
+
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (54.2ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "9fd2a836-efce-42ad-b225-6b4aea9eeef5"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:27:44 +0330
+  
+TypeError (wrong argument type Class (expected Module)):
+  
+app/controllers/application_controller.rb:9:in `include'
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:29:27 +0330
+  
+ArgumentError (A copy of Rescuers has been removed from the module tree but is still active!):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:29:29 +0330
+  
+ArgumentError (A copy of Rescuers has been removed from the module tree but is still active!):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:29:34 +0330
+  
+ArgumentError (A copy of Rescuers has been removed from the module tree but is still active!):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:29:37 +0330
+  
+ArgumentError (A copy of Rescuers has been removed from the module tree but is still active!):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:29:50 +0330
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ArgumentError (A copy of Rescuers has been removed from the module tree but is still active!):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:31:26 +0330
+  
+ActionController::RoutingError (undefined method `protect_from_forgery' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:32:15 +0330
+  
+ArgumentError (A copy of Rescuers has been removed from the module tree but is still active!):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:32:21 +0330
+  
+ArgumentError (A copy of Rescuers has been removed from the module tree but is still active!):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:32:35 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "8a9a3887-7b55-494c-b561-2010c4f9e414"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:32
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 8.3ms)
+
+
+  
+NameError (undefined method `jwt_token_wrong' for class `#<Class:#<DeviseApi::SessionsController:0x0000559d06f4ae18>>'):
+  
+activesupport (5.2.3) lib/active_support/rescuable.rb:106:in `method'
+activesupport (5.2.3) lib/active_support/rescuable.rb:106:in `handler_for_rescue'
+activesupport (5.2.3) lib/active_support/rescuable.rb:91:in `rescue_with_handler'
+activesupport (5.2.3) lib/active_support/rescuable.rb:165:in `rescue_with_handler'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:25:in `rescue in process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:21:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (2.0.7) lib/rack/builder.rb:153:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware.rb:23:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:32:41 +0330
+  
+ArgumentError (A copy of Rescuers has been removed from the module tree but is still active!):
+  
+app/controllers/application_controller.rb:9:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:33:33 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "8a9a3887-7b55-494c-b561-2010c4f9e414"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:32
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 5.1ms)
+
+
+  [1m[36mCACHE ApiUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (50.9ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "ec9428ae-bf8f-483a-b962-912b595e773d"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:35:34 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "8a9a3887-7b55-494c-b561-2010c4f9e414"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:32
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+  [1m[36mCACHE ApiUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (21.2ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "ba55024a-33a1-41ac-bf7d-ba7d0e82ecc7"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:35:38 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "8a9a3887-7b55-494c-b561-2010c4f9e414"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:32
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mCACHE ApiUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (29.7ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "8ed6134f-ac85-4f71-8178-392165e5fa61"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started POST "/login.json" for ::1 at 2019-10-01 14:47:32 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 209ms (Views: 0.3ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/login" for ::1 at 2019-10-01 14:47:38 +0330
+Processing by DeviseApi::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+Error::Requset::NonJsonInput (Error::Requset::NonJsonInput):
+  
+app/controllers/devise_api/sessions_controller.rb:11:in `create'
+Started POST "/login" for ::1 at 2019-10-01 14:49:15 +0330
+Processing by DeviseApi::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-10-01 14:49:18 +0330
+Processing by DeviseApi::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 14:49:27 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:31
+Completed 200 OK in 206ms (Views: 0.3ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 14:49:38 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:31
+Completed 401 Unauthorized in 194ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 14:50:04 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:31
+Completed 200 OK in 198ms (Views: 0.3ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/login" for ::1 at 2019-10-01 14:50:52 +0330
+Processing by DeviseApi::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-10-01 14:50:55 +0330
+Processing by DeviseApi::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-10-01 14:51:04 +0330
+Processing by DeviseApi::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-10-01 14:51:08 +0330
+Processing by DeviseApi::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-10-01 14:51:17 +0330
+Processing by DeviseApi::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-10-01 14:51:20 +0330
+Processing by DeviseApi::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-10-01 14:51:45 +0330
+Processing by DeviseApi::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-10-01 14:51:55 +0330
+Processing by DeviseApi::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-10-01 14:52:08 +0330
+Processing by DeviseApi::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-10-01 14:52:18 +0330
+Processing by DeviseApi::SessionsController#destroy as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/devise_api/sessions_controller.rb:64:in `decode_token'
+app/controllers/devise_api/sessions_controller.rb:31:in `destroy'
+Started DELETE "/logout" for ::1 at 2019-10-01 14:52:27 +0330
+Processing by DeviseApi::SessionsController#destroy as */*
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/devise_api/sessions_controller.rb:64:in `decode_token'
+app/controllers/devise_api/sessions_controller.rb:31:in `destroy'
+Started POST "/login" for ::1 at 2019-10-01 14:55:13 +0330
+Processing by DeviseApi::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 14:55:22 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:34
+Completed 200 OK in 204ms (Views: 0.2ms | ActiveRecord: 7.6ms)
+
+
+Started POST "/login" for ::1 at 2019-10-01 14:55:27 +0330
+Processing by DeviseApi::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 14:55:32 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:34
+Completed 200 OK in 164ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-10-01 14:55:37 +0330
+Processing by DeviseApi::SessionsController#destroy as */*
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (32.8ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "a70b35fe-30d9-4515-8844-7886434865c6"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started DELETE "/logout" for ::1 at 2019-10-01 14:55:39 +0330
+Processing by DeviseApi::SessionsController#destroy as */*
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (21.5ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "589845bd-ca2c-4803-8168-cfaae6f31659"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started DELETE "/logout" for ::1 at 2019-10-01 14:56:07 +0330
+Processing by DeviseApi::SessionsController#destroy as */*
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (40.2ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "07c5f6f9-6a6f-4781-8d1d-cda43b89176e"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:56:14 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:34
+  [1m[36mApiUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "8ed6134f-ac85-4f71-8178-392165e5fa61"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:27
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 2.3ms)
+
+
+  [1m[36mCACHE ApiUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (13.9ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "15ca4f4e-9e75-49b4-9e1e-1c3136ae9659"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:56:22 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:34
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "8ed6134f-ac85-4f71-8178-392165e5fa61"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:27
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+  [1m[36mCACHE ApiUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (36.5ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "da9ea590-7b8a-43e7-92bd-25b2d5df9f97"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started POST "/login.json" for ::1 at 2019-10-01 14:56:26 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:34
+Completed 200 OK in 166ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:56:28 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:34
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "da9ea590-7b8a-43e7-92bd-25b2d5df9f97"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:27
+  [1m[36mApiUser Update (27.4ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "4cb1667f-9175-4fb1-a887-1f0c11abfea8"], ["id", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:65
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:31
+Completed 200 OK in 37ms (Views: 0.3ms | ActiveRecord: 28.8ms)
+
+
+  [1m[36mApiUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (3.2ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "6c75d86e-b7cb-4403-9edf-bf4622827adb"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started DELETE "/logout.json" for ::1 at 2019-10-01 14:57:27 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:34
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "da9ea590-7b8a-43e7-92bd-25b2d5df9f97"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:27
+Completed 200 OK in 31ms (Views: 0.3ms | ActiveRecord: 5.8ms)
+
+
+  [1m[36mCACHE ApiUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (34.8ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "345114d4-3c41-4284-99e5-3265fdf863b5"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started POST "/login.json" for ::1 at 2019-10-01 14:57:30 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:34
+Completed 200 OK in 174ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/login" for ::1 at 2019-10-01 14:57:37 +0330
+Processing by DeviseApi::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-10-01 14:57:42 +0330
+Processing by DeviseApi::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 14:57:48 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:34
+Completed 200 OK in 164ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 15:01:15 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:40
+Completed 200 OK in 199ms (Views: 0.2ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 15:07:45 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:40
+Completed 200 OK in 240ms (Views: 0.4ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/profile" for ::1 at 2019-10-01 15:07:48 +0330
+  
+LoadError (Unable to autoload constant UsersController, expected /home/azhir/works/final/cafe/app/controllers/users_controller.rb to define it):
+  
+activesupport (5.2.3) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:60:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:16:in `allow_bootsnap_retry'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.3) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.3) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (2.0.7) lib/rack/builder.rb:153:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware.rb:23:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/profile" for ::1 at 2019-10-01 15:08:25 +0330
+  
+LoadError (Unable to autoload constant UsersController, expected /home/azhir/works/final/cafe/app/controllers/users_controller.rb to define it):
+  
+activesupport (5.2.3) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:60:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:16:in `allow_bootsnap_retry'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.3) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.3) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (2.0.7) lib/rack/builder.rb:153:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware.rb:23:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/profile" for ::1 at 2019-10-01 15:08:40 +0330
+Processing by UsersController#profile as */*
+  Parameters: {"user"=>{}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:08:47 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+No template found for UsersController#profile, rendering head :no_content
+Completed 204 No Content in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:09:11 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+No template found for UsersController#profile, rendering head :no_content
+Completed 204 No Content in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:09:29 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:09:39 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:09:56 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:10:07 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:11:00 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:11:16 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 15:12:44 +0330
+  
+ActionController::RoutingError (undefined method `authenticate_user!' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:17:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/devise_api/sessions_controller.rb:2:in `<main>'
+Started GET "/profile.json" for ::1 at 2019-10-01 15:13:16 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:13:36 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 3.6ms)
+
+
+  
+NoMethodError (undefined method `failure_app' for nil:NilClass):
+  
+devise (4.7.1) lib/devise/delegator.rb:13:in `failure_app'
+devise (4.7.1) lib/devise/delegator.rb:7:in `call'
+warden (1.2.8) lib/warden/manager.rb:143:in `call_failure_app'
+warden (1.2.8) lib/warden/manager.rb:129:in `process_unauthenticated'
+warden (1.2.8) lib/warden/manager.rb:44:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/profile.json" for ::1 at 2019-10-01 15:14:09 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 15:14:54 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 192ms (Views: 0.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:15:31 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 15:17:27 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 185ms (Views: 0.3ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 15:18:41 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 190ms (Views: 0.2ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:19:06 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 15:19:13 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "345114d4-3c41-4284-99e5-3265fdf863b5"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:34
+  [1m[36mApiUser Update (49.2ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "59e50cf4-93ca-4d2c-b67a-8d41d488fad7"], ["id", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:71
+Completed 200 OK in 85ms (Views: 0.4ms | ActiveRecord: 52.1ms)
+
+
+  [1m[36mApiUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (4.5ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "d6ac9992-1985-4c8b-91f5-7fc78de35441"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started POST "/login.json" for ::1 at 2019-10-01 15:19:16 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 167ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 15:19:31 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "d6ac9992-1985-4c8b-91f5-7fc78de35441"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:34
+  [1m[36mApiUser Update (39.4ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "c2df2400-211f-4352-b7b6-b9bf3eecedab"], ["id", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:71
+Completed 200 OK in 44ms (Views: 0.3ms | ActiveRecord: 39.8ms)
+
+
+  [1m[36mApiUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (4.9ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "27578e73-253f-4039-a881-79a9f5e6703a"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started POST "/login.json" for ::1 at 2019-10-01 15:19:52 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 167ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 15:20:09 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 168ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 15:20:17 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "27578e73-253f-4039-a881-79a9f5e6703a"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:34
+  [1m[36mApiUser Update (66.1ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "1964937c-0db6-4fb0-af45-a064ceab871e"], ["id", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:71
+Completed 200 OK in 71ms (Views: 0.3ms | ActiveRecord: 67.6ms)
+
+
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (6.5ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "cdc0bc64-fa2d-4627-af12-7ea34a7afccc"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started POST "/login.json" for ::1 at 2019-10-01 15:20:30 +0330
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 198ms (Views: 0.3ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:25:56 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:26:58 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:27:23 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:27:30 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:27:32 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:27:54 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 15:28:01 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "cdc0bc64-fa2d-4627-af12-7ea34a7afccc"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:27
+  [1m[36mApiUser Update (59.8ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "31c4240a-a442-4f36-b038-f1f44770e2cf"], ["id", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:71
+Completed 200 OK in 92ms (Views: 0.3ms | ActiveRecord: 62.6ms)
+
+
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (31.0ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "dd722993-5d8e-48bb-9ba4-c3b74e222ad4"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started POST "/login.json" for ::1 at 2019-10-01 15:28:05 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 190ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:28:09 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:28:33 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:28:46 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.9ms)
+
+
+  
+NameError (undefined local variable or method `decode_token' for DeviseApi::SessionsController:Class):
+  
+app/controllers/devise_api/sessions_controller.rb:38:in `getCurrentUser'
+app/controllers/application_controller.rb:41:in `set_current_user'
+Started GET "/profile.json" for ::1 at 2019-10-01 15:29:05 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 2.6ms)
+
+
+  
+NameError (undefined local variable or method `decode_token' for DeviseApi::SessionsController:Class):
+  
+app/controllers/devise_api/sessions_controller.rb:38:in `getCurrentUser'
+app/controllers/application_controller.rb:40:in `set_current_user'
+Started GET "/profile.json" for ::1 at 2019-10-01 15:29:34 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 3.5ms)
+
+
+  
+NameError (undefined local variable or method `request' for DeviseApi::SessionsController:Class
+Did you mean?  require):
+  
+app/controllers/devise_api/sessions_controller.rb:64:in `decode_token'
+app/controllers/devise_api/sessions_controller.rb:38:in `getCurrentUser'
+app/controllers/application_controller.rb:40:in `set_current_user'
+Started POST "/login.json" for ::1 at 2019-10-01 15:30:48 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 15:30:59 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"api_user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"api_user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 15:31:05 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"api_user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"api_user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 15:31:14 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"api_user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"api_user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 15:31:45 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"api_user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]", "jti"=>""}, "session"=>{"api_user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]", "jti"=>""}}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 15:32:02 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"api_user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]", "jti"=>""}, "session"=>{"api_user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]", "jti"=>""}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 15:32:49 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"api_user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]", "jti"=>"542c534t243554"}, "session"=>{"api_user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]", "jti"=>"542c534t243554"}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 15:35:57 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"api_user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"api_user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mApiUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/login.json" for ::1 at 2019-10-01 15:37:37 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"api_user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"api_user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 15:37:43 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+Completed 200 OK in 264ms (Views: 0.3ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:37:48 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:38:55 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "dd722993-5d8e-48bb-9ba4-c3b74e222ad4"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:40
+Completed 200 OK in 30ms (Views: 0.2ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:39:47 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "dd722993-5d8e-48bb-9ba4-c3b74e222ad4"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:40
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "dd722993-5d8e-48bb-9ba4-c3b74e222ad4"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+Completed 200 OK in 41ms (Views: 0.8ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 15:39:57 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "dd722993-5d8e-48bb-9ba4-c3b74e222ad4"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:40
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "dd722993-5d8e-48bb-9ba4-c3b74e222ad4"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+Completed 200 OK in 32ms (Views: 0.8ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 15:40:00 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/application_controller.rb:61:in `decode_token'
+app/controllers/application_controller.rb:40:in `set_current_user'
+Started POST "/login.json" for ::1 at 2019-10-01 15:40:12 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/application_controller.rb:61:in `decode_token'
+app/controllers/application_controller.rb:40:in `set_current_user'
+Started DELETE "/logout.json" for ::1 at 2019-10-01 15:40:20 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 15:40:28 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout.json" for ::1 at 2019-10-01 15:40:32 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 15:40:34 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/application_controller.rb:61:in `decode_token'
+app/controllers/application_controller.rb:40:in `set_current_user'
+Started POST "/login.json" for ::1 at 2019-10-01 16:16:27 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/application_controller.rb:62:in `decode_token'
+app/controllers/application_controller.rb:40:in `set_current_user'
+Started POST "/login.json" for ::1 at 2019-10-01 16:17:30 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+Completed 200 OK in 194ms (Views: 0.3ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 16:17:34 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "dd722993-5d8e-48bb-9ba4-c3b74e222ad4"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:40
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "dd722993-5d8e-48bb-9ba4-c3b74e222ad4"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profile.json" for ::1 at 2019-10-01 16:23:46 +0330
+  
+ActionController::RoutingError (No route matches [GET] "/profile.json"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/profile.json" for ::1 at 2019-10-01 16:23:55 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mApiUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "dd722993-5d8e-48bb-9ba4-c3b74e222ad4"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:40
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "dd722993-5d8e-48bb-9ba4-c3b74e222ad4"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+Completed 200 OK in 36ms (Views: 0.8ms | ActiveRecord: 11.8ms)
+
+
+Started DELETE "/api/logout.json" for ::1 at 2019-10-01 16:24:06 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "dd722993-5d8e-48bb-9ba4-c3b74e222ad4"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:40
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "dd722993-5d8e-48bb-9ba4-c3b74e222ad4"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mCACHE ApiUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "dd722993-5d8e-48bb-9ba4-c3b74e222ad4"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:29
+  [1m[36mApiUser Update (21.2ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "bb14e95e-7893-4914-aa04-e0beb4746538"], ["id", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:66
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 22.6ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-01 16:24:14 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 0.7ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/devise_api/sessions_controller.rb:22:in `+'
+app/controllers/devise_api/sessions_controller.rb:22:in `create'
+Started POST "/api/login.json" for ::1 at 2019-10-01 16:24:25 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+Completed 500 Internal Server Error in 183ms (ActiveRecord: 0.5ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/devise_api/sessions_controller.rb:22:in `+'
+app/controllers/devise_api/sessions_controller.rb:22:in `create'
+Started POST "/api/login.json" for ::1 at 2019-10-01 16:24:48 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 0.5ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/devise_api/sessions_controller.rb:22:in `+'
+app/controllers/devise_api/sessions_controller.rb:22:in `create'
+Started POST "/api/login.json" for ::1 at 2019-10-01 16:25:48 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 0.7ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/devise_api/sessions_controller.rb:22:in `+'
+app/controllers/devise_api/sessions_controller.rb:22:in `create'
+Started POST "/api/login.json" for ::1 at 2019-10-01 16:25:50 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 1.2ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/devise_api/sessions_controller.rb:22:in `+'
+app/controllers/devise_api/sessions_controller.rb:22:in `create'
+Started POST "/api/login.json" for ::1 at 2019-10-01 16:26:34 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 0.6ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/devise_api/sessions_controller.rb:22:in `+'
+app/controllers/devise_api/sessions_controller.rb:22:in `create'
+Started POST "/api/login.json" for ::1 at 2019-10-01 16:27:48 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:12
+Completed 500 Internal Server Error in 192ms (ActiveRecord: 5.5ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/devise_api/sessions_controller.rb:23:in `+'
+app/controllers/devise_api/sessions_controller.rb:23:in `create'
+Started POST "/api/login.json" for ::1 at 2019-10-01 16:28:31 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-01 16:28:42 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:12
+Completed 500 Internal Server Error in 199ms (ActiveRecord: 5.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/devise_api/sessions_controller.rb:23:in `+'
+app/controllers/devise_api/sessions_controller.rb:23:in `create'
+Started POST "/login.json" for ::1 at 2019-10-01 16:29:17 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+Completed 200 OK in 194ms (Views: 0.2ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 16:29:35 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+Completed 200 OK in 171ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login.json" for ::1 at 2019-10-01 16:29:47 +0330
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+Completed 500 Internal Server Error in 208ms (ActiveRecord: 8.2ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/devise_api/sessions_controller.rb:22:in `+'
+app/controllers/devise_api/sessions_controller.rb:22:in `create'
+Started POST "/api/login.json" for ::1 at 2019-10-01 16:30:03 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+Completed 200 OK in 204ms (Views: 0.3ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-01 16:30:06 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+Completed 200 OK in 164ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/logout.json" for ::1 at 2019-10-01 16:30:10 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "bb14e95e-7893-4914-aa04-e0beb4746538"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:40
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "bb14e95e-7893-4914-aa04-e0beb4746538"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+  [1m[36mCACHE ApiUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "bb14e95e-7893-4914-aa04-e0beb4746538"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:29
+  [1m[36mApiUser Update (12.7ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "95986772-2201-4500-b9f9-b51fd5bc14f8"], ["id", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:66
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 13.2ms)
+
+
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (35.5ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "250a6573-96a0-459f-a012-05f536c67911"], ["id", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started GET "/api/profile.json" for ::1 at 2019-10-01 16:30:13 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "bb14e95e-7893-4914-aa04-e0beb4746538"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:40
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "bb14e95e-7893-4914-aa04-e0beb4746538"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-01 16:30:17 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test01@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test01@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+Completed 200 OK in 169ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/profile.json" for ::1 at 2019-10-01 16:30:19 +0330
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mApiUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "250a6573-96a0-459f-a012-05f536c67911"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:40
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "250a6573-96a0-459f-a012-05f536c67911"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:41
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.6ms)
+
+

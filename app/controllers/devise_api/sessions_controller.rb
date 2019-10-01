@@ -1,20 +1,17 @@
 # app/controllers/api/sessions_controller.rb
 class DeviseApi::SessionsController < Devise::SessionsController
     skip_before_action :verify_signed_out_user
+    skip_before_action :check_authorization_token, only: [:create]
+    skip_before_action :set_current_user, only: [:create]
+
+
     respond_to :json
     # POST /api/login
     def create
-      puts "!!!!!!!!!!!!!!!!!!!!!!"
-      unless request.format == :json
-        sign_out
-        render status: 406, 
-                 json: { message: "JSON requests only." } and return
-      end
-
       resource = warden.authenticate(scope: :user)
+
       if resource.blank?
-        render status: 401, 
-                 json: { response: "Username or password are wrong!" } and return
+        raise Error::Requset::UsernameOrPassword
       end
 
       sign_in(resource_name, resource)
@@ -29,15 +26,9 @@ class DeviseApi::SessionsController < Devise::SessionsController
 
     # DELETE /api/logout.json
     def destroy
-      if request.headers["Authorization"].blank?
-        render json: {error: "Authorization param needed!"}
-        return
-      end
       user = ApiUser.find_by_jti(decode_token)
-      if user.blank?
-        render json: {message: "wrong Authorization tkoen!"}
-        return
-      end
+      raise Error::JwtToken::Wrong if user.blank?
+      
       revoke_token(user)
       signed_out = (Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name))
       render json: {
@@ -45,7 +36,13 @@ class DeviseApi::SessionsController < Devise::SessionsController
       }
     end
 
-    
+    def self.getCurrentUser
+      user = ApiUser.find_by_jti(decode_token)
+
+      raise Error::JwtToken::Wrong if user.blank?
+
+      user
+    end
   private
     def require_no_authentication
       assert_is_devise_resource!
@@ -63,13 +60,6 @@ class DeviseApi::SessionsController < Devise::SessionsController
                       email:current_user.email,
                       jwt: 'Bearer '+current_token}
       end
-    end
-
-    def decode_token
-      token = request.headers["Authorization"].split('Bearer ').last
-      secret = ENV['DEVISE_JWT_SECRET_KEY']
-      JWT.decode(token, secret, true, algorithm: 'HS256',
-                 verify_jti: true)[0]['jti']
     end
 
     def revoke_token(user)
