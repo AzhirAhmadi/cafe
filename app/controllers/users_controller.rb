@@ -5,6 +5,6 @@ class UsersController < ApplicationController
     end
 
     def profile
-        render json: @current_user
+        render jsonapi: @current_user
     end
 end
