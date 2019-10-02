@@ -51,3 +51,5 @@ gem 'devise'
 gem 'devise-jwt'
 
 gem 'figaro'
+
+gem 'annotate'
