@@ -52,4 +52,5 @@ gem 'devise-jwt'
 gem 'figaro'
 
 gem 'annotate'
+
 gem 'jsonapi-rails'
