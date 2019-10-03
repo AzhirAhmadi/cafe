@@ -4,11 +4,10 @@ class ApplicationController < ActionController::API
   protect_from_forgery with: :exception
   protect_from_forgery with: :null_session
   skip_before_action :verify_authenticity_token
-  before_action :set_current_user
+  before_action :authenticate_user!
 
   #my filter
   prepend_before_action :check_json_format
-  prepend_before_action :check_authorization_token, if: :json_request?
 
   rescue_from StandardError, with: :render_error
 
@@ -21,13 +20,13 @@ class ApplicationController < ActionController::API
     end
 
     def authenticate_user!(*args)
-      super and return unless args.blank?
-      json_request? ? authenticate_api_user! : super
+      check_authorization_token
+      set_current_user
     end
     
-    # So we can use Pundit policies for api_users
     def set_current_user
-      @current_user ||= User.find_by_jti(decode_token)
+      @current_user ||= User.find_by_jti(decode_authorization_token)
+      raise Error::JwtToken::Unauthorized.new  params: params if @current_user.blank? 
     end
     
     #my methods
@@ -44,7 +43,7 @@ class ApplicationController < ActionController::API
       end
     end
 
-    def decode_token
+    def decode_authorization_token
       token = request.headers["Authorization"].split('Bearer ').last
       secret = ENV['DEVISE_JWT_SECRET_KEY']
       JWT.decode(token, secret, true, algorithm: 'HS256',
@@ -52,8 +51,6 @@ class ApplicationController < ActionController::API
     rescue JWT::DecodeError
       raise Error::JwtToken::Wrong.new  params: params
     end
-
-
 
     def render_error(exception)
       if exception.is_a? Error

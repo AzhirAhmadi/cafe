@@ -9,4 +9,10 @@ class Error::JwtToken
             "Authorization header needed!"
         end
     end
+
+    class Unauthorized < Error
+        def message
+            "Unauthorized!"
+        end
+    end
 end

@@ -1,9 +1,7 @@
 # app/controllers/api/sessions_controller.rb
 class DeviseApi::SessionsController < Devise::SessionsController
     skip_before_action :verify_signed_out_user
-    skip_before_action :check_authorization_token, only: [:create]
-    skip_before_action :set_current_user, only: [:create]
-
+    skip_before_action :authenticate_user!, only: [:create]
 
     respond_to :json
     # POST /api/login
@@ -26,7 +24,7 @@ class DeviseApi::SessionsController < Devise::SessionsController
 
     # DELETE /api/logout.json
     def destroy
-      user = ApiUser.find_by_jti(decode_token)
+      user = ApiUser.find_by_jti(decode_authorization_token)
       raise Error::JwtToken::Wrong.new  params: params if user.blank?
       
       revoke_token(user)
@@ -37,7 +35,7 @@ class DeviseApi::SessionsController < Devise::SessionsController
     end
 
     def self.getCurrentUser
-      user = ApiUser.find_by_jti(decode_token)
+      user = ApiUser.find_by_jti(decode_authorization_token)
 
       raise Error::JwtToken::Wrong.new  params: params if user.blank?
 
