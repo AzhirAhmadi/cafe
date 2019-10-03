@@ -54,3 +54,6 @@ gem 'figaro'
 gem 'annotate'
 
 gem 'jsonapi-rails'
+
+gem 'rspec-rails'
+gem 'factory_bot_rails'
