@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       delete  'logout',       to: 'devise_api/sessions#destroy'
     end
   
-    resources :user, only:[:show] do
+    resources :users, only:[:create] do
       
     end
   

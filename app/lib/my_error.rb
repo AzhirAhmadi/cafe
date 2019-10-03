@@ -1,4 +1,4 @@
-    class Error < StandardError
+    class MyError < StandardError
         @args
         def initialize(args={})
             @args = args

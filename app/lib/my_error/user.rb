@@ -1,10 +1,10 @@
-class Error::Requset
-    class NonJsonInput < Error
+class MyError::User
+    class DataBaseCreation < MyError
         def message
-            "JSON requests only!"
+            args[:user].errors
         end
     end
-    class UsernameOrPassword < Error
+    class UsernameOrPassword < MyError
         def message
             "Username or password are wrong!"
         end

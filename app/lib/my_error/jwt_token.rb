@@ -1,16 +1,16 @@
-class Error::JwtToken
-    class Wrong < Error
+class MyError::JwtToken
+    class Wrong < MyError
         def message
             "Wrong jwt token!"
         end
     end
-    class Absence < Error
+    class Absence < MyError
         def message
             "Authorization header needed!"
         end
     end
 
-    class Unauthorized < Error
+    class Unauthorized < MyError
         def message
             "Unauthorized!"
         end

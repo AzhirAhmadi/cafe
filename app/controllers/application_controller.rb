@@ -1,6 +1,7 @@
 # app/controllers/application_controller.rb
 class ApplicationController < ActionController::API
   include ActionController::RequestForgeryProtection
+  include Pundit
   protect_from_forgery with: :exception
   protect_from_forgery with: :null_session
   skip_before_action :verify_authenticity_token
@@ -9,7 +10,7 @@ class ApplicationController < ActionController::API
   #my filter
   prepend_before_action :check_json_format
 
-  rescue_from StandardError, with: :render_error
+  rescue_from MyError, with: :render_error
 
 
 
@@ -26,20 +27,22 @@ class ApplicationController < ActionController::API
     
     def set_current_user
       @current_user ||= User.find_by_jti(decode_authorization_token)
-      raise Error::JwtToken::Unauthorized.new  params: params if @current_user.blank? 
+      raise MyError::JwtToken::Unauthorized.new  params: params if @current_user.blank? 
+      @current_user
     end
+
     
     #my methods
     def check_authorization_token
       if request.headers["Authorization"].blank?
-        raise Error::JwtToken::Absence.new  params: params
+        raise MyError::JwtToken::Absence.new  params: params
       end
     end
 
     def check_json_format
       unless request.format == :json
         sign_out
-        raise Error::Requset::NonJsonInput.new  params: params
+        raise MyError::Requset::NonJsonInput.new  params: params
       end
     end
 
@@ -49,11 +52,11 @@ class ApplicationController < ActionController::API
       JWT.decode(token, secret, true, algorithm: 'HS256',
         verify_jti: true)[0]['jti']
     rescue JWT::DecodeError
-      raise Error::JwtToken::Wrong.new  params: params
+      raise MyError::JwtToken::Wrong.new  params: params
     end
 
     def render_error(exception)
-      if exception.is_a? Error
+      if exception.is_a? MyError
         x = {}
         x[:message] = exception.message
         unless exception.args[:params].blank?
