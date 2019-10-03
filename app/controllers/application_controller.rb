@@ -10,7 +10,7 @@ class ApplicationController < ActionController::API
   #my filter
   prepend_before_action :check_json_format
 
-  rescue_from MyError, with: :render_error
+  rescue_from StandardError, with: :render_error
 
 
 
@@ -63,6 +63,15 @@ class ApplicationController < ActionController::API
           x[:path] = exception.args[:params][:controller] + "#" + exception.args[:params][:action] 
         end
         render json: {error: x}, status: 500
+        return
+      elsif exception.is_a? Pundit::Error
+        render json: {
+          error: {
+            text:"Access denied!",
+            class: exception.class.to_s
+          }
+        },
+        status: 500
         return
       end
       render json: {
