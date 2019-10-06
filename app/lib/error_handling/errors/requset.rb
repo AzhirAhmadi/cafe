@@ -1,4 +1,4 @@
-module ErrorHandling::Errors::JwtToken
+module ErrorHandling::Errors::Requset
     class NonJsonInput < ErrorHandling::Error
         def message
             "JSON requests only!"

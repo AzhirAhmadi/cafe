@@ -19192,3 +19192,65 @@ Processing by UsersController#create as JSON
 Completed 500 Internal Server Error in 194ms (Views: 0.2ms | ActiveRecord: 8.2ms)
 
 
+Started POST "/api/users.json" for ::1 at 2019-10-06 12:12:06 +0330
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"test07@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "a2e695e3-2ae0-450e-83e1-a329a82aadea"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test07@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:4
+Completed 500 Internal Server Error in 187ms (Views: 0.2ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-06 12:12:12 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 186ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/users.json" for ::1 at 2019-10-06 12:12:22 +0330
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"test07@test.com", "password"=>"[FILTERED]", "role"=>"player"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test07@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test07@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 500 Internal Server Error in 179ms (Views: 0.3ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/api/users.json" for ::1 at 2019-10-06 12:12:27 +0330
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"test07@test.com", "password"=>"[FILTERED]", "role"=>"player"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test07@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test07@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 500 Internal Server Error in 178ms (Views: 0.3ms | ActiveRecord: 2.5ms)
+
+

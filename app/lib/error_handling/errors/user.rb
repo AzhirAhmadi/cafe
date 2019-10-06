@@ -1,4 +1,4 @@
-module ErrorHandling::Errors::JwtToken
+module ErrorHandling::Errors::User
     class DataBaseCreation < ErrorHandling::Error
         def message
             args[:user].errors
