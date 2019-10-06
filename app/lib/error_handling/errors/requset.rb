@@ -1,10 +1,10 @@
-class MyError::Requset
-    class NonJsonInput < MyError
+module ErrorHandling::Errors::JwtToken
+    class NonJsonInput < ErrorHandling::Error
         def message
             "JSON requests only!"
         end
     end
-    class UsernameOrPassword < MyError
+    class UsernameOrPassword < ErrorHandling::Error
         def message
             "Username or password are wrong!"
         end

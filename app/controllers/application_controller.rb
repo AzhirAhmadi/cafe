@@ -27,7 +27,7 @@ class ApplicationController < ActionController::API
     
     def set_current_user
       @current_user ||= User.find_by_jti(decode_authorization_token)
-      raise MyError::JwtToken::Unauthorized.new  params: params if @current_user.blank? 
+      raise ErrorHandling::Errors::JwtToken::Unauthorized.new  params: params if @current_user.blank? 
       @current_user
     end
 
@@ -35,14 +35,14 @@ class ApplicationController < ActionController::API
     #my methods
     def check_authorization_token
       if request.headers["Authorization"].blank?
-        raise MyError::JwtToken::Absence.new  params: params
+        raise ErrorHandling::Errors::JwtToken::Absence.new  params: params
       end
     end
 
     def check_json_format
       unless request.format == :json
         sign_out
-        raise MyError::Requset::NonJsonInput.new  params: params
+        raise ErrorHandling::ErrorHandling::Errors::Requset::NonJsonInput.new  params: params
       end
     end
 
@@ -52,34 +52,11 @@ class ApplicationController < ActionController::API
       JWT.decode(token, secret, true, algorithm: 'HS256',
         verify_jti: true)[0]['jti']
     rescue JWT::DecodeError
-      raise MyError::JwtToken::Wrong.new  params: params
+      raise ErrorHandling::Errors::JwtToken::Wrong.new  params: params
     end
 
+
     def render_error(exception)
-      if exception.is_a? MyError
-        x = {}
-        x[:message] = exception.message
-        unless exception.args[:params].blank?
-          x[:path] = exception.args[:params][:controller] + "#" + exception.args[:params][:action] 
-        end
-        render json: {error: x}, status: 500
-        return
-      elsif exception.is_a? Pundit::Error
-        render json: {
-          error: {
-            text:"Access denied!",
-            class: exception.class.to_s
-          }
-        },
-        status: 500
-        return
-      end
-      render json: {
-        error: {
-          text:exception,
-          class: exception.class.to_s
-        }
-      },
-      status: 500
+      render json: (ErrorHandling::ErrorRenderer.error_to_JSON exception), status: 500
     end
   end
