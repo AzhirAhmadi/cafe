@@ -9,7 +9,7 @@ class DeviseApi::SessionsController < Devise::SessionsController
       resource = warden.authenticate(scope: :user)
 
       if resource.blank?
-        raise MyError::Requset::UsernameOrPassword.new  params: params
+        raise ErrorHandling::Errors::Requset::UsernameOrPassword.new  params: params
       end
 
       sign_in(resource_name, resource)
@@ -25,7 +25,7 @@ class DeviseApi::SessionsController < Devise::SessionsController
     # DELETE /api/logout.json
     def destroy
       user = ApiUser.find_by_jti(decode_authorization_token)
-      raise MyError::JwtToken::Wrong.new  params: params if user.blank?
+      raise ErrorHandling::Errors::JwtToken::Wrong.new  params: params if user.blank?
       
       revoke_token(user)
       signed_out = (Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name))
@@ -37,7 +37,7 @@ class DeviseApi::SessionsController < Devise::SessionsController
     def self.getCurrentUser
       user = ApiUser.find_by_jti(decode_authorization_token)
 
-      raise MyError::JwtToken::Wrong.new  params: params if user.blank?
+      raise ErrorHandling::Errors::JwtToken::Wrong.new  params: params if user.blank?
 
       user
     end
