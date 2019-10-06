@@ -28,10 +28,14 @@ class User < ApplicationRecord
 
 
   #role config
-  enum role: [:sys_master, :sys_admin, :sys_expert, :cafe_ower,:player]
+  enum role: [:sys_master, :sys_admin, :sys_expert, :cafe_owner,:player]
   after_initialize :set_default_role, :if => :new_record?
 
   def set_default_role
     self.role ||= :player
+  end
+
+  def self.role_power user
+    roles.length - roles[user.role]
   end
 end
