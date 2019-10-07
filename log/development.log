@@ -21124,3 +21124,1387 @@ Completed 500 Internal Server Error in 7ms (Views: 0.3ms | ActiveRecord: 1.5ms)
 
 
   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddDeletedToUser (20191007110116)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (86.7ms)[0m  [1m[35mALTER TABLE "users" ADD "deleted" boolean[0m
+  ↳ db/migrate/20191007110116_add_deleted_to_user.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191007110116"]]
+  ↳ bin/rails:9
+  [1m[35m (45.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (30.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeDeletedDefaultToFalseFromUser (20191007110721)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeDeletedDefaultToFalseFromUser (20191007110721)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (90.1ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "deleted" SET DEFAULT FALSE[0m
+  ↳ db/migrate/20191007110721_change_deleted_default_to_false_from_user.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191007110721"]]
+  ↳ bin/rails:9
+  [1m[35m (41.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started POST "/api/login.json" for ::1 at 2019-10-07 14:41:40 +0330
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 201ms (Views: 0.3ms | ActiveRecord: 7.5ms)
+
+
+Started POST "/api/users.json" for ::1 at 2019-10-07 14:41:47 +0330
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"test07@test.com", "password"=>"[FILTERED]", "role"=>"player"}}
+Completed 500 Internal Server Error in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 14:41:57 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 166ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/users.json" for ::1 at 2019-10-07 14:42:00 +0330
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"test07@test.com", "password"=>"[FILTERED]", "role"=>"player"}}
+Completed 500 Internal Server Error in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users.json" for ::1 at 2019-10-07 14:43:36 +0330
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"test07@test.com", "password"=>"[FILTERED]", "role"=>"player"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test07@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Create (49.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "jti", "role") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "test07@test.com"], ["encrypted_password", "$2a$11$of6ofxKcAdCaUKu1QlNqxeKS2zxNdowRih.5CnEmh/Hx.mqobcoL."], ["created_at", "2019-10-07 11:13:36.745800"], ["updated_at", "2019-10-07 11:13:36.745800"], ["jti", "efb0fe5d-dbb0-42b7-a1f5-7abd15086598"], ["role", 4]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (16.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 271ms (Views: 2.1ms | ActiveRecord: 77.4ms)
+
+
+Started POST "/api/users.json" for ::1 at 2019-10-07 14:43:40 +0330
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"test07@test.com", "password"=>"[FILTERED]", "role"=>"player"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test07@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test07@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 500 Internal Server Error in 173ms (Views: 0.2ms | ActiveRecord: 2.2ms)
+
+
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" ASC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "deleted" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2019-10-07 11:16:18.910491"], ["deleted", false], ["id", 6]]
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "deleted" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2019-10-07 11:16:35.354504"], ["deleted", false], ["id", 13]]
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "deleted" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2019-10-07 11:16:39.620250"], ["deleted", false], ["id", 4]]
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "deleted" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2019-10-07 11:16:43.004012"], ["deleted", false], ["id", 15]]
+  [1m[35m (12.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "deleted" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2019-10-07 11:16:56.502102"], ["deleted", false], ["id", 5]]
+  [1m[35m (20.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "deleted" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2019-10-07 11:17:06.236431"], ["deleted", false], ["id", 7]]
+  [1m[35m (16.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "deleted" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2019-10-07 11:17:23.299945"], ["deleted", false], ["id", 8]]
+  [1m[35m (10.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "deleted" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2019-10-07 11:17:28.548082"], ["deleted", false], ["id", 9]]
+  [1m[35m (42.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "deleted" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2019-10-07 11:17:33.485772"], ["deleted", false], ["id", 10]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "deleted" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2019-10-07 11:17:36.758824"], ["deleted", false], ["id", 11]]
+  [1m[35m (14.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."deleted" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "deleted" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2019-10-07 11:17:40.783730"], ["deleted", false], ["id", 12]]
+  [1m[35m (19.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started POST "/api/login.json" for ::1 at 2019-10-07 14:48:56 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 207ms (Views: 0.2ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 14:49:11 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 172ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 14:49:20 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 177ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 14:49:47 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 235ms (Views: 0.2ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 14:50:44 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 162ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 14:50:53 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 173ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "deleted" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2019-10-07 11:34:54.594961"], ["deleted", true], ["id", 10]]
+  [1m[35m (10.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started DELETE "/api/logout.json" for ::1 at 2019-10-07 15:05:11 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE ApiUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:27
+  [1m[36mApiUser Update (30.5ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "95685d08-7cad-446a-a6da-5d70cd70a260"], ["id", 5]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:64
+Completed 200 OK in 69ms (Views: 0.5ms | ActiveRecord: 38.6ms)
+
+
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (19.5ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["id", 5]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:05:30 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test04@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test04@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test04@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 165ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:09:01 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test04@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test04@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test04@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 203ms (Views: 15.1ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:09:07 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test04@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test04@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test04@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 196ms (Views: 30.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:09:38 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test04@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test04@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test04@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 401 Unauthorized in 240ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:09:38 +0330
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (8.0ms)
+Completed 200 OK in 73ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:10:22 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test04@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test04@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test04@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 401 Unauthorized in 169ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:10:22 +0330
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:10:50 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test04@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test04@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test04@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 401 Unauthorized in 213ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:10:51 +0330
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (3.7ms)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RenameDeletedToDeletedAt (20191007114408)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "deleted" TYPE timestamp[0m
+  ↳ db/migrate/20191007114408_rename_deleted_to_deleted_at.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RenameDeletedToDeletedAt (20191007114408)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "deleted" TYPE timestamp[0m
+  ↳ db/migrate/20191007114408_rename_deleted_to_deleted_at.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddDeletedAtColumnToUsers (20191007114845)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (17.9ms)[0m  [1m[35mALTER TABLE "users" ADD "deleted_at" timestamp[0m
+  ↳ db/migrate/20191007114845_add_deleted_at_column_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191007114845"]]
+  ↳ bin/rails:9
+  [1m[35m (17.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started POST "/api/users.json" for ::1 at 2019-10-07 15:20:06 +0330
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"test07@test.com", "password"=>"[FILTERED]", "role"=>"player"}}
+Completed 500 Internal Server Error in 4ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:20:15 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 209ms (Views: 0.2ms | ActiveRecord: 14.1ms)
+
+
+Started POST "/api/users.json" for ::1 at 2019-10-07 15:20:18 +0330
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"test07@test.com", "password"=>"[FILTERED]", "role"=>"player"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test07@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test07@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  [1m[35m (1.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 500 Internal Server Error in 204ms (Views: 0.2ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/api/users.json" for ::1 at 2019-10-07 15:20:28 +0330
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]", "role"=>"player"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "jti", "role") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "test533234@test.com"], ["encrypted_password", "$2a$11$U6ow7GYLmVayL.4omBlzN.ml04d10Rwea78oVU4AA5elfnKE0RGpa"], ["created_at", "2019-10-07 11:50:28.940547"], ["updated_at", "2019-10-07 11:50:28.940547"], ["jti", "61d233cf-8f2c-430a-a0d0-c1a879947f65"], ["role", 4]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 184ms (Views: 2.0ms | ActiveRecord: 15.6ms)
+
+
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveDeletedFromUsers (20191007115352)
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "deleeted"[0m
+  ↳ db/migrate/20191007115352_remove_deleted_from_users.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveDeletedFromUsers (20191007115352)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "deleeted"[0m
+  ↳ db/migrate/20191007115352_remove_deleted_from_users.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveDeletedFromUsers (20191007115352)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (96.1ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "deleted"[0m
+  ↳ db/migrate/20191007115352_remove_deleted_from_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191007115352"]]
+  ↳ bin/rails:9
+  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4600616931423439290)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started DELETE "/api/users/14.json" for ::1 at 2019-10-07 15:25:57 +0330
+Processing by UsersController#destroy as JSON
+  Parameters: {"id"=>"14", "user"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+Completed 500 Internal Server Error in 23ms (Views: 0.3ms | ActiveRecord: 7.8ms)
+
+
+Started DELETE "/api/users/15.json" for ::1 at 2019-10-07 15:26:07 +0330
+Processing by UsersController#destroy as JSON
+  Parameters: {"id"=>"15", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+Completed 500 Internal Server Error in 7ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/api/users/16.json" for ::1 at 2019-10-07 15:26:19 +0330
+Processing by UsersController#destroy as JSON
+  Parameters: {"id"=>"16", "user"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:27
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 16]]
+  ↳ app/controllers/users_controller.rb:27
+  [1m[35m (16.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:27
+Completed 200 OK in 27ms (Views: 1.7ms | ActiveRecord: 19.4ms)
+
+
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started DELETE "/api/users/17.json" for ::1 at 2019-10-07 15:27:24 +0330
+Processing by UsersController#destroy as JSON
+  Parameters: {"id"=>"17", "user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "deleted_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deleted_at", "2019-10-07 11:57:24.946274"], ["updated_at", "2019-10-07 11:57:24.947857"], ["id", 17]]
+  ↳ app/models/user.rb:39
+  [1m[35m (54.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+Completed 200 OK in 99ms (Views: 1.5ms | ActiveRecord: 63.3ms)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:28:01 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 401 Unauthorized in 179ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:28:01 +0330
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:28:24 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 401 Unauthorized in 180ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:28:24 +0330
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:30:56 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 401 Unauthorized in 225ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:30:56 +0330
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (3.1ms)
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:31:14 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 401 Unauthorized in 200ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:31:14 +0330
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:31:53 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 401 Unauthorized in 212ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:31:53 +0330
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:33:31 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 401 Unauthorized in 194ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:33:32 +0330
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:35:07 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 401 Unauthorized in 196ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:35:07 +0330
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:35:31 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 212ms (Views: 0.2ms | ActiveRecord: 14.8ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:35:59 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 225ms (ActiveRecord: 5.4ms)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/lib/error_handling/errors/user.rb:4:in `message'
+app/lib/error_handling/error_renderer.rb:13:in `error_handling'
+app/lib/error_handling/error_renderer.rb:4:in `error_to_JSON'
+app/controllers/application_controller.rb:59:in `render_error'
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:37:10 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 247ms (Views: 19.4ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:37:38 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 6.6ms)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/lib/error_handling/errors/user.rb:4:in `message'
+app/lib/error_handling/error_renderer.rb:13:in `error_handling'
+app/lib/error_handling/error_renderer.rb:4:in `error_to_JSON'
+app/controllers/application_controller.rb:59:in `render_error'
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:38:44 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 191ms (ActiveRecord: 3.9ms)
+
+
+  
+NoMethodError (undefined method `[]' for Mon, 07 Oct 2019 11:57:24 UTC +00:00:Time):
+  
+app/lib/error_handling/errors/user.rb:4:in `message'
+app/lib/error_handling/error_renderer.rb:13:in `error_handling'
+app/lib/error_handling/error_renderer.rb:4:in `error_to_JSON'
+app/controllers/application_controller.rb:59:in `render_error'
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:38:54 +0330
+  
+SyntaxError (/home/azhir/works/final/cafe/app/models/user.rb:43: syntax error, unexpected '}', expecting =>
+...taBaseCreation.new({deleted_at}) if deleted_at?  
+...                              ^):
+  
+app/models/user.rb:43: syntax error, unexpected '}', expecting =>
+app/models/api_user.rb:17:in `<main>'
+config/routes.rb:17:in `block (2 levels) in <main>'
+config/routes.rb:16:in `block in <main>'
+config/routes.rb:15:in `<main>'
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:39:22 +0330
+  
+SyntaxError (/home/azhir/works/final/cafe/app/models/user.rb:43: syntax error, unexpected '}', expecting =>
+...r::DeletedUser.new({deleted_at}) if deleted_at?  
+...                              ^):
+  
+app/models/user.rb:43: syntax error, unexpected '}', expecting =>
+app/models/api_user.rb:17:in `<main>'
+config/routes.rb:17:in `block (2 levels) in <main>'
+config/routes.rb:16:in `block in <main>'
+config/routes.rb:15:in `<main>'
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:39:31 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 200ms (Views: 0.2ms | ActiveRecord: 7.6ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:40:10 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 202ms (Views: 0.3ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:40:44 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 214ms (Views: 0.3ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:41:12 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 220ms (Views: 0.4ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:42:20 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 8.4ms)
+
+
+  
+TypeError (no implicit conversion of ActiveSupport::TimeWithZone into String):
+  
+app/lib/error_handling/errors/user.rb:14:in `+'
+app/lib/error_handling/errors/user.rb:14:in `message'
+app/lib/error_handling/error_renderer.rb:13:in `error_handling'
+app/lib/error_handling/error_renderer.rb:4:in `error_to_JSON'
+app/controllers/application_controller.rb:59:in `render_error'
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:42:33 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 198ms (ActiveRecord: 9.4ms)
+
+
+  
+SyntaxError (/home/azhir/works/final/cafe/app/lib/error_handling/errors/user.rb:14: syntax error, unexpected unary+, expecting end
+...t: [" +args[:deleted_at].to_s +"]"
+...                              ^):
+  
+app/lib/error_handling/errors/user.rb:14: syntax error, unexpected unary+, expecting end
+app/models/user.rb:43:in `active_for_authentication?'
+app/controllers/devise_api/sessions_controller.rb:9:in `create'
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:42:43 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 5.6ms)
+
+
+  
+SyntaxError (/home/azhir/works/final/cafe/app/lib/error_handling/errors/user.rb:14: syntax error, unexpected unary+, expecting end
+...: [" + args[:deleted_at].to_s +"]"
+...                              ^):
+  
+app/lib/error_handling/errors/user.rb:14: syntax error, unexpected unary+, expecting end
+app/models/user.rb:43:in `active_for_authentication?'
+app/controllers/devise_api/sessions_controller.rb:9:in `create'
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:43:05 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"test533234@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test533234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 204ms (Views: 0.3ms | ActiveRecord: 4.8ms)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started DELETE "/api/users/10/deactivate" for ::1 at 2019-10-07 15:49:56 +0330
+  
+ActionController::RoutingError (uninitialized constant UsersControllerController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (2.0.7) lib/rack/builder.rb:153:in `call'
+warden-jwt_auth (0.4.0) lib/warden/jwt_auth/middleware.rb:23:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/api/users/10/deactivate" for ::1 at 2019-10-07 15:50:24 +0330
+Processing by UsersController#deactivate as */*
+  Parameters: {"user_id"=>"10", "user"=>{}}
+Completed 500 Internal Server Error in 66ms (Views: 0.2ms | ActiveRecord: 9.1ms)
+
+
+Started DELETE "/api/users/10/deactivate.json" for ::1 at 2019-10-07 15:50:32 +0330
+Processing by UsersController#deactivate as JSON
+  Parameters: {"user_id"=>"10", "user"=>{}}
+Completed 500 Internal Server Error in 13ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:50:47 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 401 Unauthorized in 197ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:50:48 +0330
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (3.1ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:51:27 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 401 Unauthorized in 171ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:51:27 +0330
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:52:54 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 401 Unauthorized in 165ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:52:54 +0330
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:54:23 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:10
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:10
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:10
+Completed 401 Unauthorized in 224ms (ActiveRecord: 9.5ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:54:23 +0330
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:54:57 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+Completed 401 Unauthorized in 207ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:54:57 +0330
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:55:48 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+Completed 401 Unauthorized in 196ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:55:48 +0330
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/azhir/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:56:28 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:11
+Completed 200 OK in 188ms (Views: 0.2ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 15:57:03 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 200ms (Views: 0.2ms | ActiveRecord: 5.0ms)
+
+
+Started DELETE "/api/users/10/deactivate.json" for ::1 at 2019-10-07 15:57:16 +0330
+Processing by UsersController#deactivate as JSON
+  Parameters: {"user_id"=>"10", "user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+Completed 500 Internal Server Error in 5ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started DELETE "/api/users/10/deactivate.json" for ::1 at 2019-10-07 15:58:00 +0330
+Processing by UsersController#deactivate as JSON
+  Parameters: {"user_id"=>"10", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+Completed 500 Internal Server Error in 20ms (Views: 0.2ms | ActiveRecord: 4.5ms)
+
+
+Started DELETE "/api/users/10/deactivate.json" for ::1 at 2019-10-07 15:58:09 +0330
+Processing by UsersController#deactivate as JSON
+  Parameters: {"user_id"=>"10", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+Completed 500 Internal Server Error in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started LOCK "/api/users/10.json" for ::1 at 2019-10-07 16:00:50 +0330
+  
+ActionController::RoutingError (No route matches [LOCK] "/api/users/10.json"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started LOCK "/api/users/10.json" for ::1 at 2019-10-07 16:01:28 +0330
+  
+ActionController::RoutingError (No route matches [LOCK] "/api/users/10.json"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/api/users/10.json" for ::1 at 2019-10-07 16:01:57 +0330
+Processing by UsersController#deactivate as JSON
+  Parameters: {"user_id"=>"10", "user"=>{}}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+Completed 500 Internal Server Error in 29ms (Views: 3.3ms | ActiveRecord: 9.8ms)
+
+
+Started DELETE "/api/users/10.json" for ::1 at 2019-10-07 16:02:24 +0330
+Processing by UsersController#deactivate as JSON
+  Parameters: {"user_id"=>"10", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+Completed 500 Internal Server Error in 49ms (Views: 3.0ms | ActiveRecord: 6.6ms)
+
+
+Started DELETE "/api/users/10.json" for ::1 at 2019-10-07 16:04:11 +0330
+Processing by UsersController#deactivate as JSON
+  Parameters: {"user_id"=>"10", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+Completed 500 Internal Server Error in 27ms (Views: 0.3ms | ActiveRecord: 6.8ms)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started POST "/api/login.json" for ::1 at 2019-10-07 16:04:32 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 182ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/users/10.json" for ::1 at 2019-10-07 16:04:37 +0330
+Processing by UsersController#deactivate as JSON
+  Parameters: {"user_id"=>"10", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+Completed 500 Internal Server Error in 5ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 16:05:11 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 200ms (Views: 0.2ms | ActiveRecord: 6.0ms)
+
+
+Started DELETE "/api/users/10.json" for ::1 at 2019-10-07 16:05:16 +0330
+Processing by UsersController#deactivate as JSON
+  Parameters: {"user_id"=>"10", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "deleted_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deleted_at", "2019-10-07 12:35:16.840137"], ["updated_at", "2019-10-07 12:35:16.842248"], ["id", 10]]
+  ↳ app/models/user.rb:39
+  [1m[35m (32.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+Completed 200 OK in 47ms (Views: 1.5ms | ActiveRecord: 34.8ms)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started DELETE "/api/users/10.json" for ::1 at 2019-10-07 16:06:31 +0330
+Processing by UsersController#deactivate as JSON
+  Parameters: {"user_id"=>"10", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "deleted_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deleted_at", "2019-10-07 12:36:31.564156"], ["updated_at", "2019-10-07 12:36:31.565196"], ["id", 10]]
+  ↳ app/models/user.rb:39
+  [1m[35m (40.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+Completed 200 OK in 66ms (Views: 1.9ms | ActiveRecord: 47.9ms)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started DELETE "/api/users/10.json" for ::1 at 2019-10-07 16:08:18 +0330
+  
+SyntaxError (/home/azhir/works/final/cafe/app/controllers/users_controller.rb:48: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/users_controller.rb:48: syntax error, unexpected end-of-input, expecting end
+Started DELETE "/api/users/10.json" for ::1 at 2019-10-07 16:08:41 +0330
+Processing by UsersController#deactivate as JSON
+  Parameters: {"user_id"=>"10", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+Completed 500 Internal Server Error in 26ms (Views: 0.3ms | ActiveRecord: 5.7ms)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started DELETE "/api/users/10.json" for ::1 at 2019-10-07 16:08:59 +0330
+Processing by UsersController#deactivate as JSON
+  Parameters: {"user_id"=>"10", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+Completed 500 Internal Server Error in 4ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started DELETE "/api/users/9.json" for ::1 at 2019-10-07 16:09:14 +0330
+Processing by UsersController#deactivate as JSON
+  Parameters: {"user_id"=>"9", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "deleted_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deleted_at", "2019-10-07 12:39:14.017173"], ["updated_at", "2019-10-07 12:39:14.018185"], ["id", 9]]
+  ↳ app/models/user.rb:39
+  [1m[35m (139.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+Completed 200 OK in 159ms (Views: 12.1ms | ActiveRecord: 140.5ms)
+
+
+Started DELETE "/api/users/9.json" for ::1 at 2019-10-07 16:09:16 +0330
+Processing by UsersController#deactivate as JSON
+  Parameters: {"user_id"=>"9", "user"=>{}}
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+Completed 500 Internal Server Error in 18ms (Views: 0.2ms | ActiveRecord: 7.5ms)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started DELETE "/api/users/15.json" for ::1 at 2019-10-07 16:10:16 +0330
+Processing by UsersController#deactivate as JSON
+  Parameters: {"user_id"=>"15", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+Completed 500 Internal Server Error in 7ms (Views: 3.9ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/users/15.json" for ::1 at 2019-10-07 16:10:52 +0330
+Processing by UsersController#deactivate as JSON
+  Parameters: {"user_id"=>"15", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0187c34e-1f7e-441e-8894-a75aa91e6e4e"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+Completed 500 Internal Server Error in 29ms (Views: 0.3ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 16:12:11 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 182ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 16:12:26 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@master.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 162ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/users.json" for ::1 at 2019-10-07 16:12:43 +0330
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"test07@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+Unpermitted parameter: :role
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test07@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "jti", "role") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "test07@test.com"], ["encrypted_password", "$2a$11$0LARuPYoVi3LTqqlGYDF5.xDLyrCSBR0T69BV9Bb48D9Lt8LsM5vi"], ["created_at", "2019-10-07 12:42:43.501356"], ["updated_at", "2019-10-07 12:42:43.501356"], ["jti", "38ac1908-410d-4dbe-ba9b-6b4808b60c11"], ["role", 4]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (45.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 232ms (Views: 1.3ms | ActiveRecord: 48.1ms)
+
+
+Started POST "/api/users.json" for ::1 at 2019-10-07 16:13:13 +0330
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"test24234234@test.com", "password"=>"[FILTERED]", "role"=>"sys_admin"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test24234234@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "jti", "role") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "test24234234@test.com"], ["encrypted_password", "$2a$11$YkSj1vXndd.39iloslkYqO8sIFGSDJTDrJlx5wJvhnlmvDybC/X6a"], ["created_at", "2019-10-07 12:43:13.655234"], ["updated_at", "2019-10-07 12:43:13.655234"], ["jti", "2b9308f7-7f12-4373-8ba0-d492a7ac7a34"], ["role", 1]]
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (20.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 194ms (Views: 1.0ms | ActiveRecord: 23.3ms)
+
+
+Started DELETE "/api/users/19.json" for ::1 at 2019-10-07 16:13:32 +0330
+Processing by UsersController#deactivate as JSON
+  Parameters: {"user_id"=>"19", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (7.0ms)[0m  [1m[33mUPDATE "users" SET "deleted_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deleted_at", "2019-10-07 12:43:32.306746"], ["updated_at", "2019-10-07 12:43:32.308746"], ["id", 19]]
+  ↳ app/models/user.rb:39
+  [1m[35m (23.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+Completed 200 OK in 42ms (Views: 1.0ms | ActiveRecord: 33.9ms)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started POST "/api/login.json" for ::1 at 2019-10-07 17:04:31 +0330
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@master.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 215ms (Views: 0.2ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 17:04:50 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"nil", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"nil", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "nil"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 18ms (Views: 0.2ms | ActiveRecord: 2.5ms)
+
+

@@ -41,6 +41,6 @@ class ApplicationPolicy
         end
 
         def has_current_user
-            current_user.blank?
+            !current_user.blank?
         end
 end

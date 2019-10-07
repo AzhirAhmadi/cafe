@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
     skip_before_action :authenticate_user!, only: [:create]
     def create
-        user =User.create(permitted_attributes)
-        puts user_params
+        user =User.create(user_params)
         authorize user
         
         if user.save
@@ -22,10 +21,16 @@ class UsersController < ApplicationController
         end
     end
 
-    def destroy
-        user = User.find(params[:id])
+    def deactivate
+        puts params
+        user = User.find(params[:user_id])
         authorize user
-        if user.destroy
+
+        if user.deleted_at?
+            raise ErrorHandling::Errors::User::DeletedUser.new({deleted_at: user.deleted_at})          
+        end
+        
+        if user.soft_delete
             render jsonapi: user
         else
             raise ErrorHandling::Errors::User::DataBaseCreation.new({params: params,user: user})          

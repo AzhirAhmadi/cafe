@@ -13,10 +13,10 @@ class UserPolicy < ApplicationPolicy
     super
   end
 
-  def destroy?
+  def deactivate?
     return true if data_is_for_current_user
-    return false if has_current_user
+    return false unless has_current_user
     return true if data_is_lower_then_current_user
-    super
+    false
   end
 end

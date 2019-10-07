@@ -7,13 +7,10 @@ class DeviseApi::SessionsController < Devise::SessionsController
     # POST /api/login
     def create
       resource = warden.authenticate(scope: :user)
-
       if resource.blank?
         raise ErrorHandling::Errors::Requset::UsernameOrPassword.new  params: params
       end
-
       sign_in(resource_name, resource)
-
       render json:  {
         success: true,
         email: current_user.email,

@@ -35,6 +35,15 @@ class User < ApplicationRecord
     self.role ||= :player
   end
 
+  def soft_delete  
+    update_attribute(:deleted_at, Time.current)  
+  end 
+
+  def active_for_authentication?  
+    raise ErrorHandling::Errors::User::DeletedUser.new(deleted_at: deleted_at) if deleted_at?  
+    return true
+  end 
+
   def self.role_power user
     return (roles.length - roles[user.role]) if (user.is_a? User)
     return roles.length - roles[user]
@@ -46,5 +55,4 @@ class User < ApplicationRecord
     end
     return nil
   end
-
 end
