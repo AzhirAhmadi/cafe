@@ -19254,3 +19254,1873 @@ Processing by UsersController#create as JSON
 Completed 500 Internal Server Error in 178ms (Views: 0.3ms | ActiveRecord: 2.5ms)
 
 
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 16:56:50 +0330
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 29ms (Views: 0.3ms | ActiveRecord: 7.5ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 16:57:04 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 24ms (Views: 0.2ms | ActiveRecord: 5.5ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 16:57:15 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 22ms (Views: 0.2ms | ActiveRecord: 5.1ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 16:57:36 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 27ms (Views: 0.4ms | ActiveRecord: 7.3ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 16:57:49 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 16:58:02 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 28ms (Views: 4.8ms | ActiveRecord: 6.1ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 16:58:28 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 16:58:29 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 16:58:30 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 5ms (Views: 0.3ms | ActiveRecord: 2.5ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 16:58:31 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 3ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 16:58:31 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 16:58:40 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 16:58:41 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 5ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 16:58:42 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 16:59:04 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 25ms (Views: 0.3ms | ActiveRecord: 6.9ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 16:59:38 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 25ms (Views: 0.3ms | ActiveRecord: 5.4ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:00:09 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 24ms (Views: 0.6ms | ActiveRecord: 5.6ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:01:30 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 23ms (Views: 0.9ms | ActiveRecord: 6.3ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:01:55 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 33ms (Views: 0.2ms | ActiveRecord: 10.1ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:02:10 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 28ms (Views: 1.2ms | ActiveRecord: 6.1ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:02:22 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 25ms (Views: 0.2ms | ActiveRecord: 5.8ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:02:46 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 23ms (Views: 0.2ms | ActiveRecord: 5.9ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:04:18 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 25ms (Views: 0.3ms | ActiveRecord: 7.5ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:04:34 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 32ms (Views: 0.3ms | ActiveRecord: 7.2ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:04:47 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+Completed 500 Internal Server Error in 27ms (Views: 0.4ms | ActiveRecord: 5.6ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:05:04 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 24ms (Views: 0.2ms | ActiveRecord: 5.0ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:05:42 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 34ms (Views: 0.3ms | ActiveRecord: 10.8ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:06:00 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 27ms (Views: 0.2ms | ActiveRecord: 5.6ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:07:04 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 34ms (Views: 0.2ms | ActiveRecord: 12.3ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:13:48 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 32ms (Views: 0.2ms | ActiveRecord: 9.0ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:14:00 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 31ms (Views: 0.3ms | ActiveRecord: 6.3ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:17:11 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 39ms (Views: 0.4ms | ActiveRecord: 6.3ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:17:37 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:32
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 49ms (Views: 1.7ms | ActiveRecord: 8.1ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:20:01 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:31
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 46ms (Views: 0.2ms | ActiveRecord: 5.6ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:20:51 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:31
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 29ms (Views: 0.3ms | ActiveRecord: 7.1ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:20:55 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:21:06 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 45ms (Views: 0.3ms | ActiveRecord: 10.2ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:21:32 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 32ms (Views: 0.3ms | ActiveRecord: 7.7ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:21:41 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 28ms (Views: 0.3ms | ActiveRecord: 7.0ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:21:47 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 26ms (Views: 0.3ms | ActiveRecord: 5.7ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:22:47 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:22:56 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+Completed 500 Internal Server Error in 204ms (Views: 182.5ms | ActiveRecord: 5.3ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:23:20 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+Completed 500 Internal Server Error in 26ms (Views: 0.3ms | ActiveRecord: 7.0ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:23:45 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+Completed 500 Internal Server Error in 34ms (Views: 5.5ms | ActiveRecord: 6.1ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:24:04 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+Completed 500 Internal Server Error in 29ms (Views: 3.7ms | ActiveRecord: 6.3ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:24:21 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+Completed 500 Internal Server Error in 28ms (Views: 3.2ms | ActiveRecord: 7.0ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:24:33 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+Completed 500 Internal Server Error in 42ms (Views: 15.5ms | ActiveRecord: 4.5ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:25:13 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 29ms (Views: 0.3ms | ActiveRecord: 6.9ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:25:25 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+Completed 500 Internal Server Error in 32ms (Views: 0.2ms | ActiveRecord: 6.6ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:25:39 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+Completed 500 Internal Server Error in 32ms (Views: 0.2ms | ActiveRecord: 6.3ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:26:40 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+Completed 500 Internal Server Error in 44ms (Views: 0.2ms | ActiveRecord: 7.2ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:27:32 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+Completed 500 Internal Server Error in 31ms (Views: 0.2ms | ActiveRecord: 6.5ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:27:38 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 33ms (Views: 0.2ms | ActiveRecord: 6.2ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:31:41 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 32ms (Views: 0.3ms | ActiveRecord: 5.7ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:32:20 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 41ms (Views: 0.3ms | ActiveRecord: 6.5ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:32:31 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 31ms (Views: 0.2ms | ActiveRecord: 6.1ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:32:39 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 32ms (Views: 0.3ms | ActiveRecord: 6.8ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:33:07 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 27ms (Views: 0.2ms | ActiveRecord: 6.3ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:33:54 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 22ms (Views: 0.3ms | ActiveRecord: 5.5ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:33:58 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:34:17 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 43ms (Views: 0.3ms | ActiveRecord: 5.4ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:34:24 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 50ms (Views: 0.2ms | ActiveRecord: 8.3ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:35:13 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 26ms (Views: 0.3ms | ActiveRecord: 5.8ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:35:28 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 29ms (Views: 0.2ms | ActiveRecord: 6.6ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:35:57 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 26ms (Views: 0.3ms | ActiveRecord: 4.7ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:36:29 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+Completed 500 Internal Server Error in 222ms (Views: 196.0ms | ActiveRecord: 4.8ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-06 17:36:46 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 25ms (Views: 0.2ms | ActiveRecord: 5.0ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-07 09:06:30 +0330
+  [1m[35m (19.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (94.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 237ms (Views: 0.3ms | ActiveRecord: 143.0ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-07 10:15:20 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 37ms (Views: 0.2ms | ActiveRecord: 13.9ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-07 10:16:08 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 29ms (Views: 0.2ms | ActiveRecord: 5.8ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-07 10:17:17 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 5.1ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/models/user.rb:43:in `-'
+app/models/user.rb:43:in `role_power'
+app/policies/user_policy.rb:11:in `update?'
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-07 10:18:38 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 6.1ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/models/user.rb:43:in `-'
+app/models/user.rb:43:in `role_power'
+app/policies/user_policy.rb:11:in `update?'
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-07 10:20:32 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "b6a0825e-d8fb-4103-9df3-63eb23700bc3"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 6.7ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:17:in `update'
+Started POST "/api/login.json" for ::1 at 2019-10-07 10:20:58 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 203ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-07 10:21:07 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.9ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/13.json" for ::1 at 2019-10-07 10:21:20 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:17:in `update'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:24:20 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 5.0ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:24:36 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.6ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:25:12 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 6.5ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:18:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:27:04 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 4.8ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:18:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:27:45 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 9.0ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:18:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:28:25 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 6.5ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:18:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:28:36 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 7.2ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:18:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:28:43 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 6.9ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:18:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:29:13 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 5.4ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:29:18 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.9ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:31:14 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 6.2ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:31:36 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 6.6ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:31:47 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 6.1ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:31:54 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.8ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:32:26 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 6.8ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:32:34 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.6ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:32:55 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:33:33 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 7.3ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:17:in `update'
+Started DELETE "/api/logout.json" for ::1 at 2019-10-07 10:33:48 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE ApiUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "0e541f50-aacc-437a-9814-150ca86e55cf"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:27
+  [1m[36mApiUser Update (20.5ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "6dc4c3cd-f1fe-486c-83b7-2a1054a1148a"], ["id", 5]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:64
+Completed 200 OK in 148ms (Views: 0.4ms | ActiveRecord: 20.8ms)
+
+
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (30.9ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["id", 5]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started POST "/api/login.json" for ::1 at 2019-10-07 10:33:52 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 166ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:34:05 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.2ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:34:22 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 7.7ms)
+
+
+  
+Pundit::NotAuthorizedError (not allowed to update? this User):
+  
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:34:33 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 7.7ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/models/user.rb:44:in `-'
+app/models/user.rb:44:in `role_power'
+app/policies/user_policy.rb:18:in `update?'
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:36:32 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 6.4ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/models/user.rb:44:in `-'
+app/models/user.rb:44:in `role_power'
+app/policies/user_policy.rb:18:in `update?'
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:36:35 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.7ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/models/user.rb:44:in `-'
+app/models/user.rb:44:in `role_power'
+app/policies/user_policy.rb:18:in `update?'
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:37:23 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 7.7ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/users_controller.rb:18:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:38:07 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 6.1ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/users_controller.rb:18:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:38:21 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 6.4ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/users_controller.rb:18:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:39:31 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test17@test.com"], ["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 249ms (ActiveRecord: 6.7ms)
+
+
+  
+ErrorHandling::Errors::User::DataBaseCreation (#<ActiveModel::Errors:0x00007f64201c4928>):
+  
+app/controllers/users_controller.rb:21:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:40:23 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test17@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test17@test.com"], ["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 500 Internal Server Error in 194ms (Views: 0.3ms | ActiveRecord: 7.9ms)
+
+
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:40:56 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test27@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test27@test.com"], ["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "email" = $1, "encrypted_password" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["email", "test27@test.com"], ["encrypted_password", "$2a$11$V.v96ezRb1oZ9pudXgffbu5bJZDvwxrB8oaRc2Dev64PeAKNJHoOG"], ["updated_at", "2019-10-07 07:10:56.282279"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (31.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 229ms (Views: 26.8ms | ActiveRecord: 33.8ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:41:26 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test27@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$uRAGgFtBI3M5K.r0oFjrAeA9ekRgq5vfGIOaUeexTXt32alck.Zv2"], ["updated_at", "2019-10-07 07:11:27.089156"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (10.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 215ms (Views: 1.2ms | ActiveRecord: 12.0ms)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:42:07 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test27@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$4ppPmFTE1u4Q08ut9KKhF.t4.IZ8eC3oYqQiMmPaJC/tx4gKy8jsy"], ["updated_at", "2019-10-07 07:12:07.666661"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 185ms (Views: 0.8ms | ActiveRecord: 17.1ms)
+
+
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:43:31 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test27@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$N9jpQEmeMlnl.Y7Z.kgY2O6QwbmRdvCYq3WVfwY6wyWK75Wz.61e2"], ["updated_at", "2019-10-07 07:13:31.725236"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (10.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 198ms (Views: 1.9ms | ActiveRecord: 17.4ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:43:52 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test27@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$pA.ENh6pfq90eJzkvn4DYegyHJZUMXfpAtYbXjIUHeO4eUAw7D/46"], ["updated_at", "2019-10-07 07:13:52.757153"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 183ms (Views: 1.4ms | ActiveRecord: 12.6ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:44:02 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test37@test.com"], ["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "email" = $1, "encrypted_password" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["email", "test37@test.com"], ["encrypted_password", "$2a$11$QEY9FU95vzy59mW50rMHt.T2pYFhsXgIPbHLYS2av5lxNG9WNsZdu"], ["updated_at", "2019-10-07 07:14:03.121568"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (18.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 193ms (Views: 1.2ms | ActiveRecord: 21.8ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 10:44:45 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$PK2CPvwluv5RC5RDCuPgbOm52xyZJ.TwI7LeUiwzx8n4Bz0KACTGq"], ["updated_at", "2019-10-07 07:14:45.781946"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 208ms (Views: 1.6ms | ActiveRecord: 17.2ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:27:59 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$xrz0fZ/Pr6Cq3wtVlt9et.aZp/8.sVd0fpcktmF.D1PNW5nSplG9u"], ["updated_at", "2019-10-07 07:58:00.077606"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 214ms (Views: 1.7ms | ActiveRecord: 21.4ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:28:36 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$Agwgz4QLBPuFPWCgdfNKIO62meelYWrlKRacKlWfn0W7SbtDfrXKy"], ["updated_at", "2019-10-07 07:58:36.612875"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (18.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 215ms (Views: 1.3ms | ActiveRecord: 29.3ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 11:29:03 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 177ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:29:06 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$Yn94QfQhzluuspUPfE7eKe97DYKBJgCpqmSw1fT81BwmQ46jvDYhu"], ["updated_at", "2019-10-07 07:59:06.631203"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (21.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 200ms (Views: 1.0ms | ActiveRecord: 22.8ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:30:09 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 35ms (Views: 2.7ms | ActiveRecord: 8.8ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:30:54 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 30ms (Views: 2.8ms | ActiveRecord: 6.3ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:32:36 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 40ms (Views: 5.5ms | ActiveRecord: 5.5ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:32:59 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 11ms (Views: 7.3ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:33:52 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 35ms (Views: 7.0ms | ActiveRecord: 9.0ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:34:37 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$nWrdzoKsq076AdF4qXOd7.tEiDByw1Xbvfh9wpzMgq3FCrhD0Bi9i"], ["updated_at", "2019-10-07 08:04:37.963970"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (66.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 275ms (Views: 2.1ms | ActiveRecord: 73.6ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:36:05 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$t5qcHWvnmB5uId5IV.S6J.LuARWhE6CqetAIAce8Cqfrg3h25yMCS"], ["updated_at", "2019-10-07 08:06:05.702655"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (21.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 224ms (Views: 3.2ms | ActiveRecord: 26.3ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:36:46 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$6Qu1VOfosCBuTRijELytDuUmSbL28ZKAeBM/iWsQRwsmgCjfllnza"], ["updated_at", "2019-10-07 08:06:46.461907"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (34.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 245ms (Views: 1.4ms | ActiveRecord: 41.4ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:37:23 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$UanGFIsD1/LeJzYuxvYhu.vJjc9fCUr6UYuN06vp7LloKz6FPV4Da"], ["updated_at", "2019-10-07 08:07:24.113868"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (19.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 213ms (Views: 2.0ms | ActiveRecord: 25.3ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:37:29 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "role" = $1, "encrypted_password" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["role", 2], ["encrypted_password", "$2a$11$JAirBzRznfNGwFrIfYvrsO3XXCQayw.8upu5gBr1KTxFnEtCyTU1W"], ["updated_at", "2019-10-07 08:07:29.891729"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (20.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 225ms (Views: 1.7ms | ActiveRecord: 28.2ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:38:34 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 40ms (Views: 0.2ms | ActiveRecord: 7.0ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:38:41 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 6ms (Views: 0.3ms | ActiveRecord: 2.7ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:38:57 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:39:23 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_admin"}, "id"=>"14"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 5ms (Views: 0.3ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:39:30 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_admin"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:59:05 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_admin"}, "id"=>"14"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 29ms (Views: 0.3ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 11:59:23 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 184ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 11:59:35 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_admin"}, "id"=>"14"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 6ms (Views: 0.3ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/api/logout.json" for ::1 at 2019-10-07 12:15:12 +0330
+Processing by DeviseApi::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mCACHE ApiUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:27
+  [1m[36mApiUser Update (28.7ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "5687c56b-45d2-432d-a216-19da1146fb3d"], ["id", 5]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:64
+Completed 200 OK in 74ms (Views: 0.4ms | ActiveRecord: 38.9ms)
+
+
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mApiUser Update (13.9ms)[0m  [1m[33mUPDATE "users" SET "jti" = $1 WHERE "users"."id" = $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["id", 5]]
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 12:15:15 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_admin"}, "id"=>"14"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+Completed 500 Internal Server Error in 6ms (Views: 0.2ms | ActiveRecord: 2.3ms)
+
+
+Started PATCH "/api/users/1334.json" for ::1 at 2019-10-07 12:16:31 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_admin"}, "id"=>"1334"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "221483d3-d2d2-446a-8753-46eed21e1ef2"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+Completed 500 Internal Server Error in 8ms (Views: 0.3ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 12:16:34 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@admin.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 213ms (Views: 0.2ms | ActiveRecord: 3.9ms)
+
+
+Started PATCH "/api/users/1334.json" for ::1 at 2019-10-07 12:16:37 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_admin"}, "id"=>"1334"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1334], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 9ms (Views: 0.3ms | ActiveRecord: 1.4ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 12:17:34 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_admin"}, "id"=>"14"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 6.3ms)
+
+
+  
+SyntaxError (/home/azhir/works/final/cafe/app/policies/user_policy.rb:11: syntax error, unexpected ||, expecting end
+    ||
+    ^~):
+  
+app/policies/user_policy.rb:11: syntax error, unexpected ||, expecting end
+app/controllers/users_controller.rb:17:in `update'
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 12:17:45 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_admin"}, "id"=>"14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$woncEOUzN9RoRkyFlP011eRUWDadTMIhKG9qGnCVQKWkqiGwEgSKC"], ["updated_at", "2019-10-07 08:47:45.876995"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (18.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 239ms (Views: 1.6ms | ActiveRecord: 24.2ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 12:18:39 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_player"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 29ms (Views: 0.3ms | ActiveRecord: 5.1ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 12:18:51 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"player"}, "id"=>"14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "role" = $1, "encrypted_password" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["role", 4], ["encrypted_password", "$2a$11$sPxiHzZwJ41AFMvu6x0rs.GkCpWbgLvlWqbUVTHNfcM8XIyvBo/9a"], ["updated_at", "2019-10-07 08:48:51.992992"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (11.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 179ms (Views: 1.8ms | ActiveRecord: 13.5ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 12:19:05 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"cafe_owner"}, "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "role" = $1, "encrypted_password" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["role", 3], ["encrypted_password", "$2a$11$A4rRkCwpRyWXfv.Xu9x08uRQbyEwqmKmAkS/OhhgZ4iLNAu7NEL3G"], ["updated_at", "2019-10-07 08:49:05.669399"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (16.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 184ms (Views: 1.1ms | ActiveRecord: 18.3ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 12:33:04 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"cafe_owner"}, "id"=>"14"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$QHPtK1gvD2edonfdfe8MdOkGj6IKfNMoqNRN0aoGHFN8MyfmtTAc6"], ["updated_at", "2019-10-07 09:03:04.283474"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 221ms (Views: 2.2ms | ActiveRecord: 30.2ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 12:33:12 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"cafe_owner"}, "id"=>"14"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$QuBoPqm99StWfglmZDktZOBGZ7eV9FX.6Rm2/l0j59f.YYsDrlxAi"], ["updated_at", "2019-10-07 09:03:12.884801"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (18.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 191ms (Views: 1.1ms | ActiveRecord: 21.6ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 12:33:26 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"palyer"}, "id"=>"14"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 500 Internal Server Error in 8ms (Views: 0.3ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 12:33:39 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"player"}, "id"=>"14"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "role" = $1, "encrypted_password" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["role", 4], ["encrypted_password", "$2a$11$W7AMKVFWTSBxAS49EkNVEu92o3HApOgdiJA6lKh3KulkTy7yupH4a"], ["updated_at", "2019-10-07 09:03:39.847036"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (10.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 185ms (Views: 1.3ms | ActiveRecord: 12.7ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 14:10:47 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"player"}, "id"=>"14"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$j5pYLR.Ek2GuBDXKiB8IiuXWeUAVkcTsxUOez/.x0BUf1lOuvTh9."], ["updated_at", "2019-10-07 10:40:47.945836"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (18.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 190ms (Views: 1.6ms | ActiveRecord: 21.0ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 14:11:04 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_master"}, "id"=>"14"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$cGhsq5PcNEpHR6DFQITx7OlmqwBZLK8.54zwgLtTZS9lvywFQZK5S"], ["updated_at", "2019-10-07 10:41:04.694080"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (19.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 189ms (Views: 1.1ms | ActiveRecord: 22.2ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 14:12:15 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_admin"}, "id"=>"14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Unpermitted parameter: :role
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$lSNxh6eqZ6Uvwl.X6lmPk.lUhOl0aOehBKnzMLmTsQhHc1MVlyZYu"], ["updated_at", "2019-10-07 10:42:15.499366"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (16.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 183ms (Views: 1.5ms | ActiveRecord: 18.0ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 14:12:36 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "role" = $1, "encrypted_password" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["role", 2], ["encrypted_password", "$2a$11$KCg2BIr9ThBAhg5xb9T1COPPdEOjBARmYAJkjpYKoh9CXIlAVPSQy"], ["updated_at", "2019-10-07 10:42:36.195040"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (10.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 180ms (Views: 1.1ms | ActiveRecord: 12.4ms)
+
+
+Started PATCH "/api/users/14.json" for ::1 at 2019-10-07 14:22:15 +0330
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["encrypted_password", "$2a$11$x4qViI.YG3QDM4ILwka1Zu.VQkeIt13g5RJ19PKiiwNetRabHqfcG"], ["updated_at", "2019-10-07 10:52:15.467969"], ["id", 14]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 192ms (Views: 1.2ms | ActiveRecord: 16.3ms)
+
+
+Started DELETE "/api/users/14.json" for ::1 at 2019-10-07 14:27:05 +0330
+Processing by UsersController#destroy as JSON
+  Parameters: {"user"=>{"email"=>"test37@test.com", "password"=>"[FILTERED]", "role"=>"sys_expert"}, "id"=>"14"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:28
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 14]]
+  ↳ app/controllers/users_controller.rb:28
+  [1m[35m (39.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:28
+Completed 200 OK in 83ms (Views: 1.6ms | ActiveRecord: 47.9ms)
+
+
+Started DELETE "/api/users/14.json" for ::1 at 2019-10-07 14:27:26 +0330
+Processing by UsersController#destroy as JSON
+  Parameters: {"id"=>"14", "user"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."jti" = $1 LIMIT $2[0m  [["jti", "3a597cbc-645b-4a91-8783-7f47782a77e8"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:29
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+Completed 500 Internal Server Error in 7ms (Views: 0.3ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m

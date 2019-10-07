@@ -2,6 +2,8 @@
 class ApplicationController < ActionController::API
   include ActionController::RequestForgeryProtection
   include Pundit
+  prepend ParamSanitizer::Sanitizer
+
   protect_from_forgery with: :exception
   protect_from_forgery with: :null_session
   skip_before_action :verify_authenticity_token
@@ -11,10 +13,8 @@ class ApplicationController < ActionController::API
   prepend_before_action :check_json_format
 
   rescue_from StandardError, with: :render_error
-
-
-
-
+  # rescue_from ErrorHandling::Errors, with: :render_error
+  
   private
     def json_request?
       request.format.json?
@@ -31,7 +31,6 @@ class ApplicationController < ActionController::API
       @current_user
     end
 
-    
     #my methods
     def check_authorization_token
       if request.headers["Authorization"].blank?
@@ -42,7 +41,7 @@ class ApplicationController < ActionController::API
     def check_json_format
       unless request.format == :json
         sign_out
-        raise ErrorHandling::ErrorHandling::Errors::Requset::NonJsonInput.new  params: params
+        raise ErrorHandling::Errors::Requset::NonJsonInput.new  params: params
       end
     end
 
