@@ -22508,3 +22508,177 @@ Processing by DeviseApi::SessionsController#create as JSON
 Completed 500 Internal Server Error in 18ms (Views: 0.2ms | ActiveRecord: 2.5ms)
 
 
+Started POST "/api/login.json" for ::1 at 2019-10-07 18:38:15 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 18:38:19 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 18:38:28 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 18:39:31 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 18:40:57 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 18:41:02 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"session"=>{}}
+Completed 500 Internal Server Error in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 18:41:11 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+Completed 500 Internal Server Error in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-07 18:41:13 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+Completed 500 Internal Server Error in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-08 16:46:22 +0330
+  [1m[35m (86.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by DeviseApi::SessionsController#create as JSON
+Completed 500 Internal Server Error in 32ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-08 16:47:01 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@sys_master", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@sys_master", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (86.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@sys_master"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 343ms (Views: 0.4ms | ActiveRecord: 226.6ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-08 16:47:14 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@sys_master.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@sys_master.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@sys_master.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-08 16:47:16 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@sys_master.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@sys_master.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@sys_master.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Started POST "/api/login.json" for ::1 at 2019-10-08 16:47:50 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@master.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 188ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-08 16:48:17 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@master.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 166ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-08 16:48:36 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@master.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 186ms (ActiveRecord: 5.8ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/devise_api/sessions_controller.rb:17:in `+'
+app/controllers/devise_api/sessions_controller.rb:17:in `create'
+Started POST "/api/login.json" for ::1 at 2019-10-08 16:49:22 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@master.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 8.8ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/devise_api/sessions_controller.rb:17:in `+'
+app/controllers/devise_api/sessions_controller.rb:17:in `create'
+Started POST "/api/login.json" for ::1 at 2019-10-08 16:49:25 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@master.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 0.3ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/devise_api/sessions_controller.rb:17:in `+'
+app/controllers/devise_api/sessions_controller.rb:17:in `create'
+Started POST "/api/login.json" for ::1 at 2019-10-08 16:49:36 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@master.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 500 Internal Server Error in 231ms (ActiveRecord: 5.3ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/devise_api/sessions_controller.rb:17:in `+'
+app/controllers/devise_api/sessions_controller.rb:17:in `create'
+Started POST "/api/login.json" for ::1 at 2019-10-08 16:49:51 +0330
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@master.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 207ms (Views: 0.3ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-08 16:50:14 +0330
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/azhir/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@master.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 209ms (Views: 0.4ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/api/login.json" for ::1 at 2019-10-08 16:50:16 +0330
+Processing by DeviseApi::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"azhir@master.com", "password"=>"[FILTERED]"}}}
+  [1m[36mApiUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "azhir@master.com"], ["LIMIT", 1]]
+  ↳ app/controllers/devise_api/sessions_controller.rb:9
+Completed 200 OK in 175ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+

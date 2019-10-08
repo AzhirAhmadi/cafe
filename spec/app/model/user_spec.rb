@@ -37,11 +37,11 @@ RSpec.describe User, type: :model do
       expect(otherUser.errors.messages[:email]).to include("has already been taken")
     end
 
-    it "should except :roles [:sys_master, :sys_admin, :sys_expert, :cafe_ower,:player]" do
+    it "should except :roles [:sys_master, :sys_admin, :sys_expert, :cafe_owner,:player]" do
       expect(User).to respond_to(:sys_master)
       expect(User).to respond_to(:sys_admin)
       expect(User).to respond_to(:sys_expert)
-      expect(User).to respond_to(:cafe_ower)
+      expect(User).to respond_to(:cafe_owner)
       expect(User).to respond_to(:player)
     end
   end
