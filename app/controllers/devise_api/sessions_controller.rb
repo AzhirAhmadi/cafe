@@ -6,7 +6,12 @@ class DeviseApi::SessionsController < Devise::SessionsController
     respond_to :json
     # POST /api/login
     def create
+      if params[:user].blank? || params[:user][:email].blank? || params[:user][:password].blank?
+        raise ErrorHandling::Errors::Login::InvalidParams.new  params: params
+      end
+
       resource = warden.authenticate(scope: :user)
+      
       if resource.blank?
         raise ErrorHandling::Errors::Requset::UsernameOrPassword.new  params: params
       end

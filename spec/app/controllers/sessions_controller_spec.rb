@@ -5,8 +5,7 @@ RSpec.describe DeviseApi::SessionsController, type: :controller do
         context "when invalid params provided" do
             it "(absence of user)" do
                 @request.env["devise.mapping"] = Devise.mappings[:user]
-                post :create, params: {},
-                format: :json
+                post :create, params: {}, format: :json
 
                 expect(json["error"]).to include(
                     {
@@ -61,7 +60,7 @@ RSpec.describe DeviseApi::SessionsController, type: :controller do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"params for login must be provided like this: {\"user\" : {\"email\" : \"valid email\",\"password\" : \"password\"}}", 
+                        "message"=>"Username or password are wrong!", 
                         "path"=>"devise_api/sessions#create"
                     }
                 )
@@ -80,14 +79,12 @@ RSpec.describe DeviseApi::SessionsController, type: :controller do
 
                 expect(json["error"]).to include(
                         {
-                            "message"=>"params for login must be provided like this: {\"user\" :{\"email\" : \"valid email\",\"password\" : \"password\"}}",
+                            "message"=>"Username or password are wrong!",
                             "path"=>"devise_api/sessions#create"
                         }
                 )
             end
         end
-
-
 
         context "when valid params provieded" do
             it "login by player role and return JWT token" do
@@ -123,6 +120,52 @@ RSpec.describe DeviseApi::SessionsController, type: :controller do
                 response = sing_in user
                 body = response.body
                 expect(json["jwt"]).not_to be_nil
+            end
+        end
+    end
+
+    describe "logout" do
+        context "when invalid params provided" do
+            it "(absence of Authorization Token in header)" do
+                @request.env["devise.mapping"] = Devise.mappings[:user]
+                delete :destroy, params: {}, format: :json
+
+                expect(json["error"]).to include(
+                    {
+                        "message"=>"Authorization header needed!", 
+                        "path"=>"devise_api/sessions#destroy"
+                    }
+                )
+            end
+
+            it "(invalid Authorization Token in header)" do
+                @request.env["devise.mapping"] = Devise.mappings[:user]
+                @request.headers["Authorization"] = "invalid token"
+
+                delete :destroy, params: {}, format: :json
+                expect(json["error"]).to include(
+                    {
+                        "message"=>"Wrong jwt token!", 
+                        "path"=>"devise_api/sessions#destroy"
+                    }
+                )
+            end
+        end
+
+        context "when valid params provieded" do
+            it "logout player by JWT token" do
+                user  = create(:player)
+                sing_in user
+                
+                @request.env["devise.mapping"] = Devise.mappings[:user]
+                @request.headers["Authorization"] = JSON.parse(response.body)["jwt"]
+                delete :destroy, params: {}, format: :json
+
+                expect(json).to include(
+                    {
+                        "message"=>"signed out!"
+                    }
+                )
             end
         end
     end
