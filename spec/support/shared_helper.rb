@@ -1,55 +1,31 @@
 module SharedHelper
 
-    shared_examples_for "Authorization_token_absence" do
+    shared_examples_for "bad_Authorization_token" do
 
-        it "should return 500 status code" do
-            subject
-            expect(response).to have_http_status(500)
+        it "(absence of Authorization Token in header)" do
+            @request.env["devise.mapping"] = Devise.mappings[:user]
+            delete :destroy, params: {}, format: :json
+
+            expect(json["error"]).to include(
+                {
+                    "message"=>"Authorization header needed!", 
+                    "path"=>"devise_api/sessions#destroy"
+                }
+            )
         end
 
-        it "should return proper error body" do
-            subject
-            puts json: response.body
-            expect(json).to include("Authorization header needed!")
+        it "(invalid Authorization Token in header)" do
+            @request.env["devise.mapping"] = Devise.mappings[:user]
+            @request.headers["Authorization"] = "invalid token"
+
+            delete :destroy, params: {}, format: :json
+            expect(json["error"]).to include(
+                {
+                    "message"=>"Wrong jwt token!", 
+                    "path"=>"devise_api/sessions#destroy"
+                }
+            )
         end
     end
 
-    shared_examples_for "unauthorized_oauth_requests" do
-        let(:error) do
-            {
-                "status" => 401,
-                "source" => { "pointer" => "/code" },
-                "title" => "Authentication code is invalid",
-                "detail" => "You must provide valid code in order to exchange it for token."
-            }
-        end
-
-        it "should return 401 status code" do
-            subject
-            expect(response).to have_http_status(401)
-        end
-
-        it "should return proper error body" do
-            subject
-            expect(json["errors"]).to include(error)
-        end
-    end
-                         
-    shared_examples_for "forbidden_requests" do
-        it "should return 403 status code" do
-            subject
-            expect(response).to have_http_status(:forbidden)
-        end
-
-        it "should return proper error json" do
-            authorization_error = {
-                "status" => 403,
-                "source" => { "pointer" => "/headers/authorization" },
-                "title" => "Not authorized",
-                "detail" => "You have no right to access this resource."
-            }
-            subject
-            expect(json["errors"]).to eq(authorization_error)
-        end
-    end
 end
