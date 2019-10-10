@@ -89,35 +89,35 @@ RSpec.describe DeviseApi::SessionsController, type: :controller do
         context "when valid params provieded" do
             it "login by player role and return JWT token" do
                 user  = create(:player)
-                response = sing_in user
+                response = login user
                 body = response.body
                 expect(json["jwt"]).not_to be_nil
             end
 
             it "login by cafe_owner role and return JWT token" do
                 user  = create(:cafe_owner)
-                response = sing_in user
+                response = login user
                 body = response.body
                 expect(json["jwt"]).not_to be_nil
             end
 
             it "login by sys_expert role and return JWT token" do
                 user  = create(:sys_expert)
-                response = sing_in user
+                response = login user
                 body = response.body
                 expect(json["jwt"]).not_to be_nil
             end
 
             it "login by sys_admin role and return JWT token" do
                 user  = create(:sys_admin)
-                response = sing_in user
+                response = login user
                 body = response.body
                 expect(json["jwt"]).not_to be_nil
             end
 
             it "login by sys_master role and return JWT token" do
                 user  = create(:sys_master)
-                response = sing_in user
+                response = login user
                 body = response.body
                 expect(json["jwt"]).not_to be_nil
             end
@@ -133,7 +133,7 @@ RSpec.describe DeviseApi::SessionsController, type: :controller do
         context "when valid params provieded" do
             it "logout player by JWT token" do
                 user  = create(:player)
-                sing_in user
+                login user
                 
                 @request.env["devise.mapping"] = Devise.mappings[:user]
                 @request.headers["Authorization"] = JSON.parse(response.body)["jwt"]
