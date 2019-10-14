@@ -8,7 +8,7 @@ class ApplicationPolicy
       @data = data
     end
 
-    def craete?
+    def create?
         false
     end
 
@@ -37,7 +37,7 @@ class ApplicationPolicy
         end
 
         def data_is_lower_then_current_user 
-            (User.role_power current_user) > (User.role_power data)
+            !current_user.blank? && (User.role_power current_user) > (User.role_power data)
         end
 
         def has_current_user
