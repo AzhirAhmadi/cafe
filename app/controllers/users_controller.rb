@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
     skip_before_action :authenticate_user!, only: [:create]
+    
     def create
-        user =User.create(user_params)
-        authorize user
         
+        if params[:user].blank? || params[:user][:email].blank? || params[:user][:password].blank? || params[:user][:role].blank?
+            raise ErrorHandling::Errors::User::CreationParams.new({params: params})          
+        end
+        
+        user =User.new(user_params)
+        authorize user
         if user.save
             render jsonapi: user
         else
@@ -22,7 +27,6 @@ class UsersController < ApplicationController
     end
 
     def deactivate
-        puts params
         user = User.find(params[:user_id])
         authorize user
 
