@@ -23,12 +23,11 @@ class ApplicationController < ActionController::API
     def authenticate_user!(*args)
       check_authorization_token
       set_current_user
+      raise ErrorHandling::Errors::JwtToken::Unauthorized.new  params: params if @current_user.blank? 
     end
     
     def set_current_user
       @current_user ||= User.find_by_jti(decode_authorization_token)
-      raise ErrorHandling::Errors::JwtToken::Unauthorized.new  params: params if @current_user.blank? 
-      @current_user
     end
 
     #my methods
@@ -46,6 +45,8 @@ class ApplicationController < ActionController::API
     end
 
     def decode_authorization_token
+      return nil if request.headers["Authorization"].blank?
+      
       token = request.headers["Authorization"].split('Bearer ').last
       secret = ENV['DEVISE_JWT_SECRET_KEY']
       JWT.decode(token, secret, true, algorithm: 'HS256',
