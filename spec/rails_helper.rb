@@ -77,3 +77,7 @@ RSpec.configure do |config|
   # config.include Warden::Test::Helpers
 
 end
+
+def URL path, format = "json"
+  "http://localhost:3000" + path + "." + format
+end
