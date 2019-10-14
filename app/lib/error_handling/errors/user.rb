@@ -4,10 +4,10 @@ module ErrorHandling::Errors::User
             args[:user].errors
         end
     end
-    
-    class UsernameOrPassword < ErrorHandling::Error
+
+    class CreationParams < ErrorHandling::Error
         def message
-            "Username or password are wrong!"
+            "params for sign_up must be provided like this: {\"user\" :{\"email\" : \"valid email\",\"password\" : \"password\", \"role\":\"player\"}}"
         end
     end
 
