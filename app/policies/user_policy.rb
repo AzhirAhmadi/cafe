@@ -1,7 +1,7 @@
 class UserPolicy < ApplicationPolicy
   # enum role: [:sys_master, :sys_admin, :sys_expert, :cafe_owner,:player]
   def create?
-    return true if has_current_user
+    return true unless has_current_user
     return true if data_is_lower_then_current_user
     super
   end
