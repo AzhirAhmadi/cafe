@@ -66,7 +66,6 @@ RSpec.configure do |config|
   #my configs
   config.include FactoryBot::Syntax::Methods
   config.include JsonApiHelpers
-  config.include SharedHelper
   config.include DeviseHelper
   # config.expect_with :rspec do |c|
   #   c.syntax = :expect
