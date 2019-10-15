@@ -360,4 +360,44 @@ RSpec.describe UsersController, type: :request do
             end
         end
     end
+
+    describe "profile" do
+        context "when invalid header params provided" do
+            it "(absence of Authorization Token)" do
+                user = create :player
+                login user
+                get URL(profile_path)
+
+                expect(json["error"]).to include(
+                    {
+                        "message"=>"Authorization header needed!", 
+                        "path"=>"users#profile"
+                    }
+                )
+            end
+    
+            it "(invalid Authorization Token)" do
+                user = create :player
+                login user
+                headers = {"Authorization": "invalid"}
+                get URL(profile_path), headers: headers
+                expect(json["error"]).to include(
+                    {
+                        "message"=>"Wrong jwt token!", 
+                        "path"=>"users#profile"
+                    }
+                )
+            end
+        end
+
+        it "should return user's data" do
+            user = create :player
+            login user
+            headers = {"Authorization":  JSON.parse(response.body)["jwt"]}
+
+            get URL(profile_path), headers: headers
+            expect(json["data"]["attributes"]["email"]).to eq(user.email)
+            expect(json["data"]["attributes"]["role"]).to eq(user.role)
+        end
+    end
 end
