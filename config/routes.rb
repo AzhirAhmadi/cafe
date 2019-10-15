@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     end
   
     resources :users, only:[:create, :update] do
-      delete '', to: 'users#deactivate'
+      delete '', to: 'users#deactivate', as: "deactivate"
     end
   
     get '/profile', to: 'users#profile'
