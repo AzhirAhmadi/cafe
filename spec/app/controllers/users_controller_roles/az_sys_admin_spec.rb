@@ -1,103 +1,103 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :request do
-    # describe "create" do
-    #     context "when loged in az sys_admin" do
-    #         it "shloud create user and it's role should be 'player' if send role az 'player'" do
-    #             user = create :sys_admin
-    #             login user
-    #             count = User.count
-    #             headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-    #             post URL(users_path), params: {
-    #                 "user": {
-    #                     "email": "test@test",
-    #                     "password": "1234567",
-    #                     "role": "player"
-    #                 }
-    #             }, headers: headers
-    #             newCount = User.count
-    #             expect(newCount - count).to be(1)
-    #             expect(json["data"]["attributes"]["role"]).to eq("player")
-    #             expect(json["data"]["attributes"]["email"]).to eq("test@test")
-    #         end
+    describe "create" do
+        context "when loged in az sys_admin" do
+            it "shloud create user and it's role should be 'player' if send role az 'player'" do
+                user = create :sys_admin
+                login user
+                count = User.count
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+                post URL(users_path), params: {
+                    "user": {
+                        "email": "test@test",
+                        "password": "1234567",
+                        "role": "player"
+                    }
+                }, headers: headers
+                newCount = User.count
+                expect(newCount - count).to be(1)
+                expect(json["data"]["attributes"]["role"]).to eq("player")
+                expect(json["data"]["attributes"]["email"]).to eq("test@test")
+            end
 
-    #         it "shloud create user and it's role should be 'cafe_owner' if send role az 'cafe_owner'" do
-    #             user = create :sys_admin
-    #             login user
-    #             count = User.count
+            it "shloud create user and it's role should be 'cafe_owner' if send role az 'cafe_owner'" do
+                user = create :sys_admin
+                login user
+                count = User.count
 
-    #             headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-    #             post URL(users_path), params: {
-    #                 "user": {
-    #                     "email": "test@test",
-    #                     "password": "1234567",
-    #                     "role": "cafe_owner"
-    #                 }
-    #             }, headers: headers
-    #             newCount = User.count
-    #             expect(newCount - count).to be(1)
-    #             expect(json["data"]["attributes"]["role"]).to eq("cafe_owner")
-    #             expect(json["data"]["attributes"]["email"]).to eq("test@test")
-    #         end
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+                post URL(users_path), params: {
+                    "user": {
+                        "email": "test@test",
+                        "password": "1234567",
+                        "role": "cafe_owner"
+                    }
+                }, headers: headers
+                newCount = User.count
+                expect(newCount - count).to be(1)
+                expect(json["data"]["attributes"]["role"]).to eq("cafe_owner")
+                expect(json["data"]["attributes"]["email"]).to eq("test@test")
+            end
 
-    #         it "shloud create user and it's role should be 'sys_expert' if send role az 'sys_expert'" do
-    #             user = create :sys_admin
-    #             login user
-    #             count = User.count
+            it "shloud create user and it's role should be 'sys_expert' if send role az 'sys_expert'" do
+                user = create :sys_admin
+                login user
+                count = User.count
 
-    #             headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-    #             post URL(users_path), params: {
-    #                 "user": {
-    #                     "email": "test@test",
-    #                     "password": "1234567",
-    #                     "role": "sys_expert"
-    #                 }
-    #             }, headers: headers
-    #             newCount = User.count
-    #             expect(newCount - count).to be(1)
-    #             expect(json["data"]["attributes"]["role"]).to eq("sys_expert")
-    #             expect(json["data"]["attributes"]["email"]).to eq("test@test")
-    #         end
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+                post URL(users_path), params: {
+                    "user": {
+                        "email": "test@test",
+                        "password": "1234567",
+                        "role": "sys_expert"
+                    }
+                }, headers: headers
+                newCount = User.count
+                expect(newCount - count).to be(1)
+                expect(json["data"]["attributes"]["role"]).to eq("sys_expert")
+                expect(json["data"]["attributes"]["email"]).to eq("test@test")
+            end
 
-    #         it "shloud create user and it's role should be 'player' if send role az 'sys_admin'" do
-    #             user = create :sys_admin
-    #             login user
-    #             count = User.count
+            it "shloud create user and it's role should be 'player' if send role az 'sys_admin'" do
+                user = create :sys_admin
+                login user
+                count = User.count
 
-    #             headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-    #             post URL(users_path), params: {
-    #                 "user": {
-    #                     "email": "test@test",
-    #                     "password": "1234567",
-    #                     "role": "sys_admin"
-    #                 }
-    #             }, headers: headers
-    #             newCount = User.count
-    #             expect(newCount - count).to be(1)
-    #             expect(json["data"]["attributes"]["role"]).to eq("player")
-    #             expect(json["data"]["attributes"]["email"]).to eq("test@test")
-    #         end
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+                post URL(users_path), params: {
+                    "user": {
+                        "email": "test@test",
+                        "password": "1234567",
+                        "role": "sys_admin"
+                    }
+                }, headers: headers
+                newCount = User.count
+                expect(newCount - count).to be(1)
+                expect(json["data"]["attributes"]["role"]).to eq("player")
+                expect(json["data"]["attributes"]["email"]).to eq("test@test")
+            end
 
-    #         it "shloud create user and it's role should be 'player' if send role az 'sys_master'" do
-    #             user = create :sys_admin
-    #             login user
-    #             count = User.count
+            it "shloud create user and it's role should be 'player' if send role az 'sys_master'" do
+                user = create :sys_admin
+                login user
+                count = User.count
 
-    #             headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-    #             post URL(users_path), params: {
-    #                 "user": {
-    #                     "email": "test@test",
-    #                     "password": "1234567",
-    #                     "role": "sys_master"
-    #                 }
-    #             }, headers: headers
-    #             newCount = User.count
-    #             expect(newCount - count).to be(1)
-    #             expect(json["data"]["attributes"]["role"]).to eq("player")
-    #             expect(json["data"]["attributes"]["email"]).to eq("test@test")
-    #         end
-    #     end
-    # end
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+                post URL(users_path), params: {
+                    "user": {
+                        "email": "test@test",
+                        "password": "1234567",
+                        "role": "sys_master"
+                    }
+                }, headers: headers
+                newCount = User.count
+                expect(newCount - count).to be(1)
+                expect(json["data"]["attributes"]["role"]).to eq("player")
+                expect(json["data"]["attributes"]["email"]).to eq("test@test")
+            end
+        end
+    end
 
     describe "update" do
         context "when loged in az sys_admin" do
@@ -521,6 +521,114 @@ RSpec.describe UsersController, type: :request do
                     saved_sys_master = User.find(sys_master.id)
                     expect(saved_sys_master.email).to eq(sys_master.email)
                     expect(saved_sys_master.role).to eq(sys_master.role)
+                end
+            end
+        end
+    end
+
+    describe "deactivate" do
+        context "when loged in az sys_admin" do
+            it "shloud deactivate itself" do
+                user = create :sys_admin
+                
+                login user
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                delete URL(user_deactivate_path(user)), headers: headers
+                expect(json["data"]["attributes"]["email"]).to eq(user.email)
+
+                login user
+                expect(json["error"]["message"]).to include("Your account has been deleted at")
+            end
+
+            context "and try to deactivate a player" do
+                it "shloud deactivate it" do
+                    user = create :sys_admin
+
+                    player = create :player
+                    
+                    login user
+                    headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                    delete URL(user_deactivate_path(player)), headers: headers
+                    expect(json["data"]["attributes"]["email"]).to eq(player.email)
+                    
+                    login player
+                    expect(json["error"]["message"]).to include("Your account has been deleted at")
+                end
+            end
+
+            context "and try to deactivate a cafe_owner" do
+                it "shloud deactivate it" do
+                    user = create :sys_admin
+
+                    cafe_owner = create :cafe_owner
+                    
+                    login user
+                    headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                    delete URL(user_deactivate_path(cafe_owner)), headers: headers
+                    expect(json["data"]["attributes"]["email"]).to eq(cafe_owner.email)
+                    
+                    login cafe_owner
+                    expect(json["error"]["message"]).to include("Your account has been deleted at")
+                end
+            end
+
+            context "and try to deactivate a sys_expert" do
+                it "shloud deactivate it" do
+                    user = create :sys_admin
+
+                    sys_expert = create :sys_expert
+                    
+                    login user
+                    headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                    delete URL(user_deactivate_path(sys_expert)), headers: headers
+                    expect(json["data"]["attributes"]["email"]).to eq(sys_expert.email)
+                    
+                    login sys_expert
+                    expect(json["error"]["message"]).to include("Your account has been deleted at")
+                end
+            end
+
+            context "and try to deactivate a sys_admin" do
+                it "shloud get 'Access denied!' error" do
+                    user = create :sys_admin
+
+                    sys_admin = create :sys_admin
+                    
+                    login user
+                    headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                    delete URL(user_deactivate_path(sys_admin)), headers: headers
+
+                    expect(json).to include({
+                        "error"=>{
+                                "text"=>"Access denied!",
+                                "class"=>"Pundit::NotAuthorizedError"
+                        }
+                    })
+                end
+            end
+
+            context "and try to deactivate a sys_master" do
+                it "shloud get 'Access denied!' error" do
+                    user = create :sys_admin
+
+                    sys_master = create :sys_master
+                    
+                    login user
+                    headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                    delete URL(user_deactivate_path(sys_master)), headers: headers
+
+                    expect(json).to include({
+                        "error"=>{
+                                "text"=>"Access denied!",
+                                "class"=>"Pundit::NotAuthorizedError"
+                        }
+                    })
                 end
             end
         end

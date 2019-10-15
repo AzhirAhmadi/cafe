@@ -330,4 +330,34 @@ RSpec.describe UsersController, type: :request do
             end
         end
     end
+
+    describe "deactivate" do
+        context "when invalid header params provided" do
+            it "(absence of Authorization Token)" do
+                user = create :player
+                login user
+                delete URL(user_deactivate_path(user))
+
+                expect(json["error"]).to include(
+                    {
+                        "message"=>"Authorization header needed!", 
+                        "path"=>"users#deactivate"
+                    }
+                )
+            end
+    
+            it "(invalid Authorization Token)" do
+                user = create :player
+                login user
+                headers = {"Authorization": "invalid"}
+                delete URL(user_deactivate_path(user)), headers: headers
+                expect(json["error"]).to include(
+                    {
+                        "message"=>"Wrong jwt token!", 
+                        "path"=>"users#deactivate"
+                    }
+                )
+            end
+        end
+    end
 end

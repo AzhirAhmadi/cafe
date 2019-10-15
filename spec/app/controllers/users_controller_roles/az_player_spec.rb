@@ -213,4 +213,118 @@ RSpec.describe UsersController, type: :request do
             end
         end
     end
+
+    describe "deactivate" do
+        context "when loged in az player" do
+            it "shloud deactivate itself" do
+                user = create :player
+                login user
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+                delete URL(user_deactivate_path(user)), headers: headers
+                login user
+
+                expect(json["error"]["message"]).to include("Your account has been deleted at")
+            end
+
+            context "and try to deactivate a player" do
+                it "shloud get 'Access denied!' error" do
+                    user = create :player
+
+                    player = create :player
+                    
+                    login user
+                    headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                    delete URL(user_deactivate_path(player)), headers: headers
+
+                    expect(json).to include({
+                        "error"=>{
+                                "text"=>"Access denied!",
+                                "class"=>"Pundit::NotAuthorizedError"
+                        }
+                    })
+                end
+            end
+
+            context "and try to deactivate a cafe_owner" do
+                it "shloud get 'Access denied!' error" do
+                    user = create :player
+
+                    cafe_owner = create :cafe_owner
+                    
+                    login user
+                    headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                    delete URL(user_deactivate_path(cafe_owner)), headers: headers
+
+                    expect(json).to include({
+                        "error"=>{
+                                "text"=>"Access denied!",
+                                "class"=>"Pundit::NotAuthorizedError"
+                        }
+                    })
+                end
+            end
+
+            context "and try to deactivate a sys_expert" do
+                it "shloud get 'Access denied!' error" do
+                    user = create :player
+
+                    sys_expert = create :sys_expert
+                    
+                    login user
+                    headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                    delete URL(user_deactivate_path(sys_expert)), headers: headers
+
+                    expect(json).to include({
+                        "error"=>{
+                                "text"=>"Access denied!",
+                                "class"=>"Pundit::NotAuthorizedError"
+                        }
+                    })
+                end
+            end
+
+            context "and try to deactivate a sys_admin" do
+                it "shloud get 'Access denied!' error" do
+                    user = create :player
+
+                    sys_admin = create :sys_admin
+                    
+                    login user
+                    headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                    delete URL(user_deactivate_path(sys_admin)), headers: headers
+
+                    expect(json).to include({
+                        "error"=>{
+                                "text"=>"Access denied!",
+                                "class"=>"Pundit::NotAuthorizedError"
+                        }
+                    })
+                end
+            end
+
+            context "and try to deactivate a sys_master" do
+                it "shloud get 'Access denied!' error" do
+                    user = create :player
+
+                    sys_master = create :sys_master
+                    
+                    login user
+                    headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                    delete URL(user_deactivate_path(sys_master)), headers: headers
+
+                    expect(json).to include({
+                        "error"=>{
+                                "text"=>"Access denied!",
+                                "class"=>"Pundit::NotAuthorizedError"
+                        }
+                    })
+                end
+            end
+        end
+    end
 end

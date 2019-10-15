@@ -667,4 +667,109 @@ RSpec.describe UsersController, type: :request do
             end
         end
     end
+
+    describe "deactivate" do
+        context "when loged in az sys_master" do
+            it "shloud deactivate itself" do
+                user = create :sys_master
+                
+                login user
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                delete URL(user_deactivate_path(user)), headers: headers
+                expect(json["data"]["attributes"]["email"]).to eq(user.email)
+
+                login user
+                expect(json["error"]["message"]).to include("Your account has been deleted at")
+            end
+
+            context "and try to deactivate a player" do
+                it "shloud deactivate it" do
+                    user = create :sys_master
+
+                    player = create :player
+                    
+                    login user
+                    headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                    delete URL(user_deactivate_path(player)), headers: headers
+                    expect(json["data"]["attributes"]["email"]).to eq(player.email)
+                    
+                    login player
+                    expect(json["error"]["message"]).to include("Your account has been deleted at")
+                end
+            end
+
+            context "and try to deactivate a cafe_owner" do
+                it "shloud deactivate it" do
+                    user = create :sys_master
+
+                    cafe_owner = create :cafe_owner
+                    
+                    login user
+                    headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                    delete URL(user_deactivate_path(cafe_owner)), headers: headers
+                    expect(json["data"]["attributes"]["email"]).to eq(cafe_owner.email)
+                    
+                    login cafe_owner
+                    expect(json["error"]["message"]).to include("Your account has been deleted at")
+                end
+            end
+
+            context "and try to deactivate a sys_expert" do
+                it "shloud deactivate it" do
+                    user = create :sys_master
+
+                    sys_expert = create :sys_expert
+                    
+                    login user
+                    headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                    delete URL(user_deactivate_path(sys_expert)), headers: headers
+                    expect(json["data"]["attributes"]["email"]).to eq(sys_expert.email)
+                    
+                    login sys_expert
+                    expect(json["error"]["message"]).to include("Your account has been deleted at")
+                end
+            end
+
+            context "and try to deactivate a sys_admin" do
+                it "shloud deactivate it" do
+                    user = create :sys_master
+
+                    sys_admin = create :sys_admin
+                    
+                    login user
+                    headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                    delete URL(user_deactivate_path(sys_admin)), headers: headers
+                    expect(json["data"]["attributes"]["email"]).to eq(sys_admin.email)
+                    
+                    login sys_admin
+                    expect(json["error"]["message"]).to include("Your account has been deleted at")
+                end
+            end
+
+            context "and try to deactivate a sys_master" do
+                it "shloud get 'Access denied!' error" do
+                    user = create :sys_master
+
+                    sys_master = create :sys_master
+                    
+                    login user
+                    headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                    delete URL(user_deactivate_path(sys_master)), headers: headers
+
+                    expect(json).to include({
+                        "error"=>{
+                                "text"=>"Access denied!",
+                                "class"=>"Pundit::NotAuthorizedError"
+                        }
+                    })
+                end
+            end
+        end
+    end
 end
