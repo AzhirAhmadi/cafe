@@ -17,10 +17,7 @@ class UsersController < ApplicationController
     end
 
     def update
-
-        if params[:user].blank?
-            raise ErrorHandling::Errors::User::UpdateParams.new({params: params})          
-        elsif (params[:user][:email].blank? && params[:user][:password].blank? && params[:user][:role].blank?)
+        if params[:user].blank?|| params[:user][:email].blank? | params[:user][:password].blank? || params[:user][:role].blank?
             raise ErrorHandling::Errors::User::UpdateParams.new({params: params})          
         end
 

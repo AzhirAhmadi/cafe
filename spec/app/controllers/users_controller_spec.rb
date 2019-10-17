@@ -238,8 +238,7 @@ RSpec.describe UsersController, type: :request do
                 login user
                 headers = {"Authorization": token}
                 put URL(user_path(user)), params: {
-                    "user": {
-                    }
+                    "user": {"tets": "test"}
                 }, headers: headers
 
                 expect(json["error"]).to include(
@@ -256,7 +255,7 @@ RSpec.describe UsersController, type: :request do
                 headers = {"Authorization": token}
                 put URL(user_path(user)), params: {
                     "user": {
-                        "email": ""
+                        "email": "email"
                     }
                 }, headers: headers
 
@@ -274,8 +273,8 @@ RSpec.describe UsersController, type: :request do
                 headers = {"Authorization": token}
                 put URL(user_path(user)), params: {
                     "user": {
-                        "email": "",
-                        "password": ""
+                        "email": "email",
+                        "password": "password"
                     }
                 }, headers: headers
 
@@ -295,8 +294,7 @@ RSpec.describe UsersController, type: :request do
                     "user": {
                         "email": "invalid",
                         "password": "123456",
-                        "role": "player",
-                        "tji": "13e2de23e4x34e"
+                        "role": "player"
                     }
                 }, headers: headers
 
@@ -316,8 +314,7 @@ RSpec.describe UsersController, type: :request do
                     "user": {
                         "email": "test@test",
                         "password": "1",
-                        "role": "player",
-                        "tji": "13e2de23e4x34e"
+                        "role": "player"
                     }
                 }, headers: headers
 
