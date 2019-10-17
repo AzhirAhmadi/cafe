@@ -6,7 +6,11 @@ module ParamSanitizer::Sanitizer
     private
         def get_param_sanitizer
             controller_name = params[:controller]
-            param_sanitizer = ("ParamSanitizer::"+controller_name.capitalize+"Params").constantize
+            capitalized_controller_name = ""
+            controller_name.split('_').each do |item|
+                capitalized_controller_name += item.capitalize
+            end
+            param_sanitizer = ("ParamSanitizer::"+capitalized_controller_name+"Params").constantize
         end
 
         def get_permited_prams instance
