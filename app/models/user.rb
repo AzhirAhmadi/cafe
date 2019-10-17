@@ -12,6 +12,7 @@
 #  updated_at             :datetime         not null
 #  jti                    :string           not null
 #  role                   :integer
+#  deleted_at             :datetime
 #
 
 class User < ApplicationRecord
@@ -35,6 +36,7 @@ class User < ApplicationRecord
     self.role ||= :player
   end
 
+#soft delete config
   def soft_delete  
     update_attribute(:deleted_at, Time.current)  
   end 
@@ -44,6 +46,15 @@ class User < ApplicationRecord
     return true
   end 
 
+  def active?
+    !deleted_at?
+  end
+
+
+  has_many :created_coffee_shop, class_name: "CoffeeShop", foreign_key: "creator_id"
+  has_many :owened_coffee_shop, class_name: "CoffeeShop", foreign_key: "owner_id"
+
+# my methods
   def self.role_power user
     return (roles.length - roles[user.role]) if (user.is_a? User)
     return roles.length - roles[user]

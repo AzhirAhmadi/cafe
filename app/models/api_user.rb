@@ -12,6 +12,7 @@
 #  updated_at             :datetime         not null
 #  jti                    :string           not null
 #  role                   :integer
+#  deleted_at             :datetime
 #
 
 class ApiUser < User

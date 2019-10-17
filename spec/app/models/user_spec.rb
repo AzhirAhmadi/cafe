@@ -44,5 +44,14 @@ RSpec.describe User, type: :model do
       expect(User).to respond_to(:cafe_owner)
       expect(User).to respond_to(:player)
     end
+
+    it "shuld respond_to method active?" do
+      user = create :player
+      expect(user).to respond_to(:active?)
+      expect(user.active?).to eq(true)
+      user.deleted_at = Time.current
+      expect(user.active?).to eq(false)
+    end
+
   end
 end

@@ -6,7 +6,6 @@ RSpec.describe DeviseApi::SessionsController, type: :request do
             it "(absence of user)" do
                 # @request.env["devise.mapping"] = Devise.mappings[:user]
                 post URL(login_path), params: {}
-
                 expect(json["error"]).to include(
                     {
                         "message"=>"params for login must be provided like this: {\"user\" :{\"email\" : \"valid email\",\"password\" : \"password\"}}", 
