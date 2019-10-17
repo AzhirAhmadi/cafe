@@ -220,7 +220,7 @@ RSpec.describe UsersController, type: :request do
             it "(absence of user)" do
                 user = create :player
                 login user
-                headers = {"Authorization": token}
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 put URL(user_path(user)), params: {
 
                 }, headers: headers
@@ -236,7 +236,7 @@ RSpec.describe UsersController, type: :request do
             it "(absence of email)" do
                 user = create :player
                 login user
-                headers = {"Authorization": token}
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 put URL(user_path(user)), params: {
                     "user": {"tets": "test"}
                 }, headers: headers
@@ -252,7 +252,7 @@ RSpec.describe UsersController, type: :request do
             it "(absence of password)" do
                 user = create :player
                 login user
-                headers = {"Authorization": token}
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 put URL(user_path(user)), params: {
                     "user": {
                         "email": "email"
@@ -270,7 +270,7 @@ RSpec.describe UsersController, type: :request do
             it "(absence of role)" do
                 user = create :player
                 login user
-                headers = {"Authorization": token}
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 put URL(user_path(user)), params: {
                     "user": {
                         "email": "email",
@@ -289,7 +289,7 @@ RSpec.describe UsersController, type: :request do
             it "(invalid email)" do
                 user = create :player
                 login user
-                headers = {"Authorization": token}
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 put URL(user_path(user)), params: {
                     "user": {
                         "email": "invalid",
@@ -309,7 +309,7 @@ RSpec.describe UsersController, type: :request do
             it "(invalid of password)"do
                 user = create :player
                 login user
-                headers = {"Authorization": token}
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 put URL(user_path(user)), params: {
                     "user": {
                         "email": "test@test",

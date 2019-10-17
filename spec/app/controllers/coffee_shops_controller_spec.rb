@@ -46,7 +46,7 @@ RSpec.describe CoffeeShopsController, type: :request do
             it "(absence of coffee_shop)" do
                 creator = create :player
                 login creator
-                headers = {"Authorization": token}
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
                 post URL(user_coffee_shops_path(creator)), params: {
 
@@ -63,7 +63,7 @@ RSpec.describe CoffeeShopsController, type: :request do
             it "(absence of name)" do
                 creator = create :player
                 login creator
-                headers = {"Authorization": token}
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
                 post URL(user_coffee_shops_path(creator)), params: {
                     "coffee_shop": {}
@@ -80,7 +80,7 @@ RSpec.describe CoffeeShopsController, type: :request do
             it "(absence of address)" do
                 creator = create :player
                 login creator
-                headers = {"Authorization": token}
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
                 post URL(user_coffee_shops_path(creator)), params: {
                     "coffee_shop":{
@@ -99,7 +99,7 @@ RSpec.describe CoffeeShopsController, type: :request do
             it "(absence of owner_id)" do
                 creator = create :player
                 login creator
-                headers = {"Authorization": token}
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
                 post URL(user_coffee_shops_path(creator)), params: {
                     "coffee_shop":{
@@ -167,7 +167,7 @@ RSpec.describe CoffeeShopsController, type: :request do
             it "(absence of coffee_shop)" do
                 creator = create :player
                 login creator
-                headers = {"Authorization": token}
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 coffee_shop = create :coffee_shop
 
                 put URL(user_coffee_shop_path(creator, coffee_shop)), params: {
@@ -185,7 +185,7 @@ RSpec.describe CoffeeShopsController, type: :request do
             it "(absence of name)" do
                 creator = create :player
                 login creator
-                headers = {"Authorization": token}
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 coffee_shop = create :coffee_shop
                 put URL(user_coffee_shop_path(creator, coffee_shop)), params: {
                     "coffee_shop": {"test": "test"}
@@ -202,7 +202,7 @@ RSpec.describe CoffeeShopsController, type: :request do
             it "(absence of address)" do
                 creator = create :player
                 login creator
-                headers = {"Authorization": token}
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 coffee_shop = create :coffee_shop
                 put URL(user_coffee_shop_path(creator, coffee_shop)), params: {
                     "coffee_shop":{
@@ -221,7 +221,7 @@ RSpec.describe CoffeeShopsController, type: :request do
             it "(absence of owner_id)" do
                 creator = create :player
                 login creator
-                headers = {"Authorization": token}
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 coffee_shop = create :coffee_shop
                 put URL(user_coffee_shop_path(creator, coffee_shop)), params: {
                     "coffee_shop":{
