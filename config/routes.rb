@@ -14,18 +14,20 @@
 
 Rails.application.routes.draw do
   devise_for :users, class_name: 'ApiUser', skip: :all
-  scope path: 'api' do
+  scope path: 'api', defaults: { format: 'json' } do
     
     devise_scope :user do
       post    'login',        to: 'devise_api/sessions#create'
       delete  'logout',       to: 'devise_api/sessions#destroy'
     end
   
+    resources :coffee_shops, only: [:create, :update] do
+      delete '', to: 'coffee_shops#deactivate', as: "deactivate"
+    end
+
     resources :users, only:[:create, :update] do
       delete '', to: 'users#deactivate', as: "deactivate"
-      resources :coffee_shops, only: [:create, :update] do
-        delete '', to: 'coffee_shops#deactivate', as: "deactivate"
-      end
+      
     end
   
     get '/profile', to: 'users#profile'
