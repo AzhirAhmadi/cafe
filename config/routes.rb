@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   
     resources :users, only:[:create, :update] do
       delete '', to: 'users#deactivate', as: "deactivate"
+      resources :coffee_shops, only: [:create, :update] do
+        delete '', to: 'coffee_shops#deactivate', as: "deactivate"
+      end
     end
   
     get '/profile', to: 'users#profile'
