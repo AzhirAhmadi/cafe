@@ -44,7 +44,7 @@ RSpec.describe CoffeeShop, type: :model do
       expect(coffee_shop2.errors.messages[:owner_id]).to include("has already been taken")
     end
 
-    it "should validate owner and creator activeness" do
+    it "should validate owner and creator activeness when create" do
       owner = create :cafe_owner
       creator =create :sys_admin
 
@@ -57,6 +57,26 @@ RSpec.describe CoffeeShop, type: :model do
       coffee_shop = build :coffee_shop, owner: owner, creator: creator
       expect(coffee_shop).not_to be_valid
       expect(coffee_shop.errors.messages[:creator]).to include("is not active")
+      expect(coffee_shop.errors.messages[:owner]).to include("is not active")
+    end
+
+
+    it "should validate owner and activeness when update" do
+      owner = create :cafe_owner
+      creator =create :sys_admin
+      coffee_shop = create :coffee_shop, owner: owner, creator: creator
+      expect(coffee_shop).to be_valid
+
+      owner.deleted_at = Time.current
+      expect(owner.active?).to eq(false)
+
+      creator.deleted_at = Time.current
+      expect(creator.active?).to eq(false)
+
+      coffee_shop.update(name: "newName")
+      
+      expect(coffee_shop).not_to be_valid
+      expect(coffee_shop.errors.messages[:creator]).not_to include("is not active")
       expect(coffee_shop.errors.messages[:owner]).to include("is not active")
     end
 

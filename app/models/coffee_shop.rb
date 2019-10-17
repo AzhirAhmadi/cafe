@@ -23,8 +23,8 @@ class CoffeeShop < ApplicationRecord
     
     include ModelValidate::CoffeeShop
     validate :active_owner
-    validate :active_creator
+    validate :active_creator, on: [:create]
 
     validate :owner_role
-    validate :creator_role
+    validate :creator_role, on: [:create]
 end
