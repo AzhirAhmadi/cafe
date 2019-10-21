@@ -6,11 +6,11 @@ RSpec.describe CoffeeShopsController, type: :request do
             it "(absence of Authorization Token)" do
                 creator = create :player
 
-                post URL(user_coffee_shops_path(creator)), params: {
-                    "user": {
-                        "email": "test@test",
-                        "password": "1234567",
-                        "role": "player"
+                post coffee_shops_url, params: {
+                    "coffee_shop":{
+                        "name": "nil",
+                        "address": "nil",
+                        "owner_id": "nil"
                     }
                 }
 
@@ -26,11 +26,11 @@ RSpec.describe CoffeeShopsController, type: :request do
                 creator = create :player
                 login creator
                 headers = {"Authorization": "invalid"}
-                post URL(user_coffee_shops_path(creator)), params: {
-                    "user": {
-                        "email": "test@test",
-                        "password": "1234567",
-                        "role": "player"
+                post coffee_shops_url, params: {
+                    "coffee_shop":{
+                        "name": "nil",
+                        "address": "nil",
+                        "owner_id": "nil"
                     }
                 }, headers: headers
                 expect(json["error"]).to include(
@@ -48,13 +48,13 @@ RSpec.describe CoffeeShopsController, type: :request do
                 login creator
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                post URL(user_coffee_shops_path(creator)), params: {
+                post coffee_shops_url, params: {
 
                 }, headers: headers
                 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"params for create coffee_shop must be provided like this: {\"coffee_shop\" :{\"name\" : \"coffee_shop_name\", \"address\":\"coffee_shop_address\", \"owner_id\": \"coffee_shop_owner_id\"}}",
+                        "message"=>"params for create coffee_shop must be provided like this: {\"coffee_shop\" :{\"name\" : \"coffee_shop_name\", \"address\":\"coffee_shop_address\", \"owner_id\": \"coffee_shop_owner_id\", \"maintainer_id\": \"coffee_shop_maintainer_id\"}}",
                         "path"=>"coffee_shops#create"
                     }
                 )
@@ -65,13 +65,13 @@ RSpec.describe CoffeeShopsController, type: :request do
                 login creator
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                post URL(user_coffee_shops_path(creator)), params: {
+                post coffee_shops_url, params: {
                     "coffee_shop": {}
                 }, headers: headers
                 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"params for create coffee_shop must be provided like this: {\"coffee_shop\" :{\"name\" : \"coffee_shop_name\", \"address\":\"coffee_shop_address\", \"owner_id\": \"coffee_shop_owner_id\"}}",
+                        "message"=>"params for create coffee_shop must be provided like this: {\"coffee_shop\" :{\"name\" : \"coffee_shop_name\", \"address\":\"coffee_shop_address\", \"owner_id\": \"coffee_shop_owner_id\", \"maintainer_id\": \"coffee_shop_maintainer_id\"}}",
                         "path"=>"coffee_shops#create"
                     }
                 )
@@ -82,7 +82,7 @@ RSpec.describe CoffeeShopsController, type: :request do
                 login creator
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                post URL(user_coffee_shops_path(creator)), params: {
+                post coffee_shops_url, params: {
                     "coffee_shop":{
                         "name": "nil"
                     }
@@ -90,7 +90,7 @@ RSpec.describe CoffeeShopsController, type: :request do
                 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"params for create coffee_shop must be provided like this: {\"coffee_shop\" :{\"name\" : \"coffee_shop_name\", \"address\":\"coffee_shop_address\", \"owner_id\": \"coffee_shop_owner_id\"}}",
+                        "message"=>"params for create coffee_shop must be provided like this: {\"coffee_shop\" :{\"name\" : \"coffee_shop_name\", \"address\":\"coffee_shop_address\", \"owner_id\": \"coffee_shop_owner_id\", \"maintainer_id\": \"coffee_shop_maintainer_id\"}}",
                         "path"=>"coffee_shops#create"
                     }
                 )
@@ -101,7 +101,7 @@ RSpec.describe CoffeeShopsController, type: :request do
                 login creator
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                post URL(user_coffee_shops_path(creator)), params: {
+                post coffee_shops_url, params: {
                     "coffee_shop":{
                         "name": "nil",
                         "address": "nil"
@@ -110,7 +110,7 @@ RSpec.describe CoffeeShopsController, type: :request do
                 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"params for create coffee_shop must be provided like this: {\"coffee_shop\" :{\"name\" : \"coffee_shop_name\", \"address\":\"coffee_shop_address\", \"owner_id\": \"coffee_shop_owner_id\"}}",
+                        "message"=>"params for create coffee_shop must be provided like this: {\"coffee_shop\" :{\"name\" : \"coffee_shop_name\", \"address\":\"coffee_shop_address\", \"owner_id\": \"coffee_shop_owner_id\", \"maintainer_id\": \"coffee_shop_maintainer_id\"}}",
                         "path"=>"coffee_shops#create"
                     }
                 )
@@ -125,7 +125,7 @@ RSpec.describe CoffeeShopsController, type: :request do
                 creator = create :player
                 coffee_shop = create :coffee_shop
 
-                put URL(user_coffee_shop_path(creator, coffee_shop)), params: {
+                put coffee_shop_url(coffee_shop), params: {
                     "user": {
                         "email": "test@test",
                         "password": "1234567",
@@ -147,7 +147,7 @@ RSpec.describe CoffeeShopsController, type: :request do
 
                 login creator
                 headers = {"Authorization": "invalid"}
-                put URL(user_coffee_shop_path(creator, coffee_shop)), params: {
+                put coffee_shop_url(coffee_shop), params: {
                     "user": {
                         "email": "test@test",
                         "password": "1234567",
@@ -170,13 +170,13 @@ RSpec.describe CoffeeShopsController, type: :request do
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 coffee_shop = create :coffee_shop
 
-                put URL(user_coffee_shop_path(creator, coffee_shop)), params: {
+                put coffee_shop_url(coffee_shop), params: {
 
                 }, headers: headers
                 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"params for update coffee_shop must be provided like this: {\"coffee_shop\" :{\"name\" : \"coffee_shop_name\", \"address\":\"coffee_shop_address\", \"owner_id\": \"coffee_shop_owner_id\"}}",
+                        "message"=>"params for update coffee_shop must be provided like this: {\"coffee_shop\" :{\"name\" : \"coffee_shop_name\", \"address\":\"coffee_shop_address\", \"owner_id\": \"coffee_shop_owner_id\", \"maintainer_id\": \"coffee_shop_maintainer_id\"}}",
                         "path"=>"coffee_shops#update"
                     }
                 )
@@ -187,13 +187,13 @@ RSpec.describe CoffeeShopsController, type: :request do
                 login creator
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 coffee_shop = create :coffee_shop
-                put URL(user_coffee_shop_path(creator, coffee_shop)), params: {
+                put coffee_shop_url(coffee_shop), params: {
                     "coffee_shop": {"test": "test"}
                 }, headers: headers
                 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"params for update coffee_shop must be provided like this: {\"coffee_shop\" :{\"name\" : \"coffee_shop_name\", \"address\":\"coffee_shop_address\", \"owner_id\": \"coffee_shop_owner_id\"}}",
+                        "message"=>"params for update coffee_shop must be provided like this: {\"coffee_shop\" :{\"name\" : \"coffee_shop_name\", \"address\":\"coffee_shop_address\", \"owner_id\": \"coffee_shop_owner_id\", \"maintainer_id\": \"coffee_shop_maintainer_id\"}}",
                         "path"=>"coffee_shops#update"
                     }
                 )
@@ -204,7 +204,7 @@ RSpec.describe CoffeeShopsController, type: :request do
                 login creator
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 coffee_shop = create :coffee_shop
-                put URL(user_coffee_shop_path(creator, coffee_shop)), params: {
+                put coffee_shop_url(coffee_shop), params: {
                     "coffee_shop":{
                         "name": "nil"
                     }
@@ -212,7 +212,7 @@ RSpec.describe CoffeeShopsController, type: :request do
                 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"params for update coffee_shop must be provided like this: {\"coffee_shop\" :{\"name\" : \"coffee_shop_name\", \"address\":\"coffee_shop_address\", \"owner_id\": \"coffee_shop_owner_id\"}}",
+                        "message"=>"params for update coffee_shop must be provided like this: {\"coffee_shop\" :{\"name\" : \"coffee_shop_name\", \"address\":\"coffee_shop_address\", \"owner_id\": \"coffee_shop_owner_id\", \"maintainer_id\": \"coffee_shop_maintainer_id\"}}",
                         "path"=>"coffee_shops#update"
                     }
                 )
@@ -223,7 +223,7 @@ RSpec.describe CoffeeShopsController, type: :request do
                 login creator
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 coffee_shop = create :coffee_shop
-                put URL(user_coffee_shop_path(creator, coffee_shop)), params: {
+                put coffee_shop_url(coffee_shop), params: {
                     "coffee_shop":{
                         "name": "nil",
                         "address": "nil"
@@ -232,7 +232,7 @@ RSpec.describe CoffeeShopsController, type: :request do
                 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"params for update coffee_shop must be provided like this: {\"coffee_shop\" :{\"name\" : \"coffee_shop_name\", \"address\":\"coffee_shop_address\", \"owner_id\": \"coffee_shop_owner_id\"}}",
+                        "message"=>"params for update coffee_shop must be provided like this: {\"coffee_shop\" :{\"name\" : \"coffee_shop_name\", \"address\":\"coffee_shop_address\", \"owner_id\": \"coffee_shop_owner_id\", \"maintainer_id\": \"coffee_shop_maintainer_id\"}}",
                         "path"=>"coffee_shops#update"
                     }
                 )
@@ -246,7 +246,7 @@ RSpec.describe CoffeeShopsController, type: :request do
                 creator = create :player
                 coffee_shop = create :coffee_shop
 
-                put URL(user_coffee_shop_path(creator, coffee_shop)), params: {
+                put coffee_shop_url(coffee_shop), params: {
                     "user": {
                         "email": "test@test",
                         "password": "1234567",
@@ -268,7 +268,7 @@ RSpec.describe CoffeeShopsController, type: :request do
 
                 login creator
                 headers = {"Authorization": "invalid"}
-                put URL(user_coffee_shop_path(creator, coffee_shop)), params: {
+                put coffee_shop_url(coffee_shop), params: {
                     "user": {
                         "email": "test@test",
                         "password": "1234567",

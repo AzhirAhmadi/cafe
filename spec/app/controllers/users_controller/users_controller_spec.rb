@@ -4,7 +4,7 @@ RSpec.describe UsersController, type: :request do
     describe "create" do
         context "when invalid body params provided" do
             it "(absence of user)" do
-                post URL(users_path), params: {}
+                post users_url, params: {}
 
                 expect(json["error"]).to include(
                     {
@@ -15,7 +15,7 @@ RSpec.describe UsersController, type: :request do
             end
 
             it "(absence of email)" do
-                post URL(users_path), params: {
+                post users_url, params: {
                     "user": {
                     }
                 }
@@ -28,7 +28,7 @@ RSpec.describe UsersController, type: :request do
             end
 
             it "(absence of password)" do
-                post URL(users_path), params: {
+                post users_url, params: {
                     "user": {
                         "email": ""
                     }
@@ -43,7 +43,7 @@ RSpec.describe UsersController, type: :request do
             end
 
             it "(absence of role)" do
-                post URL(users_path), params: {
+                post users_url, params: {
                     "user": {
                         "email": "",
                         "password": ""
@@ -59,7 +59,7 @@ RSpec.describe UsersController, type: :request do
             end
 
             it "(invalid email)" do
-                post URL(users_path), params: {
+                post users_url, params: {
                     "user": {
                         "email": "invalid",
                         "password": "123456",
@@ -77,7 +77,7 @@ RSpec.describe UsersController, type: :request do
             end
 
             it "(invalid of password)"do
-                post URL(users_path), params: {
+                post users_url, params: {
                     "user": {
                         "email": "test@test",
                         "password": "1",
@@ -97,7 +97,7 @@ RSpec.describe UsersController, type: :request do
         context "when no one is loged in" do
             it "shloud create user and it's role should be 'player' if send role az 'player'" do
                 count = User.count
-                post URL(users_path), params: {
+                post users_url, params: {
                     "user": {
                         "email": "test@test",
                         "password": "1234567",
@@ -111,13 +111,13 @@ RSpec.describe UsersController, type: :request do
                 expect(json["data"]["attributes"]["email"]).to eq("test@test")
             end
 
-            it "shloud create user and it's role should be 'player' if send role az 'cafe_owner'" do
+            it "shloud create user and it's role should be 'player' if send role az 'coffee_owner'" do
                 count = User.count
-                    post URL(users_path), params: {
+                    post users_url, params: {
                         "user": {
                             "email": "test@test",
                             "password": "1234567",
-                            "role": "cafe_owner"
+                            "role": "coffee_owner"
                         }
                     }
     
@@ -129,7 +129,7 @@ RSpec.describe UsersController, type: :request do
 
             it "shloud create user and it's role should be 'player' if send role az 'sys_expert'" do
                 count = User.count
-                    post URL(users_path), params: {
+                    post users_url, params: {
                         "user": {
                             "email": "test@test",
                             "password": "1234567",
@@ -145,7 +145,7 @@ RSpec.describe UsersController, type: :request do
 
             it "shloud create user and it's role should be 'player' if send role az 'sys_admin'" do
                 count = User.count
-                    post URL(users_path), params: {
+                    post users_url, params: {
                         "user": {
                             "email": "test@test",
                             "password": "1234567",
@@ -161,7 +161,7 @@ RSpec.describe UsersController, type: :request do
 
             it "shloud create user and it's role should be 'player' if send role az 'sys_master'" do
                 count = User.count
-                    post URL(users_path), params: {
+                    post users_url, params: {
                         "user": {
                             "email": "test@test",
                             "password": "1234567",
@@ -181,7 +181,7 @@ RSpec.describe UsersController, type: :request do
             it "(absence of Authorization Token)" do
                 user = create :player
                 login user
-                        put URL(user_path(user)), params: {
+                        put user_url(user), params: {
                     "user": {
                         "email": "test@test",
                         "password": "1234567",
@@ -200,7 +200,7 @@ RSpec.describe UsersController, type: :request do
                 user = create :player
                 login user
                 headers = {"Authorization": "invalid"}
-                put URL(user_path(user)), params: {
+                put user_url(user), params: {
                     "user": {
                         "email": "test@test",
                         "password": "1234567",
@@ -221,7 +221,7 @@ RSpec.describe UsersController, type: :request do
                 user = create :player
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                put URL(user_path(user)), params: {
+                put user_url(user), params: {
 
                 }, headers: headers
 
@@ -237,7 +237,7 @@ RSpec.describe UsersController, type: :request do
                 user = create :player
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                put URL(user_path(user)), params: {
+                put user_url(user), params: {
                     "user": {"tets": "test"}
                 }, headers: headers
 
@@ -253,7 +253,7 @@ RSpec.describe UsersController, type: :request do
                 user = create :player
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                put URL(user_path(user)), params: {
+                put user_url(user), params: {
                     "user": {
                         "email": "email"
                     }
@@ -271,7 +271,7 @@ RSpec.describe UsersController, type: :request do
                 user = create :player
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                put URL(user_path(user)), params: {
+                put user_url(user), params: {
                     "user": {
                         "email": "email",
                         "password": "password"
@@ -290,7 +290,7 @@ RSpec.describe UsersController, type: :request do
                 user = create :player
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                put URL(user_path(user)), params: {
+                put user_url(user), params: {
                     "user": {
                         "email": "invalid",
                         "password": "123456",
@@ -310,7 +310,7 @@ RSpec.describe UsersController, type: :request do
                 user = create :player
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                put URL(user_path(user)), params: {
+                put user_url(user), params: {
                     "user": {
                         "email": "test@test",
                         "password": "1",
@@ -333,7 +333,7 @@ RSpec.describe UsersController, type: :request do
             it "(absence of Authorization Token)" do
                 user = create :player
                 login user
-                delete URL(user_deactivate_path(user))
+                delete user_deactivate_url(user)
 
                 expect(json["error"]).to include(
                     {
@@ -347,7 +347,7 @@ RSpec.describe UsersController, type: :request do
                 user = create :player
                 login user
                 headers = {"Authorization": "invalid"}
-                delete URL(user_deactivate_path(user)), headers: headers
+                delete user_deactivate_url(user), headers: headers
                 expect(json["error"]).to include(
                     {
                         "message"=>"Wrong jwt token!", 
@@ -363,7 +363,7 @@ RSpec.describe UsersController, type: :request do
             it "(absence of Authorization Token)" do
                 user = create :player
                 login user
-                get URL(profile_path)
+                get profile_url
 
                 expect(json["error"]).to include(
                     {
@@ -377,7 +377,7 @@ RSpec.describe UsersController, type: :request do
                 user = create :player
                 login user
                 headers = {"Authorization": "invalid"}
-                get URL(profile_path), headers: headers
+                get profile_url, headers: headers
                 expect(json["error"]).to include(
                     {
                         "message"=>"Wrong jwt token!", 
@@ -392,7 +392,7 @@ RSpec.describe UsersController, type: :request do
             login user
             headers = {"Authorization":  JSON.parse(response.body)["jwt"]}
 
-            get URL(profile_path), headers: headers
+            get profile_url, headers: headers
             expect(json["data"]["attributes"]["email"]).to eq(user.email)
             expect(json["data"]["attributes"]["role"]).to eq(user.role)
         end

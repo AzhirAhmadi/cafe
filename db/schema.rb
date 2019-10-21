@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_16_145042) do
+ActiveRecord::Schema.define(version: 2019_10_20_113658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,10 @@ ActiveRecord::Schema.define(version: 2019_10_16_145042) do
     t.bigint "creator_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.bigint "maintainer_id", null: false
     t.index ["creator_id"], name: "index_coffee_shops_on_creator_id"
+    t.index ["maintainer_id"], name: "index_coffee_shops_on_maintainer_id"
     t.index ["owner_id"], name: "index_coffee_shops_on_owner_id"
   end
 
@@ -43,5 +46,6 @@ ActiveRecord::Schema.define(version: 2019_10_16_145042) do
   end
 
   add_foreign_key "coffee_shops", "users", column: "creator_id"
+  add_foreign_key "coffee_shops", "users", column: "maintainer_id"
   add_foreign_key "coffee_shops", "users", column: "owner_id"
 end

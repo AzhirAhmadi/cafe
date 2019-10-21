@@ -2,14 +2,14 @@ module DeviseHelper
     @token
 
     def login user
-        post URL(login_path), params: {"user": {"email": user.email, "password": user.password }}
+        post login_url, params: {"user": {"email": user.email, "password": user.password }}
         @token = JSON.parse(response.body)["jwt"]
         response
     end
 
     def logout
         headers = {"Authorization": @token}
-        delete URL(logout_path), headers: headers
+        delete logout_url, headers: headers
         @token = nil
     end
 

@@ -9,11 +9,13 @@
 #  creator_id :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  deleted_at :datetime
 #
 
 class CoffeeShop < ApplicationRecord
     
     belongs_to :creator, class_name: "User"
+    belongs_to :maintainer, class_name: "User"
     belongs_to :owner, class_name: "User"
 
     validates :name, uniqueness: { case_sensitive: false }
@@ -23,8 +25,19 @@ class CoffeeShop < ApplicationRecord
     
     include ModelValidate::CoffeeShop
     validate :active_owner
+    validate :active_maintainer
     validate :active_creator, on: [:create]
 
     validate :owner_role
+    validate :maintainer_role
     validate :creator_role, on: [:create]
+
+    #soft delete config
+    def soft_delete  
+        update_attribute(:deleted_at, Time.current)  
+    end 
+
+    def active?
+        !deleted_at?
+    end
 end

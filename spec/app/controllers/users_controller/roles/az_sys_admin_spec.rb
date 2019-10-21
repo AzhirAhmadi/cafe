@@ -8,7 +8,7 @@ RSpec.describe UsersController, type: :request do
                 login user
                 count = User.count
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                post URL(users_path), params: {
+                post users_url, params: {
                     "user": {
                         "email": "test@test",
                         "password": "1234567",
@@ -21,22 +21,22 @@ RSpec.describe UsersController, type: :request do
                 expect(json["data"]["attributes"]["email"]).to eq("test@test")
             end
 
-            it "shloud create user and it's role should be 'cafe_owner' if send role az 'cafe_owner'" do
+            it "shloud create user and it's role should be 'coffee_owner' if send role az 'coffee_owner'" do
                 user = create :sys_admin
                 login user
                 count = User.count
 
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                post URL(users_path), params: {
+                post users_url, params: {
                     "user": {
                         "email": "test@test",
                         "password": "1234567",
-                        "role": "cafe_owner"
+                        "role": "coffee_owner"
                     }
                 }, headers: headers
                 newCount = User.count
                 expect(newCount - count).to be(1)
-                expect(json["data"]["attributes"]["role"]).to eq("cafe_owner")
+                expect(json["data"]["attributes"]["role"]).to eq("coffee_owner")
                 expect(json["data"]["attributes"]["email"]).to eq("test@test")
             end
 
@@ -46,7 +46,7 @@ RSpec.describe UsersController, type: :request do
                 count = User.count
 
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                post URL(users_path), params: {
+                post users_url, params: {
                     "user": {
                         "email": "test@test",
                         "password": "1234567",
@@ -65,7 +65,7 @@ RSpec.describe UsersController, type: :request do
                 count = User.count
 
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                post URL(users_path), params: {
+                post users_url, params: {
                     "user": {
                         "email": "test@test",
                         "password": "1234567",
@@ -84,7 +84,7 @@ RSpec.describe UsersController, type: :request do
                 count = User.count
 
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                post URL(users_path), params: {
+                post users_url, params: {
                     "user": {
                         "email": "test@test",
                         "password": "1234567",
@@ -105,7 +105,7 @@ RSpec.describe UsersController, type: :request do
                 user = create :sys_admin
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                put URL(user_path(user)), params: {
+                put user_url(user), params: {
                     "user": {
                         "email": "new@test",
                         "password": "1234567",
@@ -123,15 +123,15 @@ RSpec.describe UsersController, type: :request do
                 expect(User.find(user.id).role).to eq("player")
             end
 
-            it "shloud update itself and it's role to 'cafe_owner'" do
+            it "shloud update itself and it's role to 'coffee_owner'" do
                 user = create :sys_admin
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                put URL(user_path(user)), params: {
+                put user_url(user), params: {
                     "user": {
                         "email": "new@test",
                         "password": "1234567",
-                        "role": "cafe_owner"
+                        "role": "coffee_owner"
                     }
                 }, headers: headers
                 
@@ -142,14 +142,14 @@ RSpec.describe UsersController, type: :request do
 
                 expect(token).not_to eq(nil)
                 expect(User.find(user.id).email).to eq("new@test")
-                expect(User.find(user.id).role).to eq("cafe_owner")
+                expect(User.find(user.id).role).to eq("coffee_owner")
             end
 
             it "shloud update itself and it's role to 'sys_expert'" do
                 user = create :sys_admin
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                put URL(user_path(user)), params: {
+                put user_url(user), params: {
                     "user": {
                         "email": "new@test",
                         "password": "1234567",
@@ -171,7 +171,7 @@ RSpec.describe UsersController, type: :request do
                 user = create :sys_admin
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                put URL(user_path(user)), params: {
+                put user_url(user), params: {
                     "user": {
                         "email": "new@test",
                         "password": "1234567",
@@ -193,7 +193,7 @@ RSpec.describe UsersController, type: :request do
                 user = create :sys_admin
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                put URL(user_path(user)), params: {
+                put user_url(user), params: {
                     "user": {
                         "email": "new@test",
                         "password": "1234567",
@@ -219,7 +219,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
     
-                    put URL(user_path(player)), params: {
+                    put user_url(player), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
@@ -232,7 +232,7 @@ RSpec.describe UsersController, type: :request do
                     expect(saved_player.role).to eq("player")
                 end
     
-                it "shloud update it and it's role to 'cafe_owner'" do
+                it "shloud update it and it's role to 'coffee_owner'" do
                     user = create :sys_admin
     
                     player = create :player
@@ -240,17 +240,17 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
     
-                    put URL(user_path(player)), params: {
+                    put user_url(player), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
-                            "role": "cafe_owner"
+                            "role": "coffee_owner"
                         }
                     }, headers: headers
     
                     saved_player = User.find(player.id)
                     expect(saved_player.email).to eq("new@test")
-                    expect(saved_player.role).to eq("cafe_owner")
+                    expect(saved_player.role).to eq("coffee_owner")
                 end
     
                 it "shloud update it and it's role to 'sys_expert'" do
@@ -261,7 +261,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
     
-                    put URL(user_path(player)), params: {
+                    put user_url(player), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
@@ -282,7 +282,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
     
-                    put URL(user_path(player)), params: {
+                    put user_url(player), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
@@ -296,16 +296,16 @@ RSpec.describe UsersController, type: :request do
                 end
             end
     
-            context "and try to update a cafe_owner" do
+            context "and try to update a coffee_owner" do
                 it "shloud update it and it's role to 'player'" do
                     user = create :sys_admin
     
-                    cafe_owner = create :cafe_owner
+                    coffee_owner = create :coffee_owner
                     
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
     
-                    put URL(user_path(cafe_owner)), params: {
+                    put user_url(coffee_owner), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
@@ -313,41 +313,41 @@ RSpec.describe UsersController, type: :request do
                         }
                     }, headers: headers
                     
-                    saved_cafe_owner = User.find(cafe_owner.id)
-                    expect(saved_cafe_owner.email).to eq("new@test")
-                    expect(saved_cafe_owner.role).to eq("player")
+                    saved_coffee_owner = User.find(coffee_owner.id)
+                    expect(saved_coffee_owner.email).to eq("new@test")
+                    expect(saved_coffee_owner.role).to eq("player")
                 end
     
-                it "shloud update it and it's role to 'cafe_owner'" do
+                it "shloud update it and it's role to 'coffee_owner'" do
                     user = create :sys_admin
     
-                    cafe_owner = create :cafe_owner
+                    coffee_owner = create :coffee_owner
                     
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
     
-                    put URL(user_path(cafe_owner)), params: {
+                    put user_url(coffee_owner), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
-                            "role": "cafe_owner"
+                            "role": "coffee_owner"
                         }
                     }, headers: headers
     
-                    saved_cafe_owner = User.find(cafe_owner.id)
-                    expect(saved_cafe_owner.email).to eq("new@test")
-                    expect(saved_cafe_owner.role).to eq("cafe_owner")
+                    saved_coffee_owner = User.find(coffee_owner.id)
+                    expect(saved_coffee_owner.email).to eq("new@test")
+                    expect(saved_coffee_owner.role).to eq("coffee_owner")
                 end
     
                 it "shloud update it and it's role to 'sys_expert'" do
                     user = create :sys_admin
     
-                    cafe_owner = create :cafe_owner
+                    coffee_owner = create :coffee_owner
                     
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
     
-                    put URL(user_path(cafe_owner)), params: {
+                    put user_url(coffee_owner), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
@@ -355,7 +355,7 @@ RSpec.describe UsersController, type: :request do
                         }
                     }, headers: headers
     
-                    saved_sys_expert = User.find(cafe_owner.id)
+                    saved_sys_expert = User.find(coffee_owner.id)
                     expect(saved_sys_expert.email).to eq("new@test")
                     expect(saved_sys_expert.role).to eq("sys_expert")
                 end
@@ -363,12 +363,12 @@ RSpec.describe UsersController, type: :request do
                 it "shloud update it and can't change it's role to upper roles" do
                     user = create :sys_expert
     
-                    cafe_owner = create :cafe_owner
+                    coffee_owner = create :coffee_owner
                     
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
     
-                    put URL(user_path(cafe_owner)), params: {
+                    put user_url(coffee_owner), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
@@ -376,9 +376,9 @@ RSpec.describe UsersController, type: :request do
                         }
                     }, headers: headers
     
-                    saved_cafe_owner = User.find(cafe_owner.id)
-                    expect(saved_cafe_owner.email).to eq("new@test")
-                    expect(saved_cafe_owner.role).to eq("cafe_owner")
+                    saved_coffee_owner = User.find(coffee_owner.id)
+                    expect(saved_coffee_owner.email).to eq("new@test")
+                    expect(saved_coffee_owner.role).to eq("coffee_owner")
                 end
             end
     
@@ -391,7 +391,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
     
-                    put URL(user_path(sys_expert)), params: {
+                    put user_url(sys_expert), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
@@ -404,7 +404,7 @@ RSpec.describe UsersController, type: :request do
                     expect(saved_sys_expert.role).to eq("player")
                 end
     
-                it "shloud update it and it's role to 'cafe_owner'" do
+                it "shloud update it and it's role to 'coffee_owner'" do
                     user = create :sys_admin
     
                     sys_expert = create :sys_expert
@@ -412,17 +412,17 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
     
-                    put URL(user_path(sys_expert)), params: {
+                    put user_url(sys_expert), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
-                            "role": "cafe_owner"
+                            "role": "coffee_owner"
                         }
                     }, headers: headers
     
                     saved_sys_expert = User.find(sys_expert.id)
                     expect(saved_sys_expert.email).to eq("new@test")
-                    expect(saved_sys_expert.role).to eq("cafe_owner")
+                    expect(saved_sys_expert.role).to eq("coffee_owner")
                 end
 
                 it "shloud update it and it's role to 'sys_expert'" do
@@ -433,7 +433,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
     
-                    put URL(user_path(sys_expert)), params: {
+                    put user_url(sys_expert), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
@@ -454,7 +454,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
     
-                    put URL(user_path(sys_expert)), params: {
+                    put user_url(sys_expert), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
@@ -477,7 +477,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
     
-                    put URL(user_path(sys_admin)), params: {
+                    put user_url(sys_admin), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
@@ -505,7 +505,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
     
-                    put URL(user_path(sys_master)), params: {
+                    put user_url(sys_master), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
@@ -534,7 +534,7 @@ RSpec.describe UsersController, type: :request do
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                delete URL(user_deactivate_path(user)), headers: headers
+                delete user_deactivate_url(user), headers: headers
                 expect(json["data"]["attributes"]["email"]).to eq(user.email)
 
                 login user
@@ -550,7 +550,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete URL(user_deactivate_path(player)), headers: headers
+                    delete user_deactivate_url(player), headers: headers
                     expect(json["data"]["attributes"]["email"]).to eq(player.email)
                     
                     login player
@@ -558,19 +558,19 @@ RSpec.describe UsersController, type: :request do
                 end
             end
 
-            context "and try to deactivate a cafe_owner" do
+            context "and try to deactivate a coffee_owner" do
                 it "shloud deactivate it" do
                     user = create :sys_admin
 
-                    cafe_owner = create :cafe_owner
+                    coffee_owner = create :coffee_owner
                     
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete URL(user_deactivate_path(cafe_owner)), headers: headers
-                    expect(json["data"]["attributes"]["email"]).to eq(cafe_owner.email)
+                    delete user_deactivate_url(coffee_owner), headers: headers
+                    expect(json["data"]["attributes"]["email"]).to eq(coffee_owner.email)
                     
-                    login cafe_owner
+                    login coffee_owner
                     expect(json["error"]["message"]).to include("Your account has been deleted at")
                 end
             end
@@ -584,7 +584,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete URL(user_deactivate_path(sys_expert)), headers: headers
+                    delete user_deactivate_url(sys_expert), headers: headers
                     expect(json["data"]["attributes"]["email"]).to eq(sys_expert.email)
                     
                     login sys_expert
@@ -601,7 +601,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete URL(user_deactivate_path(sys_admin)), headers: headers
+                    delete user_deactivate_url(sys_admin), headers: headers
 
                     expect(json).to include({
                         "error"=>{
@@ -621,7 +621,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete URL(user_deactivate_path(sys_master)), headers: headers
+                    delete user_deactivate_url(sys_master), headers: headers
 
                     expect(json).to include({
                         "error"=>{

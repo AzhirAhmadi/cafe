@@ -9,6 +9,7 @@
 #  creator_id :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  deleted_at :datetime
 #
 
 require 'faker'
@@ -18,7 +19,8 @@ FactoryBot.define do
     sequence(:name) { |n| "CoffeeShopName#{n}" }
     sequence(:address) { |n| "CoffeeShopAddress#{n}" }
 
-    association :owner, factory: :cafe_owner
+    association :owner, factory: :coffee_owner
+    association :maintainer, factory: :sys_expert
     association :creator, factory: :sys_admin
   end
 end

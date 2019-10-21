@@ -5,7 +5,7 @@ RSpec.describe DeviseApi::SessionsController, type: :request do
         context "when invalid body params provided" do
             it "(absence of user)" do
                 # @request.env["devise.mapping"] = Devise.mappings[:user]
-                post URL(login_path), params: {}
+                post login_url, params: {}
                 expect(json["error"]).to include(
                     {
                         "message"=>"params for login must be provided like this: {\"user\" :{\"email\" : \"valid email\",\"password\" : \"password\"}}", 
@@ -16,7 +16,7 @@ RSpec.describe DeviseApi::SessionsController, type: :request do
 
             it "(absence of email)"do
                 # @request.env["devise.mapping"] = Devise.mappings[:user]
-                post URL(login_path), params: {
+                post login_url, params: {
                     "user":{}
                 }
                 expect(json["error"]).to include(
@@ -29,7 +29,7 @@ RSpec.describe DeviseApi::SessionsController, type: :request do
 
             it "(absence of password)"do
                 # @request.env["devise.mapping"] = Devise.mappings[:user]
-                post URL(login_path), params: {
+                post login_url, params: {
                     "user": {
                         "email": "email"
                     }
@@ -47,7 +47,7 @@ RSpec.describe DeviseApi::SessionsController, type: :request do
 
                 user = create :player
                 # @request.env["devise.mapping"] = Devise.mappings[:user]
-                post URL(login_path), params: {
+                post login_url, params: {
                     "user": {
                         "email": "invalid",
                         "password": user.password
@@ -65,7 +65,7 @@ RSpec.describe DeviseApi::SessionsController, type: :request do
             it "(invalid of password)"do
                 user = create :player
                 # @request.env["devise.mapping"] = Devise.mappings[:user]
-                post URL(login_path), params: {
+                post login_url, params: {
                     "user": {
                         "email": user.email,
                         "password": "invalid"
@@ -89,8 +89,8 @@ RSpec.describe DeviseApi::SessionsController, type: :request do
                 expect(json["jwt"]).not_to be_nil
             end
 
-            it "login by cafe_owner role and return JWT token" do
-                user  = create(:cafe_owner)
+            it "login by coffee_owner role and return JWT token" do
+                user  = create(:coffee_owner)
                 response = login user
                 body = response.body
                 expect(json["jwt"]).not_to be_nil
@@ -124,7 +124,7 @@ RSpec.describe DeviseApi::SessionsController, type: :request do
                 it "(absence of Authorization Token)" do
                     # @request.env["devise.mapping"] = Devise.mappings[:user]
                     
-                    delete URL(logout_path), params: {}
+                    delete logout_url, params: {}
                     expect(json["error"]).to include(
                         {
                             "message"=>"Authorization header needed!", 
@@ -135,7 +135,7 @@ RSpec.describe DeviseApi::SessionsController, type: :request do
         
                 it "(invalid Authorization Token)" do
                     headers = {"Authorization": "invalid token"}
-                    delete URL(logout_path), params: {}, headers: headers
+                    delete logout_url, params: {}, headers: headers
                     expect(json["error"]).to include(
                         {
                             "message"=>"Wrong jwt token!", 
@@ -151,7 +151,7 @@ RSpec.describe DeviseApi::SessionsController, type: :request do
                 login user
                 
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                delete URL(logout_path), headers: headers
+                delete logout_url, headers: headers
 
                 expect(json).to include(
                     {

@@ -8,7 +8,7 @@ RSpec.describe UsersController, type: :request do
                 login user
                 count = User.count
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                post URL(users_path), params: {
+                post users_url, params:{
                     "user": {
                         "email": "test@test",
                         "password": "1234567",
@@ -32,7 +32,7 @@ RSpec.describe UsersController, type: :request do
                 user = create :player
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                put URL(user_path(user)), params: {
+                put user_url(user), params: {
                     "user": {
                         "email": "new@test",
                         "password": "1234567",
@@ -54,11 +54,11 @@ RSpec.describe UsersController, type: :request do
                 user = create :player
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                put URL(user_path(user)), params: {
+                put user_url(user), params: {
                     "user": {
                         "email": "new@test",
                         "password": "1234567",
-                        "role": "cafe_owner"
+                        "role": "coffee_owner"
                     }
                 }, headers: headers
                 logout
@@ -80,7 +80,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    put URL(user_path(player)), params: {
+                    put user_url(player), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
@@ -100,20 +100,20 @@ RSpec.describe UsersController, type: :request do
                 end
             end
 
-            context "and try to update a cafe_owner" do
+            context "and try to update a coffee_owner" do
                 it "shloud get 'Access denied!' error" do
                     user = create :player
 
-                    cafe_owner = create :cafe_owner
+                    coffee_owner = create :coffee_owner
                     
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    put URL(user_path(cafe_owner)), params: {
+                    put user_url(coffee_owner), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
-                            "role": "cafe_owner"
+                            "role": "coffee_owner"
                         }
                     }, headers: headers
                     expect(json).to include({
@@ -122,9 +122,9 @@ RSpec.describe UsersController, type: :request do
                                 "class"=>"Pundit::NotAuthorizedError"
                             }
                     })
-                    saved_cafe_owner = User.find(cafe_owner.id)
-                    expect(saved_cafe_owner.email).to eq(cafe_owner.email)
-                    expect(saved_cafe_owner.role).to eq(cafe_owner.role)
+                    saved_coffee_owner = User.find(coffee_owner.id)
+                    expect(saved_coffee_owner.email).to eq(coffee_owner.email)
+                    expect(saved_coffee_owner.role).to eq(coffee_owner.role)
                 end
             end
 
@@ -137,7 +137,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    put URL(user_path(sys_expert)), params: {
+                    put user_url(sys_expert), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
@@ -165,7 +165,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    put URL(user_path(sys_admin)), params: {
+                    put user_url(sys_admin), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
@@ -193,7 +193,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    put URL(user_path(sys_master)), params: {
+                    put user_url(sys_master), params: {
                         "user": {
                             "email": "new@test",
                             "password": "1234567",
@@ -220,7 +220,7 @@ RSpec.describe UsersController, type: :request do
                 user = create :player
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                delete URL(user_deactivate_path(user)), headers: headers
+                delete user_deactivate_url(user), headers: headers
                 login user
 
                 expect(json["error"]["message"]).to include("Your account has been deleted at")
@@ -235,7 +235,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete URL(user_deactivate_path(player)), headers: headers
+                    delete user_deactivate_url(player), headers: headers
 
                     expect(json).to include({
                         "error"=>{
@@ -246,16 +246,16 @@ RSpec.describe UsersController, type: :request do
                 end
             end
 
-            context "and try to deactivate a cafe_owner" do
+            context "and try to deactivate a coffee_owner" do
                 it "shloud get 'Access denied!' error" do
                     user = create :player
 
-                    cafe_owner = create :cafe_owner
+                    coffee_owner = create :coffee_owner
                     
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete URL(user_deactivate_path(cafe_owner)), headers: headers
+                    delete user_deactivate_url(coffee_owner), headers: headers
 
                     expect(json).to include({
                         "error"=>{
@@ -275,7 +275,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete URL(user_deactivate_path(sys_expert)), headers: headers
+                    delete user_deactivate_url(sys_expert), headers: headers
 
                     expect(json).to include({
                         "error"=>{
@@ -295,7 +295,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete URL(user_deactivate_path(sys_admin)), headers: headers
+                    delete user_deactivate_url(sys_admin), headers: headers
 
                     expect(json).to include({
                         "error"=>{
@@ -315,7 +315,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete URL(user_deactivate_path(sys_master)), headers: headers
+                    delete user_deactivate_url(sys_master), headers: headers
 
                     expect(json).to include({
                         "error"=>{
