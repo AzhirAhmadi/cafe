@@ -5,12 +5,48 @@ class CoffeeShopsController < ApplicationController
             params[:coffee_shop][:address].blank? || params[:coffee_shop][:owner_id].blank?
             raise ErrorHandling::Errors::CoffeeShop::CreationParams.new({params: params})          
         end
+        coffee_shop = CoffeeShop.new (coffee_shop_params)
+        authorize coffee_shop
+        coffee_shop.creator = current_user
+        if coffee_shop.save
+            render jsonapi: coffee_shop, include: ['owner', 'creator', 'maintainer']
+        else
+            raise ErrorHandling::Errors::CoffeeShop::DataBaseCreation.new({params: params,coffee_shop: coffee_shop})          
+        end
     end
 
     def update
         if params[:coffee_shop].blank? || params[:coffee_shop][:name].blank? || 
-            params[:coffee_shop][:address].blank? || params[:coffee_shop][:owner_id].blank?
+            params[:coffee_shop][:address].blank? || params[:coffee_shop][:owner_id].blank? ||
+            params[:coffee_shop][:maintainer_id].blank? 
             raise ErrorHandling::Errors::CoffeeShop::UpdateParams.new({params: params})
         end
+
+        coffee_shop = CoffeeShop.find(params[:id])
+        authorize coffee_shop
+
+        coffee_shop.update(coffee_shop_params)
+        
+        if coffee_shop.save
+            render jsonapi: coffee_shop, include: ['owner', 'creator', 'maintainer']
+        else
+            raise ErrorHandling::Errors::User::DataBaseCreation.new({params: params,coffee_shop: coffee_shop})
+        end
     end
+
+    def deactivate
+        coffee_shop = CoffeeShop.find(params[:id])
+        authorize coffee_shop
+        if coffee_shop.deleted_at?
+            raise ErrorHandling::Errors::CoffeeShop::DeletedCoffeeShop.new({deleted_at: coffee_shop.deleted_at})          
+        end
+
+        coffee_shop.soft_delete
+        render jsonapi: coffee_shop
+    end
+
+    private
+        def coffee_shop_params
+            params.require(:coffee_shop).permit(sanitize_params)
+        end
 end
