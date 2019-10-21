@@ -29,7 +29,7 @@ class User < ApplicationRecord
 
 
   #role config
-  enum role: [:sys_master, :sys_admin, :sys_expert, :cafe_owner,:player]
+  enum role: [:sys_master, :sys_admin, :sys_expert, :coffee_owner,:player]
   after_initialize :set_default_role, :if => :new_record?
 
   def set_default_role
@@ -52,7 +52,9 @@ class User < ApplicationRecord
 
 
   has_many :created_coffee_shop, class_name: "CoffeeShop", foreign_key: "creator_id"
+  has_many :maintained_coffee_shop, class_name: "CoffeeShop", foreign_key: "maintainer_id"
   has_many :owened_coffee_shop, class_name: "CoffeeShop", foreign_key: "owner_id"
+  
 
 # my methods
   def self.role_power user

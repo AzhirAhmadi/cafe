@@ -18,7 +18,7 @@
 require 'faker'
 
 FactoryBot.define do
-  # :sys_master, :sys_admin, :sys_expert, :cafe_owner,:player
+  # :sys_master, :sys_admin, :sys_expert, :coffee_owner,:player
 
     factory :player, class: ApiUser do
       sequence(:email) { |n| "test#{n}@player.com" }
@@ -27,10 +27,10 @@ FactoryBot.define do
       jti {Faker::Alphanumeric.alphanumeric(number: 20)}
     end
 
-    factory :cafe_owner, class: ApiUser do
-      sequence(:email) { |n| "test#{n}@cafe_owner.com" }
+    factory :coffee_owner, class: ApiUser do
+      sequence(:email) { |n| "test#{n}@coffee_owner.com" }
       password { "123456" }
-      role {"cafe_owner"}
+      role {"coffee_owner"}
       jti {Faker::Alphanumeric.alphanumeric(number: 20)}
     end
 
