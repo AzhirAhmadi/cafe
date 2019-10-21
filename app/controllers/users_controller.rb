@@ -31,18 +31,13 @@ class UsersController < ApplicationController
     end
 
     def deactivate
-        user = User.find(params[:user_id])
+        user = User.find(params[:id])
         authorize user
-
         if user.deleted_at?
             raise ErrorHandling::Errors::User::DeletedUser.new({deleted_at: user.deleted_at})          
         end
-        
-        if user.soft_delete
-            render jsonapi: user
-        else
-            raise ErrorHandling::Errors::User::DataBaseCreation.new({params: params,user: user})          
-        end
+        user.soft_delete
+        render jsonapi: user
     end
 
     def profile
@@ -50,7 +45,7 @@ class UsersController < ApplicationController
     end
 
     private
-        # enum role: [:sys_master, :sys_admin, :sys_expert, :cafe_owner,:player]
+        # enum role: [:sys_master, :sys_admin, :sys_expert, :coffee_owner,:player]
         def user_params
             params.require(:user).permit(sanitize_params)
         end
