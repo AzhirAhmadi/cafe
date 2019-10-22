@@ -16,4 +16,7 @@
 #
 
 class BoardGame < ApplicationRecord
+    belongs_to :creator, class_name: "CoffeeShop"
+
+    
 end

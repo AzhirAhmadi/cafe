@@ -19,6 +19,8 @@ class CoffeeShop < ApplicationRecord
     belongs_to :maintainer, class_name: "User"
     belongs_to :owner, class_name: "User"
 
+    has_many :created_board_games, class_name: "BoardGame", foreign_key: "creator_id"
+
     validates :name, uniqueness: { case_sensitive: false }
     validates :owner_id, uniqueness: { case_sensitive: false}
 
