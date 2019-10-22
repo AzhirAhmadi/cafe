@@ -58,15 +58,19 @@ RSpec.describe CoffeeShop, type: :model do
     end
 
 
-    it "should validate owner and activeness when update" do
+    it "should validate owner and maintainer activeness when update" do
       owner = create :coffee_owner
+      maintainer = create :sys_expert
       creator =create :sys_admin
-      coffee_shop = create :coffee_shop, owner: owner, creator: creator
+      coffee_shop = create :coffee_shop, owner: owner, creator: creator, maintainer: maintainer
       expect(coffee_shop).to be_valid
 
       owner.deleted_at = Time.current
       expect(owner.active?).to eq(false)
 
+      maintainer.deleted_at = Time.current
+      expect(maintainer.active?).to eq(false)
+      
       creator.deleted_at = Time.current
       expect(creator.active?).to eq(false)
 
