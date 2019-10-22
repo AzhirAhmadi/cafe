@@ -9,6 +9,8 @@ class BoardGamesController < ApplicationController
             params[:board_game][:play_time].blank?
             raise ErrorHandling::Errors::BoardGame::CreationParams.new({params: params})          
         end
+
+        board_game =BoardGame.new(board_game_params)
     end
 
     def update
@@ -27,4 +29,8 @@ class BoardGamesController < ApplicationController
 
     end
 
+    private
+        def board_game_params
+            params.require(:board_game).permit(sanitize_params)
+        end
 end
