@@ -16,6 +16,6 @@ class CoffeeShopPolicy < ApplicationPolicy
       return true if data.owner_id == current_user.id
       return true if data.id == current_user.id
       return true if current_user.sys_admin? || current_user.sys_master?
-      false
+      super
     end
   end

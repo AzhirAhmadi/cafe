@@ -27,6 +27,10 @@ class ApplicationPolicy
         false
     end
 
+    def deactivate?
+        false
+    end
+
     protected
         def current_user
             @current_user

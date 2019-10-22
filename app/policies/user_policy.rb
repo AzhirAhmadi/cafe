@@ -17,6 +17,6 @@ class UserPolicy < ApplicationPolicy
     return false unless has_current_user
     return true if data_is_for_current_user
     return true if data_is_lower_then_current_user
-    false
+    super
   end
 end
