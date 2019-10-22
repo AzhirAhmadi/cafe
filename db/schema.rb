@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_20_113658) do
+ActiveRecord::Schema.define(version: 2019_10_22_075436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "board_games", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "publisher", null: false
+    t.integer "min_player", null: false
+    t.integer "max_player", null: false
+    t.integer "play_time", null: false
+    t.text "description"
+    t.datetime "deleted_at"
+    t.bigint "coffee_shop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coffee_shop_id"], name: "index_board_games_on_coffee_shop_id"
+  end
 
   create_table "coffee_shops", force: :cascade do |t|
     t.string "name", null: false
@@ -45,6 +59,7 @@ ActiveRecord::Schema.define(version: 2019_10_20_113658) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "board_games", "coffee_shops"
   add_foreign_key "coffee_shops", "users", column: "creator_id"
   add_foreign_key "coffee_shops", "users", column: "maintainer_id"
   add_foreign_key "coffee_shops", "users", column: "owner_id"
