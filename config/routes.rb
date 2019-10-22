@@ -21,12 +21,14 @@ Rails.application.routes.draw do
       delete  'logout',       to: 'devise_api/sessions#destroy'
     end
 
+    resources :coffee_shops, only: [:create, :update] do
+      resources :board_games, only: [:create, :update]
+      delete 'board_games/:id', to: 'board_games#deactivate', as: "board_game_deactivate"
+    end 
     delete 'coffee_shops/:id', to: 'coffee_shops#deactivate', as: "coffee_shop_deactivate"
-    resources :coffee_shops, only: [:create, :update]
-
-    delete 'users/:id', to: 'users#deactivate', as: "user_deactivate"
+    
     resources :users, only:[:create, :update]
-
+    delete 'users/:id', to: 'users#deactivate', as: "user_deactivate"
     get '/profile', to: 'users#profile'
   end
 end
