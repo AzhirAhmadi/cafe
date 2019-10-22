@@ -10,7 +10,9 @@ class BoardGamesController < ApplicationController
             raise ErrorHandling::Errors::BoardGame::CreationParams.new({params: params})          
         end
 
-        board_game =BoardGame.new(board_game_params)
+        board_game = BoardGame.new(board_game_params)
+
+        authorize board_game
     end
 
     def update
@@ -22,11 +24,15 @@ class BoardGamesController < ApplicationController
             params[:board_game][:play_time].blank?
             raise ErrorHandling::Errors::BoardGame::UpdateParams.new({params: params})          
         end
+        board_game = BoardGame.find(params[:coffee_shop_id])
 
+        authorize board_game
     end
 
     def deactivate 
+        board_game = BoardGame.find(params[:coffee_shop_id])
 
+        authorize board_game
     end
 
     private

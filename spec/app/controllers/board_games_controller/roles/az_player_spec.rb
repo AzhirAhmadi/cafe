@@ -40,13 +40,15 @@ RSpec.describe BoardGamesController, type: :request do
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
                 coffee_shop = create :coffee_shop
+                board_game = create :board_game
 
-                put coffee_shop_url(coffee_shop), params: {
-                    "coffee_shop":{
+                put coffee_shop_board_game_url(board_game, coffee_shop), params: {
+                    "board_game": {
                         "name": "name",
-                        "address": "address",
-                        "owner_id": 1,
-                        "maintainer_id": 1
+                        "publisher": "publisher",
+                        "min_player": 1,
+                        "max_player": 3,
+                        "play_time": 20
                     }
                 }, headers: headers
                 
@@ -68,8 +70,9 @@ RSpec.describe BoardGamesController, type: :request do
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
                 coffee_shop = create :coffee_shop
+                board_game =create :board_game
 
-                delete coffee_shop_deactivate_url(coffee_shop), headers: headers
+                delete coffee_shop_board_game_deactivate_url(board_game,coffee_shop), headers: headers
                 
                 expect(json["error"]).to include(
                     {
