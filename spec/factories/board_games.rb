@@ -17,11 +17,13 @@
 
 FactoryBot.define do
   factory :board_game do
-    name { "MyString" }
+    sequence(:name) { |n| "BoardGame_Name#{n}" }
     publisher { "MyString" }
-    min_player { "MyString" }
-    max_player { "MyString" }
-    play_time { "MyString" }
-    description { "MyText" }
+    min_player { 2 }
+    max_player { 7 }
+    play_time { 30 }
+    description { "Description Text" }
+
+    association :creator, factory: :coffee_shop
   end
 end

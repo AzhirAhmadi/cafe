@@ -10,7 +10,7 @@
 #  play_time      :integer          not null
 #  description    :text
 #  deleted_at     :datetime
-#  coffee_shop_id :integer
+#  creator_id     :integer
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #
@@ -18,5 +18,9 @@
 class BoardGame < ApplicationRecord
     belongs_to :creator, class_name: "CoffeeShop"
 
-    
+    validates :name, :publisher, :min_player, :max_player, :play_time, presence: true
+    validates :name, uniqueness: { scope: :creator_id}
+
+    include ModelValidate::BoardGame
+    validate :active_creator
 end
