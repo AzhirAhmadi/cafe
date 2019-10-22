@@ -17,13 +17,18 @@ RSpec.describe BoardGame, type: :model do
         expect(board_game.errors.messages[:play_time]).to include("can't be blank")
     end
 
-    it "should validate  uniqueness: { case_sensitive: false } of :name" do
+    it "should validate  uniqueness of [:name, creator_id]" do
       coffee_shop = create :coffee_shop
       board_game1 = create :board_game, name: "Name", creator: coffee_shop
       board_game2 = build :board_game, name: "Name", creator: coffee_shop
 
       expect(board_game2).not_to be_valid
       expect(board_game2.errors.messages[:name]).to include("has already been taken")
+
+      coffee_shop2 = create :coffee_shop
+      board_game3 = create :board_game, name: "Name", creator: coffee_shop2
+
+      expect(board_game3).to be_valid
     end
 
     it "should validate creator activeness when create" do
