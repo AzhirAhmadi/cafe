@@ -5,9 +5,10 @@ class CoffeeShopsController < ApplicationController
             params[:coffee_shop][:address].blank? || params[:coffee_shop][:owner_id].blank?
             raise ErrorHandling::Errors::CoffeeShop::CreationParams.new({params: params})          
         end
-        coffee_shop = CoffeeShop.new (coffee_shop_params)
+        coffee_shop = current_user.created_coffee_shop.build(coffee_shop_params)
+
         authorize coffee_shop
-        coffee_shop.creator = current_user
+
         if coffee_shop.save
             render jsonapi: coffee_shop, include: ['owner', 'creator', 'maintainer']
         else
