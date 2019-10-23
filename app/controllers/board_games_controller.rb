@@ -9,11 +9,9 @@ class BoardGamesController < ApplicationController
             params[:board_game][:play_time].blank?
             raise ErrorHandling::Errors::BoardGame::CreationParams.new({params: params})          
         end
-        board_game = BoardGame.new(board_game_params)
-        board_game.creator_id = params[:coffee_shop_id]
-  
+        coffee_Shop = CoffeeShop.find(params[:coffee_shop_id])
+        board_game = coffee_Shop.created_board_games.build(board_game_params)
         authorize board_game
-
         if board_game.save
             render jsonapi: board_game, include: ['creator']
         else
@@ -30,7 +28,8 @@ class BoardGamesController < ApplicationController
             params[:board_game][:play_time].blank?
             raise ErrorHandling::Errors::BoardGame::UpdateParams.new({params: params})          
         end
-        board_game = BoardGame.find(params[:id])
+        coffee_Shop = CoffeeShop.find(params[:coffee_shop_id])
+        board_game = coffee_Shop.created_board_games.find(params[:id])
 
         authorize board_game
 
@@ -42,7 +41,8 @@ class BoardGamesController < ApplicationController
     end
 
     def deactivate 
-        board_game = BoardGame.find(params[:id])
+        coffee_Shop = CoffeeShop.find(params[:coffee_shop_id])
+        board_game = coffee_Shop.created_board_games.find(params[:id])
 
         authorize board_game
 

@@ -40,7 +40,7 @@ RSpec.describe BoardGamesController, type: :request do
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
                 coffee_shop = create :coffee_shop
-                board_game = create :board_game
+                board_game = create :board_game, creator: coffee_shop
 
                 put coffee_shop_board_game_url(coffee_shop, board_game), params: {
                     "board_game": {
@@ -70,7 +70,7 @@ RSpec.describe BoardGamesController, type: :request do
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
                 coffee_shop = create :coffee_shop
-                board_game =create :board_game
+                board_game = create :board_game, creator: coffee_shop
 
                 delete coffee_shop_board_game_deactivate_url(coffee_shop, board_game), headers: headers
                 
