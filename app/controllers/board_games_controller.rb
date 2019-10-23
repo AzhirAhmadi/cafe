@@ -9,10 +9,15 @@ class BoardGamesController < ApplicationController
             params[:board_game][:play_time].blank?
             raise ErrorHandling::Errors::BoardGame::CreationParams.new({params: params})          
         end
-
         board_game = BoardGame.new(board_game_params)
-
+        board_game.creator_id = params[:coffee_shop_id]
         authorize board_game
+
+        if board_game.save
+            render jsonapi: board_game, include: ['creator']
+        else
+            raise ErrorHandling::Errors::BoardGame::DataBaseCreation.new({params: params,board_game: board_game})           
+        end
     end
 
     def update
@@ -24,15 +29,28 @@ class BoardGamesController < ApplicationController
             params[:board_game][:play_time].blank?
             raise ErrorHandling::Errors::BoardGame::UpdateParams.new({params: params})          
         end
-        board_game = BoardGame.find(params[:coffee_shop_id])
+        board_game = BoardGame.find(params[:id])
 
         authorize board_game
+
+        if board_game.update(board_game_params)
+            render jsonapi: board_game, include: ['creator']
+        else
+            raise ErrorHandling::Errors::BoardGame::DataBaseUpdate.new({params: params,board_game: board_game})           
+        end
     end
 
     def deactivate 
-        board_game = BoardGame.find(params[:coffee_shop_id])
+        board_game = BoardGame.find(params[:id])
 
         authorize board_game
+
+        if board_game.deleted_at?
+            raise ErrorHandling::Errors::BoardGame::DeletedCoffeeShop.new({deleted_at: board_game.deleted_at})          
+        end
+
+        board_game.soft_delete
+        render jsonapi: board_game
     end
 
     private

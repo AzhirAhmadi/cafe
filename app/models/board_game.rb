@@ -23,4 +23,14 @@ class BoardGame < ApplicationRecord
 
     include ModelValidate::BoardGame
     validate :active_creator
+
+
+    #soft delete config
+    def soft_delete  
+        update_attribute(:deleted_at, Time.current)  
+    end 
+
+    def active?
+        !deleted_at?
+    end
 end
