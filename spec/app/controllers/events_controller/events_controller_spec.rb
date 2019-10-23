@@ -211,7 +211,7 @@ RSpec.describe EventsController, type: :request do
                 )
             end
 
-            it "(absence of close_at)" do
+            it "(absence of closed_at)" do
                 user = create :player
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
@@ -453,7 +453,7 @@ RSpec.describe EventsController, type: :request do
                 )
             end
 
-            it "(absence of close_at)" do
+            it "(absence of closed_at)" do
                 user = create :player
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}

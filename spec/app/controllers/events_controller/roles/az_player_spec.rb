@@ -19,7 +19,7 @@ RSpec.describe EventsController, type: :request do
                         "enrol_end_time": "datetime",
                         "event_start_time": "datetime",
                         "event_end_time": "datetime",
-                        "close_at": "datetime"
+                        "closed_at": "datetime"
                     }
                 }, headers: headers
                 puts json
@@ -54,7 +54,7 @@ RSpec.describe EventsController, type: :request do
                         "enrol_end_time": "datetime",
                         "event_start_time": "datetime",
                         "event_end_time": "datetime",
-                        "close_at": "datetime"
+                        "closed_at": "datetime"
                     }
                 }, headers: headers
                 
