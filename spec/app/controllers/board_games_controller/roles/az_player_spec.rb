@@ -72,7 +72,7 @@ RSpec.describe BoardGamesController, type: :request do
                 coffee_shop = create :coffee_shop
                 board_game =create :board_game
 
-                delete coffee_shop_board_game_deactivate_url(board_game,coffee_shop), headers: headers
+                delete coffee_shop_board_game_deactivate_url(coffee_shop, board_game), headers: headers
                 
                 expect(json["error"]).to include(
                     {
