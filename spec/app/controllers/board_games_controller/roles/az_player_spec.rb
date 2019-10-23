@@ -42,7 +42,7 @@ RSpec.describe BoardGamesController, type: :request do
                 coffee_shop = create :coffee_shop
                 board_game = create :board_game
 
-                put coffee_shop_board_game_url(board_game, coffee_shop), params: {
+                put coffee_shop_board_game_url(coffee_shop, board_game), params: {
                     "board_game": {
                         "name": "name",
                         "publisher": "publisher",
