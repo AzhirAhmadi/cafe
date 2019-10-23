@@ -23,7 +23,6 @@ RSpec.describe CoffeeShopsController, type: :request do
                 }, headers: headers
                 
                 newCount = CoffeeShop.count
-                    puts json
                 expect(newCount - count).to eq(1)
                 expect(json['data']['relationships']['owner']['data']['id'].to_i).to eq(coffee_shop_owner.id)
                 expect(json['data']['relationships']['maintainer']['data']['id'].to_i).to eq(coffee_shop_maintainer.id)
