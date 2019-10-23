@@ -11,6 +11,7 @@ class BoardGamesController < ApplicationController
         end
         board_game = BoardGame.new(board_game_params)
         board_game.creator_id = params[:coffee_shop_id]
+  
         authorize board_game
 
         if board_game.save
