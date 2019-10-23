@@ -3,19 +3,19 @@ class BoardGamePolicy < ApplicationPolicy
   def create?
     return true if current_user.coffee_owner? && board_game.creator.owner.id == current_user.id
     return true if current_user.sys_expert? && board_game.creator.maintainer.id == current_user.id
-    return true if current_user.sys_admin?
+    return true if current_user.sys_admin? || current_user.sys_master?
   end
 
   def update?
     return true if current_user.coffee_owner? && board_game.creator.owner.id == current_user.id
     return true if current_user.sys_expert? && board_game.creator.maintainer.id == current_user.id
-    return true if current_user.sys_admin?
+    return true if current_user.sys_admin? || current_user.sys_master?
   end
 
   def deactivate?
     return true if current_user.coffee_owner? && board_game.creator.owner.id == current_user.id
     return true if current_user.sys_expert? && board_game.creator.maintainer.id == current_user.id
-    return true if current_user.sys_admin?
+    return true if current_user.sys_admin? || current_user.sys_master?
   end
 
   private
