@@ -7,6 +7,10 @@
 #            coffee_shop_board_game PATCH  /api/coffee_shops/:coffee_shop_id/board_games/:id(.:format)                              board_games#update {:format=>"json"}
 #                                   PUT    /api/coffee_shops/:coffee_shop_id/board_games/:id(.:format)                              board_games#update {:format=>"json"}
 # coffee_shop_board_game_deactivate DELETE /api/coffee_shops/:coffee_shop_id/board_games/:id(.:format)                              board_games#deactivate {:format=>"json"}
+#                coffee_shop_events POST   /api/coffee_shops/:coffee_shop_id/events(.:format)                                       events#create {:format=>"json"}
+#                 coffee_shop_event PATCH  /api/coffee_shops/:coffee_shop_id/events/:id(.:format)                                   events#update {:format=>"json"}
+#                                   PUT    /api/coffee_shops/:coffee_shop_id/events/:id(.:format)                                   events#update {:format=>"json"}
+#      coffee_shop_event_deactivate DELETE /api/coffee_shops/:coffee_shop_id/events/:id(.:format)                                   events#deactivate {:format=>"json"}
 #                      coffee_shops POST   /api/coffee_shops(.:format)                                                              coffee_shops#create {:format=>"json"}
 #                       coffee_shop PATCH  /api/coffee_shops/:id(.:format)                                                          coffee_shops#update {:format=>"json"}
 #                                   PUT    /api/coffee_shops/:id(.:format)                                                          coffee_shops#update {:format=>"json"}
