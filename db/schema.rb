@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_22_085030) do
+ActiveRecord::Schema.define(version: 2019_10_23_101654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,22 @@ ActiveRecord::Schema.define(version: 2019_10_22_085030) do
     t.index ["owner_id"], name: "index_coffee_shops_on_owner_id"
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "description", null: false
+    t.datetime "deleted_at"
+    t.bigint "coffee_shop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "opens_at", null: false
+    t.datetime "enrol_start_time", null: false
+    t.datetime "enrol_end_time", null: false
+    t.datetime "event_start_time", null: false
+    t.datetime "event_end_time", null: false
+    t.datetime "closed_at", null: false
+    t.index ["coffee_shop_id"], name: "index_events_on_coffee_shop_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -64,4 +80,5 @@ ActiveRecord::Schema.define(version: 2019_10_22_085030) do
   add_foreign_key "coffee_shops", "users", column: "creator_id"
   add_foreign_key "coffee_shops", "users", column: "maintainer_id"
   add_foreign_key "coffee_shops", "users", column: "owner_id"
+  add_foreign_key "events", "coffee_shops"
 end
