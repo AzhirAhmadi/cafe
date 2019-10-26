@@ -16,13 +16,11 @@ class EventsController < ApplicationController
 
     def update
         check_update_params
-        check params
+        
         coffee_shop = CoffeeShop.find(params[:coffee_shop_id])
         event = coffee_shop.created_events.find(params[:id])
 
         authorize event
-
-        check event_params
 
         if event.update(event_params)
             render jsonapi: event, include: ['coffee_shop']
