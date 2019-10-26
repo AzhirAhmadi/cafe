@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
     skip_before_action :authenticate_user!, only: [:create]
+
+    def show
+    end
+
+    def index
+    end
     
     def create
-        
         if params[:user].blank? || params[:user][:email].blank? || params[:user][:password].blank? || params[:user][:role].blank?
             raise ErrorHandling::Errors::User::CreationParams.new({params: params})          
         end

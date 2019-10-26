@@ -49,7 +49,7 @@ Rails.application.routes.draw do
     end 
     delete 'coffee_shops/:id', to: 'coffee_shops#deactivate', as: "coffee_shop_deactivate"
     
-    resources :users, only:[:create, :update]
+    resources :users, only:[:create, :update, :show, :index]
     delete 'users/:id', to: 'users#deactivate', as: "user_deactivate"
     get '/profile', to: 'users#profile'
   end

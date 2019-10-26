@@ -1,6 +1,66 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :request do
+    describe "show" do
+        context "when invalid header params provided" do
+            it "(absence of Authorization Token)" do
+                user = create :player
+                login user
+                get user_url(user)
+
+                expect(json["error"]).to include(
+                    {
+                        "message"=>"Authorization header needed!", 
+                        "path"=>"users#show"
+                    }
+                )
+            end
+    
+            it "(invalid Authorization Token)" do
+                user = create :player
+                login user
+                headers = {"Authorization": "invalid"}
+                get user_url(user), headers: headers
+                expect(json["error"]).to include(
+                    {
+                        "message"=>"Wrong jwt token!", 
+                        "path"=>"users#show"
+                    }
+                )
+            end
+        end
+    end
+
+    describe "index" do
+        context "when invalid header params provided" do
+            it "(absence of Authorization Token)" do
+                user = create :player
+                login user
+                get users_url
+
+                expect(json["error"]).to include(
+                    {
+                        "message"=>"Authorization header needed!", 
+                        "path"=>"users#index"
+                    }
+                )
+            end
+    
+            it "(invalid Authorization Token)" do
+                user = create :player
+                login user
+                headers = {"Authorization": "invalid"}
+                get users_url, headers: headers
+                expect(json["error"]).to include(
+                    {
+                        "message"=>"Wrong jwt token!", 
+                        "path"=>"users#index"
+                    }
+                )
+            end
+        end
+    end
+
     describe "create" do
         context "when invalid body params provided" do
             it "(absence of user)" do
