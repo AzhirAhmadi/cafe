@@ -90,7 +90,7 @@ RSpec.describe EventsController, type: :request do
                 expect(json["data"]["relationships"]["coffee_shop"]["data"]["id"].to_i).to eq(coffee_shop.id)
             end
 
-            it "shloud not create event if coffee_owner is not owner of the coffee_shop" do
+            it "shloud not update event if coffee_owner is not owner of the coffee_shop" do
                 coffee_owner = create :coffee_owner
                 login coffee_owner
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
