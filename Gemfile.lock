@@ -51,6 +51,7 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.3)
     byebug (11.0.1)
+    colorize (0.8.1)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
     devise (4.7.1)
@@ -214,6 +215,7 @@ DEPENDENCIES
   annotate
   bootsnap (>= 1.1.0)
   byebug
+  colorize
   devise
   devise-jwt
   factory_bot_rails

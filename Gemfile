@@ -62,3 +62,4 @@ gem 'faker'
 gem 'pundit'
 
 gem 'rename'
+gem 'colorize'
