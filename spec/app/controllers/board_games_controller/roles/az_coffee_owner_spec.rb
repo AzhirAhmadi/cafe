@@ -57,7 +57,7 @@ RSpec.describe BoardGamesController, type: :request do
         end
     end
     describe "#update" do
-        context "when loged in az player" do
+        context "when loged in az coffee_owner" do
             it "shloud update board_game if coffee_owner is owner of the coffee_shop" do
                 coffee_owner = create :coffee_owner
                 login coffee_owner
@@ -109,7 +109,7 @@ RSpec.describe BoardGamesController, type: :request do
     end
 
     describe "deactivate" do
-        context "when loged in az player" do
+        context "when loged in az coffee_owner" do
             it "shloud deactivate board_game if coffee_owner is owner of the coffee_shop" do
                 coffee_owner = create :coffee_owner
                 login coffee_owner
