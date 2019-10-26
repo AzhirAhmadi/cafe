@@ -23,7 +23,7 @@ module ErrorHandling::Errors::Event
         end
     end
 
-    class DeletedCoffeeShop < ErrorHandling::Error
+    class DeletedEvent < ErrorHandling::Error
         def message
            "This event has been deleted at: [" + args[:deleted_at].to_s + "]"
         end
