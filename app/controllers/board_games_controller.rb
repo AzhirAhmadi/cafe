@@ -47,7 +47,7 @@ class BoardGamesController < ApplicationController
         authorize board_game
 
         if board_game.deleted_at?
-            raise ErrorHandling::Errors::BoardGame::DeletedCoffeeShop.new({deleted_at: board_game.deleted_at})          
+            raise ErrorHandling::Errors::BoardGame::DeletedBoardGame.new({deleted_at: board_game.deleted_at})          
         end
 
         board_game.soft_delete

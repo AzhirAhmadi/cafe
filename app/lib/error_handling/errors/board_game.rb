@@ -23,7 +23,7 @@ module ErrorHandling::Errors::BoardGame
         end
     end
 
-    class DeletedCoffeeShop < ErrorHandling::Error
+    class DeletedBoardGame < ErrorHandling::Error
         def message
            "This board_game has been deleted at: [" + args[:deleted_at].to_s + "]"
         end
