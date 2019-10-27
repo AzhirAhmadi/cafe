@@ -1,6 +1,59 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :request do
+    describe "show" do
+        context "when loged in az coffee_owner" do
+            it "shloud not see deactivated users " do
+                user = create :coffee_owner
+                login user
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                player = create :player
+                get user_url(player), headers: headers
+
+                expect(json["data"]["id"].to_i).to eql(player.id)
+                
+                player.deleted_at = Time.now
+                player.save
+
+                get user_url(player), headers: headers
+
+                expect(json).to include({
+                    "error"=>{
+                        "message"=>"Couldn't find User"
+                    }
+                })
+            end
+        end
+    end
+
+    describe "index" do
+        context "when loged in az coffee_owner" do
+            it "shloud not see deactivated users " do
+                user = create :coffee_owner
+                login user
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                n = 10
+                players = create_list :player, n
+
+                
+                get users_url, headers: headers
+                
+                expect(json["data"].length).to eql(n+1)
+                
+                for i in 0..3 do
+                    players[i].deleted_at = Time.now
+                    players[i].save    
+                end
+
+                get users_url, headers: headers
+
+                expect(json["data"].length).to eql(n+1-4)
+            end
+        end
+    end
+
     describe "create" do
         context "when loged in az coffee_owner" do
             it "shloud create user and it's role should be 'player' if send role az 'player'" do

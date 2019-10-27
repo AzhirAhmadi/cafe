@@ -1,8 +1,6 @@
 class ApplicationPolicy 
-    attr_reader :data
+    attr_reader :current_user,:data
     
-    @current_user
-
     def initialize(current_user, data)
       @current_user = current_user
       @data = data
@@ -31,6 +29,18 @@ class ApplicationPolicy
         false
     end
 
+    class Scope
+        attr_reader :current_user, :scope
+
+        def initialize(user, scope)
+            @current_user  = user
+            @scope = scope
+        end
+
+        def resolve
+            scope.all
+        end
+    end
     protected
         def current_user
             @current_user

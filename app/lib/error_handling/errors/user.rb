@@ -1,4 +1,11 @@
 module ErrorHandling::Errors::User
+
+    class DataBaseFind < ErrorHandling::Error
+        def message
+            "Couldn't find User"
+        end
+    end
+
     class DataBaseCreation < ErrorHandling::Error
         def message
             args[:user].errors

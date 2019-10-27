@@ -1,6 +1,74 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :request do
+   
+    describe "show" do
+        context "when loged in az sys_admin" do
+            it "shloud all users except deactivated sys_admins " do
+                user = create :sys_admin
+                login user
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                sys_admin = create :sys_admin
+                player = create :player
+
+                get user_url(sys_admin), headers: headers
+                expect(json["data"]["id"].to_i).to eql(sys_admin.id)
+                expect(json["data"]["attributes"]["deleted_at"]).to eql(nil)
+
+                get user_url(player), headers: headers
+                expect(json["data"]["id"].to_i).to eql(player.id)
+                expect(json["data"]["attributes"]["deleted_at"]).to eql(nil)
+
+                sys_admin.deleted_at = Time.now
+                sys_admin.save
+                player.deleted_at = Time.now
+                player.save
+
+                get user_url(sys_admin), headers: headers
+                expect(json).to include({
+                    "error"=>{
+                        "message"=>"Couldn't find User"
+                    }
+                })
+
+                get user_url(player), headers: headers
+                expect(json["data"]["id"].to_i).to eql(player.id)
+                expect(json["data"]["attributes"]["deleted_at"]).not_to eql(nil)
+                expect(json["data"]["id"].to_i).to eql(player.id)
+            end
+        end
+    end
+
+    describe "index" do
+        context "when loged in az coffee_owner" do
+            it "shloud not see deactivated users " do
+                user = create :sys_admin
+                login user
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                players = create_list :player, 10
+                sys_admins = create_list :sys_admin, 10
+                
+                get users_url, headers: headers
+                
+                expect(json["data"].length).to eql(20+1)
+                
+                for i in 0..3 do
+                    players[i].deleted_at = Time.now
+                    players[i].save
+                    
+                    sys_admins[i].deleted_at = Time.now
+                    sys_admins[i].save
+                end
+
+                get users_url, headers: headers
+
+                expect(json["data"].length).to eql(16+1)
+            end
+        end
+    end
+
     describe "create" do
         context "when loged in az sys_admin" do
             it "shloud create user and it's role should be 'player' if send role az 'player'" do

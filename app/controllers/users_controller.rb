@@ -2,9 +2,15 @@ class UsersController < ApplicationController
     skip_before_action :authenticate_user!, only: [:create]
 
     def show
+        user = policy_scope(User).find(params[:id])
+        render jsonapi: user
+    rescue
+        render raise ErrorHandling::Errors::User::DataBaseFind.new          
     end
 
     def index
+        users = policy_scope(User)
+        render jsonapi: users
     end
     
     def create
