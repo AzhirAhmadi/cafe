@@ -41,7 +41,7 @@ Rails.application.routes.draw do
       delete  'logout',       to: 'devise_api/sessions#destroy'
     end
 
-    resources :coffee_shops, only: [:create, :update] do
+    resources :coffee_shops, only: [:create, :update, :show, :index] do
       resources :board_games, only: [:create, :update]
       delete 'board_games/:id', to: 'board_games#deactivate', as: "board_game_deactivate"
       resources :events, only: [:create, :update]

@@ -1,6 +1,54 @@
 require 'rails_helper'
 
 RSpec.describe CoffeeShopsController, type: :request do
+    describe ".show" do
+        context "when loged in az sys_admin" do
+            it "shloud see all coffee_shops " do
+                sys_admin = create :sys_admin
+                login sys_admin
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                coffee_shop = create :coffee_shop
+                get coffee_shop_url(coffee_shop), headers: headers
+
+                expect(json["data"]["id"].to_i).to eql(coffee_shop.id)
+                
+                coffee_shop.deleted_at = Time.now
+                coffee_shop.save
+
+                get coffee_shop_url(coffee_shop), headers: headers
+                expect(json["data"]["id"].to_i).to eql(coffee_shop.id)
+                expect(json["data"]["attributes"]["deleted_at"]).to eql(nil)
+                expect(json["data"]["id"].to_i).to eql(coffee_shop.id)
+            end
+        end
+    end
+
+    describe ".index" do
+        context "when loged in az sys_admin" do
+            it "shloud see all coffee_shops " do
+                sys_admin = create :sys_admin
+                login sys_admin
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                coffee_shops = create_list :coffee_shop, 10
+                
+                get coffee_shops_url, headers: headers
+                
+                expect(json["data"].length).to eql(10)
+                
+                for i in 0..3 do
+                    coffee_shops[i].deleted_at = Time.now
+                    coffee_shops[i].save    
+                end
+
+                get coffee_shops_url, headers: headers
+
+                expect(json["data"].length).to eql(10)
+            end
+        end
+    end
+
     describe "create" do
         context "when loged in az sys_admin" do
             it "shloud create coffee_shop and be creator of the coffee_shop" do

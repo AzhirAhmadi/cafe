@@ -1,4 +1,15 @@
 class CoffeeShopsController < ApplicationController
+    def show
+        coffee_shop = policy_scope(CoffeeShop).find(params[:id])
+        render jsonapi: coffee_shop
+    rescue
+        render raise ErrorHandling::Errors::CoffeeShop::DataBaseFind.new          
+    end
+
+    def index
+        coffee_shops = policy_scope(CoffeeShop)
+        render jsonapi: coffee_shops
+    end
 
     def create
         if params[:coffee_shop].blank? || params[:coffee_shop][:name].blank? ||

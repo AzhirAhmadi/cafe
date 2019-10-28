@@ -1,4 +1,10 @@
 module ErrorHandling::Errors::CoffeeShop
+    class DataBaseFind < ErrorHandling::Error
+        def message
+            "Couldn't find coffee shop"
+        end
+    end
+
     class DataBaseCreation < ErrorHandling::Error
         def message
             args[:coffee_shop].errors
