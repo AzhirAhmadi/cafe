@@ -4,7 +4,7 @@ RSpec.describe UsersController, type: :request do
    
     describe "show" do
         context "when loged in az sys_admin" do
-            it "shloud all users except deactivated sys_admins " do
+            it "shloud see all users except deactivated sys_admins " do
                 user = create :sys_admin
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
@@ -41,7 +41,7 @@ RSpec.describe UsersController, type: :request do
     end
 
     describe "index" do
-        context "when loged in az coffee_owner" do
+        context "when loged in az sys_admin" do
             it "shloud not see deactivated users " do
                 user = create :sys_admin
                 login user
