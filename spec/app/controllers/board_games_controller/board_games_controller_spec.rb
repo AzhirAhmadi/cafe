@@ -1,7 +1,79 @@
 require 'rails_helper'
 
 RSpec.describe BoardGamesController, type: :request do
-    describe "#create" do
+    describe ".show" do
+        context "when invalid header params provided" do
+            it "(absence of Authorization Token)" do
+                creator = create :player
+
+                coffee_shop =create :coffee_shop
+                board_game = create :board_game
+
+                get coffee_shop_board_game_url(coffee_shop, board_game)
+
+                expect(json["error"]).to include(
+                    {
+                        "message"=>"Authorization header needed!", 
+                        "path"=>"board_games#show"
+                    }
+                )
+            end
+    
+            it "(invalid Authorization Token)" do
+                creator = create :player
+                login creator
+                headers = {"Authorization": "invalid"}
+
+                coffee_shop =create :coffee_shop
+                board_game = create :board_game
+
+                get coffee_shop_board_game_url(coffee_shop, board_game), headers: headers
+
+                expect(json["error"]).to include(
+                    {
+                        "message"=>"Wrong jwt token!", 
+                        "path"=>"board_games#show"
+                    }
+                )
+            end
+        end
+    end
+    
+    describe ".index" do
+        context "when invalid header params provided" do
+            it "(absence of Authorization Token)" do
+                creator = create :player
+
+                coffee_shop = create :coffee_shop
+                get coffee_shop_board_games_url(coffee_shop)
+
+                expect(json["error"]).to include(
+                    {
+                        "message"=>"Authorization header needed!", 
+                        "path"=>"board_games#index"
+                    }
+                )
+            end
+    
+            it "(invalid Authorization Token)" do
+                creator = create :player
+                login creator
+                headers = {"Authorization": "invalid"}
+                
+                coffee_shop = create :coffee_shop
+
+                get coffee_shop_board_games_url(coffee_shop), headers: headers
+
+                expect(json["error"]).to include(
+                    {
+                        "message"=>"Wrong jwt token!", 
+                        "path"=>"board_games#index"
+                    }
+                )
+            end
+        end
+    end
+    describe ".create" do
         context "when invalid header params provided" do
             it "(absence of Authorization Token)" do
                 coffee_shop = create :coffee_shop
@@ -166,7 +238,7 @@ RSpec.describe BoardGamesController, type: :request do
         end
     end
 
-    describe "#update" do
+    describe ".update" do
         context "when invalid header params provided" do
             it "(absence of Authorization Token)" do
                 coffee_shop = create :coffee_shop
@@ -333,7 +405,7 @@ RSpec.describe BoardGamesController, type: :request do
         end
     end
 
-    describe "deactivate" do
+    describe ".deactivate" do
         context "when invalid header params provided" do
             it "(absence of Authorization Token)" do
                 coffee_shop = create :coffee_shop

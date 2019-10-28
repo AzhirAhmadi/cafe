@@ -1,4 +1,10 @@
 module ErrorHandling::Errors::BoardGame
+    class DataBaseFind < ErrorHandling::Error
+        def message
+            "Couldn't find board_game"
+        end
+    end
+
     class DataBaseCreation < ErrorHandling::Error
         def message
             args[:board_game].errors

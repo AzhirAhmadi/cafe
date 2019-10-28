@@ -1,4 +1,17 @@
 class BoardGamesController < ApplicationController
+    def show
+        board_game = policy_scope(BoardGame).find_by(creator_id: params[:coffee_shop_id])
+        unless board_game.blank?
+            render jsonapi: board_game
+        else
+            render raise ErrorHandling::Errors::BoardGame::DataBaseFind.new          
+        end
+    end
+
+    def index
+        board_games = policy_scope(BoardGame).where(creator_id: params[:coffee_shop_id])
+        render jsonapi: board_games
+    end
 
     def create
         if params[:board_game].blank? ||
