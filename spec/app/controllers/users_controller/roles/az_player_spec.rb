@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :request do
-    describe "show" do
+    describe ".show" do
         context "when loged in az player" do
             it "shloud not see deactivated users " do
                 user = create :player
@@ -27,7 +27,7 @@ RSpec.describe UsersController, type: :request do
         end
     end
 
-    describe "index" do
+    describe ".index" do
         context "when loged in az player" do
             it "shloud not see deactivated users " do
                 user = create :player
