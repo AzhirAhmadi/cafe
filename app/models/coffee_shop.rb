@@ -12,6 +12,12 @@
 #  deleted_at    :datetime
 #  maintainer_id :integer          not null
 #
+# Indexes
+#
+#  index_coffee_shops_on_creator_id     (creator_id)
+#  index_coffee_shops_on_maintainer_id  (maintainer_id)
+#  index_coffee_shops_on_owner_id       (owner_id)
+#
 
 class CoffeeShop < ApplicationRecord
     include Generals::SoftDelete

@@ -14,6 +14,12 @@
 #  role                   :integer
 #  deleted_at             :datetime
 #
+# Indexes
+#
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_jti                   (jti) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#
 
 class ApiUser < User
     include Devise::JWT::RevocationStrategies::JTIMatcher
