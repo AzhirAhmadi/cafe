@@ -12,7 +12,7 @@ RSpec.describe BoardGamesController, type: :request do
                 board_game = create :board_game, creator: coffee_shop
                 
                 get coffee_shop_board_game_url(coffee_shop, board_game), headers: headers
-                puts json
+
                 expect(json["data"]["id"].to_i).to eql(board_game.id)
             end
 
