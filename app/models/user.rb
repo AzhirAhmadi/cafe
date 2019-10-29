@@ -16,10 +16,20 @@
 #
 
 class User < ApplicationRecord
+  include Generals::SoftDelete
+
+  include Methods::User
+  include Scopes::User
+  include Validations::User
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
+  
+  has_many :created_coffee_shop, class_name: "CoffeeShop", foreign_key: "creator_id"
+  has_many :maintained_coffee_shop, class_name: "CoffeeShop", foreign_key: "maintainer_id"
+  has_many :owened_coffee_shop, class_name: "CoffeeShop", foreign_key: "owner_id"
 
   #JWT config
   before_create :add_jti
@@ -36,36 +46,9 @@ class User < ApplicationRecord
     self.role ||= :player
   end
 
-#soft delete config
-  def soft_delete  
-    update_attribute(:deleted_at, Time.current)  
-  end 
-
+#soft delete config for davise
   def active_for_authentication?  
     raise ErrorHandling::Errors::User::DeletedUser.new(deleted_at: deleted_at) if deleted_at?  
     return true
   end 
-
-  def active?
-    !deleted_at?
-  end
-
-
-  has_many :created_coffee_shop, class_name: "CoffeeShop", foreign_key: "creator_id"
-  has_many :maintained_coffee_shop, class_name: "CoffeeShop", foreign_key: "maintainer_id"
-  has_many :owened_coffee_shop, class_name: "CoffeeShop", foreign_key: "owner_id"
-  
-
-# my methods
-  def self.role_power user
-    return (roles.length - roles[user.role]) if (user.is_a? User)
-    return roles.length - roles[user]
-  end
-
-  def self.PP
-    User.all.order(id: :asc).each do  |item|
-      puts item.as_json(:except => [:created_at, :updated_at, :jti])
-    end
-    return nil
-  end
 end

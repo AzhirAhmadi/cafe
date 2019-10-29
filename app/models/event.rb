@@ -18,6 +18,13 @@
 #
 
 class Event < ApplicationRecord
+    include Generals::SoftDelete    
+
+    include Methods::Event
+    include Scopes::Event
+    include Validations::Event
+
+
     belongs_to :coffee_shop, class_name: "CoffeeShop"
 
     validates :name, :description, :opens_at,
@@ -30,12 +37,5 @@ class Event < ApplicationRecord
     validate :active_coffee_shop
     validate :time_orders
 
-        #soft delete config
-        def soft_delete  
-            update_attribute(:deleted_at, Time.current)  
-        end 
-    
-        def active?
-            !deleted_at?
-        end
+
 end

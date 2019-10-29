@@ -16,21 +16,11 @@
 #
 
 class BoardGame < ApplicationRecord
+    include Generals::SoftDelete
+
+    include Methods::BoardGame
+    include Scopes::BoardGame
+    include Validations::BoardGame
+
     belongs_to :creator, class_name: "CoffeeShop"
-
-    validates :name, :publisher, :min_player, :max_player, :play_time, presence: true
-    validates :name, uniqueness: { scope: :creator_id}
-
-    include ModelValidate::BoardGame
-    validate :active_creator
-
-
-    #soft delete config
-    def soft_delete  
-        update_attribute(:deleted_at, Time.current)  
-    end 
-
-    def active?
-        !deleted_at?
-    end
 end
