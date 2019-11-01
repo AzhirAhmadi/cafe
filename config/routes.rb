@@ -44,7 +44,7 @@ Rails.application.routes.draw do
     resources :coffee_shops, only: [:create, :update, :show, :index] do
       resources :board_games, only: [:create, :update, :show, :index]
       delete 'board_games/:id', to: 'board_games#deactivate', as: "board_game_deactivate"
-      resources :events, only: [:create, :update]
+      resources :events, only: [:create, :update, :show, :index]
       delete 'events/:id', to: 'events#deactivate', as: "event_deactivate"
     end 
     delete 'coffee_shops/:id', to: 'coffee_shops#deactivate', as: "coffee_shop_deactivate"

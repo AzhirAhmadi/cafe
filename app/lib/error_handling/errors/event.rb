@@ -1,4 +1,10 @@
 module ErrorHandling::Errors::Event
+    class DataBaseFind < ErrorHandling::Error
+        def message
+            "Couldn't find event"
+        end
+    end
+
     class DataBaseCreation < ErrorHandling::Error
         def message
             args[:event].errors

@@ -1,7 +1,204 @@
 require 'rails_helper'
 
 RSpec.describe EventsController, type: :request do
-    describe "#create" do
+    describe ".show" do
+        context "when no one loged" do
+            it "shloud see event in coffee_shop if event is open" do
+                player = create :player
+                login player
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                coffee_shop = create :coffee_shop
+
+                locked_event = create :locked_event, coffee_shop: coffee_shop
+                opened_event = create :opened_event, coffee_shop: coffee_shop
+
+                
+                get coffee_shop_event_url(coffee_shop, opened_event), headers: headers
+                expect(json["data"]["id"].to_i).to eql(opened_event.id)
+                expect(json["data"]["relationships"]["coffee_shop"]["data"]["id"].to_i).to eql(coffee_shop.id)
+
+                get coffee_shop_event_url(coffee_shop, locked_event), headers: headers
+                expect(json).to include({
+                    "error"=>{
+                        "message"=>"Couldn't find event"
+                    }
+                })
+            end
+
+            it "shloud not see event which is not in coffee_shop" do
+                player = create :player
+                login player
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                coffee_shop = create :coffee_shop
+                event = create :event
+                
+                get coffee_shop_event_url(coffee_shop, event), headers: headers
+
+                expect(json).to include({
+                    "error"=>{
+                        "message"=>"Couldn't find event"
+                    }
+                })
+            end
+
+            it "shloud not see deactivated event" do
+                player = create :player
+                login player
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                coffee_shop = create :coffee_shop
+                opened_event = create :opened_event, coffee_shop: coffee_shop
+                
+                get coffee_shop_event_url(coffee_shop, opened_event), headers: headers
+                expect(json["data"]["id"].to_i).to eql(opened_event.id)
+
+                opened_event.deleted_at = Time.now
+                opened_event.save
+
+                get coffee_shop_event_url(coffee_shop, opened_event), headers: headers
+                expect(json).to include({
+                    "error"=>{
+                        "message"=>"Couldn't find event"
+                    }
+                })
+            end
+        end
+    end
+
+    describe ".index" do
+        context "when no one loged" do
+            it "shloud see all opend events in coffee_shop" do
+                player = create :player
+                login player
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                coffee_shop = create :coffee_shop
+
+                opened_event = create :opened_event, coffee_shop: coffee_shop
+                enroled_event = create :enroled_event, coffee_shop: coffee_shop
+                started_event = create :started_event, coffee_shop: coffee_shop
+                ended_event = create :ended_event, coffee_shop: coffee_shop
+                closed_event = create :closed_event, coffee_shop: coffee_shop
+                
+                get coffee_shop_events_url(coffee_shop), headers: headers
+                expect(json["data"].length).to eql(5)
+            end
+
+            it "shloud not see event which is not in coffee_shop" do
+                player = create :player
+                login player
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                coffee_shop = create :coffee_shop
+
+                opened_event = create :opened_event, coffee_shop: coffee_shop
+                enroled_event = create :enroled_event, coffee_shop: coffee_shop
+
+                started_event = create :started_event
+                ended_event = create :ended_event
+                closed_event = create :closed_event
+                
+                get coffee_shop_events_url(coffee_shop), headers: headers
+                expect(json["data"].length).to eql(2)
+            end
+
+            it "shloud not see deactivated event" do
+                player = create :player
+                login player
+                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
+
+                coffee_shop = create :coffee_shop
+                opened_events = create_list :opened_event, 10, coffee_shop: coffee_shop
+                
+                get coffee_shop_events_url(coffee_shop), headers: headers
+                expect(json["data"].length).to eql(10)
+                
+                for i in 0..3 do
+                    opened_events[i].deleted_at = Time.now
+                    opened_events[i].save
+                end
+
+                get coffee_shop_events_url(coffee_shop), headers: headers
+                expect(json["data"].length).to eql(6)
+            end
+        end
+    end
+    # describe ".show" do
+    #     context "when invalid header params provided" do
+    #         it "(absence of Authorization Token)" do
+    #             creator = create :player
+
+    #             coffee_shop =create :coffee_shop
+    #             event = create :event
+
+    #             get coffee_shop_event_url(coffee_shop, event)
+
+    #             expect(json["error"]).to include(
+    #                 {
+    #                     "message"=>"Authorization header needed!", 
+    #                     "path"=>"events#show"
+    #                 }
+    #             )
+    #         end
+    
+    #         it "(invalid Authorization Token)" do
+    #             creator = create :player
+    #             login creator
+    #             headers = {"Authorization": "invalid"}
+
+    #             coffee_shop =create :coffee_shop
+    #             event = create :event
+
+    #             get coffee_shop_event_url(coffee_shop, event), headers: headers
+
+    #             expect(json["error"]).to include(
+    #                 {
+    #                     "message"=>"Wrong jwt token!", 
+    #                     "path"=>"events#show"
+    #                 }
+    #             )
+    #         end
+    #     end
+    # end
+    
+    # describe ".index" do
+    #     context "when invalid header params provided" do
+    #         it "(absence of Authorization Token)" do
+    #             creator = create :player
+
+    #             coffee_shop = create :coffee_shop
+    #             get coffee_shop_events_url(coffee_shop)
+
+    #             expect(json["error"]).to include(
+    #                 {
+    #                     "message"=>"Authorization header needed!", 
+    #                     "path"=>"events#index"
+    #                 }
+    #             )
+    #         end
+    
+    #         it "(invalid Authorization Token)" do
+    #             creator = create :player
+    #             login creator
+    #             headers = {"Authorization": "invalid"}
+                
+    #             coffee_shop = create :coffee_shop
+
+    #             get coffee_shop_events_url(coffee_shop), headers: headers
+
+    #             expect(json["error"]).to include(
+    #                 {
+    #                     "message"=>"Wrong jwt token!", 
+    #                     "path"=>"events#index"
+    #                 }
+    #             )
+    #         end
+    #     end
+    # end
+    
+    describe ".create" do
         context "when invalid header params provided" do
             it "(absence of Authorization Token)" do
                 coffee_shop = create :coffee_shop
@@ -239,7 +436,7 @@ RSpec.describe EventsController, type: :request do
         end
     end
 
-    describe "#update" do
+    describe ".update" do
         context "when invalid header params provided" do
             it "(absence of Authorization Token)" do
                 coffee_shop = create :coffee_shop
@@ -481,7 +678,7 @@ RSpec.describe EventsController, type: :request do
         end
     end
 
-    describe "deactivate" do
+    describe ".deactivate" do
         context "when invalid header params provided" do
             it "(absence of Authorization Token)" do
                 coffee_shop = create :coffee_shop
