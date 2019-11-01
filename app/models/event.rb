@@ -16,6 +16,10 @@
 #  event_end_time   :datetime         not null
 #  closed_at        :datetime         not null
 #
+# Indexes
+#
+#  index_events_on_coffee_shop_id  (coffee_shop_id)
+#
 
 class Event < ApplicationRecord
     include Generals::SoftDelete    
@@ -24,18 +28,5 @@ class Event < ApplicationRecord
     include Scopes::Event
     include Validations::Event
 
-
     belongs_to :coffee_shop, class_name: "CoffeeShop"
-
-    validates :name, :description, :opens_at,
-    :enrol_start_time, :enrol_end_time, :event_start_time,
-    :event_end_time, :closed_at , :coffee_shop, presence: true
-
-
-    include ModelValidate::Event
-
-    validate :active_coffee_shop
-    validate :time_orders
-
-
 end
