@@ -21,7 +21,7 @@ class CoffeeShopPolicy < ApplicationPolicy
 
     class Scope < Scope
       def resolve
-        if current_user.sys_admin? || current_user.sys_master?
+        if current_user&.sys_admin? || current_user&.sys_master?
           return scope.all
         end
         scope.where(deleted_at: nil)
