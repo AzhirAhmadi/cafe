@@ -18,4 +18,12 @@
 #
 
 class Table < ApplicationRecord
+    include Generals::SoftDelete    
+
+    include Methods::Table
+    include Scopes::Table
+    include Validations::Table
+
+    belongs_to :event, class_name: "Event"
+    belongs_to :board_game, class_name: "BoardGame"
 end

@@ -28,4 +28,6 @@ class BoardGame < ApplicationRecord
     include Validations::BoardGame
 
     belongs_to :creator, class_name: "CoffeeShop"
+
+    has_many :created_tables, class_name: "Table", foreign_key: "board_game_id"
 end

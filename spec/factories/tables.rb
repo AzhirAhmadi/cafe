@@ -19,7 +19,10 @@
 
 FactoryBot.define do
   factory :table do
-    capacity { "MyString" }
-    table_number { "MyString" }
+    capacity { 5 }
+    table_number { 1 }
+
+    association :event, factory: :event
+    association :board_game, factory: :board_game
   end
 end

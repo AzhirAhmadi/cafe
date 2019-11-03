@@ -29,4 +29,6 @@ class Event < ApplicationRecord
     include Validations::Event
 
     belongs_to :coffee_shop, class_name: "CoffeeShop"
+
+    has_many :created_tables, class_name: "Table", foreign_key: "event_id"
 end
