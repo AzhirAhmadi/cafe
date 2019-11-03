@@ -24,7 +24,7 @@
 FactoryBot.define do
 
   factory :event, class: Event do
-    name {"Event Name (event)"}
+    name {"Event Name (locked_event)"}
     description {"Event Description"}
     association :coffee_shop, factory: :coffee_shop
 
