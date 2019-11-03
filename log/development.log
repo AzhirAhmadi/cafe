@@ -22853,3 +22853,36 @@ FOREIGN KEY ("coffee_shop_id")
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
   [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6014725215817793370)[0m
+  ↳ bin/rails:9
+  [1m[35m (27.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTables (20191103072152)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (645.1ms)[0m  [1m[35mCREATE TABLE "tables" ("id" bigserial primary key, "capacity" character varying NOT NULL, "table_number" character varying NOT NULL, "deleted_at" timestamp, "event_id" bigint, "board_game_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b446cf93c4"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+, CONSTRAINT "fk_rails_f86e5af94b"
+FOREIGN KEY ("board_game_id")
+  REFERENCES "board_games" ("id")
+)[0m
+  ↳ db/migrate/20191103072152_create_tables.rb:3
+  [1m[35m (36.3ms)[0m  [1m[35mCREATE  INDEX  "index_tables_on_event_id" ON "tables"  ("event_id")[0m
+  ↳ db/migrate/20191103072152_create_tables.rb:3
+  [1m[35m (40.3ms)[0m  [1m[35mCREATE  INDEX  "index_tables_on_board_game_id" ON "tables"  ("board_game_id")[0m
+  ↳ db/migrate/20191103072152_create_tables.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191103072152"]]
+  ↳ bin/rails:9
+  [1m[35m (11.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (39.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(6014725215817793370)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9

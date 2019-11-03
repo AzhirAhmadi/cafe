@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_23_101654) do
+ActiveRecord::Schema.define(version: 2019_11_03_072152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,18 @@ ActiveRecord::Schema.define(version: 2019_10_23_101654) do
     t.index ["coffee_shop_id"], name: "index_events_on_coffee_shop_id"
   end
 
+  create_table "tables", force: :cascade do |t|
+    t.string "capacity", null: false
+    t.string "table_number", null: false
+    t.datetime "deleted_at"
+    t.bigint "event_id"
+    t.bigint "board_game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["board_game_id"], name: "index_tables_on_board_game_id"
+    t.index ["event_id"], name: "index_tables_on_event_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -81,4 +93,6 @@ ActiveRecord::Schema.define(version: 2019_10_23_101654) do
   add_foreign_key "coffee_shops", "users", column: "maintainer_id"
   add_foreign_key "coffee_shops", "users", column: "owner_id"
   add_foreign_key "events", "coffee_shops"
+  add_foreign_key "tables", "board_games"
+  add_foreign_key "tables", "events"
 end
