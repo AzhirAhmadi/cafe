@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_03_072152) do
+ActiveRecord::Schema.define(version: 2019_11_03_140053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,15 +61,17 @@ ActiveRecord::Schema.define(version: 2019_11_03_072152) do
   end
 
   create_table "tables", force: :cascade do |t|
-    t.string "capacity", null: false
-    t.string "table_number", null: false
+    t.string "table_code", null: false
     t.datetime "deleted_at"
     t.bigint "event_id"
     t.bigint "board_game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "capacity"
+    t.integer "enroled", default: 0
     t.index ["board_game_id"], name: "index_tables_on_board_game_id"
     t.index ["event_id"], name: "index_tables_on_event_id"
+    t.index ["table_code", "event_id"], name: "index_tables_on_table_code_and_event_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
