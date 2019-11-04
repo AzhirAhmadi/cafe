@@ -9,20 +9,20 @@ class TablePolicy < ApplicationPolicy
   end
 
   def create?
-    return true if  current_user.coffee_owner? && table.coffee_shop.owner.id == current_user.id
-    return true if  current_user.sys_expert? && table.coffee_shop.maintainer.id == current_user.id
+    return true if  current_user.coffee_owner? && table.event.coffee_shop.owner.id == current_user.id
+    return true if  current_user.sys_expert? && table.event.coffee_shop.maintainer.id == current_user.id
     return true if  current_user.sys_admin? || current_user.sys_master?
   end
 
   def update?
-    return true if  current_user.coffee_owner? && table.coffee_shop.owner.id == current_user.id
-    return true if  current_user.sys_expert? && table.coffee_shop.maintainer.id == current_user.id
+    return true if  current_user.coffee_owner? && table.event.coffee_shop.owner.id == current_user.id
+    return true if  current_user.sys_expert? && table.event.coffee_shop.maintainer.id == current_user.id
     return true if  current_user.sys_admin? || current_user.sys_master?
   end
 
   def deactivate?
-    return true if  current_user.coffee_owner? && table.coffee_shop.owner.id == current_user.id
-    return true if  current_user.sys_expert? && table.coffee_shop.maintainer.id == current_user.id
+    return true if  current_user.coffee_owner? && table.event.coffee_shop.owner.id == current_user.id
+    return true if  current_user.sys_expert? && table.event.coffee_shop.maintainer.id == current_user.id
     return true if  current_user.sys_admin? || current_user.sys_master?
   end
 

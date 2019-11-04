@@ -49,7 +49,7 @@ RSpec.describe CoffeeShopsController, type: :request do
         end
     end
 
-    describe "#create" do
+    describe ".create" do
         context "when loged in az sys_master" do
             it "shloud create coffee_shop and be creator of the coffee_shop" do
                 sys_master = create :sys_master
@@ -79,7 +79,7 @@ RSpec.describe CoffeeShopsController, type: :request do
         end
     end
 
-    describe "#update" do
+    describe ".update" do
         context "when loged in az sys_master" do
             it "shloud update coffee_shop data and it's owner and maintainer" do
                 sys_master = create :sys_master
@@ -109,7 +109,7 @@ RSpec.describe CoffeeShopsController, type: :request do
         end
     end
 
-    describe "#deactivate" do
+    describe ".deactivate" do
         context "when loged in az sys_master" do
             it "shloud deactivate coffee_shop" do
                 sys_master = create :sys_master

@@ -15,51 +15,55 @@ class TablesController < ApplicationController
 
     def create
         check_create_params
+        event = find_event 
+        
+        raise ErrorHandling::Errors::Table::StartedEvent.new() if event.started_event?
+        
+        table = event.created_tables.build(table_params)
 
-        # coffee_shop = CoffeeShop.find(params[:coffee_shop_id])
-        # event = coffee_shop.created_events.build(event_params)
+        authorize table
 
-        # authorize event
-
-        # if event.save
-        #     render jsonapi: event, include: ['coffee_shop']
-        # else
-        #     raise ErrorHandling::Errors::Event::DataBaseCreation.new({params: params, event: event})           
-        # end
+        if table.save
+            render jsonapi: table, include: ['event', 'board_game']
+        else
+            raise ErrorHandling::Errors::Table::DataBaseCreation.new({params: params, table: table})           
+        end
     end
 
     def update
         check_update_params
+
+        event = find_event 
+        raise ErrorHandling::Errors::Table::StartedEvent.new() if event.started_event?
         
-        # coffee_shop = CoffeeShop.find(params[:coffee_shop_id])
-        # event = coffee_shop.created_events.find(params[:id])
+        table = find_table
 
-        # authorize event
+        authorize table
 
-        # if event.update(event_params)
-        #     render jsonapi: event, include: ['coffee_shop']
-        # else
-        #     raise ErrorHandling::Errors::Event::DataBaseUpdate.new({params: params,event: event})           
-        # end
+        if table.update(table_params)
+            render jsonapi: table, include: ['event', 'board_game']
+        else
+            raise ErrorHandling::Errors::Table::DataBaseUpdate.new({params: params, table: table})           
+        end
     end
 
     def deactivate
-        # coffee_shop = CoffeeShop.find(params[:coffee_shop_id])
-        # event = coffee_shop.created_events.find(params[:id])
+        event = find_event 
+        raise ErrorHandling::Errors::Table::StartedEvent.new() if event.started_event?
 
-        # authorize event
+        table = find_table
 
-        # if event.deleted_at?
-        #     raise ErrorHandling::Errors::Event::DeletedEvent.new({deleted_at: event.deleted_at})          
-        # end
+        authorize table
 
-        # event.soft_delete
-        # render jsonapi: event
+        raise ErrorHandling::Errors::Table::Deletedtable.new({deleted_at: table.deleted_at}) if table.deleted_at?
+
+        table.soft_delete
+        render jsonapi: table
     end
 
     private
-        def event_params
-            params.require(:event).permit(sanitize_params)
+        def table_params
+            params.require(:table).permit(sanitize_params)
         end
 
         def check_create_params
@@ -80,9 +84,32 @@ class TablesController < ApplicationController
             policy_scope(CoffeeShop).find(params[:coffee_shop_id]) 
         end
 
-        def find_event
-           policy_scope(Event).find(params[:event_id]) 
+        def find_table
+            policy_scope(Table).in_coffee_shop(find_coffee_shop).in_event(find_event).find(params[:id])
         end
+#find event by role and ownership
+        def find_event
+            coffee_shop = find_coffee_shop
+            return find_event_for_coffee_owner(coffee_shop) if current_user&.coffee_owner?
+            return find_event_for_sys_expert(coffee_shop) if current_user&.sys_expert?
+            find_event_for_other(coffee_shop)
+        end
+
+        def find_event_for_coffee_owner(coffee_shop)
+            return policy_scope(Event).in_coffee_shop(coffee_shop).find(params[:event_id]) if coffee_shop.owner_id == current_user.id
+            policy_scope(Event).unlocked_events.in_coffee_shop(coffee_shop).find(params[:event_id])
+        end
+
+        def find_event_for_sys_expert(coffee_shop)
+            return policy_scope(Event).in_coffee_shop(coffee_shop).find(params[:event_id]) if coffee_shop.maintainer_id == current_user.id
+            policy_scope(Event).unlocked_events.in_coffee_shop(coffee_shop).find(params[:event_id])
+        end
+
+        def find_event_for_other(coffee_shop)
+            policy_scope(Event).in_coffee_shop(coffee_shop).find(params[:event_id])
+        end
+#end
+
 #for show **********************************************************
         def for_show_prossece_by_current_user_role
             for_show_current_user_is_blank if current_user.blank?
@@ -93,42 +120,43 @@ class TablesController < ApplicationController
         end
 
         def for_show_current_user_is_blank
-            table = policy_scope(Table).in_coffee_shop(find_coffee_shop).in_event(find_event).find(params[:id])
-            render jsonapi: table, include: ['event', 'board_game' ]
+            render jsonapi: find_table, include: ['event', 'board_game' ]
         end
 
         def for_show_current_user_is_player
-            # event = policy_scope(Event).find(params[:id])
-            # render jsonapi: event, include: ["coffee_shop"]
+            table = policy_scope(Table).in_coffee_shop(find_coffee_shop).in_event(find_event).find(params[:id])
+            render jsonapi: table, include: ['event', 'board_game' ]
         end
         
         def for_show_current_user_is_sys_expert
-            # coffee_shop = find_coffee_shop
-            # if coffee_shop.maintainer_id == current_user.id
-            #     event = policy_scope(Event).in_coffee_shop(coffee_shop).find(params[:id])
-            #     render jsonapi: event, include: ["coffee_shop"]
-            # else
-            #     event = policy_scope(Event).unlocked_events.in_coffee_shop(coffee_shop).find(params[:id])
-            #     render jsonapi: event, include: ["coffee_shop"]
-            # end
+            coffee_shop = find_coffee_shop
+            event = find_event
+            if coffee_shop.maintainer_id == current_user.id
+                table = policy_scope(Table).in_coffee_shop(coffee_shop).in_event(event).find(params[:id])
+                render jsonapi: table, include: ['event', 'board_game']
+            else
+                table = policy_scope(Table).unlocked_tables.in_coffee_shop(coffee_shop).in_event(event).find(params[:id])
+                render jsonapi: table, include: ['event', 'board_game']
+            end
         end
 
         def for_show_current_user_is_coffee_owner
-            # coffee_shop = find_coffee_shop
-            # if coffee_shop.owner_id == current_user.id
-            #     event = policy_scope(Event).in_coffee_shop(coffee_shop).find(params[:id])
-            #     render jsonapi: event, include: ["coffee_shop"]
-            # else
-            #     event = policy_scope(Event).unlocked_events.in_coffee_shop(coffee_shop).find(params[:id])
-            #     render jsonapi: event, include: ["coffee_shop"]
-            # end
+            coffee_shop = find_coffee_shop
+            event = find_event
+            if coffee_shop.owner_id == current_user.id
+                table = policy_scope(Table).in_coffee_shop(coffee_shop).in_event(event).find(params[:id])
+                render jsonapi: table, include: ['event', 'board_game']
+            else
+                table = policy_scope(Table).unlocked_tables.in_coffee_shop(coffee_shop).in_event(event).find(params[:id])
+                render jsonapi: table, include: ['event', 'board_game']
+            end
         end
 
         def for_show_current_user_is_sys_admin_or_sys_master
-            # events = policy_scope(Event).in_coffee_shop(find_coffee_shop).find(params[:id])
-            # render jsonapi: events, include: ["coffee_shop"]
+            table = policy_scope(Table).in_coffee_shop(find_coffee_shop).in_event(find_event).find(params[:id])
+            render jsonapi: table, include: ['event', 'board_game']
         end
-
+#end
 #for index *********************************************************
         def for_index_prossece_by_current_user_role
             for_index_current_user_is_blank if current_user.blank?
@@ -139,39 +167,42 @@ class TablesController < ApplicationController
         end
 
         def for_index_current_user_is_blank
-            table = policy_scope(Table).in_coffee_shop(find_coffee_shop).in_event(find_event)
-            render jsonapi: table, include: ['event', 'board_game' ]
+            tables = policy_scope(Table).in_coffee_shop(find_coffee_shop).in_event(find_event)
+            render jsonapi: tables, include: ['event', 'board_game' ]
         end
 
         def for_index_current_user_is_player
-            # events = policy_scope(Event).in_coffee_shop(find_coffee_shop)
-            # render jsonapi: events, include: ["coffee_shop"]
+            tables = policy_scope(Table).in_coffee_shop(find_coffee_shop).in_event(find_event)
+            render jsonapi: tables, include: ['event', 'board_game' ]
         end
         
         def for_index_current_user_is_sys_expert
-            # coffee_shop = find_coffee_shop
-            # if coffee_shop.maintainer_id == current_user.id
-            #     events = policy_scope(Event).in_coffee_shop(coffee_shop)
-            #     render jsonapi: events, include: ["coffee_shop"]
-            # else
-            #     events = policy_scope(Event).unlocked_events.in_coffee_shop(coffee_shop)
-            #     render jsonapi: events, include: ["coffee_shop"]
-            # end
+            coffee_shop = find_coffee_shop
+            event = find_event
+            if coffee_shop.maintainer_id == current_user.id
+                tables = policy_scope(Table).in_coffee_shop(coffee_shop).in_event(event)
+                render jsonapi: tables, include: ['event', 'board_game']
+            else
+                tables = policy_scope(Table).unlocked_tables.in_coffee_shop(coffee_shop).in_event(event)
+                render jsonapi: tables, include: ['event', 'board_game']
+            end
         end
 
         def for_index_current_user_is_coffee_owner
-            # coffee_shop = find_coffee_shop
-            # if coffee_shop.owner_id == current_user.id
-            #     events = policy_scope(Event).in_coffee_shop(coffee_shop)
-            #     render jsonapi: events, include: ["coffee_shop"]
-            # else
-            #     events = policy_scope(Event).unlocked_events.in_coffee_shop(coffee_shop)
-            #     render jsonapi: events, include: ["coffee_shop"]
-            # end
+            coffee_shop = find_coffee_shop
+            event = find_event
+            if coffee_shop.owner_id == current_user.id
+                tables = policy_scope(Table).in_coffee_shop(coffee_shop).in_event(event)
+                render jsonapi: tables, include: ['event', 'board_game']
+            else
+                tables = policy_scope(Table).unlocked_tables.in_coffee_shop(coffee_shop).in_event(event)
+                render jsonapi: tables, include: ['event', 'board_game']
+            end
         end
 
         def for_index_current_user_is_sys_admin_or_sys_master
-            # events = policy_scope(Event).in_coffee_shop(find_coffee_shop)
-            # render jsonapi: events, include: ["coffee_shop"]
+            tables = policy_scope(Table).in_coffee_shop(find_coffee_shop).in_event(find_event)
+            render jsonapi: tables, include: ['event', 'board_game']
         end
+#end
 end

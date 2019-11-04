@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe TablesController, type: :request do
     describe ".show" do
-        context "when no one loged" do
+        context "when no one loged in" do
             it "shloud see table in open event which is in coffee_shop" do
                 opened_table = create :opened_table
                 
@@ -95,7 +95,7 @@ RSpec.describe TablesController, type: :request do
     end
 
     describe ".index" do
-        context "when no one loged" do
+        context "when no one loged in" do
             it "shloud see table in open event which is in coffee_shop" do
                 opened_table = create :opened_table
                 
@@ -110,7 +110,7 @@ RSpec.describe TablesController, type: :request do
                 opened_table = create :opened_table
                 
                 get coffee_shop_event_tables_url(coffee_shop, opened_table.event)
-                puts json
+
                 expect(json["data"].length).to eql(0)
             end
 
@@ -127,7 +127,7 @@ RSpec.describe TablesController, type: :request do
                 locked_table = create :locked_table
                 
                 get coffee_shop_event_tables_url(locked_table.event.coffee_shop, locked_table.event)
-                puts json
+
                 expect(json["data"].length).to eql(0)
             end
 

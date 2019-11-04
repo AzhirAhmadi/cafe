@@ -29,6 +29,12 @@ module ErrorHandling::Errors::Table
         end
     end
 
+    class StartedEvent < ErrorHandling::Error
+        def message
+            "event is started!"
+        end
+    end
+    
     class Deletedtable < ErrorHandling::Error
         def message
            "This table has been deleted at: [" + args[:deleted_at].to_s + "]"
