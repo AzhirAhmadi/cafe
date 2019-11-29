@@ -3,7 +3,7 @@ class BoardGamesController < ApplicationController
     
     def show
         board_game = policy_scope(BoardGame).in_coffee_shop(find_coffee_shop).find(params[:id])
-        render jsonapi: board_game
+        render jsonapi: board_game, include: ['coffee_shop']
     rescue
         render raise ErrorHandling::Errors::BoardGame::DataBaseFind.new          
     end
