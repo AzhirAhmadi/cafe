@@ -425,7 +425,7 @@ export default {
     }
   },
   created(){
-    console.log("coffee_shops#create.created")
+    console.log("events#create.created")
     this.$store.dispatch('updatePageHeader', 'Create Event');
   }
 }
