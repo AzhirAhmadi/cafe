@@ -2,7 +2,7 @@ class BoardGamesController < ApplicationController
     skip_before_action :authenticate_user!, only: [:show, :index]
     
     def show
-        board_game = policy_scope(BoardGame).find_by(coffee_shop_id: params[:coffee_shop_id])
+        board_game = policy_scope(BoardGame).in_coffee_shop(find_coffee_shop).find(params[:id])
         unless board_game.blank?
             render jsonapi: board_game
         else
@@ -11,13 +11,11 @@ class BoardGamesController < ApplicationController
     end
 
     def index
-        board_games = policy_scope(BoardGame).where(coffee_shop_id: params[:coffee_shop_id])
+        board_games = policy_scope(BoardGame).in_coffee_shop(find_coffee_shop).order("id")
         render jsonapi: board_games
     end
 
     def create
-        puts "################"
-        puts params
         if params[:board_game].blank? ||
             params[:board_game][:name].blank? ||
             params[:board_game][:publisher].blank? ||
@@ -75,5 +73,9 @@ class BoardGamesController < ApplicationController
     private
         def board_game_params
             params.require(:board_game).permit(sanitize_params)
+        end
+
+        def find_coffee_shop
+            policy_scope(CoffeeShop).find(params[:coffee_shop_id]) 
         end
 end
