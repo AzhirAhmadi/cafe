@@ -3,15 +3,13 @@ class BoardGamesController < ApplicationController
     
     def show
         board_game = policy_scope(BoardGame).in_coffee_shop(find_coffee_shop).find(params[:id])
-        unless board_game.blank?
-            render jsonapi: board_game
-        else
-            render raise ErrorHandling::Errors::BoardGame::DataBaseFind.new          
-        end
+        render jsonapi: board_game
+    rescue
+        render raise ErrorHandling::Errors::BoardGame::DataBaseFind.new          
     end
 
     def index
-        board_games = policy_scope(BoardGame).in_coffee_shop(find_coffee_shop).order("id")
+        board_games = policy_scope(BoardGame).in_coffee_shop(find_coffee_shop)
         render jsonapi: board_games
     end
 
