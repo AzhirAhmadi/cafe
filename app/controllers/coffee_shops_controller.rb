@@ -10,12 +10,6 @@ class CoffeeShopsController < ApplicationController
 
     def index
         coffee_shops = policy_scope(CoffeeShop)
-        # unless(params[:role].blank?)
-        #     users = users.where(role: params[:role])
-        # end
-        # unless(params[:free].blank?)
-        #     users = users.has_no_coffee_shop
-        # end
         render jsonapi: coffee_shops, include: ["owner", "maintainer"]
     end
 
