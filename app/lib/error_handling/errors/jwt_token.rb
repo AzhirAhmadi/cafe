@@ -20,7 +20,7 @@ module ErrorHandling::Errors::JwtToken
 
     class Unauthorized < ErrorHandling::Error
         def message
-            "Unauthorized!"
+            "Not Acceptable!"
         end
 
         def status

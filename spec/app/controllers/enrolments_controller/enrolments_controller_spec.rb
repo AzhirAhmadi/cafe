@@ -10,7 +10,7 @@ RSpec.describe EnrolmentsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Authorization header needed!", 
+                        "message"=>"Bad Request!", 
                         "path"=>"enrolments#create"
                     }
                 )
@@ -25,7 +25,7 @@ RSpec.describe EnrolmentsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Unauthorized!" ,
+                        "message"=>"Not Acceptable!" ,
                         "path"=>"enrolments#create"
                     }
                 )
@@ -79,7 +79,7 @@ RSpec.describe EnrolmentsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Authorization header needed!", 
+                        "message"=>"Bad Request!", 
                         "path"=>"enrolments#deactivate"
                     }
                 )
@@ -92,7 +92,7 @@ RSpec.describe EnrolmentsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Unauthorized!" ,
+                        "message"=>"Not Acceptable!" ,
                         "path"=>"enrolments#deactivate"
                     }
                 )

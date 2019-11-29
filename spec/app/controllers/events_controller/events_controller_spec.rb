@@ -116,7 +116,7 @@ RSpec.describe EventsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Authorization header needed!", 
+                        "message"=>"Bad Request!", 
                         "path"=>"events#create"
                     }
                 )
@@ -135,7 +135,7 @@ RSpec.describe EventsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Unauthorized!" ,
+                        "message"=>"Not Acceptable!" ,
                         "path"=>"events#create"
                     }
                 )
@@ -356,7 +356,7 @@ RSpec.describe EventsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Authorization header needed!", 
+                        "message"=>"Bad Request!", 
                         "path"=>"events#update"
                     }
                 )
@@ -377,7 +377,7 @@ RSpec.describe EventsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Unauthorized!" ,
+                        "message"=>"Not Acceptable!" ,
                         "path"=>"events#update"
                     }
                 )
@@ -591,7 +591,7 @@ RSpec.describe EventsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Authorization header needed!", 
+                        "message"=>"Bad Request!", 
                         "path"=>"events#deactivate"
                     }
                 )
@@ -605,7 +605,7 @@ RSpec.describe EventsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Unauthorized!" ,
+                        "message"=>"Not Acceptable!" ,
                         "path"=>"events#deactivate"
                     }
                 )

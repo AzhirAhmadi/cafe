@@ -28,8 +28,8 @@ class ApplicationController < ActionController::Base
     def authenticate_user!(*args)
       check_authorization_token
       set_current_user
-    rescue
-      raise ErrorHandling::Errors::JwtToken::Unauthorized.new  params: params if @current_user.blank? 
+    # rescue
+    #   raise ErrorHandling::Errors::JwtToken::Unauthorized.new  params: params if @current_user.blank? 
     end
     
     def set_current_user
@@ -63,8 +63,8 @@ class ApplicationController < ActionController::Base
 
 
     def render_error(exception)
-      puts json: (ErrorHandling::ErrorRenderer.error_to_JSON exception),
-      status: (ErrorHandling::ErrorRenderer.error_status exception)
+      # puts json: (ErrorHandling::ErrorRenderer.error_to_JSON exception),
+      # status: (ErrorHandling::ErrorRenderer.error_status exception)
       render json: (ErrorHandling::ErrorRenderer.error_to_JSON exception),
        status: (ErrorHandling::ErrorRenderer.error_status exception)
     end

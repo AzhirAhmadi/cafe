@@ -127,7 +127,7 @@ RSpec.describe DeviseApi::SessionsController, type: :request do
                     delete logout_url, params: {}
                     expect(json["error"]).to include(
                         {
-                            "message"=>"Authorization header needed!", 
+                            "message"=>"Bad Request!", 
                             "path"=>"devise_api/sessions#destroy"
                         }
                     )
@@ -138,7 +138,7 @@ RSpec.describe DeviseApi::SessionsController, type: :request do
                     delete logout_url, params: {}, headers: headers
                     expect(json["error"]).to include(
                         {
-                            "message"=>"Unauthorized!", 
+                            "message"=>"Not Acceptable!", 
                             "path"=>"devise_api/sessions#destroy"
                         }
                     )
