@@ -138,7 +138,7 @@ RSpec.describe EventsController, type: :request do
 
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     event = create :opened_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: event, board_game: board_game
                     
@@ -157,7 +157,7 @@ RSpec.describe EventsController, type: :request do
 
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     event = create :opened_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: event, board_game: board_game
                     
@@ -180,7 +180,7 @@ RSpec.describe EventsController, type: :request do
 
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     event = create :opened_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: event, board_game: board_game
                     
@@ -203,7 +203,7 @@ RSpec.describe EventsController, type: :request do
 
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     event = create :locked_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: event, board_game: board_game
                     
@@ -222,7 +222,7 @@ RSpec.describe EventsController, type: :request do
 
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     event = create :locked_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: event, board_game: board_game
                     table.deleted_at = Time.now
@@ -245,7 +245,7 @@ RSpec.describe EventsController, type: :request do
 
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     event = create :locked_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: event, board_game: board_game
 
@@ -269,7 +269,7 @@ RSpec.describe EventsController, type: :request do
 
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     event = create :locked_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: event, board_game: board_game
 
@@ -401,7 +401,7 @@ RSpec.describe EventsController, type: :request do
 
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     event = create :opened_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: event, board_game: board_game
                     
@@ -420,7 +420,7 @@ RSpec.describe EventsController, type: :request do
 
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     event = create :opened_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: event, board_game: board_game
                     
@@ -439,7 +439,7 @@ RSpec.describe EventsController, type: :request do
 
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     event = create :opened_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: event, board_game: board_game
                     
@@ -458,7 +458,7 @@ RSpec.describe EventsController, type: :request do
 
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     event = create :locked_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: event, board_game: board_game
                     
@@ -477,7 +477,7 @@ RSpec.describe EventsController, type: :request do
 
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     event = create :locked_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: event, board_game: board_game
                     table.deleted_at = Time.now
@@ -496,7 +496,7 @@ RSpec.describe EventsController, type: :request do
 
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     event = create :locked_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: event, board_game: board_game
 
@@ -516,7 +516,7 @@ RSpec.describe EventsController, type: :request do
 
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     event = create :locked_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: event, board_game: board_game
 
@@ -542,7 +542,7 @@ RSpec.describe EventsController, type: :request do
                     
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     opened_event = create :opened_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     count = Table.count
                     post coffee_shop_event_tables_url(coffee_shop, opened_event), params: {
@@ -567,7 +567,7 @@ RSpec.describe EventsController, type: :request do
                     
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     locked_event = create :locked_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     count = Table.count
                     post coffee_shop_event_tables_url(coffee_shop, locked_event), params: {
@@ -592,7 +592,7 @@ RSpec.describe EventsController, type: :request do
                     
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     started_event = create :started_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     count = Table.count
                     post coffee_shop_event_tables_url(coffee_shop, started_event), params: {
@@ -621,7 +621,7 @@ RSpec.describe EventsController, type: :request do
                     
                     coffee_shop = create :coffee_shop
                     started_event = create :started_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     count = Table.count
                     post coffee_shop_event_tables_url(coffee_shop, started_event), params: {
@@ -654,11 +654,11 @@ RSpec.describe EventsController, type: :request do
                     
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     opened_event = create :opened_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: opened_event, board_game: board_game
 
-                    other_board_game = create :board_game, creator: coffee_shop
+                    other_board_game = create :board_game, coffee_shop: coffee_shop
                     put coffee_shop_event_table_url(coffee_shop, opened_event, table), params: {
                         "table": {
                             "capacity": 10,
@@ -680,11 +680,11 @@ RSpec.describe EventsController, type: :request do
                     
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     locked_event = create :locked_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: locked_event, board_game: board_game
 
-                    other_board_game = create :board_game, creator: coffee_shop
+                    other_board_game = create :board_game, coffee_shop: coffee_shop
                     put coffee_shop_event_table_url(coffee_shop, locked_event, table), params: {
                         "table": {
                             "capacity": 10,
@@ -706,11 +706,11 @@ RSpec.describe EventsController, type: :request do
                     
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     started_event = create :started_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: started_event, board_game: board_game
 
-                    other_board_game = create :board_game, creator: coffee_shop
+                    other_board_game = create :board_game, coffee_shop: coffee_shop
                     put coffee_shop_event_table_url(coffee_shop, started_event, table), params: {
                         "table": {
                             "capacity": 10,
@@ -764,11 +764,11 @@ RSpec.describe EventsController, type: :request do
                     
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     opened_event = create :opened_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: opened_event, board_game: board_game
 
-                    other_board_game = create :board_game, creator: coffee_shop
+                    other_board_game = create :board_game, coffee_shop: coffee_shop
                     delete coffee_shop_event_table_deactivate_url(coffee_shop, opened_event, table), headers: headers
 
                     expect(json["data"]["attributes"]["table_code"]).to eql(table.table_code)
@@ -782,7 +782,7 @@ RSpec.describe EventsController, type: :request do
                     
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     locked_event = create :locked_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: locked_event, board_game: board_game
 
@@ -799,7 +799,7 @@ RSpec.describe EventsController, type: :request do
                     
                     coffee_shop = create :coffee_shop, maintainer: sys_expert
                     started_event = create :started_event, coffee_shop: coffee_shop
-                    board_game = create :board_game, creator: coffee_shop
+                    board_game = create :board_game, coffee_shop: coffee_shop
 
                     table = create :table, event: started_event, board_game: board_game
 

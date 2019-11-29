@@ -28,7 +28,7 @@ RSpec.describe CoffeeShopsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!", 
+                        "message"=>"Unauthorized!", 
                         "path"=>"coffee_shops#show"
                     }
                 )
@@ -62,7 +62,7 @@ RSpec.describe CoffeeShopsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!", 
+                        "message"=>"Unauthorized!", 
                         "path"=>"coffee_shops#index"
                     }
                 )
@@ -104,7 +104,7 @@ RSpec.describe CoffeeShopsController, type: :request do
                 }, headers: headers
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!", 
+                        "message"=>"Unauthorized!", 
                         "path"=>"coffee_shops#create"
                     }
                 )
@@ -225,7 +225,7 @@ RSpec.describe CoffeeShopsController, type: :request do
                 }, headers: headers
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!", 
+                        "message"=>"Unauthorized!", 
                         "path"=>"coffee_shops#update"
                     }
                 )
@@ -346,7 +346,7 @@ RSpec.describe CoffeeShopsController, type: :request do
                 }, headers: headers
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!", 
+                        "message"=>"Unauthorized!", 
                         "path"=>"coffee_shops#update"
                     }
                 )

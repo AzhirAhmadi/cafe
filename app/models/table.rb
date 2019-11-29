@@ -28,4 +28,7 @@ class Table < ApplicationRecord
 
     belongs_to :event, class_name: "Event"
     belongs_to :board_game, class_name: "BoardGame"
+
+    has_many :enrolments
+    has_many :enroled_users, through: :enrolments, source: :user
 end

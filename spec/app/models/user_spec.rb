@@ -53,5 +53,9 @@ RSpec.describe User, type: :model do
       expect(user.active?).to eq(false)
     end
 
+    it "shuld respond_to method enroled_tables" do
+      user = create :player
+      expect(user).to respond_to(:enroled_tables)
+    end
   end
 end

@@ -9,26 +9,26 @@ class BoardGamePolicy < ApplicationPolicy
   end
 
   def create?
-    return true if current_user.coffee_owner? && board_game.creator.owner.id == current_user.id
-    return true if current_user.sys_expert? && board_game.creator.maintainer.id == current_user.id
+    return true if current_user.coffee_owner? && board_game.coffee_shop.owner.id == current_user.id
+    return true if current_user.sys_expert? && board_game.coffee_shop.maintainer.id == current_user.id
     return true if current_user.sys_admin? || current_user.sys_master?
   end
 
   def update?
-    return true if current_user.coffee_owner? && board_game.creator.owner.id == current_user.id
-    return true if current_user.sys_expert? && board_game.creator.maintainer.id == current_user.id
+    return true if current_user.coffee_owner? && board_game.coffee_shop.owner.id == current_user.id
+    return true if current_user.sys_expert? && board_game.coffee_shop.maintainer.id == current_user.id
     return true if current_user.sys_admin? || current_user.sys_master?
   end
 
   def deactivate?
-    return true if current_user.coffee_owner? && board_game.creator.owner.id == current_user.id
-    return true if current_user.sys_expert? && board_game.creator.maintainer.id == current_user.id
+    return true if current_user.coffee_owner? && board_game.coffee_shop.owner.id == current_user.id
+    return true if current_user.sys_expert? && board_game.coffee_shop.maintainer.id == current_user.id
     return true if current_user.sys_admin? || current_user.sys_master?
   end
 
   class Scope < Scope
     def resolve
-      if current_user.sys_admin? || current_user.sys_master?
+      if current_user&.sys_admin? || current_user&.sys_master?
         return scope.all
       end
       scope.where(deleted_at: nil)

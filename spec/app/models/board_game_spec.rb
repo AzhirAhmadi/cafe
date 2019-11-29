@@ -17,50 +17,50 @@ RSpec.describe BoardGame, type: :model do
         expect(board_game.errors.messages[:play_time]).to include("can't be blank")
     end
 
-    it "should validate  uniqueness of [:name, creator_id]" do
+    it "should validate  uniqueness of [:name, coffee_shop_id]" do
       coffee_shop = create :coffee_shop
-      board_game1 = create :board_game, name: "Name", creator: coffee_shop
-      board_game2 = build :board_game, name: "Name", creator: coffee_shop
+      board_game1 = create :board_game, name: "Name", coffee_shop: coffee_shop
+      board_game2 = build :board_game, name: "Name", coffee_shop: coffee_shop
 
       expect(board_game2).not_to be_valid
       expect(board_game2.errors.messages[:name]).to include("has already been taken")
 
       coffee_shop2 = create :coffee_shop
-      board_game3 = create :board_game, name: "Name", creator: coffee_shop2
+      board_game3 = create :board_game, name: "Name", coffee_shop: coffee_shop2
 
       expect(board_game3).to be_valid
     end
 
-    it "should validate creator activeness when create" do
-      creator =create :coffee_shop
+    it "should validate coffee_shop activeness when create" do
+      coffee_shop =create :coffee_shop
 
-      creator.deleted_at = Time.current
-      expect(creator.active?).to eq(false)
+      coffee_shop.deleted_at = Time.current
+      expect(coffee_shop.active?).to eq(false)
 
-      board_game = build :board_game, creator: creator
+      board_game = build :board_game, coffee_shop: coffee_shop
       expect(board_game).not_to be_valid
-      expect(board_game.errors.messages[:creator]).to include("is not active")
+      expect(board_game.errors.messages[:coffee_shop]).to include("is not active")
     end
 
 
-    it "should validate creator activeness when update" do
-      creator = create :coffee_shop
-      board_game = create :board_game, creator: creator
+    it "should validate coffee_shop activeness when update" do
+      coffee_shop = create :coffee_shop
+      board_game = create :board_game, coffee_shop: coffee_shop
       expect(board_game).to be_valid
 
-      creator.deleted_at = Time.current
-      expect(creator.active?).to eq(false)
+      coffee_shop.deleted_at = Time.current
+      expect(coffee_shop.active?).to eq(false)
 
       board_game.update(name: "newName")
       
       expect(board_game).not_to be_valid
-      expect(board_game.errors.messages[:creator]).to include("is not active")
+      expect(board_game.errors.messages[:coffee_shop]).to include("is not active")
     end
 
-    it "should except methods (:owner, :creator)" do
+    it "should except methods (:owner, :coffee_shop)" do
       board_game = create :board_game
       
-      expect(board_game).to respond_to(:creator)
+      expect(board_game).to respond_to(:coffee_shop)
     end
   end
 end

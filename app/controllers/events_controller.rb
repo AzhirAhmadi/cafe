@@ -102,6 +102,8 @@ class EventsController < ApplicationController
         end
 
         def for_show_current_user_is_blank
+            event = policy_scope(Event).find(params[:id])
+            render jsonapi: event, include: ["coffee_shop"]
         end
 
         def for_show_current_user_is_player
@@ -146,6 +148,8 @@ class EventsController < ApplicationController
         end
 
         def for_index_current_user_is_blank
+            events = policy_scope(Event).in_coffee_shop(find_coffee_shop)
+            render jsonapi: events, include: ["coffee_shop"]
         end
 
         def for_index_current_user_is_player

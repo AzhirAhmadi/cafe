@@ -1,6 +1,8 @@
 class BoardGamesController < ApplicationController
+    skip_before_action :authenticate_user!, only: [:show, :index]
+    
     def show
-        board_game = policy_scope(BoardGame).find_by(creator_id: params[:coffee_shop_id])
+        board_game = policy_scope(BoardGame).find_by(coffee_shop_id: params[:coffee_shop_id])
         unless board_game.blank?
             render jsonapi: board_game
         else
@@ -9,11 +11,13 @@ class BoardGamesController < ApplicationController
     end
 
     def index
-        board_games = policy_scope(BoardGame).where(creator_id: params[:coffee_shop_id])
+        board_games = policy_scope(BoardGame).where(coffee_shop_id: params[:coffee_shop_id])
         render jsonapi: board_games
     end
 
     def create
+        puts "################"
+        puts params
         if params[:board_game].blank? ||
             params[:board_game][:name].blank? ||
             params[:board_game][:publisher].blank? ||
@@ -22,11 +26,12 @@ class BoardGamesController < ApplicationController
             params[:board_game][:play_time].blank?
             raise ErrorHandling::Errors::BoardGame::CreationParams.new({params: params})          
         end
+        
         coffee_Shop = CoffeeShop.find(params[:coffee_shop_id])
         board_game = coffee_Shop.created_board_games.build(board_game_params)
         authorize board_game
         if board_game.save
-            render jsonapi: board_game, include: ['creator']
+            render jsonapi: board_game, include: ['coffee_shop']
         else
             raise ErrorHandling::Errors::BoardGame::DataBaseCreation.new({params: params,board_game: board_game})           
         end
@@ -47,7 +52,7 @@ class BoardGamesController < ApplicationController
         authorize board_game
 
         if board_game.update(board_game_params)
-            render jsonapi: board_game, include: ['creator']
+            render jsonapi: board_game, include: ['coffee_shop']
         else
             raise ErrorHandling::Errors::BoardGame::DataBaseUpdate.new({params: params,board_game: board_game})           
         end

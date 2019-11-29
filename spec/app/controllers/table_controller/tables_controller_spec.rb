@@ -187,7 +187,7 @@ RSpec.describe TablesController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!" ,
+                        "message"=>"Unauthorized!" ,
                         "path"=>"tables#create"
                     }
                 )
@@ -300,7 +300,7 @@ RSpec.describe TablesController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!" ,
+                        "message"=>"Unauthorized!" ,
                         "path"=>"tables#update"
                     }
                 )
@@ -409,7 +409,7 @@ RSpec.describe TablesController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!" ,
+                        "message"=>"Unauthorized!" ,
                         "path"=>"tables#deactivate"
                     }
                 )

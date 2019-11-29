@@ -8,6 +8,6 @@ module ModelValidate::Table
     end
 
     def board_game_owner_ship
-        errors.add(:board_game, "is not owened by this coffe_shop") unless  board_game&.creator&.id == event&.coffee_shop&.id
+        errors.add(:board_game, "is not owened by this coffe_shop") unless  board_game&.coffee_shop&.id == event&.coffee_shop&.id
     end
 end

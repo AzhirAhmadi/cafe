@@ -4,21 +4,17 @@ RSpec.describe EventsController, type: :request do
     describe ".show" do
         context "when no one loged" do
             it "shloud see event in coffee_shop if event is open" do
-                player = create :player
-                login player
-                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-
                 coffee_shop = create :coffee_shop
 
                 locked_event = create :locked_event, coffee_shop: coffee_shop
                 opened_event = create :opened_event, coffee_shop: coffee_shop
 
                 
-                get coffee_shop_event_url(coffee_shop, opened_event), headers: headers
+                get coffee_shop_event_url(coffee_shop, opened_event)
                 expect(json["data"]["id"].to_i).to eql(opened_event.id)
                 expect(json["data"]["relationships"]["coffee_shop"]["data"]["id"].to_i).to eql(coffee_shop.id)
 
-                get coffee_shop_event_url(coffee_shop, locked_event), headers: headers
+                get coffee_shop_event_url(coffee_shop, locked_event)
                 expect(json).to include({
                     "error"=>{
                         "message"=>"Couldn't find event"
@@ -27,14 +23,10 @@ RSpec.describe EventsController, type: :request do
             end
 
             it "shloud not see event which is not in coffee_shop" do
-                player = create :player
-                login player
-                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-
                 coffee_shop = create :coffee_shop
                 event = create :event
                 
-                get coffee_shop_event_url(coffee_shop, event), headers: headers
+                get coffee_shop_event_url(coffee_shop, event)
 
                 expect(json).to include({
                     "error"=>{
@@ -44,20 +36,16 @@ RSpec.describe EventsController, type: :request do
             end
 
             it "shloud not see deactivated event" do
-                player = create :player
-                login player
-                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-
                 coffee_shop = create :coffee_shop
                 opened_event = create :opened_event, coffee_shop: coffee_shop
                 
-                get coffee_shop_event_url(coffee_shop, opened_event), headers: headers
+                get coffee_shop_event_url(coffee_shop, opened_event)
                 expect(json["data"]["id"].to_i).to eql(opened_event.id)
 
                 opened_event.deleted_at = Time.now
                 opened_event.save
 
-                get coffee_shop_event_url(coffee_shop, opened_event), headers: headers
+                get coffee_shop_event_url(coffee_shop, opened_event)
                 expect(json).to include({
                     "error"=>{
                         "message"=>"Couldn't find event"
@@ -70,10 +58,6 @@ RSpec.describe EventsController, type: :request do
     describe ".index" do
         context "when no one loged" do
             it "shloud see all opend events in coffee_shop" do
-                player = create :player
-                login player
-                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-
                 coffee_shop = create :coffee_shop
 
                 opened_event = create :opened_event, coffee_shop: coffee_shop
@@ -82,15 +66,11 @@ RSpec.describe EventsController, type: :request do
                 ended_event = create :ended_event, coffee_shop: coffee_shop
                 closed_event = create :closed_event, coffee_shop: coffee_shop
                 
-                get coffee_shop_events_url(coffee_shop), headers: headers
+                get coffee_shop_events_url(coffee_shop)
                 expect(json["data"].length).to eql(5)
             end
 
             it "shloud not see event which is not in coffee_shop" do
-                player = create :player
-                login player
-                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-
                 coffee_shop = create :coffee_shop
 
                 opened_event = create :opened_event, coffee_shop: coffee_shop
@@ -100,19 +80,15 @@ RSpec.describe EventsController, type: :request do
                 ended_event = create :ended_event
                 closed_event = create :closed_event
                 
-                get coffee_shop_events_url(coffee_shop), headers: headers
+                get coffee_shop_events_url(coffee_shop)
                 expect(json["data"].length).to eql(2)
             end
 
             it "shloud not see deactivated event" do
-                player = create :player
-                login player
-                headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-
                 coffee_shop = create :coffee_shop
                 opened_events = create_list :opened_event, 10, coffee_shop: coffee_shop
                 
-                get coffee_shop_events_url(coffee_shop), headers: headers
+                get coffee_shop_events_url(coffee_shop)
                 expect(json["data"].length).to eql(10)
                 
                 for i in 0..3 do
@@ -120,7 +96,7 @@ RSpec.describe EventsController, type: :request do
                     opened_events[i].save
                 end
 
-                get coffee_shop_events_url(coffee_shop), headers: headers
+                get coffee_shop_events_url(coffee_shop)
                 expect(json["data"].length).to eql(6)
             end
         end
@@ -159,7 +135,7 @@ RSpec.describe EventsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!" ,
+                        "message"=>"Unauthorized!" ,
                         "path"=>"events#create"
                     }
                 )
@@ -401,7 +377,7 @@ RSpec.describe EventsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!" ,
+                        "message"=>"Unauthorized!" ,
                         "path"=>"events#update"
                     }
                 )
@@ -629,7 +605,7 @@ RSpec.describe EventsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!" ,
+                        "message"=>"Unauthorized!" ,
                         "path"=>"events#deactivate"
                     }
                 )

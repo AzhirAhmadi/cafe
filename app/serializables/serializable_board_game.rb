@@ -3,9 +3,9 @@ class SerializableBoardGame < JSONAPI::Serializable::Resource
   
     attributes :name, :publisher, :min_player, :max_player, :play_time, :deleted_at
 
-    has_one :creator do
+    has_one :coffee_shop do
       data do
-        @object.creator
+        @object.coffee_shop
       end
     end
   end

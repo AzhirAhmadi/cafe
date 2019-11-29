@@ -31,7 +31,7 @@ RSpec.describe BoardGamesController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!", 
+                        "message"=>"Unauthorized!", 
                         "path"=>"board_games#show"
                     }
                 )
@@ -66,7 +66,7 @@ RSpec.describe BoardGamesController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!", 
+                        "message"=>"Unauthorized!", 
                         "path"=>"board_games#index"
                     }
                 )
@@ -106,7 +106,7 @@ RSpec.describe BoardGamesController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!" ,
+                        "message"=>"Unauthorized!" ,
                         "path"=>"board_games#create"
                     }
                 )
@@ -273,7 +273,7 @@ RSpec.describe BoardGamesController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!" ,
+                        "message"=>"Unauthorized!" ,
                         "path"=>"board_games#update"
                     }
                 )
@@ -428,7 +428,7 @@ RSpec.describe BoardGamesController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!" ,
+                        "message"=>"Unauthorized!" ,
                         "path"=>"board_games#deactivate"
                     }
                 )

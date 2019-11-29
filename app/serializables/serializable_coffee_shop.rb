@@ -1,7 +1,7 @@
 class SerializableCoffeeShop < JSONAPI::Serializable::Resource
     type 'coffee_shops'
   
-    attributes :name, :address
+    attributes :name, :address, :deleted_at
 
     has_one :owner do
       data do

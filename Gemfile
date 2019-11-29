@@ -63,3 +63,5 @@ gem 'pundit'
 
 gem 'rename'
 gem 'colorize'
+
+gem 'webpacker'

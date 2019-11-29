@@ -1,14 +1,22 @@
 class CoffeeShopsController < ApplicationController
+    skip_before_action :authenticate_user!, only: [:show, :index]
+
     def show
         coffee_shop = policy_scope(CoffeeShop).find(params[:id])
-        render jsonapi: coffee_shop
+        render jsonapi: coffee_shop, include: ["owner", "maintainer"]
     rescue
         render raise ErrorHandling::Errors::CoffeeShop::DataBaseFind.new          
     end
 
     def index
         coffee_shops = policy_scope(CoffeeShop)
-        render jsonapi: coffee_shops
+        # unless(params[:role].blank?)
+        #     users = users.where(role: params[:role])
+        # end
+        # unless(params[:free].blank?)
+        #     users = users.has_no_coffee_shop
+        # end
+        render jsonapi: coffee_shops, include: ["owner", "maintainer"]
     end
 
     def create

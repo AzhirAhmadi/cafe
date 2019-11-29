@@ -1,18 +1,30 @@
 module ErrorHandling::Errors::JwtToken
     class Wrong < ErrorHandling::Error
         def message
-            "Wrong jwt token!"
+            "Not Acceptable!"
+        end
+
+        def status
+            406 # Not Acceptable
         end
     end
     class Absence < ErrorHandling::Error
         def message
-            "Authorization header needed!"
+            "Bad Request!"
+        end
+
+        def status
+            400 # 400 Bad Request
         end
     end
 
     class Unauthorized < ErrorHandling::Error
         def message
             "Unauthorized!"
+        end
+
+        def status
+            401 # 401 Unauthorized
         end
     end
 end

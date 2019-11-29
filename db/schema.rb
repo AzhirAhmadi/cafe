@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_03_140053) do
+ActiveRecord::Schema.define(version: 2019_11_05_152448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(version: 2019_11_03_140053) do
     t.integer "play_time", null: false
     t.text "description"
     t.datetime "deleted_at"
-    t.bigint "creator_id", null: false
+    t.bigint "coffee_shop_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["creator_id"], name: "index_board_games_on_creator_id"
-    t.index ["name", "creator_id"], name: "index_board_games_on_name_and_creator_id", unique: true
+    t.index ["coffee_shop_id"], name: "index_board_games_on_coffee_shop_id"
+    t.index ["name", "coffee_shop_id"], name: "index_board_games_on_name_and_coffee_shop_id", unique: true
   end
 
   create_table "coffee_shops", force: :cascade do |t|
@@ -42,6 +42,17 @@ ActiveRecord::Schema.define(version: 2019_11_03_140053) do
     t.index ["creator_id"], name: "index_coffee_shops_on_creator_id"
     t.index ["maintainer_id"], name: "index_coffee_shops_on_maintainer_id"
     t.index ["owner_id"], name: "index_coffee_shops_on_owner_id"
+  end
+
+  create_table "enrolments", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "table_id"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["table_id"], name: "index_enrolments_on_table_id"
+    t.index ["user_id", "table_id", "deleted_at"], name: "index_enrolments_on_user_id_and_table_id_and_deleted_at", unique: true
+    t.index ["user_id"], name: "index_enrolments_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -90,10 +101,12 @@ ActiveRecord::Schema.define(version: 2019_11_03_140053) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "board_games", "coffee_shops", column: "creator_id"
+  add_foreign_key "board_games", "coffee_shops"
   add_foreign_key "coffee_shops", "users", column: "creator_id"
   add_foreign_key "coffee_shops", "users", column: "maintainer_id"
   add_foreign_key "coffee_shops", "users", column: "owner_id"
+  add_foreign_key "enrolments", "tables"
+  add_foreign_key "enrolments", "users"
   add_foreign_key "events", "coffee_shops"
   add_foreign_key "tables", "board_games"
   add_foreign_key "tables", "events"

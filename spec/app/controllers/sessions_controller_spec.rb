@@ -138,7 +138,7 @@ RSpec.describe DeviseApi::SessionsController, type: :request do
                     delete logout_url, params: {}, headers: headers
                     expect(json["error"]).to include(
                         {
-                            "message"=>"Wrong jwt token!", 
+                            "message"=>"Unauthorized!", 
                             "path"=>"devise_api/sessions#destroy"
                         }
                     )
