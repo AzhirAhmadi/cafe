@@ -240,9 +240,25 @@ class POST{
 class PUT{
 //PUT ##########################################################################################
 // board_games#update
-    coffee_shop_board_game(coffee_shop_id, id){
+    coffee_shop_board_game(coffee_shop_id, id, board_game){
         console.log("coffee_shop_board_game")
-        return apiClient.put("/coffee_shops/"+coffee_shop_id+"/board_games/"+id);
+        return apiClient.put("/coffee_shops/"+coffee_shop_id+"/board_games/"+id,
+        {
+            board_game: {
+                name: board_game.name,
+                publisher: board_game.publisher,
+                description: board_game.description,
+                min_player: board_game.min_player,
+                max_player: board_game.max_player,
+                play_time: board_game.play_time,
+            }
+        },    
+        {
+            headers: {
+                    Authorization: store.state.auth_token
+                }
+            }
+        );
     } //##
 // tables#update
     coffee_shop_event_table(coffee_shop_id, event_id, id){
@@ -254,7 +270,7 @@ class PUT{
         console.log("coffee_shop_event")
         return apiClient.put("/coffee_shops/"+coffee_shop_id+"/events/"+id,
         {
-            "event": {
+            event: {
                 name: event.name,
                 description: event.description,
                 opens_at: event.opens_at,
@@ -276,11 +292,11 @@ class PUT{
     coffee_shop(id, coffee_shop){
         console.log("coffee_shop")
         return apiClient.put("/coffee_shops/"+id,{
-            "coffee_shop":{
-                    "name": coffee_shop.name,
-                    "address": coffee_shop. address,
-                    "owner_id": coffee_shop.owner_id,
-                    "maintainer_id": coffee_shop.maintainer_id
+            coffee_shop:{
+                    name: coffee_shop.name,
+                    address: coffee_shop.address,
+                    owner_id: coffee_shop.owner_id,
+                    maintainer_id: coffee_shop.maintainer_id
                 }
             },
             {
@@ -293,12 +309,12 @@ class PUT{
     user(id, user){
         console.log("user")
         // return apiClient.put("/users/"+id);
-        return apiClient.put("/users/"+id,
-            {"user":
+        return apiClient.put("/users/"+id,{
+            user:
                 {
-                    "email": user.email,
-                    "password": user.password,
-                    "role": user.role
+                    email: user.email,
+                    password: user.password,
+                    role: user.role
                 }
             },
             {

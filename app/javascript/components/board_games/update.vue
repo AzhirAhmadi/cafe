@@ -1,5 +1,5 @@
 <template>
-  <el-form :model="board_game.attributes" :rules="rules" ref="createBoardGame" label-width="200px">
+  <el-form :model="board_game.attributes" :rules="rules" ref="updateBoardGame" label-width="200px">
     
     <el-form-item label="BoardGame name" prop="name" required>
       <el-input v-model="board_game.attributes.name"></el-input>
@@ -26,8 +26,8 @@
     </el-form-item>
 
     <el-form-item>
-      <el-button type="success" @click="submitForm('createBoardGame')">Save</el-button>
-      <el-button type="warning" @click="resetForm('createBoardGame')">Reset</el-button>
+      <el-button type="success" @click="submitForm('updateBoardGame')">Save</el-button>
+      <el-button type="warning" @click="resetForm('updateBoardGame')">Reset</el-button>
       <el-button type="danger" @click="cancel">Cancel</el-button>
     </el-form-item>
   </el-form>
@@ -56,15 +56,12 @@ export default {
         ],
         min_player: [
           { required: true, message: 'Please input boardgame minimum players number', trigger: 'change' },
-          { min: 1, max: 20, message: 'Min Player should be 1 to 20', trigger: 'change' }
         ],
         max_player: [
           { required: true, message: 'Please input boardgame maximum players number', trigger: 'change' },
-          { min: 1, max: 20, message: 'Max player should be 1 to 20', trigger: 'change' }
         ],
         play_time: [
           { required: true, message: 'Please input boardgame playing time', trigger: 'change' },
-          { min: 0, max: 240, message: 'Paly time should be 0 to 240', trigger: 'change' }
         ],
         description: [
           { required: true, message: 'Please input boardgame description', trigger: 'change' },
@@ -73,8 +70,13 @@ export default {
     }
   },
   methods:{
-    callBoardGameUpdate(){
-      console.log("callBoardGameUpdate")
+    callGET_coffee_shop__board_game(){
+      console.log("callGET_coffee_shop__board_game")
+      route_helpers.GET().coffee_shop_board_game(this.coffee_shop_id, this.id)
+      .then((response) => {this.board_game.attributes = response.data.data.attributes})
+    },
+    callPUT_coffee_shop_board_game(){
+      console.log("callPUT_coffee_shop_board_game")
       route_helpers.PUT().coffee_shop_board_game(this.coffee_shop_id, this.id, this.board_game.attributes)
       .then((response)=> {console.log(response)})
       .then(()=>{this.$router.go(-1)})
@@ -86,7 +88,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.callBoardGameUpdate();
+          this.callPUT_coffee_shop_board_game();
         } else {
           return false;
         }
@@ -99,8 +101,9 @@ export default {
   computed:{
   },
   created(){
-    console.log("coffee_shops#create.created")
+    console.log("board_games#update.created")
     this.$store.dispatch('updatePageHeader', 'Create BoardGame');
+    this.callGET_coffee_shop__board_game()
   }
 }
 </script>

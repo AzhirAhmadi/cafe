@@ -53,19 +53,15 @@ export default {
       rules: {
         name: [
           { required: true, message: 'Please input boardgame name', trigger: 'change' },
-          // { min: 5, max: 10, message: 'Length should be 5 to 10', trigger: 'change' }
         ],
         min_player: [
           { required: true, message: 'Please input boardgame minimum players number', trigger: 'change' },
-          { min: 1, max: 20, message: 'Min Player should be 1 to 20', trigger: 'change' }
         ],
         max_player: [
           { required: true, message: 'Please input boardgame maximum players number', trigger: 'change' },
-          { min: 1, max: 20, message: 'Max player should be 1 to 20', trigger: 'change' }
         ],
         play_time: [
           { required: true, message: 'Please input boardgame playing time', trigger: 'change' },
-          { min: 0, max: 240, message: 'Paly time should be 0 to 240', trigger: 'change' }
         ],
         description: [
           { required: true, message: 'Please input boardgame description', trigger: 'change' },
