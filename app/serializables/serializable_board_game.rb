@@ -1,7 +1,8 @@
 class SerializableBoardGame < JSONAPI::Serializable::Resource
     type 'board_game'
   
-    attributes :name, :publisher, :min_player, :max_player, :play_time, :deleted_at
+    attributes :name, :publisher, :min_player, :max_player,
+     :play_time, :deleted_at, :description
 
     has_one :coffee_shop do
       data do
