@@ -29,9 +29,9 @@ class BoardGamePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       if current_user&.sys_admin? || current_user&.sys_master?
-        return scope.all
+        return scope.all.order("id")
       end
-      scope.where(deleted_at: nil)
+      scope.where(deleted_at: nil).order("id")
     end
   end
 

@@ -6,15 +6,15 @@ class CoffeeShopPolicy < ApplicationPolicy
     end
 
     def update?
-      return true if data.owner_id == current_user.id
-      return true if data.maintainer_id == current_user.id
+      return true if coffee_shop.owner_id == current_user.id
+      return true if coffee_shop.maintainer_id == current_user.id
       return true if current_user.sys_admin? || current_user.sys_master?
       super
     end
 
     def deactivate?
-      return true if data.owner_id == current_user.id
-      return true if data.id == current_user.id
+      return true if coffee_shop.owner_id == current_user.id
+      return true if coffee_shop.id == current_user.id
       return true if current_user.sys_admin? || current_user.sys_master?
       super
     end
@@ -22,9 +22,14 @@ class CoffeeShopPolicy < ApplicationPolicy
     class Scope < Scope
       def resolve
         if current_user&.sys_admin? || current_user&.sys_master?
-          return scope.all
+          return scope.all.order("id")
         end
-        scope.where(deleted_at: nil)
+        scope.where(deleted_at: nil).order("id")
       end
+    end
+
+    private
+    def coffee_shop
+      data
     end
   end

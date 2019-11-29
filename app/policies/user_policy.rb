@@ -27,14 +27,14 @@ class UserPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       if current_user&.sys_admin?
-        return  scope.where(deleted_at: nil).or(scope.where.not(role: [:sys_admin]))
+        return  scope.where(deleted_at: nil).or(scope.where.not(role: [:sys_admin])).order("id")
       end
 
       if current_user&.sys_master?
-        return scope.all
+        return scope.all.order("id")
       end
       
-      scope.where(deleted_at: nil)
+      scope.where(deleted_at: nil).order("id")
     end
   end
 end

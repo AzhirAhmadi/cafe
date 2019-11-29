@@ -12,7 +12,7 @@ class EnrolmentPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      scope.all
+      scope.all.order("id")
     end
   end
   
