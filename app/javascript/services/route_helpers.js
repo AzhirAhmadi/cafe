@@ -52,7 +52,16 @@ class GET{
 // tables#index
     coffee_shop_event_tables(coffee_shop_id, event_id){
         console.log("coffee_shop_event_tables")
-        return apiClient.get("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/tables");
+        if(store.state.current_user){
+            return apiClient.get("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/tables",{
+                headers: {
+                    Authorization: store.state.auth_token
+                }
+            });
+        }
+        else{
+            return apiClient.get("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/tables");
+        }
     } //##
 // tables#show
     coffee_shop_event_table(coffee_shop_id, event_id, id){
@@ -65,7 +74,7 @@ class GET{
         if(store.state.current_user){
             return apiClient.get("/coffee_shops/"+coffee_shop_id+"/events",{
                 headers: {
-                Authorization: store.state.auth_token
+                    Authorization: store.state.auth_token
                 }
             });
         }
