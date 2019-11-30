@@ -12,7 +12,7 @@
               <th>Adderss</th>
               <th>Actions</th>
             </tr>
-            <CoffeeShopInLIst v-for="(coffee_shop, index) in coffee_shops" :coffee_shop='coffee_shop' :key='index'
+            <CoffeeShopInList v-for="(coffee_shop, index) in coffee_shops" :coffee_shop='coffee_shop' :key='index'
              v-on:removeFromParent="removeCoffeeShopFromList"
              :editAble='current_user && EDIT_ABLE(coffee_shop)'
               :reActiveAble='current_user && RE_ACTIVE_ABLE(coffee_shop)' 
@@ -24,7 +24,7 @@
 
 <script>
 import route_helpers from '../../services/route_helpers'
-import CoffeeShopInLIst from './components/coffee_shop_in_list'
+import CoffeeShopInList from './components/coffee_shop_in_list'
 export default {
   data: function () {
     return {
@@ -34,7 +34,7 @@ export default {
     }
   },
   components:{
-    CoffeeShopInLIst
+    CoffeeShopInList
   },
   methods:{
     callCoffeeShops(){

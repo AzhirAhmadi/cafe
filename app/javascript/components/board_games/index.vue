@@ -13,7 +13,7 @@
               <th>Status</th>
               <th>Actions</th>
             </tr>
-            <BoardGameInLIst v-for="(board_game, index) in board_games" :coffee_shop='coffee_shop' :board_game='board_game' :key='index'
+            <BoardGameInList v-for="(board_game, index) in board_games" :coffee_shop='coffee_shop' :board_game='board_game' :key='index'
              v-on:removeFromParent="removeboard_gameFromList"
               :editAble="current_user && EDIT_ABLE" :reActiveAble="current_user && RE_ACTIVE_ABLE" :deleteAble="current_user && DELETE_ABLE"/>
       </table>
@@ -23,7 +23,7 @@
 
 <script>
 import route_helpers from '../../services/route_helpers'
-import BoardGameInLIst from './components/board_game_in_list'
+import BoardGameInList from './components/board_game_in_list'
 
 export default {
   props: ['coffee_shop_id'],
@@ -36,7 +36,7 @@ export default {
     }
   },
   components:{
-    BoardGameInLIst
+    BoardGameInList
   },
   methods:{
     callBoardGames(){

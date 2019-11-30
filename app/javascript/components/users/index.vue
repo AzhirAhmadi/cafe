@@ -17,7 +17,7 @@
               <th>Role</th>
               <th>Actions</th>
             </tr>
-            <UserInLIst v-for="(user, index) in players" :user='user' :key='index' v-on:removeFromParent="removeUserFromList"/>
+            <UserInList v-for="(user, index) in players" :user='user' :key='index' v-on:removeFromParent="removeUserFromList"/>
           </table>
         </tr>
 
@@ -33,7 +33,7 @@
               <th>Role</th>
               <th>Actions</th>
             </tr>
-            <UserInLIst v-for="(user, index) in coffee_owners" :user='user' :key='index' v-on:removeFromParent="removeUserFromList"/>
+            <UserInList v-for="(user, index) in coffee_owners" :user='user' :key='index' v-on:removeFromParent="removeUserFromList"/>
           </table>
         </tr>
 
@@ -49,7 +49,7 @@
               <th>Role</th>
               <th>Actions</th>
             </tr>
-            <UserInLIst v-for="(user, index) in sys_experts" :user='user' :key='index' v-on:removeFromParent="removeUserFromList"/>
+            <UserInList v-for="(user, index) in sys_experts" :user='user' :key='index' v-on:removeFromParent="removeUserFromList"/>
           </table>
         </tr>
 
@@ -65,7 +65,7 @@
               <th>Role</th>
               <th>Actions</th>
             </tr>
-            <UserInLIst v-for="(user, index) in sys_admins" :user='user' :key='index' v-on:removeFromParent="removeUserFromList"/>
+            <UserInList v-for="(user, index) in sys_admins" :user='user' :key='index' v-on:removeFromParent="removeUserFromList"/>
           </table>
         </tr>
 
@@ -81,7 +81,7 @@
               <th>Role</th>
               <th>Actions</th>
             </tr>
-            <UserInLIst v-for="(user, index) in sys_matsers" :user='user' :key='index' v-on:removeFromParent="removeUserFromList"/>
+            <UserInList v-for="(user, index) in sys_matsers" :user='user' :key='index' v-on:removeFromParent="removeUserFromList"/>
           </table>
         </tr>
       </table>
@@ -90,7 +90,7 @@
 </template>
 
 <script>
-import UserInLIst from './components/user_in_list.vue'
+import UserInList from './components/user_in_list.vue'
 import route_helpers from '../../services/route_helpers'
 
 export default {
@@ -101,7 +101,7 @@ export default {
     }
   },
   components:{
-    UserInLIst
+    UserInList
   },
   methods:{
     callUsers(){
