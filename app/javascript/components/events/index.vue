@@ -13,7 +13,7 @@
               <th>Status</th>
               <th>Actions</th>
             </tr>
-            <EventInLIst v-for="(event, index) in events" :coffee_shop='coffee_shop' :event='event' :key='index'
+            <EventInList v-for="(event, index) in events" :coffee_shop='coffee_shop' :event='event' :key='index'
              v-on:removeFromParent="removeEventFromList"
               :editAble="current_user && EDIT_ABLE" :reActiveAble="current_user && RE_ACTIVE_ABLE" :deleteAble="current_user && DELETE_ABLE"/>
       </table>
@@ -23,7 +23,7 @@
 
 <script>
 import route_helpers from '../../services/route_helpers'
-import EventInLIst from './components/event_in_list'
+import EventInList from './components/event_in_list'
 
 export default {
   props: ['coffee_shop_id'],
@@ -36,7 +36,7 @@ export default {
     }
   },
   components:{
-    EventInLIst
+    EventInList
   },
   methods:{
     callEvents(){

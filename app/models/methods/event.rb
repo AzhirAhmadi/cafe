@@ -36,13 +36,13 @@ module  Methods::Event
 
             def status
                 result=""
-                result = "Locked"  if isLocked?
-                result = "Unlocked"  if isUnLocked?
-                result = "Opened" if isOpened?
-                result = "Enroling" if isEnroling?
-                result = "Started" if isStarted?
-                result = "Ended" if isEnded?
-                result = "Closed" if isClosed?
+                result = "locked"  if isLocked?
+                result = "unlocked"  if isUnLocked?
+                result = "opened" if isOpened?
+                result = "enroling" if isEnroling?
+                result = "started" if isStarted?
+                result = "ended" if isEnded?
+                result = "closed" if isClosed?
                 
                 result
             end

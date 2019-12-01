@@ -1,6 +1,6 @@
 <template >
   <div v-if="load"> 
-    <el-row v-if="current_user && CREAT_TABLE" style="text-align: right;">
+    <el-row v-if="current_user && CREAT_TABLE && CHECK_EVENT_STATUS" style="text-align: right;">
       <router-link :to="{name: 'table_create'}"><el-button type="primary" >Create Table</el-button></router-link>
     </el-row>
     <el-row>
@@ -14,7 +14,7 @@
               <th>Event</th>
               <th>Actions</th>
             </tr>
-            <TableInLIst v-for="(table, index) in tables" :coffee_shop='coffee_shop' :event='event' :table='table' :key='index'
+            <TableInList v-for="(table, index) in tables" :coffee_shop='coffee_shop' :event='event' :table='table' :key='index'
              v-on:removeFromParent="removetableFromList"
               :editAble="current_user && EDIT_ABLE" :reActiveAble="current_user && RE_ACTIVE_ABLE" :deleteAble="current_user && DELETE_ABLE"/>
       </table>
@@ -24,7 +24,7 @@
 
 <script>
 import route_helpers from '../../services/route_helpers'
-import TableInLIst from './components/table_in_list'
+import TableInList from './components/table_in_list'
 
 export default {
   props: ['coffee_shop_id', 'event_id'],
@@ -38,15 +38,13 @@ export default {
     }
   },
   components:{
-    TableInLIst
+    TableInList
   },
   methods:{
     callCoffeeShop(){
       console.log("callCoffeeShop")
-      this.load = false;
       route_helpers.GET().coffee_shop(this.coffee_shop_id)
       .then( response => {this.coffee_shop = response.data.data})
-      .then(() => {this.load = true})
     },
     callCoffeeShopEvent(){
       console.log("callCoffeeShopEvent")
@@ -84,6 +82,11 @@ export default {
           this.current_user.attributes.role === "sys_master" ||
           this.isMaintainer() ||
           this.isOwner()
+    },
+    CHECK_EVENT_STATUS(){
+      console.log(this.event)
+      return this.event.attributes.status !== "ended" &&
+            this.event.attributes.status !== "closed"
     },
     EDIT_ABLE(){
       return this.current_user.attributes.role === "sys_admin" ||

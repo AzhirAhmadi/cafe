@@ -164,9 +164,22 @@ class POST{
           });
     } //##
 // tables#create
-    coffee_shop_event_tables(coffee_shop_id, event_id){
+    coffee_shop_event_tables(coffee_shop_id, event_id, table){
         console.log("coffee_shop_event_tables")
-        return apiClient.post("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/tables");
+        return apiClient.post("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/tables",
+        {
+            table: {
+                capacity: table.capacity,
+                table_code: table.table_code,
+                board_game_id: table.board_game_id,
+            },
+        },    
+        {
+            headers: {
+                    Authorization: store.state.auth_token
+                }
+            }
+        );
     } //##
 // enrolments#create
     coffee_shop_event_enrolments(coffee_shop_id, event_id){
@@ -190,7 +203,7 @@ class POST{
             }
         },    
         {
-                headers: {
+            headers: {
                     Authorization: store.state.auth_token
                 }
             }
