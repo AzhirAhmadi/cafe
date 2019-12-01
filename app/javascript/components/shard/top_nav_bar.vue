@@ -1,11 +1,16 @@
 <template>
   <el-row>
     <el-col :span="18" >
-        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
+        <!-- <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
           <el-menu-item>{{page_header}}</el-menu-item>
-          <!-- <el-menu-item index="1"><router-link :to="{name: 'user_index'}"><div>Users</div></router-link></el-menu-item>
-          <el-menu-item index="2"><router-link :to="{name: 'coffee_shop_index'}"><div>CoffeeShops</div></router-link></el-menu-item> -->
-        </el-menu>
+
+          <el-menu-item index="1"><router-link :to="{name: 'user_index'}"><div>Users</div></router-link></el-menu-item>
+          <el-menu-item index="2"><router-link :to="{name: 'coffee_shop_index'}"><div>CoffeeShops</div></router-link></el-menu-item>
+
+        </el-menu> -->
+
+        <el-page-header @back="goBack" :content='page_header'>
+        </el-page-header>
     </el-col>
     <el-col :span="6">
         <Authentication></Authentication>
@@ -26,6 +31,12 @@
         page_header: 'Home'
       };
     },
+    methods:{
+      goBack() {
+        console.log('go back');
+        this.$router.go(-1)
+      }
+    },
     created(){
       this.$store.watch(
         (state, getters) => getters.page_header,
@@ -35,7 +46,7 @@
           this.$forceUpdate();          
         }
       );
-      this.activeIndex='2'
+      // this.activeIndex='2'
     }
   }
 </script>
