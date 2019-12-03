@@ -10,4 +10,8 @@ module ModelValidate::Table
     def board_game_owner_ship
         errors.add(:board_game, "is not owened by this coffe_shop") unless  board_game&.coffee_shop&.id == event&.coffee_shop&.id
     end
+
+    def board_game_capacity
+        errors.add(:board_game, "is not owened by this coffe_shop") unless  board_game&.min_player < capacity && capacity < board_game&.max_player   
+    end
 end

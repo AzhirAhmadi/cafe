@@ -5,7 +5,7 @@ module  Validations::Table
             validates :table_code, uniqueness: { scope: :event_id}
             include ModelValidate::Table
 
-            validate :active_event, :active_board_game, :board_game_owner_ship
+            validate :active_event, :active_board_game, :board_game_owner_ship, :board_game_capacity
         end
     end
 end
