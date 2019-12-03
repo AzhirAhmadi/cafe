@@ -351,17 +351,29 @@ class DELETE{
 // board_games#deactivate
     coffee_shop_board_game_deactivate(coffee_shop_id, id){
         console.log("coffee_shop_board_game_deactivate")
-        return apiClient.delete("/coffee_shops/"+coffee_shop_id+"/board_games/"+id);
+        return apiClient.delete("/coffee_shops/"+coffee_shop_id+"/board_games/"+id,{
+            headers: {
+              Authorization: store.state.auth_token
+            }
+        });
     } //##
 // tables#deactivate
     coffee_shop_event_table_deactivate(coffee_shop_id, event_id, id){
         console.log("coffee_shop_event_table_deactivate")
-        return apiClient.delete("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/tables/"+id);
+        return apiClient.delete("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/tables/"+id,{
+            headers: {
+              Authorization: store.state.auth_token
+            }
+        });
     } //##
 // enrolments#deactivate
     coffee_shop_event_enrolment_deactivate(coffee_shop_id, event_id, id){
         console.log("coffee_shop_event_enrolment_deactivate")
-        return apiClient.delete("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/enrolments/"+id);
+        return apiClient.delete("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/enrolments/"+id,{
+            headers: {
+              Authorization: store.state.auth_token
+            }
+        });
     } //##
 // events#deactivate
     coffee_shop_event_deactivate(coffee_shop_id, id){

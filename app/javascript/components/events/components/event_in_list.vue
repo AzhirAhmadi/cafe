@@ -6,7 +6,7 @@
     </td>
     <td style="text-align: left;">{{event.attributes.name}}</td>
     <td style="width:100px">{{coffee_shop.attributes.name}}</td>
-    <td style="width:100px">test</td>
+    <td style="width:100px">{{uperCaseStatus}}</td>
     <td style="width:250px">
         <el-button v-if="editAble && current_user && EDIT" type="success" @click="push_event_edit" style="margin: auto;">Edit</el-button>
         <el-button v-if="reActiveAble && current_user && reACTIVE" type="warning" @click="call_reActive" style="margin: auto;">reActive</el-button>
@@ -20,6 +20,7 @@
 import RolePower from '../../../services/role_pwoer'
 import route_helpers from '../../../services/route_helpers'
 import router from '../../../packs/router'
+import { statSync } from 'fs'
 
 export default {
   props: ['coffee_shop', 'event', 'editAble', 'deleteAble', 'reActiveAble'],
@@ -48,6 +49,9 @@ export default {
     }
   },
   computed:{
+    uperCaseStatus(){
+      return this.event.attributes.status[0].toUpperCase()+ this.event.attributes.status.substr(1);
+    },
     EDIT(){
       return RolePower.power(this.current_user.attributes.role)>1 // coffee_owner & expert & admin & master
     },

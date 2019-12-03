@@ -1,9 +1,20 @@
 <template>
-  <tr v-if="load">
+  <tr v-if="load" class="box">
     <td style="width:25px"><strong>{{table.id}}</strong></td>
     <td style="width:80px">
         <el-avatar :size="50" :src="'/img/img5.jpg'"></el-avatar>
     </td>
+
+      <td  style="text-align: left;">
+        <div class="box">
+          <div class="top">
+            <el-tooltip class="item" effect="dark" content="Top Center prompts info" placement="top">
+              <el-button>top</el-button>
+            </el-tooltip>
+          </div>
+        </div>
+      </td>
+
     <td style="text-align: left;">{{board_game.attributes.name}}</td>
     <td style="text-align: left;">{{board_game.attributes.min_player}}-{{board_game.attributes.max_player}}({{table.attributes.capacity}})</td>
     <td style="width:100px">{{coffee_shop.attributes.name}}</td>
@@ -90,4 +101,40 @@ tr:nth-child(even) {
   background-color: #eee;
   
 }
+
+  .box {
+    width: 400px;
+  }
+    .top {
+      text-align: center;
+    }
+
+    .left {
+      float: left;
+      width: 110px;
+    }
+
+    .right {
+      float: right;
+      width: 110px;
+    }
+
+    .bottom {
+      clear: both;
+      text-align: center;
+    }
+
+    .item {
+      margin: 4px;
+    }
+
+    .left .el-tooltip__popper,
+    .right .el-tooltip__popper {
+      padding: 8px 10px;
+    }
+
+    .el-button {
+      width: 110px;
+    }
+  
 </style>
