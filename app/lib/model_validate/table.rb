@@ -12,6 +12,6 @@ module ModelValidate::Table
     end
 
     def board_game_capacity
-        errors.add(:board_game, "is not owened by this coffe_shop") unless  board_game&.min_player < capacity && capacity < board_game&.max_player   
+        errors.add(:board_game, "table capacity is not board game") unless  board_game&.min_player <= capacity && capacity <= board_game&.max_player   
     end
 end
