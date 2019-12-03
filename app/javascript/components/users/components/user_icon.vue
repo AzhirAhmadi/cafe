@@ -6,22 +6,26 @@
           <div class="block"><el-avatar :size="50" :src="'/img/img1.jpg'"></el-avatar></div>
         </div>
       </el-col>
-      <el-col :span="13" :push="1">
+      <el-col :span="11">
         <div style="text-align: left; margin: 0">
-          <strong>{{user.attributes.email}}</strong>
-          <br>
-          <strong>{{user.attributes.role}}</strong>
+          <p class="truncate">{{user.attributes.email}}</p>
+          <p>{{user.attributes.role}}</p>
         </div>
       </el-col>
-      <el-col :span="4">
+      <el-col :span="6">
         <el-popover
         placement="bottom"
-        width="200"
+        width="150"
         trigger="manual"
         v-model="visible">
-          <el-button type="success" @click="push_user_edit">Edit</el-button>
-          <el-button type="danger" @click="callDEVISE_logout">SingOut</el-button>
-
+          <p  style="text-align: center; margin: 0">{{user.attributes.email}}</p>
+          <p  style="text-align: center; margin: 0">{{user.attributes.role}}</p>
+          <el-divider></el-divider>
+          <div style="text-align: center; margin: 0">
+            <el-button type="success" @click="push_user_edit"><i class="el-icon-edit"></i></el-button>
+            <el-button type="danger" @click="callDEVISE_logout"><i class="el-icon-switch-button "></i></el-button>
+          </div>
+          
           <el-button slot="reference" @click="visible = !visible" type="success" >
                 <i class="el-icon-setting"/>
           </el-button>
@@ -67,3 +71,17 @@
     }
   }
 </script>
+
+<style scoped>
+.truncate {
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+p{
+  font-size: 18px;
+  margin: 0 !important;
+  text-align: left;
+}
+</style>
