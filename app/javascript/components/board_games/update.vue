@@ -102,7 +102,7 @@ export default {
   },
   created(){
     console.log("board_games#update.created")
-    this.$store.dispatch('updatePageHeader', 'Create BoardGame');
+    this.$store.dispatch('updatePageHeader', 'Update BoardGame');
     this.callGET_coffee_shop__board_game()
   }
 }
