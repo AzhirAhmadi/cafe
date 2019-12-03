@@ -244,7 +244,7 @@ RSpec.describe EventsController, type: :request do
                 
                 coffee_shop = create :coffee_shop
                 opened_event = create :opened_event, coffee_shop: coffee_shop
-                board_game = create :board_game, creator: coffee_shop
+                board_game = create :board_game, coffee_shop: coffee_shop
 
                 count = Table.count
                 post coffee_shop_event_tables_url(coffee_shop, opened_event), params: {

@@ -23,7 +23,7 @@ require 'faker'
 
 FactoryBot.define do
   factory :coffee_shop do
-    sequence(:name) { |n| "CoffeeShopName#{n}" }
+    sequence(:name) { |n| "CoffeeShop_Name#{n}#{rand(100000..999999).to_s}" }
     sequence(:address) { |n| "CoffeeShopAddress#{n}" }
 
     association :owner, factory: :coffee_owner

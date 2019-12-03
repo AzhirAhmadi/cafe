@@ -10,6 +10,12 @@ class UsersController < ApplicationController
 
     def index
         users = policy_scope(User)
+        unless(params[:role].blank?)
+            users = users.active_users.where(role: params[:role])
+        end
+        unless(params[:free].blank?)
+            users = users.active_users.without_coffee_shop
+        end
         render jsonapi: users
     end
     

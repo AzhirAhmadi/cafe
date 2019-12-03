@@ -28,9 +28,9 @@ class EventPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      return scope.all if current_user&.sys_admin? || current_user&.sys_master?
-      return scope.active_events if current_user&.coffee_owner? || current_user&.sys_expert?
-      scope.active_events.unlocked_events
+      return scope.all.order("id") if current_user&.sys_admin? || current_user&.sys_master?
+      return scope.active_events.order("id") if current_user&.coffee_owner? || current_user&.sys_expert?
+      scope.active_events.unlocked_events.order("id")
     end
   end
   

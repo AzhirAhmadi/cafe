@@ -28,9 +28,9 @@ class TablePolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      return scope.all if current_user&.sys_admin? || current_user&.sys_master?
-      return scope.active_tables if current_user&.coffee_owner? || current_user&.sys_expert?
-      scope.active_tables.unlocked_tables
+      return scope.all.order("id") if current_user&.sys_admin? || current_user&.sys_master?
+      return scope.active_tables.order("id") if current_user&.coffee_owner? || current_user&.sys_expert?
+      scope.active_tables.unlocked_tables.order("id")
     end
   end
   

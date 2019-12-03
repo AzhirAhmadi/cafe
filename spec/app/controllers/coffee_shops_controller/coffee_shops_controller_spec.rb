@@ -1,75 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe CoffeeShopsController, type: :request do
-    describe ".show" do
-        context "when invalid header params provided" do
-            it "(absence of Authorization Token)" do
-                creator = create :player
-
-                coffee_shop = create :coffee_shop
-                get coffee_shop_url(coffee_shop)
-
-                expect(json["error"]).to include(
-                    {
-                        "message"=>"Authorization header needed!", 
-                        "path"=>"coffee_shops#show"
-                    }
-                )
-            end
-    
-            it "(invalid Authorization Token)" do
-                creator = create :player
-                login creator
-                headers = {"Authorization": "invalid"}
-                
-                coffee_shop = create :coffee_shop
-
-                get coffee_shop_url(coffee_shop), headers: headers
-
-                expect(json["error"]).to include(
-                    {
-                        "message"=>"Wrong jwt token!", 
-                        "path"=>"coffee_shops#show"
-                    }
-                )
-            end
-        end
-    end
-    describe ".index" do
-        context "when invalid header params provided" do
-            it "(absence of Authorization Token)" do
-                creator = create :player
-
-                coffee_shop = create :coffee_shop
-                get coffee_shops_url
-
-                expect(json["error"]).to include(
-                    {
-                        "message"=>"Authorization header needed!", 
-                        "path"=>"coffee_shops#index"
-                    }
-                )
-            end
-    
-            it "(invalid Authorization Token)" do
-                creator = create :player
-                login creator
-                headers = {"Authorization": "invalid"}
-                
-                coffee_shop = create :coffee_shop
-
-                get coffee_shops_url, headers: headers
-
-                expect(json["error"]).to include(
-                    {
-                        "message"=>"Wrong jwt token!", 
-                        "path"=>"coffee_shops#index"
-                    }
-                )
-            end
-        end
-    end
-
     describe ".create" do
         context "when invalid header params provided" do
             it "(absence of Authorization Token)" do
@@ -85,7 +16,7 @@ RSpec.describe CoffeeShopsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Authorization header needed!", 
+                        "message"=>"Bad Request!", 
                         "path"=>"coffee_shops#create"
                     }
                 )
@@ -104,7 +35,7 @@ RSpec.describe CoffeeShopsController, type: :request do
                 }, headers: headers
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!", 
+                        "message"=>"Not Acceptable!", 
                         "path"=>"coffee_shops#create"
                     }
                 )
@@ -204,7 +135,7 @@ RSpec.describe CoffeeShopsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Authorization header needed!", 
+                        "message"=>"Bad Request!", 
                         "path"=>"coffee_shops#update"
                     }
                 )
@@ -225,7 +156,7 @@ RSpec.describe CoffeeShopsController, type: :request do
                 }, headers: headers
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!", 
+                        "message"=>"Not Acceptable!", 
                         "path"=>"coffee_shops#update"
                     }
                 )
@@ -325,7 +256,7 @@ RSpec.describe CoffeeShopsController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Authorization header needed!", 
+                        "message"=>"Bad Request!", 
                         "path"=>"coffee_shops#update"
                     }
                 )
@@ -346,7 +277,7 @@ RSpec.describe CoffeeShopsController, type: :request do
                 }, headers: headers
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!", 
+                        "message"=>"Not Acceptable!", 
                         "path"=>"coffee_shops#update"
                     }
                 )

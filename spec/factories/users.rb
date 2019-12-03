@@ -27,35 +27,35 @@ FactoryBot.define do
   # :sys_master, :sys_admin, :sys_expert, :coffee_owner,:player
 
     factory :player, class: ApiUser do
-      sequence(:email) { |n| "test#{n}@player.com" }
+      sequence(:email) { |n| "test#{n}#{rand(100000..999999).to_s}@player.com" }
       password { "123456" }
       role {"player"}
       jti {Faker::Alphanumeric.alphanumeric(number: 20)}
     end
 
     factory :coffee_owner, class: ApiUser do
-      sequence(:email) { |n| "test#{n}@coffee_owner.com" }
+      sequence(:email) { |n| "test#{n}#{rand(100000..999999).to_s}@coffee_owner.com" }
       password { "123456" }
       role {"coffee_owner"}
       jti {Faker::Alphanumeric.alphanumeric(number: 20)}
     end
 
     factory :sys_expert, class: ApiUser do
-      sequence(:email) { |n| "test#{n}@sys_expert.com" }
+      sequence(:email) { |n| "test#{n}#{rand(100000..999999).to_s}@sys_expert.com" }
       password { "123456" }
       role {"sys_expert"}
       jti {Faker::Alphanumeric.alphanumeric(number: 20)}
     end
 
     factory :sys_admin, class: ApiUser do
-      sequence(:email) { |n| "test#{n}@sys_admin.com" }
+      sequence(:email) { |n| "test#{n}#{rand(100000..999999).to_s}@sys_admin.com" }
       password { "123456" }
       role {"sys_admin"}
       jti {Faker::Alphanumeric.alphanumeric(number: 20)}
     end
 
     factory :sys_master, class: ApiUser do
-      sequence(:email) { |n| "test#{n}@sys_master.com" }
+      sequence(:email) { |n| "test#{n}#{rand(100000..999999).to_s}@sys_master.com" }
       password { "123456" }
       role {"sys_master"}
       jti {Faker::Alphanumeric.alphanumeric(number: 20)}

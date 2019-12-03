@@ -172,7 +172,7 @@ RSpec.describe TablesController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Authorization header needed!", 
+                        "message"=>"Bad Request!", 
                         "path"=>"tables#create"
                     }
                 )
@@ -187,7 +187,7 @@ RSpec.describe TablesController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!" ,
+                        "message"=>"Not Acceptable!" ,
                         "path"=>"tables#create"
                     }
                 )
@@ -286,7 +286,7 @@ RSpec.describe TablesController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Authorization header needed!", 
+                        "message"=>"Bad Request!", 
                         "path"=>"tables#update"
                     }
                 )
@@ -300,7 +300,7 @@ RSpec.describe TablesController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!" ,
+                        "message"=>"Not Acceptable!" ,
                         "path"=>"tables#update"
                     }
                 )
@@ -395,7 +395,7 @@ RSpec.describe TablesController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Authorization header needed!", 
+                        "message"=>"Bad Request!", 
                         "path"=>"tables#deactivate"
                     }
                 )
@@ -409,7 +409,7 @@ RSpec.describe TablesController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!" ,
+                        "message"=>"Not Acceptable!" ,
                         "path"=>"tables#deactivate"
                     }
                 )

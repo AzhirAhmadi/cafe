@@ -18,7 +18,7 @@ RSpec.describe CoffeeShopsController, type: :request do
 
                 get coffee_shop_url(coffee_shop), headers: headers
                 expect(json["data"]["id"].to_i).to eql(coffee_shop.id)
-                expect(json["data"]["attributes"]["deleted_at"]).to eql(nil)
+                expect(json["data"]["attributes"]["deleted_at"]).not_to eql(nil)
                 expect(json["data"]["id"].to_i).to eql(coffee_shop.id)
             end
         end

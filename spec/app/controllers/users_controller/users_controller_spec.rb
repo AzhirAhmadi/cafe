@@ -10,7 +10,7 @@ RSpec.describe UsersController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Authorization header needed!", 
+                        "message"=>"Bad Request!", 
                         "path"=>"users#show"
                     }
                 )
@@ -23,7 +23,7 @@ RSpec.describe UsersController, type: :request do
                 get user_url(user), headers: headers
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!", 
+                        "message"=>"Not Acceptable!", 
                         "path"=>"users#show"
                     }
                 )
@@ -40,7 +40,7 @@ RSpec.describe UsersController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Authorization header needed!", 
+                        "message"=>"Bad Request!", 
                         "path"=>"users#index"
                     }
                 )
@@ -53,7 +53,7 @@ RSpec.describe UsersController, type: :request do
                 get users_url, headers: headers
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!", 
+                        "message"=>"Not Acceptable!", 
                         "path"=>"users#index"
                     }
                 )
@@ -250,7 +250,7 @@ RSpec.describe UsersController, type: :request do
                 }
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Authorization header needed!", 
+                        "message"=>"Bad Request!", 
                         "path"=>"users#update"
                     }
                 )
@@ -269,7 +269,7 @@ RSpec.describe UsersController, type: :request do
                 }, headers: headers
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!", 
+                        "message"=>"Not Acceptable!", 
                         "path"=>"users#update"
                     }
                 )
@@ -397,7 +397,7 @@ RSpec.describe UsersController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Authorization header needed!", 
+                        "message"=>"Bad Request!", 
                         "path"=>"users#deactivate"
                     }
                 )
@@ -410,7 +410,7 @@ RSpec.describe UsersController, type: :request do
                 delete user_deactivate_url(user), headers: headers
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!", 
+                        "message"=>"Not Acceptable!", 
                         "path"=>"users#deactivate"
                     }
                 )
@@ -427,7 +427,7 @@ RSpec.describe UsersController, type: :request do
 
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Authorization header needed!", 
+                        "message"=>"Bad Request!", 
                         "path"=>"users#profile"
                     }
                 )
@@ -440,7 +440,7 @@ RSpec.describe UsersController, type: :request do
                 get profile_url, headers: headers
                 expect(json["error"]).to include(
                     {
-                        "message"=>"Wrong jwt token!", 
+                        "message"=>"Not Acceptable!", 
                         "path"=>"users#profile"
                     }
                 )

@@ -22,34 +22,34 @@
 FactoryBot.define do
   factory :table do
     capacity {5}
-    table_code {"code_99"}
+    sequence(:table_code) { |n| "code#{n}#{rand(100000..999999).to_s}" }
 
     transient do
       coffee_shop {create :coffee_shop}
     end
     event {create :event, coffee_shop: coffee_shop}
-    board_game {create :board_game, creator: coffee_shop}
+    board_game {create :board_game, coffee_shop: coffee_shop}
   end
 
   factory :opened_table, class: Table do
     capacity {5}
-    table_code {"code_99"}
+    sequence(:table_code) { |n| "code#{n}#{rand(100000..999999).to_s}" }
 
     transient do
       coffee_shop {create :coffee_shop}
     end
     event {create :opened_event, coffee_shop: coffee_shop}
-    board_game {create :board_game, creator: coffee_shop}
+    board_game {create :board_game, coffee_shop: coffee_shop}
   end
 
   factory :locked_table, class: Table do
     capacity {5}
-    table_code {"code_99"}
+    sequence(:table_code) { |n| "code#{n}#{rand(100000..999999).to_s}" }
 
     transient do
       coffee_shop {create :coffee_shop}
     end
     event {create :locked_event, coffee_shop: coffee_shop}
-    board_game {create :board_game, creator: coffee_shop}
+    board_game {create :board_game, coffee_shop: coffee_shop}
   end
 end

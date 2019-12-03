@@ -52,7 +52,7 @@ RSpec.describe Table, type: :model do
       coffee_shop =create :coffee_shop
 
       event = create :event, coffee_shop: coffee_shop
-      board_game = create :board_game, creator: coffee_shop
+      board_game = create :board_game, coffee_shop: coffee_shop
 
       table = create :table, event: event, board_game: board_game
       new_table = build :table, table_code: table.table_code, event: event, board_game: board_game
@@ -71,6 +71,11 @@ RSpec.describe Table, type: :model do
       table = create :table
       
       expect(table).to respond_to(:board_game)
+    end
+
+    it "should respond_to method enroled_users" do
+      table = create :opened_table
+      expect(table).to respond_to(:enroled_users)
     end
   end
 end

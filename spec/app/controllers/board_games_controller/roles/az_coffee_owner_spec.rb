@@ -9,7 +9,7 @@ RSpec.describe BoardGamesController, type: :request do
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
                 coffee_shop = create :coffee_shop
-                board_game = create :board_game, creator: coffee_shop
+                board_game = create :board_game, coffee_shop: coffee_shop
                 
                 get coffee_shop_board_game_url(coffee_shop, board_game), headers: headers
 
@@ -39,7 +39,7 @@ RSpec.describe BoardGamesController, type: :request do
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
                 coffee_shop = create :coffee_shop
-                board_game = create :board_game, creator: coffee_shop
+                board_game = create :board_game, coffee_shop: coffee_shop
                 
                 get coffee_shop_board_game_url(coffee_shop, board_game), headers: headers
                 expect(json["data"]["id"].to_i).to eql(board_game.id)
@@ -65,7 +65,7 @@ RSpec.describe BoardGamesController, type: :request do
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
                 coffee_shop = create :coffee_shop
-                board_games = create_list :board_game, 10, creator: coffee_shop
+                board_games = create_list :board_game, 10, coffee_shop: coffee_shop
                 
                 get coffee_shop_board_games_url(coffee_shop), headers: headers
                 expect(json["data"].length).to eql(10)
@@ -77,7 +77,7 @@ RSpec.describe BoardGamesController, type: :request do
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
                 coffee_shop = create :coffee_shop
-                board_games = create_list :board_game, 10, creator: coffee_shop
+                board_games = create_list :board_game, 10, coffee_shop: coffee_shop
                 other_board_games = create_list :board_game, 10
                 
                 get coffee_shop_board_games_url(coffee_shop), headers: headers
@@ -90,7 +90,7 @@ RSpec.describe BoardGamesController, type: :request do
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
                 coffee_shop = create :coffee_shop
-                board_games = create_list :board_game, 10, creator: coffee_shop
+                board_games = create_list :board_game, 10, coffee_shop: coffee_shop
                 
                 get coffee_shop_board_games_url(coffee_shop), headers: headers
                 expect(json["data"].length).to eql(10)
@@ -129,7 +129,7 @@ RSpec.describe BoardGamesController, type: :request do
                 newCount = BoardGame.count
                 expect(newCount - count).to eq(1)
                 expect(json["data"]["attributes"]["name"]).to eq("board_game_name")
-                expect(json["data"]["relationships"]["creator"]["data"]["id"].to_i).to eq(coffee_shop.id)
+                expect(json["data"]["relationships"]["coffee_shop"]["data"]["id"].to_i).to eq(coffee_shop.id)
             end
 
             it "shloud not create board_game if coffee_owner is not owner of the coffee_shop" do
@@ -169,7 +169,7 @@ RSpec.describe BoardGamesController, type: :request do
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 
                 coffee_shop = create :coffee_shop, owner: coffee_owner 
-                board_game = create :board_game, creator: coffee_shop
+                board_game = create :board_game, coffee_shop: coffee_shop
 
                 put coffee_shop_board_game_url(coffee_shop, board_game), params: {
                     "board_game": {
@@ -182,7 +182,7 @@ RSpec.describe BoardGamesController, type: :request do
                 }, headers: headers
 
                 expect(json["data"]["attributes"]["name"]).to eq("board_game_name")
-                expect(json["data"]["relationships"]["creator"]["data"]["id"].to_i).to eq(coffee_shop.id)
+                expect(json["data"]["relationships"]["coffee_shop"]["data"]["id"].to_i).to eq(coffee_shop.id)
             end
 
             it "shloud not create board_game if coffee_owner is not owner of the coffee_shop" do
@@ -191,7 +191,7 @@ RSpec.describe BoardGamesController, type: :request do
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 
                 coffee_shop = create :coffee_shop
-                board_game = create :board_game, creator: coffee_shop
+                board_game = create :board_game, coffee_shop: coffee_shop
 
                 put coffee_shop_board_game_url(coffee_shop, board_game), params: {
                     "board_game": {
@@ -221,7 +221,7 @@ RSpec.describe BoardGamesController, type: :request do
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
                 coffee_shop = create :coffee_shop, owner: coffee_owner
-                board_game =create :board_game, creator: coffee_shop
+                board_game =create :board_game, coffee_shop: coffee_shop
 
                 delete coffee_shop_board_game_deactivate_url(coffee_shop, board_game), headers: headers
 
@@ -235,7 +235,7 @@ RSpec.describe BoardGamesController, type: :request do
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
                 coffee_shop = create :coffee_shop
-                board_game =create :board_game, creator: coffee_shop
+                board_game =create :board_game, coffee_shop: coffee_shop
 
                 delete coffee_shop_board_game_deactivate_url(coffee_shop, board_game), headers: headers
 

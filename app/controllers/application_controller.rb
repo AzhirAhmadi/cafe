@@ -1,5 +1,5 @@
 # app/controllers/application_controller.rb
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
   include ActionController::RequestForgeryProtection
   include Pundit
   prepend ParamSanitizer::Sanitizer
@@ -7,14 +7,19 @@ class ApplicationController < ActionController::API
   protect_from_forgery with: :exception
   protect_from_forgery with: :null_session
   skip_before_action :verify_authenticity_token
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:app]
 
   #my filter
-  prepend_before_action :check_json_format
+  prepend_before_action :check_json_format, except: [:app]
+
 
   rescue_from StandardError, with: :render_error
   # rescue_from ErrorHandling::Errors, with: :render_error
   
+  def app
+    render "layouts/application"
+  end
+
   private
     def json_request?
       request.format.json?
@@ -23,7 +28,8 @@ class ApplicationController < ActionController::API
     def authenticate_user!(*args)
       check_authorization_token
       set_current_user
-      raise ErrorHandling::Errors::JwtToken::Unauthorized.new  params: params if @current_user.blank? 
+    # rescue
+    #   raise ErrorHandling::Errors::JwtToken::Unauthorized.new  params: params if @current_user.blank? 
     end
     
     def set_current_user
@@ -57,6 +63,9 @@ class ApplicationController < ActionController::API
 
 
     def render_error(exception)
-      render json: (ErrorHandling::ErrorRenderer.error_to_JSON exception), status: 500
+      puts json: (ErrorHandling::ErrorRenderer.error_to_JSON exception),
+      status: (ErrorHandling::ErrorRenderer.error_status exception)
+      render json: (ErrorHandling::ErrorRenderer.error_to_JSON exception),
+       status: (ErrorHandling::ErrorRenderer.error_status exception)
     end
   end

@@ -47,6 +47,9 @@ Rails.application.routes.draw do
       resources :events, only: [:create, :update, :show, :index] do
         resources :tables, only: [:create, :update, :show, :index]
         delete 'tables/:id', to: 'tables#deactivate', as: "table_deactivate"  
+
+        resources :enrolments, only: [:create]
+        delete 'enrolments/:id', to: 'enrolments#deactivate', as: "enrolment_deactivate"  
       end
       delete 'events/:id', to: 'events#deactivate', as: "event_deactivate"
     end 
@@ -56,4 +59,6 @@ Rails.application.routes.draw do
     delete 'users/:id', to: 'users#deactivate', as: "user_deactivate"
     get '/profile', to: 'users#profile'
   end
+
+  get '(*path)', to: 'application#app'
 end

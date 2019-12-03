@@ -7,6 +7,12 @@ class ErrorHandling::ErrorRenderer < ActionController::API
         return default exception
     end
 
+    def self.error_status(exception)
+        return error_handling_status exception if exception.is_a? ErrorHandling::Error
+        return pundit_status exception if exception.is_a? Pundit::Error
+        return default_status exception
+    end
+
     private
         def self.error_handling exception
             json = {}
@@ -31,6 +37,18 @@ class ErrorHandling::ErrorRenderer < ActionController::API
             json[:text] = exception
             json[:class] = exception.class.to_s
             return {error: json}
+        end
+
+        def self.error_handling_status exception
+            return exception.status
+        end
+
+        def self.pundit_status exception
+            return 403 #403 Forbidden
+        end
+
+        def self.default_status exception
+            return 500 #500 Internal Server Error
         end
 
 end

@@ -1,15 +1,15 @@
 class BoardGamesController < ApplicationController
+    skip_before_action :authenticate_user!, only: [:show, :index]
+    
     def show
-        board_game = policy_scope(BoardGame).find_by(creator_id: params[:coffee_shop_id])
-        unless board_game.blank?
-            render jsonapi: board_game
-        else
-            render raise ErrorHandling::Errors::BoardGame::DataBaseFind.new          
-        end
+        board_game = policy_scope(BoardGame).in_coffee_shop(find_coffee_shop).find(params[:id])
+        render jsonapi: board_game, include: ['coffee_shop']
+    rescue
+        render raise ErrorHandling::Errors::BoardGame::DataBaseFind.new          
     end
 
     def index
-        board_games = policy_scope(BoardGame).where(creator_id: params[:coffee_shop_id])
+        board_games = policy_scope(BoardGame).in_coffee_shop(find_coffee_shop)
         render jsonapi: board_games
     end
 
@@ -22,11 +22,12 @@ class BoardGamesController < ApplicationController
             params[:board_game][:play_time].blank?
             raise ErrorHandling::Errors::BoardGame::CreationParams.new({params: params})          
         end
+        
         coffee_Shop = CoffeeShop.find(params[:coffee_shop_id])
         board_game = coffee_Shop.created_board_games.build(board_game_params)
         authorize board_game
         if board_game.save
-            render jsonapi: board_game, include: ['creator']
+            render jsonapi: board_game, include: ['coffee_shop']
         else
             raise ErrorHandling::Errors::BoardGame::DataBaseCreation.new({params: params,board_game: board_game})           
         end
@@ -47,7 +48,7 @@ class BoardGamesController < ApplicationController
         authorize board_game
 
         if board_game.update(board_game_params)
-            render jsonapi: board_game, include: ['creator']
+            render jsonapi: board_game, include: ['coffee_shop']
         else
             raise ErrorHandling::Errors::BoardGame::DataBaseUpdate.new({params: params,board_game: board_game})           
         end
@@ -70,5 +71,9 @@ class BoardGamesController < ApplicationController
     private
         def board_game_params
             params.require(:board_game).permit(sanitize_params)
+        end
+
+        def find_coffee_shop
+            policy_scope(CoffeeShop).find(params[:coffee_shop_id]) 
         end
 end
