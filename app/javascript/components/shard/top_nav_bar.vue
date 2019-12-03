@@ -1,6 +1,6 @@
 <template>
   <el-row>
-    <el-col :span="18" >
+    <el-col :span="20" >
         <!-- <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
           <el-menu-item>{{page_header}}</el-menu-item>
 
@@ -12,7 +12,7 @@
         <el-page-header @back="goBack" :content='page_header'>
         </el-page-header>
     </el-col>
-    <el-col :span="6">
+    <el-col :span="4">
         <Authentication></Authentication>
     </el-col>
   </el-row>

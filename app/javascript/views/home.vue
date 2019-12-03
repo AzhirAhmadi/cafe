@@ -3,13 +3,14 @@
     <el-header style="padding: 0px;">
       <TopNavBar></TopNavBar>
     </el-header>
-    <el-row >
-        <el-col :span="18" >
+    <el-row class="tac">
+        <el-col :span="20" >
           <el-main>
             <router-view/>
           </el-main>
         </el-col>
-        <el-col :span="6" >
+        
+        <el-col :span="4">
             <RightNavBar></RightNavBar>
         </el-col>
     </el-row>
@@ -48,6 +49,7 @@ p {
   text-align: center;
 }
 body{
+  height: 100%;
   margin: 0 !important;
 }
 </style>
