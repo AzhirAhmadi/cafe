@@ -1,6 +1,6 @@
 <template>
-  <el-dialog title="Add Table" :visible.sync="dialogFormVisible">
-    <el-form :model="table.attributes" :rules="rules" ref="createTable">
+  <el-dialog title="Update Table" :visible.sync="dialogFormVisible">
+    <el-form :model="table.attributes" :rules="rules" ref="updateTable">
       <el-form-item label="" prop="table_code" required >
           <el-input v-model="table.attributes.table_code" placeholder="Table Code"></el-input>
       </el-form-item>
@@ -23,8 +23,8 @@
       </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
-      <el-button type="success" @click="submitForm('createTable')">Create</el-button>
-      <el-button type="warning" @click="resetForm('createTable')">Reset</el-button>
+      <el-button type="success" @click="submitForm('updateTable')">Save</el-button>
+      <el-button type="warning" @click="resetForm('updateTable')">Reset</el-button>
       <el-button type="danger" @click="cancel">Cancel</el-button>
     </span>
   </el-dialog>
@@ -34,14 +34,17 @@
 import route_helpers from '../../../services/route_helpers'
 
 export default {
-  props:['dialogFormVisible','coffee_shop_id', 'event_id', 'tables'],
+  props:['dialogFormVisible','coffee_shop_id', 'event_id', 'id', 'tables'],
   data(){
     var check_unique_table_code = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('Please input uniqe table code'));
       }
       else {
-        if(this.tables.find(item =>{return item.attributes.table_code === value})){
+        var flag = this.tables.find(item =>{
+          return item.attributes.table_code === value && item.id !== this.id
+          })
+        if(flag){
           callback(new Error( ' \''+value + '\' is used'));
         }
         callback();
@@ -62,7 +65,7 @@ export default {
         ],
         table_code: [
           { required: true, message: 'Please input uniqe table code', trigger: 'change' },
-          { validator: check_unique_table_code, trigger: 'blur' }
+          { validator: check_unique_table_code, trigger: 'change' }
         ],
         board_game_id: [
           { required: true, message: 'Please input uniqe table code', trigger: 'change' },
@@ -72,11 +75,11 @@ export default {
     }
   },
   methods:{
-    callPOST_CoffeeShopEventTables(){
-        console.log("callPOST_CoffeeShopEventTables")
-        route_helpers.POST().coffee_shop_event_tables(this.coffee_shop_id, this.event_id, this.table.attributes)
+    callPUT_CoffeeShopEventTable(){
+        console.log("callPUT_CoffeeShopEventTable")
+        route_helpers.PUT().coffee_shop_event_table(this.coffee_shop_id, this.event_id,this.id, this.table.attributes)
             .then((response)=> {console.log(response)})
-            .then(()=>{this.$emit('onTableAdded')})
+            .then(()=>{this.$emit('onTableUpdated')})
             .then(()=>{this.$emit('update:dialogFormVisible', false)})
     },
     callGET_CoffeeShopBoardGames(){
@@ -84,8 +87,18 @@ export default {
         this.load = false;
         route_helpers.GET().coffee_shop_board_games(this.coffee_shop_id)
             .then(response => {this.board_games = response.data.data})
-            .then(() => {this.table.attributes.board_game_id = this.board_games[0].id})
             .then(() => {this.load = true})
+    },
+    callGET_CoofeeShopEventTable(){
+      console.log("callGET_CoofeeShopEventTable")
+      this.load = false;
+      route_helpers.GET().coffee_shop_event_table(this.coffee_shop_id, this.event_id, this.id)
+      .then(response => {
+        this.table.attributes.board_game_id = response.data.data.relationships.board_game.data.id;
+        this.table.attributes.capacity = response.data.data.attributes.capacity;
+        this.table.attributes.table_code = response.data.data.attributes.table_code;
+      })
+      .then(() => {this.load = true})
     },
     cancel(){
         console.log("cancel")
@@ -94,7 +107,7 @@ export default {
     submitForm(formName) {
         this.$refs[formName].validate((valid) => {
             if (valid) {
-                this.callPOST_CoffeeShopEventTables();
+                this.callPUT_CoffeeShopEventTable();
             } else {
                 return false;
             }
@@ -112,8 +125,9 @@ export default {
     }
   },
   created(){
-    console.log("tables#add_card")
+    console.log("tables#update_card")
     this.callGET_CoffeeShopBoardGames()
+    this.callGET_CoofeeShopEventTable()
   }
 }
 </script>
