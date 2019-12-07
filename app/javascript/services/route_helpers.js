@@ -30,6 +30,20 @@ class DEVICE {
 }
 class GET{
 //GET ##########################################################################################
+// enrolments#index
+    coffee_shop_event_table_enrolments(coffee_shop_id, event_id, table_id, url_params = ""){
+        console.log("coffee_shop_event_table_enrolments")
+        if(store.state.current_user){
+            return apiClient.get("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/tables/"+table_id+"/enrolments"+url_params,{
+                headers: {
+                Authorization: store.state.auth_token
+                }
+            });
+        }
+        else{
+            return apiClient.get("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/tables/"+table_id+"/enrolments"+url_params);
+        }
+    } //##
 // board_games#index
     coffee_shop_board_games(coffee_shop_id){
         console.log("coffee_shop_board_games")
@@ -182,9 +196,17 @@ class POST{
         );
     } //##
 // enrolments#create
-    coffee_shop_event_enrolments(coffee_shop_id, event_id){
-        console.log("coffee_shop_event_enrolments")
-        return apiClient.post("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/enrolments");
+    coffee_shop_event_table_enrolments(coffee_shop_id, event_id, table_id){
+        console.log("coffee_shop_event_table_enrolments")
+        
+        return apiClient.post("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/tables/"+table_id+"/enrolments",
+        {},    
+        {
+            headers: {
+                    Authorization: store.state.auth_token
+                }
+            }
+        );
     } //##
 // events#create
     coffee_shop_events(coffee_shop_id, event){
@@ -283,9 +305,22 @@ class PUT{
         );
     } //##
 // tables#update
-    coffee_shop_event_table(coffee_shop_id, event_id, id){
+    coffee_shop_event_table(coffee_shop_id, event_id, id, table){
         console.log("coffee_shop_event_table")
-        return apiClient.put("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/tables/"+id);
+        return apiClient.put("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/tables/"+id,
+        {
+            table: {
+                capacity: table.capacity,
+                table_code: table.table_code,
+                board_game_id: table.board_game_id,
+            },
+        },    
+        {
+            headers: {
+                    Authorization: store.state.auth_token
+                }
+            }
+        );
     } //##
 // events#update
     coffee_shop_event(coffee_shop_id, id, event){
@@ -367,9 +402,10 @@ class DELETE{
         });
     } //##
 // enrolments#deactivate
-    coffee_shop_event_enrolment_deactivate(coffee_shop_id, event_id, id){
-        console.log("coffee_shop_event_enrolment_deactivate")
-        return apiClient.delete("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/enrolments/"+id,{
+    coffee_shop_event_table_enrolment_deactivate(coffee_shop_id, event_id, table_id, id){
+        console.log("coffee_shop_event_table_enrolment_deactivate")
+        
+        return apiClient.delete("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/tables/"+table_id+"/enrolments/"+id,{
             headers: {
               Authorization: store.state.auth_token
             }

@@ -1,17 +1,27 @@
 <template>
   <el-card v-if="load" class="box-card">
         <div slot="header" class="clearfix">
-          <span>{{board_game.attributes.name}}</span>
-          <el-button style="float: right; padding: 3px 0" type="text">Operation button</el-button>
-          <el-button v-if="editAble     && EDIT"     @click="push_table_edit"    type="primary" icon="el-icon-edit"         circle style="margin: auto;"></el-button>
+          <span>{{board_game.attributes.name}} {{table.id}}</span>
+            <el-switch
+              v-if="current_user"
+              style="float: right; padding: 3px 0; width: 30px; height: 30px;"
+
+              v-model="enrolment"
+              active-color="#13ce66"
+              inactive-color="#ff4949"
+              active-value= true
+              inactive-value= false
+              @change="enrolment_change"
+              >
+            </el-switch>
         </div>
         <div v-for="o in 4" :key="o" class="text item">
           {{'List item ' + o }}
         </div>
     <div v-if="current_user">
-      <el-button v-if="editAble     && EDIT"     @click="push_table_edit"    type="primary" icon="el-icon-edit"         circle style="margin: auto;"></el-button>
+      <el-button v-if="editAble     && EDIT"     @click="call_on_update_table"    type="primary" icon="el-icon-edit"         circle style="margin: auto;"></el-button>
       <el-button v-if="reActiveAble && reACTIVE" @click="call_reActive"      type="warning" icon="el-icon-refresh-left" circle style="margin: auto;"></el-button>
-      <el-button v-if="deleteAble   && DELETE"   @click="callDELETE_table"   type="danger"  icon="el-icon-delete"       circle style="margin: auto;"></el-button>
+      <el-button v-if="deleteAble   && DELETE"   @click="callDELETE_SoffeeShopEventTableDeactivate"   type="danger"  icon="el-icon-delete"       circle style="margin: auto;"></el-button>
     </div>
   </el-card>
 </template>
@@ -27,32 +37,75 @@ export default {
     return {
       current_user: {},
       board_game:{},
+      enrolments:[],
+      enrolment: false,
       load: true,
     }
   },
   methods:{
-    callCoffeeShopBoardGame(){
-      console.log("callCoffeeShopBoardGame")
+    
+    callGET_CoffeeShopBoardGame(){
+      console.log("callGET_CoffeeShopBoardGame")
       this.load = false;
       route_helpers.GET().coffee_shop_board_game(this.coffee_shop.id, this.table.relationships.board_game.data.id)
       .then( response => {this.board_game = response.data.data})
       .then(() => {this.load = true})
-      console.log(this.table.id)
     },
-    push_table_edit(){
-      console.log("push_table_update")
-      router.push('/coffee_shops/'+this.coffee_shop.id+'/events/'+this.event.id+'/tables/'+this.table.id+'/update');
+    callGET_CoffeeShopEventTableEnrolments(){
+      console.log("callGET_CoffeeShopEventTableEnrolments")
+      this.load = false;
+      route_helpers.GET().coffee_shop_event_table_enrolments(this.coffee_shop.id, this.event.id, this.table.id)
+      .then( response => {this.enrolments = response.data.data})
+      .then(() => {this.load = true})
+      .then(() => {this.test()})
     },
-    callDELETE_table(){
-      console.log("callDELETE_table")  
+    callDELETE_SoffeeShopEventTableDeactivate(){
+      console.log("callDELETE_SoffeeShopEventTableDeactivate")  
       route_helpers.DELETE().coffee_shop_event_table_deactivate(this.coffee_shop.id, this.event.id, this.table.id)
       .then(response => {console.log(response)})
-      .then(()=>{this.$emit('removeFromParent', this.table.id);})    
+      .then(()=>{this.$emit('onDeleteTable', this.table.id)})    
       .catch(error => {error_handler._401("get#users")})
+    },
+    callPOST_CoffeeShopEventTableEnrolments(){
+      console.log("callPOST_CoffeeShopEventTableEnrolments")
+      route_helpers.POST().coffee_shop_event_table_enrolments(this.coffee_shop.id, this.event.id, this.table.id)
+      .then(response => {console.log(response)})
+      .then(()=>{this.callGET_CoffeeShopEventTableEnrolments()})
+    },
+    callDELETE_CoffeeShopEventTableEnrolmentDeactivate(){
+      console.log("callDELETE_CoffeeShopEventTableEnrolmentDeactivate")
+      let temp = this.enrolments.find(item =>{
+        return item.attributes.user.id == this.current_user.id
+      })
+      console.log(temp.id)
+      route_helpers.DELETE ().coffee_shop_event_table_enrolment_deactivate(this.coffee_shop.id, this.event.id, this.table.id, temp.id) 
+      .then(response => {console.log(response)})
+      .then(()=>{this.callGET_CoffeeShopEventTableEnrolments()})
+    },
+    enrolment_change(){
+      console.log("enrolment_change")
+      if(this.enrolment == "true"){
+        this.callPOST_CoffeeShopEventTableEnrolments()
+      }
+      else{
+        this.callDELETE_CoffeeShopEventTableEnrolmentDeactivate()
+      }
+    },
+    test(){
+      this.enrolment = this.enrolments.some(item =>{
+        return item.attributes.user.id == this.current_user.id
+      })+""
+    },
+    call_on_update_table(){
+      console.log("call_on_update_table")
+      this.$emit('onUpdateTable', this.table.id)
+    },
+    enrol_in_table(){
+      console.log("enrol_in_table")
     },
     call_reActive(){
       console.log("call_reActive");
-    }
+    },
   },
   computed:{
     EDIT(){
@@ -77,7 +130,8 @@ export default {
       }
     );
     this.current_user = this.$store.state.current_user
-    this.callCoffeeShopBoardGame();
+    this.callGET_CoffeeShopBoardGame()
+    this.callGET_CoffeeShopEventTableEnrolments()
   }
 }
 </script>
