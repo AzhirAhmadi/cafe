@@ -240,7 +240,7 @@ RSpec.describe EventsController, type: :request do
                 count = Table.count
                 post coffee_shop_event_tables_url(coffee_shop, opened_event), params: {
                     "table": {
-                        "capacity": 99,
+                        "capacity": board_game.min_player,
                         "table_code": "code_99",
                         "board_game_id": board_game.id
                     }
@@ -265,7 +265,7 @@ RSpec.describe EventsController, type: :request do
                 count = Table.count
                 post coffee_shop_event_tables_url(coffee_shop, locked_event), params: {
                     "table": {
-                        "capacity": 99,
+                        "capacity": board_game.min_player,
                         "table_code": "code_99",
                         "board_game_id": board_game.id
                     }
@@ -290,7 +290,7 @@ RSpec.describe EventsController, type: :request do
                 count = Table.count
                 post coffee_shop_event_tables_url(coffee_shop, started_event), params: {
                     "table": {
-                        "capacity": 99,
+                        "capacity": board_game.min_player,
                         "table_code": "code_99",
                         "board_game_id": board_game.id
                     }
@@ -323,14 +323,14 @@ RSpec.describe EventsController, type: :request do
                 other_board_game = create :board_game, coffee_shop: coffee_shop
                 put coffee_shop_event_table_url(coffee_shop, opened_event, table), params: {
                     "table": {
-                        "capacity": 10,
+                        "capacity": board_game.min_player,
                         "table_code": "code",
                         "board_game_id": other_board_game.id
                     }
                 }, headers: headers
 
                 expect(json["data"]["attributes"]["table_code"]).to eql("code")
-                expect(json["data"]["attributes"]["capacity"]).to eql(10)
+                expect(json["data"]["attributes"]["capacity"]).to eql(board_game.min_player)
                 expect(json["data"]["relationships"]["event"]["data"]["id"].to_i).to eql(opened_event.id)
                 expect(json["data"]["relationships"]["board_game"]["data"]["id"].to_i).to eql(other_board_game.id)
             end
@@ -349,14 +349,14 @@ RSpec.describe EventsController, type: :request do
                 other_board_game = create :board_game, coffee_shop: coffee_shop
                 put coffee_shop_event_table_url(coffee_shop, locked_event, table), params: {
                     "table": {
-                        "capacity": 10,
+                        "capacity": board_game.min_player,
                         "table_code": "code",
                         "board_game_id": other_board_game.id
                     }
                 }, headers: headers
 
                 expect(json["data"]["attributes"]["table_code"]).to eql("code")
-                expect(json["data"]["attributes"]["capacity"]).to eql(10)
+                expect(json["data"]["attributes"]["capacity"]).to eql(board_game.min_player)
                 expect(json["data"]["relationships"]["event"]["data"]["id"].to_i).to eql(locked_event.id)
                 expect(json["data"]["relationships"]["board_game"]["data"]["id"].to_i).to eql(other_board_game.id)
             end
@@ -375,7 +375,7 @@ RSpec.describe EventsController, type: :request do
                 other_board_game = create :board_game, coffee_shop: coffee_shop
                 put coffee_shop_event_table_url(coffee_shop, started_event, table), params: {
                     "table": {
-                        "capacity": 10,
+                        "capacity": board_game.min_player,
                         "table_code": "code",
                         "board_game_id": other_board_game.id
                     }
