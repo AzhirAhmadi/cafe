@@ -48,12 +48,10 @@ class TablesController < ApplicationController
     end
 
     def deactivate
-        puts "##############################"
         event = find_event 
         raise ErrorHandling::Errors::Table::StartedEvent.new() if event.started_event?
         
         table = find_table
-        puts json: table
 
         authorize table
         raise ErrorHandling::Errors::Table::Deletedtable.new({deleted_at: table.deleted_at}) if table.deleted_at?

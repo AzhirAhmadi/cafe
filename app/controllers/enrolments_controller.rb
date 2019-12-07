@@ -9,6 +9,7 @@ class EnrolmentsController < ApplicationController
     end
 
     def create
+        puts params
         enrolment = current_user.enrolments.build(table_id: params[:table_id])
 
         authorize enrolment
