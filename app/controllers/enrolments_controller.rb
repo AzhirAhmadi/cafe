@@ -9,19 +9,18 @@ class EnrolmentsController < ApplicationController
     end
 
     def create
-        puts params
         enrolment = current_user.enrolments.build(table_id: params[:table_id])
 
         authorize enrolment
 
         if enrolment.save
-            render jsonapi: enrolment, include: ['coffee_shop']
+            render jsonapi: enrolment
         else
             raise ErrorHandling::Errors::Enrolment::DataBaseCreation.new({params: params, enrolment: enrolment})           
         end
     end
 
-    def deactivate
+    def destroy
         enrolment = Enrolment.find(params[:id])
 
         authorize enrolment

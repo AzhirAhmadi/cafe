@@ -20,7 +20,7 @@ class TablePolicy < ApplicationPolicy
     return true if  current_user.sys_admin? || current_user.sys_master?
   end
 
-  def deactivate?
+  def destroy?
     return true if  current_user.coffee_owner? && table.event.coffee_shop.owner.id == current_user.id
     return true if  current_user.sys_expert? && table.event.coffee_shop.maintainer.id == current_user.id
     return true if  current_user.sys_admin? || current_user.sys_master?

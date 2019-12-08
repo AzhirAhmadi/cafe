@@ -63,8 +63,8 @@ class ApplicationController < ActionController::Base
 
 
     def render_error(exception)
-      puts json: (ErrorHandling::ErrorRenderer.error_to_JSON exception),
-      status: (ErrorHandling::ErrorRenderer.error_status exception)
+      # puts json: (ErrorHandling::ErrorRenderer.error_to_JSON exception),
+      # status: (ErrorHandling::ErrorRenderer.error_status exception)
       render json: (ErrorHandling::ErrorRenderer.error_to_JSON exception),
        status: (ErrorHandling::ErrorRenderer.error_status exception)
     end

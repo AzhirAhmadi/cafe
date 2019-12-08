@@ -48,7 +48,7 @@ class CoffeeShopsController < ApplicationController
         end
     end
 
-    def deactivate
+    def destroy
         coffee_shop = CoffeeShop.find(params[:id])
         authorize coffee_shop
         if coffee_shop.deleted_at?

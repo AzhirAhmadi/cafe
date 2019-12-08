@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :request do
 
-    describe "show" do
+    describe ".show" do
         context "when loged in az sys_master" do
             it "shloud see users even deactivateds" do
                 user = create :sys_master
@@ -38,7 +38,7 @@ RSpec.describe UsersController, type: :request do
         end
     end
 
-    describe "index" do
+    describe ".index" do
         context "when loged in az sys_master" do
             it "shloud see all users even deactivated users " do
                 user = create :sys_master
@@ -67,7 +67,7 @@ RSpec.describe UsersController, type: :request do
         end
     end
 
-    describe "create" do
+    describe ".create" do
         context "when loged in az sys_master" do
             it "shloud create user and it's role should be 'player' if send role az 'player'" do
                 user = create :sys_master
@@ -165,7 +165,7 @@ RSpec.describe UsersController, type: :request do
         end
     end
 
-    describe "update" do
+    describe ".update" do
         context "when loged in az sys_master" do
             it "shloud update itself and it's role to 'player'" do
                 user = create :sys_master
@@ -734,7 +734,7 @@ RSpec.describe UsersController, type: :request do
         end
     end
 
-    describe "deactivate" do
+    describe ".destroy" do
         context "when loged in az sys_master" do
             it "shloud deactivate itself" do
                 user = create :sys_master
@@ -742,7 +742,7 @@ RSpec.describe UsersController, type: :request do
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                delete user_deactivate_url(user), headers: headers
+                delete user_url(user), headers: headers
                 expect(json["data"]["attributes"]["email"]).to eq(user.email)
 
                 login user
@@ -758,7 +758,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete user_deactivate_url(player), headers: headers
+                    delete user_url(player), headers: headers
                     expect(json["data"]["attributes"]["email"]).to eq(player.email)
                     
                     login player
@@ -775,7 +775,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete user_deactivate_url(coffee_owner), headers: headers
+                    delete user_url(coffee_owner), headers: headers
                     expect(json["data"]["attributes"]["email"]).to eq(coffee_owner.email)
                     
                     login coffee_owner
@@ -792,7 +792,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete user_deactivate_url(sys_expert), headers: headers
+                    delete user_url(sys_expert), headers: headers
                     expect(json["data"]["attributes"]["email"]).to eq(sys_expert.email)
                     
                     login sys_expert
@@ -809,7 +809,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete user_deactivate_url(sys_admin), headers: headers
+                    delete user_url(sys_admin), headers: headers
                     expect(json["data"]["attributes"]["email"]).to eq(sys_admin.email)
                     
                     login sys_admin
@@ -826,7 +826,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete user_deactivate_url(sys_master), headers: headers
+                    delete user_url(sys_master), headers: headers
 
                     expect(json).to include({
                         "error"=>{

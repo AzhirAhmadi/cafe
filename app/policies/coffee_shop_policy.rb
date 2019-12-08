@@ -12,7 +12,7 @@ class CoffeeShopPolicy < ApplicationPolicy
       super
     end
 
-    def deactivate?
+    def destroy?
       return true if coffee_shop.owner_id == current_user.id
       return true if coffee_shop.id == current_user.id
       return true if current_user.sys_admin? || current_user.sys_master?

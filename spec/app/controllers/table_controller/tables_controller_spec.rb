@@ -387,7 +387,7 @@ RSpec.describe TablesController, type: :request do
         end
     end
 
-    describe ".deactivate" do
+    describe ".destroy" do
         context "when invalid header params provided" do
             it "(absence of Authorization Token)" do
                 table = create :table
@@ -396,7 +396,7 @@ RSpec.describe TablesController, type: :request do
                 expect(json["error"]).to include(
                     {
                         "message"=>"Bad Request!", 
-                        "path"=>"tables#deactivate"
+                        "path"=>"tables#destroy"
                     }
                 )
             end
@@ -410,7 +410,7 @@ RSpec.describe TablesController, type: :request do
                 expect(json["error"]).to include(
                     {
                         "message"=>"Not Acceptable!" ,
-                        "path"=>"tables#deactivate"
+                        "path"=>"tables#destroy"
                     }
                 )
             end

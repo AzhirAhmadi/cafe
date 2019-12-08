@@ -20,7 +20,7 @@ class BoardGamePolicy < ApplicationPolicy
     return true if current_user.sys_admin? || current_user.sys_master?
   end
 
-  def deactivate?
+  def destroy?
     return true if current_user.coffee_owner? && board_game.coffee_shop.owner.id == current_user.id
     return true if current_user.sys_expert? && board_game.coffee_shop.maintainer.id == current_user.id
     return true if current_user.sys_admin? || current_user.sys_master?

@@ -109,7 +109,7 @@ RSpec.describe CoffeeShopsController, type: :request do
         end
     end
 
-    describe ".deactivate" do
+    describe ".destroy" do
         context "when loged in az sys_master" do
             it "shloud deactivate coffee_shop" do
                 sys_master = create :sys_master
@@ -118,7 +118,7 @@ RSpec.describe CoffeeShopsController, type: :request do
 
                 coffee_shop = create :coffee_shop
 
-                delete coffee_shop_deactivate_url(coffee_shop), headers: headers
+                delete coffee_shop_url(coffee_shop), headers: headers
 
                 expect(CoffeeShop.find(coffee_shop.id).active?).to eq(false)
                 expect(json["data"]['id'].to_i).to eq(coffee_shop.id) 

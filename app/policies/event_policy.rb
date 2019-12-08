@@ -20,7 +20,7 @@ class EventPolicy < ApplicationPolicy
     return true if  current_user.sys_admin? || current_user.sys_master?
   end
 
-  def deactivate?
+  def destroy?
     return true if  current_user.coffee_owner? && event.coffee_shop.owner.id == current_user.id
     return true if  current_user.sys_expert? && event.coffee_shop.maintainer.id == current_user.id
     return true if  current_user.sys_admin? || current_user.sys_master?

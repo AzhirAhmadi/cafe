@@ -137,6 +137,7 @@ RSpec.describe BoardGamesController, type: :request do
             end
         end
     end
+
     describe ".update" do
         context "when loged in az player" do
             it "shloud get 'Access denied!' error" do
@@ -167,7 +168,7 @@ RSpec.describe BoardGamesController, type: :request do
         end
     end
 
-    describe ".deactivate" do
+    describe ".destroy" do
         context "when loged in az player" do
             it "shloud get 'Access denied!' error" do
                 player = create :player
@@ -177,7 +178,7 @@ RSpec.describe BoardGamesController, type: :request do
                 coffee_shop = create :coffee_shop
                 board_game = create :board_game, coffee_shop: coffee_shop
 
-                delete coffee_shop_board_game_deactivate_url(coffee_shop, board_game), headers: headers
+                delete coffee_shop_board_game_url(coffee_shop, board_game), headers: headers
                 
                 expect(json["error"]).to include(
                     {

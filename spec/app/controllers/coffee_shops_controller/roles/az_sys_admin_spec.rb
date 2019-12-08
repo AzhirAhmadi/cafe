@@ -49,7 +49,7 @@ RSpec.describe CoffeeShopsController, type: :request do
         end
     end
 
-    describe "create" do
+    describe ".create" do
         context "when loged in az sys_admin" do
             it "shloud create coffee_shop and be creator of the coffee_shop" do
                 sys_admin = create :sys_admin
@@ -80,7 +80,7 @@ RSpec.describe CoffeeShopsController, type: :request do
         end
     end
 
-    describe "update" do
+    describe ".update" do
         context "when loged in az sys_admin" do
             it "shloud update coffee_shop data and it's owner and maintainer" do
                 sys_admin = create :sys_admin
@@ -110,7 +110,7 @@ RSpec.describe CoffeeShopsController, type: :request do
         end
     end
 
-    describe "deactivate" do
+    describe ".destroy" do
         context "when loged in az sys_admin" do
             it "shloud deactivate coffee_shop" do
                 sys_admin = create :sys_admin
@@ -119,7 +119,7 @@ RSpec.describe CoffeeShopsController, type: :request do
 
                 coffee_shop = create :coffee_shop
 
-                delete coffee_shop_deactivate_url(coffee_shop), headers: headers
+                delete coffee_shop_url(coffee_shop), headers: headers
 
                 expect(CoffeeShop.find(coffee_shop.id).active?).to eq(false)
                 expect(json["data"]['id'].to_i).to eq(coffee_shop.id) 

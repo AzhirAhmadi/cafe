@@ -25,10 +25,6 @@ class ApplicationPolicy
         false
     end
 
-    def deactivate?
-        false
-    end
-
     class Scope
         attr_reader :current_user, :scope
 

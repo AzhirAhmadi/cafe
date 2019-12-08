@@ -52,7 +52,7 @@ RSpec.describe CoffeeShopsController, type: :request do
         end
     end
     
-    describe "create" do
+    describe ".create" do
         context "when loged in az coffee_owner" do
             it "shloud get 'Access denied!' error" do
                 coffee_owner = create :coffee_owner
@@ -81,7 +81,8 @@ RSpec.describe CoffeeShopsController, type: :request do
             end
         end
     end
-    describe "update" do
+
+    describe ".update" do
         context "when loged in az coffee_owner" do
             it "shloud update coffee_shop data if coffee_owner ownes the coffee_shop" do
                 coffee_owner = create :coffee_owner
@@ -156,7 +157,7 @@ RSpec.describe CoffeeShopsController, type: :request do
         end
     end
 
-    describe "deactivate" do
+    describe ".destroy" do
         context "when loged in az coffee_owner" do
 
             it "shloud deactivate coffee_shop if coffee_owner ownes the coffee_shop" do
@@ -166,8 +167,8 @@ RSpec.describe CoffeeShopsController, type: :request do
 
                 coffee_shop = create :coffee_shop, owner: coffee_owner
 
-                delete coffee_shop_deactivate_url(coffee_shop), headers: headers
-
+                delete coffee_shop_url(coffee_shop), headers: headers
+                puts json
                 expect(CoffeeShop.find(coffee_shop.id).active?).to eq(false)
                 expect(json["data"]['id'].to_i).to eq(coffee_shop.id) 
             end
@@ -180,7 +181,7 @@ RSpec.describe CoffeeShopsController, type: :request do
 
                 coffee_shop = create :coffee_shop, owner: other_coffee_owner
 
-                delete coffee_shop_deactivate_url(coffee_shop), headers: headers
+                delete coffee_shop_url(coffee_shop), headers: headers
                 
                 expect(json["error"]).to include(
                     {

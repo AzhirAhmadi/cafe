@@ -240,24 +240,18 @@ RSpec.describe CoffeeShopsController, type: :request do
         end
     end
 
-    describe ".deactivate" do
+    describe ".destroy" do
         context "when invalid header params provided" do
             it "(absence of Authorization Token)" do
                 creator = create :player
                 coffee_shop = create :coffee_shop
 
-                put coffee_shop_url(coffee_shop), params: {
-                    "user": {
-                        "email": "test@test",
-                        "password": "1234567",
-                        "role": "player"
-                    }
-                }
+                delete coffee_shop_url(coffee_shop)
 
                 expect(json["error"]).to include(
                     {
                         "message"=>"Bad Request!", 
-                        "path"=>"coffee_shops#update"
+                        "path"=>"coffee_shops#destroy"
                     }
                 )
             end
@@ -268,17 +262,11 @@ RSpec.describe CoffeeShopsController, type: :request do
 
                 login creator
                 headers = {"Authorization": "invalid"}
-                put coffee_shop_url(coffee_shop), params: {
-                    "user": {
-                        "email": "test@test",
-                        "password": "1234567",
-                        "role": "player"
-                    }
-                }, headers: headers
+                delete coffee_shop_url(coffee_shop), headers: headers
                 expect(json["error"]).to include(
                     {
                         "message"=>"Not Acceptable!", 
-                        "path"=>"coffee_shops#update"
+                        "path"=>"coffee_shops#destroy"
                     }
                 )
             end

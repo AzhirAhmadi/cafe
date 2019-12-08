@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :request do
-    describe "show" do
+    describe ".show" do
         context "when invalid header params provided" do
             it "(absence of Authorization Token)" do
                 user = create :player
@@ -31,7 +31,7 @@ RSpec.describe UsersController, type: :request do
         end
     end
 
-    describe "index" do
+    describe ".index" do
         context "when invalid header params provided" do
             it "(absence of Authorization Token)" do
                 user = create :player
@@ -61,7 +61,7 @@ RSpec.describe UsersController, type: :request do
         end
     end
 
-    describe "create" do
+    describe ".create" do
         context "when invalid body params provided" do
             it "(absence of user)" do
                 post users_url, params: {}
@@ -236,7 +236,7 @@ RSpec.describe UsersController, type: :request do
             end
         end
     end
-    describe "update" do
+    describe ".update" do
         context "when invalid header params provided" do
             it "(absence of Authorization Token)" do
                 user = create :player
@@ -388,17 +388,17 @@ RSpec.describe UsersController, type: :request do
         end
     end
 
-    describe "deactivate" do
+    describe ".destroy" do
         context "when invalid header params provided" do
             it "(absence of Authorization Token)" do
                 user = create :player
                 login user
-                delete user_deactivate_url(user)
+                delete user_url(user)
 
                 expect(json["error"]).to include(
                     {
                         "message"=>"Bad Request!", 
-                        "path"=>"users#deactivate"
+                        "path"=>"users#destroy"
                     }
                 )
             end
@@ -407,18 +407,18 @@ RSpec.describe UsersController, type: :request do
                 user = create :player
                 login user
                 headers = {"Authorization": "invalid"}
-                delete user_deactivate_url(user), headers: headers
+                delete user_url(user), headers: headers
                 expect(json["error"]).to include(
                     {
                         "message"=>"Not Acceptable!", 
-                        "path"=>"users#deactivate"
+                        "path"=>"users#destroy"
                     }
                 )
             end
         end
     end
 
-    describe "profile" do
+    describe ".profile" do
         context "when invalid header params provided" do
             it "(absence of Authorization Token)" do
                 user = create :player

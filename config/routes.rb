@@ -54,23 +54,16 @@ Rails.application.routes.draw do
       delete  'logout',       to: 'devise_api/sessions#destroy'
     end
 
-    resources :coffee_shops, only: [:create, :update, :show, :index] do
-      resources :board_games, only: [:create, :update, :show, :index]
-      delete 'board_games/:id', to: 'board_games#deactivate', as: "board_game_deactivate"
-      resources :events, only: [:create, :update, :show, :index] do
-        resources :tables, only: [:create, :update, :show, :index] do
-          resources :enrolments, only: [:create, :index]
-          delete 'enrolments/:id', to: 'enrolments#deactivate', as: "enrolment_deactivate"  
+    resources :coffee_shops, only: [:create, :update, :show, :index, :destroy] do
+      resources :board_games, only: [:create, :update, :show, :index, :destroy]
+      resources :events, only: [:create, :update, :show, :index, :destroy] do
+        resources :tables, only: [:create, :update, :show, :index, :destroy] do
+          resources :enrolments, only: [:create, :index, :destroy]
         end
-        delete 'tables/:id', to: 'tables#deactivate', as: "table_deactivate"  
-
       end
-      delete 'events/:id', to: 'events#deactivate', as: "event_deactivate"
     end 
-    delete 'coffee_shops/:id', to: 'coffee_shops#deactivate', as: "coffee_shop_deactivate"
     
-    resources :users, only:[:create, :update, :show, :index]
-    delete 'users/:id', to: 'users#deactivate', as: "user_deactivate"
+    resources :users, only:[:create, :update, :show, :index, :destroy]
     get '/profile', to: 'users#profile'
   end
 

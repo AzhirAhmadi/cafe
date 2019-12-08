@@ -582,17 +582,17 @@ RSpec.describe EventsController, type: :request do
         end
     end
 
-    describe ".deactivate" do
+    describe ".destroy" do
         context "when invalid header params provided" do
             it "(absence of Authorization Token)" do
                 coffee_shop = create :coffee_shop
                 event = create :event
-                delete coffee_shop_event_deactivate_url(coffee_shop, event)
+                delete coffee_shop_event_url(coffee_shop, event)
 
                 expect(json["error"]).to include(
                     {
                         "message"=>"Bad Request!", 
-                        "path"=>"events#deactivate"
+                        "path"=>"events#destroy"
                     }
                 )
             end
@@ -601,12 +601,12 @@ RSpec.describe EventsController, type: :request do
                 coffee_shop = create :coffee_shop
                 headers = {"Authorization": "invalid"}
                 event = create :event
-                delete coffee_shop_event_deactivate_url(coffee_shop, event),headers: headers
+                delete coffee_shop_event_url(coffee_shop, event),headers: headers
 
                 expect(json["error"]).to include(
                     {
                         "message"=>"Not Acceptable!" ,
-                        "path"=>"events#deactivate"
+                        "path"=>"events#destroy"
                     }
                 )
             end

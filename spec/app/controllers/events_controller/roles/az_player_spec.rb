@@ -182,6 +182,7 @@ RSpec.describe EventsController, type: :request do
             end
         end
     end
+
     describe ".update" do
         context "when loged in az player" do
             it "shloud get 'Access denied!' error" do
@@ -215,7 +216,7 @@ RSpec.describe EventsController, type: :request do
         end
     end
 
-    describe ".deactivate" do
+    describe ".destroy" do
         context "when loged in az player" do
             it "shloud get 'Access denied!' error" do
                 player = create :player
@@ -225,7 +226,7 @@ RSpec.describe EventsController, type: :request do
                 coffee_shop = create :coffee_shop
                 event = create :event, coffee_shop: coffee_shop
 
-                delete coffee_shop_event_deactivate_url(coffee_shop, event), headers: headers
+                delete coffee_shop_event_url(coffee_shop, event), headers: headers
                 
                 expect(json["error"]).to include(
                     {

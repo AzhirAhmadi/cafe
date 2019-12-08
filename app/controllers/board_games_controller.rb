@@ -54,7 +54,7 @@ class BoardGamesController < ApplicationController
         end
     end
 
-    def deactivate 
+    def destroy 
         coffee_Shop = CoffeeShop.find(params[:coffee_shop_id])
         board_game = coffee_Shop.created_board_games.find(params[:id])
 

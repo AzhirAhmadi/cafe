@@ -52,7 +52,7 @@ RSpec.describe CoffeeShopsController, type: :request do
         end
     end
 
-    describe "create" do
+    describe ".create" do
         context "when loged in az sys_expert" do
             it "shloud get 'Access denied!' error" do
                 sys_expert = create :sys_expert
@@ -81,7 +81,7 @@ RSpec.describe CoffeeShopsController, type: :request do
         end
     end
 
-    describe "update" do
+    describe ".update" do
         context "when loged in az sys_expert" do
             it "shloud update coffee_shop data if sys_expert is maintianer of the coffee_shop" do
                 sys_expert = create :sys_expert
@@ -157,7 +157,7 @@ RSpec.describe CoffeeShopsController, type: :request do
         end
     end
 
-    describe "deactivate" do
+    describe ".destroy" do
         context "when loged in az sys_expert" do
             it "shloud get 'Access denied!' error" do
                 coffee_shop_maintainer = create :sys_expert
@@ -166,7 +166,7 @@ RSpec.describe CoffeeShopsController, type: :request do
 
                 coffee_shop = create :coffee_shop
 
-                delete coffee_shop_deactivate_url(coffee_shop), headers: headers
+                delete coffee_shop_url(coffee_shop), headers: headers
                 
                 expect(json["error"]).to include(
                     {

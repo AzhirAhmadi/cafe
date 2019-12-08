@@ -10,11 +10,8 @@ RSpec.describe EnrolmentsController, type: :request do
                 
                 opened_table = create :opened_table
                 count = Enrolment.count
-                post coffee_shop_event_enrolments_url(opened_table.event.coffee_shop,opened_table.event), params: {
-                    "enrolment": {
-                        "table_id": opened_table.id
-                    }
-                }, headers: headers
+                post coffee_shop_event_table_enrolments_url(opened_table.event.coffee_shop,opened_table.event, opened_table),
+                params: {}, headers: headers
                 newCount = Enrolment.count
 
                 expect(newCount - count).to eq(1)
@@ -24,16 +21,17 @@ RSpec.describe EnrolmentsController, type: :request do
         end
     end
 
-    describe ".deactivate" do
+    describe ".destroy" do
         context "when loged in az sys_admin" do
-            it "should deactivate an enrolment on a table for loged in user" do
+            it "should destroy an enrolment on a table for loged in user" do
                 sys_admin = create :sys_admin
                 login sys_admin
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 
                 enrolment = create :enrolment, user: sys_admin
 
-                delete coffee_shop_event_enrolment_deactivate_url(enrolment.table.event.coffee_shop, enrolment.table.event, enrolment), headers: headers
+                delete coffee_shop_event_table_enrolment_url(enrolment.table.event.coffee_shop, enrolment.table.event, enrolment.table, enrolment),
+                headers: headers
 
                 expect(Enrolment.find(enrolment.id).active?).to eq(false)
                 expect(json["data"]['id'].to_i).to eq(enrolment.id)

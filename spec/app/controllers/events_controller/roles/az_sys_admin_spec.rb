@@ -118,6 +118,7 @@ RSpec.describe EventsController, type: :request do
             end
         end
     end
+
     describe ".update" do
         context "when loged in az sys_admin" do
             it "shloud update event" do
@@ -147,7 +148,7 @@ RSpec.describe EventsController, type: :request do
         end
     end
 
-    describe ".deactivate" do
+    describe ".destroy" do
         context "when loged in az sys_admin" do
             it "shloud deactivate event" do
                 sys_admin = create :sys_admin
@@ -157,7 +158,7 @@ RSpec.describe EventsController, type: :request do
                 coffee_shop = create :coffee_shop
                 event =create :event, coffee_shop: coffee_shop
 
-                delete coffee_shop_event_deactivate_url(coffee_shop, event), headers: headers
+                delete coffee_shop_event_url(coffee_shop, event), headers: headers
 
                 expect(Event.find(event.id).active?).to eq(false)
                 expect(json["data"]['id'].to_i).to eq(event.id) 

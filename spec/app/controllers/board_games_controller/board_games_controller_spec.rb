@@ -333,17 +333,17 @@ RSpec.describe BoardGamesController, type: :request do
         end
     end
 
-    describe ".deactivate" do
+    describe ".destroy" do
         context "when invalid header params provided" do
             it "(absence of Authorization Token)" do
                 coffee_shop = create :coffee_shop
                 board_game = create :board_game
-                delete coffee_shop_board_game_deactivate_url(coffee_shop, board_game)
+                delete coffee_shop_board_game_url(coffee_shop, board_game)
 
                 expect(json["error"]).to include(
                     {
                         "message"=>"Bad Request!", 
-                        "path"=>"board_games#deactivate"
+                        "path"=>"board_games#destroy"
                     }
                 )
             end
@@ -352,12 +352,12 @@ RSpec.describe BoardGamesController, type: :request do
                 coffee_shop = create :coffee_shop
                 headers = {"Authorization": "invalid"}
                 board_game = create :board_game
-                delete coffee_shop_board_game_deactivate_url(coffee_shop, board_game),headers: headers
+                delete coffee_shop_board_game_url(coffee_shop, board_game),headers: headers
 
                 expect(json["error"]).to include(
                     {
                         "message"=>"Not Acceptable!" ,
-                        "path"=>"board_games#deactivate"
+                        "path"=>"board_games#destroy"
                     }
                 )
             end

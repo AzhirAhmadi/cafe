@@ -5,7 +5,7 @@ class EnrolmentPolicy < ApplicationPolicy
     true
   end
 
-  def deactivate?
+  def destroy?
     return false if current_user.blank?
     true
   end

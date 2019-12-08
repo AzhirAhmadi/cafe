@@ -242,6 +242,7 @@ RSpec.describe EventsController, type: :request do
             end
         end
     end
+
     describe ".update" do
         context "when loged in az sys_expert" do
             it "shloud update event if sys_expert is maintainer of the coffee_shop" do
@@ -300,7 +301,7 @@ RSpec.describe EventsController, type: :request do
         end
     end
 
-    describe ".deactivate" do
+    describe ".destroy" do
         context "when loged in az sys_expert" do
             it "shloud deactivate event if sys_expert is maintainer of the coffee_shop" do
                 sys_expert = create :sys_expert
@@ -310,7 +311,7 @@ RSpec.describe EventsController, type: :request do
                 coffee_shop = create :coffee_shop, maintainer: sys_expert
                 event =create :event, coffee_shop: coffee_shop
 
-                delete coffee_shop_event_deactivate_url(coffee_shop, event), headers: headers
+                delete coffee_shop_event_url(coffee_shop, event), headers: headers
 
                 expect(Event.find(event.id).active?).to eq(false)
                 expect(json["data"]['id'].to_i).to eq(event.id) 
@@ -324,7 +325,7 @@ RSpec.describe EventsController, type: :request do
                 coffee_shop = create :coffee_shop
                 event =create :event, coffee_shop: coffee_shop
 
-                delete coffee_shop_event_deactivate_url(coffee_shop, event), headers: headers
+                delete coffee_shop_event_url(coffee_shop, event), headers: headers
 
                 expect(Event.find(event.id).active?).to eq(true)
                 

@@ -161,6 +161,7 @@ RSpec.describe BoardGamesController, type: :request do
             end
         end
     end
+
     describe ".update" do
         context "when loged in az player" do
             it "shloud update board_game if sys_expert is maintainer of the coffee_shop" do
@@ -213,7 +214,7 @@ RSpec.describe BoardGamesController, type: :request do
         end
     end
 
-    describe ".deactivate" do
+    describe ".destroy" do
         context "when loged in az player" do
             it "shloud deactivate board_game if sys_expert is maintainer of the coffee_shop" do
                 sys_expert = create :sys_expert
@@ -223,7 +224,7 @@ RSpec.describe BoardGamesController, type: :request do
                 coffee_shop = create :coffee_shop, maintainer: sys_expert
                 board_game =create :board_game, coffee_shop: coffee_shop
 
-                delete coffee_shop_board_game_deactivate_url(coffee_shop, board_game), headers: headers
+                delete coffee_shop_board_game_url(coffee_shop, board_game), headers: headers
 
                 expect(BoardGame.find(board_game.id).active?).to eq(false)
                 expect(json["data"]['id'].to_i).to eq(board_game.id) 
@@ -237,7 +238,7 @@ RSpec.describe BoardGamesController, type: :request do
                 coffee_shop = create :coffee_shop
                 board_game =create :board_game, coffee_shop: coffee_shop
 
-                delete coffee_shop_board_game_deactivate_url(coffee_shop, board_game), headers: headers
+                delete coffee_shop_board_game_url(coffee_shop, board_game), headers: headers
 
                 expect(BoardGame.find(board_game.id).active?).to eq(true)
                 

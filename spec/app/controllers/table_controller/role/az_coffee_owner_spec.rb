@@ -749,7 +749,7 @@ RSpec.describe EventsController, type: :request do
         end
     end
 
-    describe ".deactivate" do
+    describe ".destroy" do
         context "and is the owner of coffee shop" do
             it "shloud deactivate table for open event" do
                 coffee_owner = create :coffee_owner
@@ -763,7 +763,7 @@ RSpec.describe EventsController, type: :request do
                 table = create :table, event: opened_event, board_game: board_game
 
                 other_board_game = create :board_game, coffee_shop: coffee_shop
-                delete coffee_shop_event_table_deactivate_url(coffee_shop, opened_event, table), headers: headers
+                delete coffee_shop_event_table_url(coffee_shop, opened_event, table), headers: headers
 
                 expect(json["data"]["attributes"]["table_code"]).to eql(table.table_code)
                 expect(json["data"]["attributes"]["capacity"]).to eql(table.capacity)
@@ -780,7 +780,7 @@ RSpec.describe EventsController, type: :request do
 
                 table = create :table, event: locked_event, board_game: board_game
 
-                delete coffee_shop_event_table_deactivate_url(coffee_shop, locked_event, table), headers: headers
+                delete coffee_shop_event_table_url(coffee_shop, locked_event, table), headers: headers
 
                 expect(json["data"]["attributes"]["table_code"]).to eql(table.table_code)
                 expect(json["data"]["attributes"]["capacity"]).to eql(table.capacity)
@@ -797,7 +797,7 @@ RSpec.describe EventsController, type: :request do
 
                 table = create :table, event: started_event, board_game: board_game
 
-                delete coffee_shop_event_table_deactivate_url(coffee_shop, started_event, table), headers: headers
+                delete coffee_shop_event_table_url(coffee_shop, started_event, table), headers: headers
 
                 expect(json).to include({
                     "error"=>{
@@ -815,7 +815,7 @@ RSpec.describe EventsController, type: :request do
                 
                 opened_table = create :opened_table
 
-                delete coffee_shop_event_table_deactivate_url(opened_table.event.coffee_shop, opened_table.event, opened_table), headers: headers
+                delete coffee_shop_event_table_url(opened_table.event.coffee_shop, opened_table.event, opened_table), headers: headers
 
                 expect(json["error"]).to include(
                     {

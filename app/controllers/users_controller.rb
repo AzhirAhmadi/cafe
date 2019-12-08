@@ -47,7 +47,7 @@ class UsersController < ApplicationController
         end
     end
 
-    def deactivate
+    def destroy
         user = User.find(params[:id])
         authorize user
         if user.deleted_at?

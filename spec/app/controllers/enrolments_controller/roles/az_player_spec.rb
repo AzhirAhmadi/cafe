@@ -204,16 +204,16 @@ RSpec.describe EnrolmentsController, type: :request do
         end
     end
 
-    describe ".deactivate" do
+    describe ".destroy" do
         context "when loged in az player" do
-            it "should deactivate an enrolment on a table for loged in user" do
+            it "should destroy an enrolment on a table for loged in user" do
                 player = create :player
                 login player
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
                 
                 enrolment = create :enrolment, user: player
 
-                delete coffee_shop_event_table_enrolment_deactivate_url(enrolment.table.event.coffee_shop, enrolment.table.event, enrolment.table, enrolment), headers: headers
+                delete coffee_shop_event_table_enrolment_url(enrolment.table.event.coffee_shop, enrolment.table.event, enrolment.table, enrolment), headers: headers
 
                 expect(Enrolment.find(enrolment.id).active?).to eq(false)
                 expect(json["data"]['id'].to_i).to eq(enrolment.id)

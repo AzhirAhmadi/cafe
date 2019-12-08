@@ -41,7 +41,7 @@ class EventsController < ApplicationController
         end
     end
 
-    def deactivate
+    def destroy
         coffee_shop = CoffeeShop.find(params[:coffee_shop_id])
         event = coffee_shop.created_events.find(params[:id])
 

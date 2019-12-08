@@ -52,7 +52,7 @@ RSpec.describe UsersController, type: :request do
         end
     end
 
-    describe "create" do
+    describe ".create" do
         context "when loged in az player" do
             it "shloud get 'Access denied!' error" do
                 user = create :player
@@ -77,7 +77,7 @@ RSpec.describe UsersController, type: :request do
             end
         end
     end
-    describe "update" do
+    describe ".update" do
         context "when loged in az player" do
             it "shloud update itself and it's role to 'player'" do
                 user = create :player
@@ -265,13 +265,13 @@ RSpec.describe UsersController, type: :request do
         end
     end
 
-    describe "deactivate" do
+    describe ".destroy" do
         context "when loged in az player" do
             it "shloud deactivate itself" do
                 user = create :player
                 login user
                 headers = {"Authorization": JSON.parse(response.body)["jwt"]}
-                delete user_deactivate_url(user), headers: headers
+                delete user_url(user), headers: headers
                 login user
 
                 expect(json["error"]["message"]).to include("Your account has been deleted at")
@@ -286,7 +286,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete user_deactivate_url(player), headers: headers
+                    delete user_url(player), headers: headers
 
                     expect(json).to include({
                         "error"=>{
@@ -306,7 +306,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete user_deactivate_url(coffee_owner), headers: headers
+                    delete user_url(coffee_owner), headers: headers
 
                     expect(json).to include({
                         "error"=>{
@@ -326,7 +326,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete user_deactivate_url(sys_expert), headers: headers
+                    delete user_url(sys_expert), headers: headers
 
                     expect(json).to include({
                         "error"=>{
@@ -346,7 +346,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete user_deactivate_url(sys_admin), headers: headers
+                    delete user_url(sys_admin), headers: headers
 
                     expect(json).to include({
                         "error"=>{
@@ -366,7 +366,7 @@ RSpec.describe UsersController, type: :request do
                     login user
                     headers = {"Authorization": JSON.parse(response.body)["jwt"]}
 
-                    delete user_deactivate_url(sys_master), headers: headers
+                    delete user_url(sys_master), headers: headers
 
                     expect(json).to include({
                         "error"=>{

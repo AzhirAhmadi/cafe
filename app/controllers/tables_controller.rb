@@ -47,7 +47,7 @@ class TablesController < ApplicationController
         end
     end
 
-    def deactivate
+    def destroy
         event = find_event 
         raise ErrorHandling::Errors::Table::StartedEvent.new() if event.started_event?
         
