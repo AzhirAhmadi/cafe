@@ -23,6 +23,26 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 import store from './store.js'
 
+
+import boardGameResource from '../resources/boardGameResource'
+import coffeeShopResource from '../resources/coffeeShopResource'
+import deviseResource from '../resources/deviseResource'
+import enrolmentResource from '../resources/enrolmentResource'
+import eventResource from '../resources/eventResource'
+import tableResource from '../resources/tableResource'
+import userResource from '../resources/userResource'
+
+Vue.prototype.$boardGameResource = boardGameResource
+Vue.prototype.$coffeeShopResource = coffeeShopResource
+Vue.prototype.$deviseResource = deviseResource
+Vue.prototype.$enrolmentResource = enrolmentResource
+Vue.prototype.$eventResource = eventResource
+Vue.prototype.$tableResource = tableResource
+Vue.prototype.$userResource = userResource
+
+
+
+
 Vue.config.productionTip = false
 
 document.addEventListener('DOMContentLoaded', () => {

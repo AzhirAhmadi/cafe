@@ -33,8 +33,6 @@
 </template>
 
 <script>
-import RouteHelpers from '../../services/route_helpers'
-
 export default {
   data(){
     var validateConfirm = (rule, value, callback) => {
@@ -100,13 +98,13 @@ export default {
   methods:{
     callUserCreate(){
       console.log("callUserCreate")
-      RouteHelpers.POST().users(this.user.attributes)
+      this.$userResource.POST_users(this.user.attributes)
       .then(()=> { this.callLogin()})
     },
     callLogin(){
       console.log("callLogin")
       if(!this.current_user){
-        RouteHelpers.DEVICE().login(this.user.attributes.email, this.user.attributes.password)
+        this.$deviseResource.POST_login(this.user.attributes.email, this.user.attributes.password)
         .then(response => {this.$store.dispatch('updateAuthToken', response.data.jwt)})
         .then(()=> {this.callProfile()})
       }
@@ -116,7 +114,7 @@ export default {
     },
     callProfile(){
       console.log("callProfile")
-      RouteHelpers.GET().profile()
+      this.$userResource.GET_profile()
       .then(response =>{this.$store.dispatch('updateCurrentUser', response.data.data)})
       .then(()=> {this.$router.push("/")})
     },

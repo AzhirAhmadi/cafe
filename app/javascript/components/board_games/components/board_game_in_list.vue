@@ -18,7 +18,6 @@
 
 <script>
 import RolePower from '../../../services/role_pwoer'
-import route_helpers from '../../../services/route_helpers'
 import router from '../../../packs/router'
 
 export default {
@@ -35,7 +34,7 @@ export default {
     },
     callDELETE_board_game(){
       console.log("callDELETE_board_game")  
-      route_helpers.DELETE().coffee_shop_board_game_deactivate(this.coffee_shop.id, this.board_game.id)
+      this.$boardGameResource.DELETE_coffee_shop_board_game_deactivate(this.coffee_shop.id, this.board_game.id)
       .then(response => {console.log(response)})
       .then(()=>{this.$emit('removeFromParent', this.board_game.id);})    
       .catch(error => {error_handler._401("get#users")})

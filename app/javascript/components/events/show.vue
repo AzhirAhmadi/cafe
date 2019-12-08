@@ -77,7 +77,6 @@
 </template>
 
 <script>
-import route_helpers from '../../services/route_helpers'
 import router from '../../packs/router'
 import TableCrad from '../../components/tables/components/table_card'
 import AddTableDailog from '../../components/tables/components/add_table_dailog'
@@ -117,13 +116,13 @@ export default {
     callGET_CoffeeShopEvent(){
       console.log("callGET_CoffeeShopEvent")
       this.load = false;
-      route_helpers.GET().coffee_shop_event(this.coffee_shop_id, this.id)
+      this.$eventResource.GET_coffee_shop_event(this.coffee_shop_id, this.id)
       .then(response => {this.tempName(response.data);})
       .then(() => {this.load = true})
     },
     callGET_CoofeeShopEventTables(){
       console.log("callGET_CoofeeShopEventTables")
-      route_helpers.GET().coffee_shop_event_tables(this.coffee_shop_id, this.id)
+      this.$tableResource.GET_coffee_shop_event_tables(this.coffee_shop_id, this.id)
       .then(response => {
         this.tables.data = response.data.data
         this.tables.key = Math.random();

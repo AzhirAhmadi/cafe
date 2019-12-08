@@ -17,7 +17,6 @@
 
 <script>
 import RolePower from '../../../services/role_pwoer'
-import route_helpers from '../../../services/route_helpers'
 import router from '../../../packs/router'
 
 export default {
@@ -34,7 +33,7 @@ export default {
     },
     callDELETE_coffee_shop(){
       console.log("callDELETE_coffee_shop")  
-      route_helpers.DELETE().coffee_shop_deactivate(this.coffee_shop.id)
+      this.$coffeeShopResource.DELETE_coffee_shop_deactivate(this.coffee_shop.id)
       .then(response => {console.log(response)})
       .then(()=>{this.$emit('removeFromParent', this.coffee_shop.id);})    
     },

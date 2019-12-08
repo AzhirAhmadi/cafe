@@ -41,8 +41,8 @@
 
 
 <script>
-  import route_helper from '../../services/route_helpers'
   import router from '../../packs/router'
+  
   export default {
     data(){
       return {

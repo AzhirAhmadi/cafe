@@ -25,8 +25,6 @@
 </template>
 
 <script>
-import route_helpers from '../../services/route_helpers'
-
 export default {
   props: ['id'],
   data: function () {
@@ -43,7 +41,7 @@ export default {
     callGET_CoffeeShop(){
       console.log("callcoffee_shops")
       this.load = false;
-      route_helpers.GET().coffee_shop(this.id)
+      this.$coffeeShopResource.GET_coffee_shop(this.id)
       .then(response => {this.tempName(response.data);})
       .then(() => {this.load = true})
     },

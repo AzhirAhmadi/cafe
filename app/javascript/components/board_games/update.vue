@@ -34,8 +34,6 @@
 </template>
 
 <script>
-import route_helpers from '../../services/route_helpers'
-
 export default {
   props:['coffee_shop_id', 'id'],
   data(){
@@ -72,12 +70,12 @@ export default {
   methods:{
     callGET_coffee_shop__board_game(){
       console.log("callGET_coffee_shop__board_game")
-      route_helpers.GET().coffee_shop_board_game(this.coffee_shop_id, this.id)
+      this.$boardGameResource.GET_coffee_shop_board_game(this.coffee_shop_id, this.id)
       .then((response) => {this.board_game.attributes = response.data.data.attributes})
     },
     callPUT_coffee_shop_board_game(){
       console.log("callPUT_coffee_shop_board_game")
-      route_helpers.PUT().coffee_shop_board_game(this.coffee_shop_id, this.id, this.board_game.attributes)
+      this.$boardGameResource.PUT_coffee_shop_board_game(this.coffee_shop_id, this.id, this.board_game.attributes)
       .then((response)=> {console.log(response)})
       .then(()=>{this.$router.go(-1)})
     },

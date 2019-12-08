@@ -91,7 +91,6 @@
 
 <script>
 import UserInList from './components/user_in_list.vue'
-import route_helpers from '../../services/route_helpers'
 
 export default {
   data(){
@@ -106,7 +105,7 @@ export default {
   methods:{
     callUsers(){
       console.log("callUsers")
-       route_helpers.GET().users()
+       this.$userResource.GET_users()
        .then(response => {this.users = response.data.data})
     },
     handleClick() {

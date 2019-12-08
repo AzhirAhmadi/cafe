@@ -13,7 +13,6 @@
 
 <script>
 import RolePower from '../../../services/role_pwoer'
-import route_helpers from '../../../services/route_helpers'
 import router from '../../../packs/router'
 
 export default {

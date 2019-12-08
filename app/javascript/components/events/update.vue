@@ -114,7 +114,6 @@
 </template>
 
 <script>
-import route_helpers from '../../services/route_helpers'
 import error_handler from '../../services/error_handler'
 
 export default {
@@ -392,12 +391,12 @@ export default {
       this.temp_event.closed_at_time = this.event.attributes.closed_at
     },
     callGET_coffee_shop_event(){
-      route_helpers.GET().coffee_shop_event(this.coffee_shop_id, this.id)
+      this.$eventResource.GET_coffee_shop_event(this.coffee_shop_id, this.id)
       .then((response) => { this.setData(response.data.data)})
     },
     callPUT_coffee_shop_event(){
       console.log("callCoffeeShopCreate")
-      route_helpers.PUT().coffee_shop_event(this.coffee_shop_id, this.id, this.event.attributes)
+      this.$eventResource.PUT_coffee_shop_event(this.coffee_shop_id, this.id, this.event.attributes)
       .then(()=>{this.$router.go(-1)})
       .catch(error => {error_handler._401("get#users")})
     },

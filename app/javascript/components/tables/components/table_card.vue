@@ -28,7 +28,6 @@
 
 <script>
 import RolePower from '../../../services/role_pwoer'
-import route_helpers from '../../../services/route_helpers'
 import router from '../../../packs/router'
 
 export default {
@@ -47,28 +46,28 @@ export default {
     callGET_CoffeeShopBoardGame(){
       console.log("callGET_CoffeeShopBoardGame")
       this.load = false;
-      route_helpers.GET().coffee_shop_board_game(this.coffee_shop.id, this.table.relationships.board_game.data.id)
+      this.$boardGameResource.GET_coffee_shop_board_game(this.coffee_shop.id, this.table.relationships.board_game.data.id)
       .then( response => {this.board_game = response.data.data})
       .then(() => {this.load = true})
     },
     callGET_CoffeeShopEventTableEnrolments(){
       console.log("callGET_CoffeeShopEventTableEnrolments")
       this.load = false;
-      route_helpers.GET().coffee_shop_event_table_enrolments(this.coffee_shop.id, this.event.id, this.table.id)
+      this.$enrolmentResource.GET_coffee_shop_event_table_enrolments(this.coffee_shop.id, this.event.id, this.table.id)
       .then( response => {this.enrolments = response.data.data})
       .then(() => {this.load = true})
       .then(() => {this.test()})
     },
     callDELETE_SoffeeShopEventTableDeactivate(){
       console.log("callDELETE_SoffeeShopEventTableDeactivate")  
-      route_helpers.DELETE().coffee_shop_event_table_deactivate(this.coffee_shop.id, this.event.id, this.table.id)
+      this.$tableResource.DELETE_coffee_shop_event_table_deactivate(this.coffee_shop.id, this.event.id, this.table.id)
       .then(response => {console.log(response)})
       .then(()=>{this.$emit('onDeleteTable', this.table.id)})    
       .catch(error => {error_handler._401("get#users")})
     },
     callPOST_CoffeeShopEventTableEnrolments(){
       console.log("callPOST_CoffeeShopEventTableEnrolments")
-      route_helpers.POST().coffee_shop_event_table_enrolments(this.coffee_shop.id, this.event.id, this.table.id)
+      this.$enrolmentResource.POST_coffee_shop_event_table_enrolments(this.coffee_shop.id, this.event.id, this.table.id)
       .then(response => {console.log(response)})
       .then(()=>{this.callGET_CoffeeShopEventTableEnrolments()})
     },
@@ -78,7 +77,7 @@ export default {
         return item.attributes.user.id == this.current_user.id
       })
       console.log(temp.id)
-      route_helpers.DELETE ().coffee_shop_event_table_enrolment_deactivate(this.coffee_shop.id, this.event.id, this.table.id, temp.id) 
+      this.$enrolmentResource.DELETE_coffee_shop_event_table_enrolment_deactivate(this.coffee_shop.id, this.event.id, this.table.id, temp.id) 
       .then(response => {console.log(response)})
       .then(()=>{this.callGET_CoffeeShopEventTableEnrolments()})
     },

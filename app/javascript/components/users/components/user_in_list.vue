@@ -17,7 +17,6 @@
 
 <script>
 import RolePower from '../../../services/role_pwoer'
-import route_helpers from '../../../services/route_helpers'
 import router from '../../../packs/router'
 
 export default {
@@ -34,7 +33,7 @@ export default {
     },
     callDELETE_user(){
       console.log("callDELETE_user")  
-      route_helpers.DELETE().user_deactivate(this.user.id)
+      this.$userResource.DELETE_user_deactivate(this.user.id)
       .then(response => {console.log(response)})
       .then(()=>{this.$emit('removeFromParent', this.user.id);})    
     },

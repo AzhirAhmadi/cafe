@@ -19,9 +19,9 @@
 </template>
 
 <script>
-  import Authentication from '../authenticate/authentication.vue'
-  import route_helper from '../../services/route_helpers'
-  export default {
+import Authentication from '../authenticate/authentication.vue'
+
+export default {
     components:{
       Authentication
     },

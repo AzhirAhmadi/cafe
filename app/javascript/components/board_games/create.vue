@@ -34,8 +34,6 @@
 </template>
 
 <script>
-import route_helpers from '../../services/route_helpers'
-
 export default {
   props:["coffee_shop_id"],
   data(){
@@ -72,7 +70,7 @@ export default {
   methods:{
     callBoardGameCreate(){
       console.log("callCoffeeShopCreate")
-      route_helpers.POST().coffee_shop_board_games(this.coffee_shop_id, this.board_game.attributes)
+      this.$boardGameResource.POST_coffee_shop_board_games(this.coffee_shop_id, this.board_game.attributes)
       .then((response)=> {console.log(response)})
       .then(()=>{this.$router.go(-1)})
     },

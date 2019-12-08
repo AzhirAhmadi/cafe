@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import route_helpers from '../../services/route_helpers'
 import TableInList from './components/table_in_list'
 
 export default {
@@ -43,19 +42,19 @@ export default {
   methods:{
     callCoffeeShop(){
       console.log("callCoffeeShop")
-      route_helpers.GET().coffee_shop(this.coffee_shop_id)
+      this.$coffeeShopResource.GET_coffee_shop(this.coffee_shop_id)
       .then( response => {this.coffee_shop = response.data.data})
     },
     callCoffeeShopEvent(){
       console.log("callCoffeeShopEvent")
       this.load = false;
-      route_helpers.GET().coffee_shop_event(this.coffee_shop_id, this.event_id)
+      this.$eventResource.GET_coffee_shop_event(this.coffee_shop_id, this.event_id)
       .then( response => {this.event = response.data.data})
       .then(() => {this.load = true})
     },
     callCoofeeShopEventTables(){
       console.log("callCoofeeShopEventTables")
-       route_helpers.GET().coffee_shop_event_tables(this.coffee_shop_id, this.event_id)
+       this.$tableResource.GET_coffee_shop_event_tables(this.coffee_shop_id, this.event_id)
        .then(response => {this.tables = response.data.data})
     },
     removetableFromList(id){

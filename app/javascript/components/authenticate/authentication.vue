@@ -13,7 +13,6 @@
 
 <script>
   import UserIcon from "../users/components/user_icon"
-  import route_helper from '../../services/route_helpers'
   export default {
     data(){
       return {
@@ -26,24 +25,17 @@
     methods:{
       callDEVISE_logout(){
         console.log("callDEVISE_logout")
-        route_helper.DEVICE().logout()
+        this.$deviseResource.DELETE_logout()
         .then(response =>{this.$store.dispatch('updateAuthToken', "")})
         .then(response =>{this.$store.dispatch('updateCurrentUser', null)})
       }
     },
     created(){
-      // this.$store.watch(
-      //   (state, getters) => getters.auth_token,
-      //   (newValue, oldValue) => {
-      //     this.auth_token = this.$store.state.auth_token
-      //   }
-      // );
       this.$store.watch(
         (state, getters) => getters.current_user,
         (newValue, oldValue) => {
           console.log(`Updating from ${oldValue} to ${newValue}`);
           this.current_user = this.$store.state.current_user
-          // this.$forceUpdate();          
         }
       );
     }

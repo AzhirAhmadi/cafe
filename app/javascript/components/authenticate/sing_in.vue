@@ -41,9 +41,6 @@
 
 
 <script>
-  import route_helpers from '../../services/route_helpers'
-  // import {mapState} from 'vuex'
-  
   export default {
     data(){
       return {
@@ -53,37 +50,37 @@
     },
     methods:{
       Mster(){
-        route_helpers.DEVICE().login("azhir@master.com", "123456")
+        this.$deviseResource.POST_login("azhir@master.com", "123456")
         .then(response =>{this.$store.dispatch('updateAuthToken', response.data.jwt)})
         .then(this.callProfile)
       },
       Admin(){
-        route_helpers.DEVICE().login("azhir@admin.com", "123456")
+        this.$deviseResource.POST_login("azhir@admin.com", "123456")
         .then(response =>{this.$store.dispatch('updateAuthToken', response.data.jwt)})
         .then(this.callProfile)
       },
       Expert(){
-        route_helpers.DEVICE().login("azhir@expert.com", "123456")
+        this.$deviseResource.POST_login("azhir@expert.com", "123456")
         .then(response =>{this.$store.dispatch('updateAuthToken', response.data.jwt)})
         .then(this.callProfile)
       },
       CoffeeOwner(){
-        route_helpers.DEVICE().login("azhir@cafe_owner.com", "123456")
+        this.$deviseResource.POST_login("azhir@cafe_owner.com", "123456")
         .then(response =>{this.$store.dispatch('updateAuthToken', response.data.jwt)})
         .then(this.callProfile)
       },
       Player(){
-        route_helpers.DEVICE().login("azhir@player.com", "123456")
+        this.$deviseResource.POST_login("azhir@player.com", "123456")
         .then(response =>{this.$store.dispatch('updateAuthToken', response.data.jwt)})
         .then(this.callProfile)
       },
       callLogin(){
-        route_helpers.DEVICE().login(this.email,this.password)
+        this.$deviseResource.POST_login(this.email,this.password)
         .then(response =>{this.$store.dispatch('updateAuthToken', response.data.jwt)})
         .then(this.callProfile)
       },
       callProfile(){
-        route_helpers.GET().profile()
+        this.$userResource.GET_profile()
         .then(response =>{this.$store.dispatch('updateCurrentUser', response.data.data)})
         .then(this.cancel)
       },

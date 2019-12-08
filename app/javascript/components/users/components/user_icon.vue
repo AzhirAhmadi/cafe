@@ -38,38 +38,38 @@
 </template>
 
 <script>
-  import route_helper from '../../../services/route_helpers'
-  import router from '../../../packs/router'
-  export default {
-    props: ['user'],
-    data(){
-        return {
-          visible: false
-        }
-    },
-    methods: {
-      push_user_edit(){
-        console.log("push_user_update")
-        router.push('/users/'+this.current_user.id+'/update');
-      },
-      callDEVISE_logout(){
-        console.log("callDEVISE_logout")
-        route_helper.DEVICE().logout()
-        .then(response =>{this.$store.dispatch('updateAuthToken', "")})
-        .then(response =>{this.$store.dispatch('updateCurrentUser', null)})
+import router from '../../../packs/router'
+
+export default {
+  props: ['user'],
+  data(){
+      return {
+        visible: false
       }
+  },
+  methods: {
+    push_user_edit(){
+      console.log("push_user_update")
+      router.push('/users/'+this.current_user.id+'/update');
     },
-    created(){
-      this.$store.watch(
-        (state, getters) => getters.current_user,
-        (newValue, oldValue) => {
-          console.log(`Updating from ${oldValue} to ${newValue}`);
-          this.current_user = this.$store.state.current_user
-        }
-      );
-      this.current_user = this.$store.state.current_user
+    callDEVISE_logout(){
+      console.log("callDEVISE_logout")
+      this.$deviseResource.DELETE_logout()
+      .then(response =>{this.$store.dispatch('updateAuthToken', "")})
+      .then(response =>{this.$store.dispatch('updateCurrentUser', null)})
     }
+  },
+  created(){
+    this.$store.watch(
+      (state, getters) => getters.current_user,
+      (newValue, oldValue) => {
+        console.log(`Updating from ${oldValue} to ${newValue}`);
+        this.current_user = this.$store.state.current_user
+      }
+    );
+    this.current_user = this.$store.state.current_user
   }
+}
 </script>
 
 <style scoped>

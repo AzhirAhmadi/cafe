@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import route_helpers from '../../services/route_helpers'
 import router from '../../packs/router'
 
 export default {
@@ -101,12 +100,12 @@ export default {
   methods:{
     callUserUpdate(){
       console.log("callUserUpdate")
-      route_helpers.PUT().user(this.id,this.user.attributes)
+      this.$userResource.PUT_user(this.id,this.user.attributes)
       .then(()=>{this.$router.go(-1)})
     },
     callGET_User(){
       console.log("callUsers")
-       route_helpers.GET().user(this.id)
+       this.$userResource.GET_user(this.id)
        .then(response => {this.user = response.data.data})
     },
     cancel(){

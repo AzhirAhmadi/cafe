@@ -40,8 +40,6 @@
 </template>
 
 <script>
-import route_helpers from '../../services/route_helpers'
-
 export default {
   data(){
     return {
@@ -74,7 +72,7 @@ export default {
   methods:{
     callCoffeeShopCreate(){
       console.log("callCoffeeShopCreate")
-      route_helpers.POST().coffee_shops(this.coffee_shop.attributes)
+      this.$coffeeShopResource.POST_coffee_shops(this.coffee_shop.attributes)
       .then((response)=> {console.log(response)})
       .then(()=>{this.$router.go(-1)})
     },
@@ -84,9 +82,9 @@ export default {
     },
     callUsers(){
       console.log("callUsers")
-       route_helpers.GET().users("?role=coffee_owner&free=true")
+       this.$userResource.GET_users("?role=coffee_owner&free=true")
        .then(response => {this.owners = response.data.data})
-       route_helpers.GET().users("?role=sys_expert")
+       this.$userResource.GET_users("?role=sys_expert")
        .then(response => {this.maintainers = response.data.data})
     },
     cancel(){

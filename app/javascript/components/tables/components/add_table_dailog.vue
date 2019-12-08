@@ -31,8 +31,6 @@
 </template>
 
 <script>
-import route_helpers from '../../../services/route_helpers'
-
 export default {
   props:['dialogFormVisible','coffee_shop_id', 'event_id', 'tables'],
   data(){
@@ -74,7 +72,7 @@ export default {
   methods:{
     callPOST_CoffeeShopEventTables(){
         console.log("callPOST_CoffeeShopEventTables")
-        route_helpers.POST().coffee_shop_event_tables(this.coffee_shop_id, this.event_id, this.table.attributes)
+        this.$tableResource.POST_coffee_shop_event_tables(this.coffee_shop_id, this.event_id, this.table.attributes)
             .then((response)=> {console.log(response)})
             .then(()=>{this.$emit('onTableAdded')})
             .then(()=>{this.$emit('update:dialogFormVisible', false)})
@@ -82,7 +80,7 @@ export default {
     callGET_CoffeeShopBoardGames(){
         console.log("callGET_CoffeeShopBoardGames")
         this.load = false;
-        route_helpers.GET().coffee_shop_board_games(this.coffee_shop_id)
+        this.$boardGameResource.GET_coffee_shop_board_games(this.coffee_shop_id)
             .then(response => {this.board_games = response.data.data})
             .then(() => {this.table.attributes.board_game_id = this.board_games[0].id})
             .then(() => {this.load = true})

@@ -40,8 +40,6 @@
 </template>
 
 <script>
-import route_helpers from '../../services/route_helpers'
-
 export default {
   props:['id'],
   data(){
@@ -76,19 +74,19 @@ export default {
   methods:{
     callCoffeeShopUpdate(){
       console.log("callCoffeeShopUpdate")
-      route_helpers.PUT().coffee_shop(this.id,this.coffee_shop.attributes)
+      this.$coffeeShopResource.PUT_coffee_shop(this.id,this.coffee_shop.attributes)
       .then((response)=> {console.log(response)})
       .then(()=>{this.$router.go(-1)})
     },
     callUsers(){
       console.log("callUsers")
-       route_helpers.GET().users("?role=coffee_owner&free=true")
+       this.$userResource.GET_users("?role=coffee_owner&free=true")
        .then(response => {this.owners = response.data.data})
-       route_helpers.GET().users("?role=sys_expert")
+       this.$userResource.GET_users("?role=sys_expert")
        .then(response => {this.maintainers = response.data.data})
     },
     callGET_coffee_shop(){
-      route_helpers.GET().coffee_shop(this.id)
+      this.$coffeeShopResource.GET_coffee_shop(this.id)
       .then((response)=>{ this.set_coofee_shop_data(response.data.data)})
     },
     set_coofee_shop_data(data){
@@ -99,7 +97,7 @@ export default {
       this.coffee_shop.attributes.owner_id = data.relationships.owner.data.id
       this.coffee_shop.attributes.maintainer_id = data.relationships.maintainer.data.id
       
-      route_helpers.GET().user(this.coffee_shop.attributes.owner_id)
+      this.$userResource.GET_user(this.coffee_shop.attributes.owner_id)
       .then(response => {this.owners.push(response.data.data)})
     },
     cancel(){

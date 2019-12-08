@@ -114,8 +114,6 @@
 </template>
 
 <script>
-import route_helpers from '../../services/route_helpers'
-
 export default {
   props:["coffee_shop_id"],
   data(){
@@ -365,7 +363,7 @@ export default {
     },
     callEventCreate(){
       console.log("callCoffeeShopCreate")
-      route_helpers.POST().coffee_shop_events(this.coffee_shop_id, this.event.attributes)
+      this.$eventResource.POST_coffee_shop_events(this.coffee_shop_id, this.event.attributes)
       .then((response)=> {console.log(response)})
       .then(()=>{this.$router.go(-1)})
     },

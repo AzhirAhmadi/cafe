@@ -61,7 +61,6 @@
 </template>
 
 <script>
-import route_helpers from '../../services/route_helpers'
 import BoardGamePlayed from './components/board_game_played'
 import EventJoined from './components/event_jioned'
 
@@ -79,7 +78,7 @@ export default {
   methods:{
     callGET_User(){
       console.log("callUsers")
-       route_helpers.GET().user(this.id)
+       this.$userResource.GET_user(this.id)
        .then(response => {this.user = response.data.data})
     }
   },

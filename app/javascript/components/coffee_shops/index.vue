@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import route_helpers from '../../services/route_helpers'
 import CoffeeShopInList from './components/coffee_shop_in_list'
+
 export default {
   data: function () {
     return {
@@ -40,7 +40,7 @@ export default {
     callCoffeeShops(){
       console.log("callCoffeeShops")
       this.load = false
-       route_helpers.GET().coffee_shops()
+       this.$coffeeShopResource.GET_coffee_shops()
        .then(response => {this.coffee_shops = response.data.data})
        .then(()=>{this.load = true})
     },

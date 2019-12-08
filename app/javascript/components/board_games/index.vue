@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import route_helpers from '../../services/route_helpers'
 import BoardGameInList from './components/board_game_in_list'
 
 export default {
@@ -41,13 +40,13 @@ export default {
   methods:{
     callBoardGames(){
       console.log("callBoardGames")
-       route_helpers.GET().coffee_shop_board_games(this.coffee_shop_id)
+       this.$boardGameResource.GET_coffee_shop_board_games(this.coffee_shop_id)
        .then(response => {this.board_games = response.data.data})
     },
     callCoffeeShop(){
       console.log("set loed to false")
       this.load = false;
-      route_helpers.GET().coffee_shop(this.coffee_shop_id)
+      this.$coffeeShopResource.GET_coffee_shop(this.coffee_shop_id)
       .then( response => {this.coffee_shop = response.data.data})
       .then(() => {this.load = true})
     },

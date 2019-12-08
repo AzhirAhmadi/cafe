@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import route_helpers from '../../services/route_helpers'
 import EventInList from './components/event_in_list'
 
 export default {
@@ -41,13 +40,13 @@ export default {
   methods:{
     callEvents(){
       console.log("callEvents")
-       route_helpers.GET().coffee_shop_events(this.coffee_shop_id)
+       this.$eventResource.GET_coffee_shop_events(this.coffee_shop_id)
        .then(response => {this.events = response.data.data})
     },
     callCoffeeShop(){
       console.log("set loed to false")
       this.load = false;
-      route_helpers.GET().coffee_shop(this.coffee_shop_id)
+      this.$coffeeShopResource.GET_coffee_shop(this.coffee_shop_id)
       .then( response => {this.coffee_shop = response.data.data})
       .then(() => {this.load = true})
     },

@@ -28,8 +28,8 @@
 </template>
 
 <script>
-import route_helpers from '../../services/route_helpers'
 import router from '../../packs/router'
+
 export default {
   props: ['coffee_shop_id' ,'id'],
   data: function () {
@@ -45,7 +45,7 @@ export default {
     callGET_Event(){
       console.log("callGET_Event")
       this.load = false;
-      route_helpers.GET().coffee_shop_event(this.coffee_shop_id, this.id)
+      this.$eventResource.GET_coffee_shop_event(this.coffee_shop_id, this.id)
       .then(response => {this.tempName(response.data);})
       .then(() => {this.load = true})
     },

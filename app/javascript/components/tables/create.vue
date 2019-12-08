@@ -29,8 +29,6 @@
 </template>
 
 <script>
-import route_helpers from '../../services/route_helpers'
-
 export default {
   props:["coffee_shop_id", 'event_id'],
   data(){
@@ -59,13 +57,13 @@ export default {
   methods:{
     callPOST_CoffeeShopEventTables(){
       console.log("callPOST_CoffeeShopEventTables")
-      route_helpers.POST().coffee_shop_event_tables(this.coffee_shop_id, this.event_id, this.table.attributes)
+      this.$tableResource.POST_coffee_shop_event_tables(this.coffee_shop_id, this.event_id, this.table.attributes)
       .then((response)=> {console.log(response)})
       .then(()=>{this.$router.go(-1)})
     },
     callGET_CoffeeShopBoardGames(){
       console.log("callGET_CoffeeShopBoardGames")
-       route_helpers.GET().coffee_shop_board_games(this.coffee_shop_id)
+       this.$boardGameResource.GET_coffee_shop_board_games(this.coffee_shop_id)
        .then(response => {this.board_games = response.data.data})
     },
     cancel(){
