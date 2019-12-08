@@ -57,8 +57,8 @@ export default {
         });
     }, //##
     // coffee_shops#deactivate
-    DELETE_coffee_shop_deactivate(id){
-        console.log("coffee_shop_deactivate")
+    DELETE_coffee_shop(id){
+        console.log("coffee_shops")
         return apiClient.delete("/coffee_shops/"+id,{
             headers: {
               Authorization: store.state.auth_token

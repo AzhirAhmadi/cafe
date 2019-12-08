@@ -63,8 +63,8 @@ export default {
         );
     }, //##
     // board_games#deactivate
-    DELETE_coffee_shop_board_game_deactivate(coffee_shop_id, id){
-        console.log("coffee_shop_board_game_deactivate")
+    DELETE_coffee_shop_board_game(coffee_shop_id, id){
+        console.log("coffee_shop_board_game")
         return apiClient.delete("/coffee_shops/"+coffee_shop_id+"/board_games/"+id,{
             headers: {
             Authorization: store.state.auth_token

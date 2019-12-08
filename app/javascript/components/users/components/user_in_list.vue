@@ -33,7 +33,7 @@ export default {
     },
     callDELETE_user(){
       console.log("callDELETE_user")  
-      this.$userResource.DELETE_user_deactivate(this.user.id)
+      this.$userResource.DELETE_user(this.user.id)
       .then(response => {console.log(response)})
       .then(()=>{this.$emit('removeFromParent', this.user.id);})    
     },

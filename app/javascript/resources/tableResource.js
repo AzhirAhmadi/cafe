@@ -59,8 +59,8 @@ export default {
         );
     }, //##
     // tables#deactivate
-    DELETE_coffee_shop_event_table_deactivate(coffee_shop_id, event_id, id){
-        console.log("coffee_shop_event_table_deactivate")
+    DELETE_coffee_shop_event_table(coffee_shop_id, event_id, id){
+        console.log("coffee_shop_event_table")
         return apiClient.delete("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/tables/"+id,{
             headers: {
             Authorization: store.state.auth_token

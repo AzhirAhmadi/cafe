@@ -80,8 +80,8 @@ export default {
         });
     }, //##
     // users#deactivate
-    DELETE_user_deactivate(id){
-        console.log("user_deactivate")
+    DELETE_user(id){
+        console.log("user")
         return apiClient.delete("/users/"+id,{
             headers: {
               Authorization: store.state.auth_token

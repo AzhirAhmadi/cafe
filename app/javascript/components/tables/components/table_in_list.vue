@@ -54,7 +54,7 @@ export default {
     },
     callDELETE_board_game(){
       console.log("callDELETE_board_game")  
-      this.$boardGameResource.DELETE_coffee_shop_board_game_deactivate(this.coffee_shop.id, this.board_game.id)
+      this.$boardGameResource.DELETE_coffee_shop_board_game(this.coffee_shop.id, this.board_game.id)
       .then(response => {console.log(response)})
       .then(()=>{this.$emit('removeFromParent', this.board_game.id);})    
       .catch(error => {error_handler._401("get#users")})

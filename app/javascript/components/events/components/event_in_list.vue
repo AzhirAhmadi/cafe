@@ -35,7 +35,7 @@ export default {
     },
     callDELETE_event(){
       console.log("callDELETE_event")  
-      this.$eventResource.DELETE_coffee_shop_event_deactivate(this.coffee_shop.id, this.event.id)
+      this.$eventResource.DELETE_coffee_shop_event(this.coffee_shop.id, this.event.id)
       .then(response => {console.log(response)})
       .then(()=>{this.$emit('removeFromParent', this.event.id);})    
       .catch(error => {error_handler._401("get#users")})

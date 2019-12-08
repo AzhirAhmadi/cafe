@@ -31,8 +31,8 @@ export default {
         );
     }, //##
     // enrolments#deactivate
-    DELETE_coffee_shop_event_table_enrolment_deactivate(coffee_shop_id, event_id, table_id, id){
-        console.log("coffee_shop_event_table_enrolment_deactivate")
+    DELETE_coffee_shop_event_table_enrolment(coffee_shop_id, event_id, table_id, id){
+        console.log("coffee_shop_event_table_enrolment")
         
         return apiClient.delete("/coffee_shops/"+coffee_shop_id+"/events/"+event_id+"/tables/"+table_id+"/enrolments/"+id,{
             headers: {

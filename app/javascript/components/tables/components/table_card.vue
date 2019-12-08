@@ -60,7 +60,7 @@ export default {
     },
     callDELETE_SoffeeShopEventTableDeactivate(){
       console.log("callDELETE_SoffeeShopEventTableDeactivate")  
-      this.$tableResource.DELETE_coffee_shop_event_table_deactivate(this.coffee_shop.id, this.event.id, this.table.id)
+      this.$tableResource.DELETE_coffee_shop_event_table(this.coffee_shop.id, this.event.id, this.table.id)
       .then(response => {console.log(response)})
       .then(()=>{this.$emit('onDeleteTable', this.table.id)})    
       .catch(error => {error_handler._401("get#users")})
@@ -77,7 +77,7 @@ export default {
         return item.attributes.user.id == this.current_user.id
       })
       console.log(temp.id)
-      this.$enrolmentResource.DELETE_coffee_shop_event_table_enrolment_deactivate(this.coffee_shop.id, this.event.id, this.table.id, temp.id) 
+      this.$enrolmentResource.DELETE_coffee_shop_event_table_enrolment(this.coffee_shop.id, this.event.id, this.table.id, temp.id) 
       .then(response => {console.log(response)})
       .then(()=>{this.callGET_CoffeeShopEventTableEnrolments()})
     },
