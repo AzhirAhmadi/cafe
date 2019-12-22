@@ -33,49 +33,52 @@ export default {
     // users#create
     POST_users(user){
         console.log("users")
+        console.log(user)
+        let formData = new FormData();
+        formData.append('image', user.image);
+        formData.append('user', JSON.stringify({
+                email: user.email,
+                password: user.password,
+                role: user.role
+            })
+        );
+
         if(store.state.current_user){
-            return apiClient.post("/users",
-                {"user":
-                    {
-                        "email": user.email,
-                        "password": user.password,
-                        "role": user.role
-                    }
-                },
-                {
-                    headers: {
-                        Authorization: store.state.auth_token
-                    }
+            return apiClient.post("/users",formData,{
+                headers: {
+                    Authorization: store.state.auth_token,
+                    'Content-Type': 'multipart/form-data',
                 }
+              }
             );
         }
         else{
-            return apiClient.post("/users",
-                {"user":
-                    {
-                        "email": user.email,
-                        "password": user.password,
-                        "role": user.role
-                    }
+            return apiClient.post("/users",formData,{
+                headers: {
+                    'Content-Type': 'multipart/form-data'
                 }
+              }
             );
         }
     }, //##
     // users#update
     PUT_user(id, user){
         console.log("user")
-        // return apiClient.put("/users/"+id);
-        return apiClient.put("/users/"+id,{
-            user:
-                {
-                    email: user.email,
-                    password: user.password,
-                    role: user.role
-                }
-            },
-            {
-                headers: {
-                Authorization: store.state.auth_token
+        
+        let formData = new FormData();
+        formData.append('image', user.image);
+        formData.append('user', JSON.stringify({
+                email: user.email,
+                password: user.password,
+                role: user.role
+            })
+        );
+
+        return apiClient.put("/users/"+id,formData,
+        {
+            headers:{
+                Authorization: store.state.auth_token,
+                'Content-Type': 'multipart/form-data',
             }
         });
     }, //##

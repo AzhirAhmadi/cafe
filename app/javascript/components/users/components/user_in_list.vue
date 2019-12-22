@@ -1,8 +1,11 @@
 <template>
   <tr>
     <td style="width:25px"><strong>{{user.id}}</strong></td>
-    <td style="width:80px">
-        <el-avatar :size="50" :src="'/img/img1.jpg'"></el-avatar>
+    <td v-if="user.attributes.avatar" style="width:80px">
+        <el-avatar :size="50" :src="user.attributes.avatar.image.url"></el-avatar>
+    </td>
+    <td v-else style="width:80px">
+        <el-avatar :size="50" :src="'/img/defultAvatar.jpg'"></el-avatar>
     </td>
     <td style="text-align: left;">{{user.attributes.email}}</td>
     <td style="width:100px">{{user.attributes.role}}</td>

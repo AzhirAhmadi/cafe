@@ -1,8 +1,8 @@
 <template>
   <div>
     <el-row>
-        <el-col class="temp" :span="6" >
-            <el-avatar :size="200 " :src="'/img/img1.jpg'"></el-avatar>
+        <el-col :span="6" >
+            <el-avatar :size="200" :src="user.attributes.avatar.image.url"></el-avatar>
         </el-col>
         <el-col style="text-align: left;" :span="18" >
             <strong style="font-size: 1.5em;">{{user.attributes.email}}</strong>
@@ -104,3 +104,5 @@ export default {
     background-color: red;
   }
 </style>
+
+

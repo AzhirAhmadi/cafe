@@ -1,6 +1,8 @@
 <template>
-   <el-form :model="user.attributes" :rules="rules" ref="createUser" label-width="150px ">
-    
+  <el-form :model="user.attributes" :rules="rules" ref="createUser" label-width="150px ">
+    <el-form-item>
+      <Uploader @onImageChange="setImage"/>
+    </el-form-item>
     <el-form-item label="Email" prop="email" required>
       <el-input v-model="user.attributes.email"></el-input>
     </el-form-item>
@@ -32,7 +34,10 @@
   </el-form>
 </template>
 
-<script>
+<script> 
+import Uploader from './components/singleImageUploader'
+import apiClient from '../../resources/apiClient'
+
 export default {
   data(){
     var validateConfirm = (rule, value, callback) => {
@@ -52,7 +57,8 @@ export default {
           email:"",
           password: "",
           role: "player",
-          confirm: ""
+          confirm: "",
+          image: null
         }
       },
       roles:[
@@ -95,11 +101,14 @@ export default {
       },
     }
   },
+  components:{
+    Uploader
+  },
   methods:{
     callUserCreate(){
       console.log("callUserCreate")
       this.$userResource.POST_users(this.user.attributes)
-      .then(()=> { this.callLogin()})
+      .then(()=>{ this.callLogin()})
     },
     callLogin(){
       console.log("callLogin")
@@ -117,6 +126,9 @@ export default {
       this.$userResource.GET_profile()
       .then(response =>{this.$store.dispatch('updateCurrentUser', response.data.data)})
       .then(()=> {this.$router.push("/")})
+    },
+    setImage(file){
+      this.user.attributes.image = file.raw
     },
     cancel(){
       console.log("cancel")
