@@ -2,7 +2,8 @@
   <div v-if="load">
     <el-row>
         <el-col :span="6">
-            <el-avatar class="temp" :size="200 " :src="'/img/img3.jpg'"></el-avatar>
+          <el-avatar v-if="event.attributes.avatar" :size="200" :src="event.attributes.avatar.image.url"/>
+          <el-avatar  v-else :size="200" :src="'/img/EventDefultAvatar.jpg'"/>
         </el-col>
 
         <el-col style="text-align: left;" :span="6" >

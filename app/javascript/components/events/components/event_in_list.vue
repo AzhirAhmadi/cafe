@@ -1,8 +1,11 @@
 <template>
   <tr>
     <td style="width:25px"><strong>{{event.id}}</strong></td>
-    <td style="width:80px">
-        <el-avatar :size="50" :src="'/img/img3.jpg'"></el-avatar>
+    <td v-if="event.attributes.avatar" style="width:80px">
+        <el-avatar :size="50" :src="event.attributes.avatar.image.url"></el-avatar>
+    </td>
+    <td v-else style="width:80px">
+        <el-avatar :size="50" :src="'/img/coffeeShopDefultAvatar.jpg'"></el-avatar>
     </td>
     <td style="text-align: left;">{{event.attributes.name}}</td>
     <td style="width:100px">{{coffee_shop.attributes.name}}</td>

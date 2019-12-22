@@ -31,4 +31,5 @@ class Event < ApplicationRecord
     belongs_to :coffee_shop, class_name: "CoffeeShop"
 
     has_many :created_tables, class_name: "Table", foreign_key: "event_id"
+    has_one :avatar, :as => :parent, class_name: "Image", dependent: :destroy
 end

@@ -1,6 +1,9 @@
 <template>
   <el-form :model="temp_event" :rules="rules" ref="createEvent" label-width="150px">
-    
+    <el-form-item>
+      <Uploader @onImageChange="setImage"/>
+    </el-form-item>
+
     <el-form-item label="Event name" prop="name" required>
       <el-input v-model="temp_event.name"></el-input>
     </el-form-item>
@@ -114,6 +117,7 @@
 </template>
 
 <script>
+import Uploader from '../shard/singleImageUploader'
 export default {
   props:["coffee_shop_id"],
   data(){
@@ -247,7 +251,8 @@ export default {
           enrol_end_time:null,
           event_start_time:null,
           event_end_time:null,
-          closed_at: null
+          closed_at: null,
+          image: null,
         }
       },
       temp_event:{
@@ -394,6 +399,9 @@ export default {
         }
       }
     },
+    setImage(file){
+      this.event.attributes.image = file.raw
+    },
     cancel(){
       console.log("cancel")
       this.$router.go(-1)
@@ -413,6 +421,9 @@ export default {
     resetForm(formName) {
       this.$refs[formName].resetFields();
     }
+  },
+  components:{
+    Uploader,
   },
   computed:{
     SELECT_ROLE(){

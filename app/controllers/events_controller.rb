@@ -12,6 +12,7 @@ class EventsController < ApplicationController
     end
 
     def create
+        clear_json_params
         check_create_params
 
         coffee_shop = CoffeeShop.find(params[:coffee_shop_id])
@@ -20,6 +21,7 @@ class EventsController < ApplicationController
         authorize event
 
         if event.save
+            Image.create(image: params[:image], parent: event)
             render jsonapi: event, include: ['coffee_shop']
         else
             raise ErrorHandling::Errors::Event::DataBaseCreation.new({params: params, event: event})           
@@ -27,6 +29,7 @@ class EventsController < ApplicationController
     end
 
     def update
+        clear_json_params
         check_update_params
         
         coffee_shop = CoffeeShop.find(params[:coffee_shop_id])
@@ -35,6 +38,8 @@ class EventsController < ApplicationController
         authorize event
 
         if event.update(event_params)
+            event.avatar.destroy if event.avatar
+            Image.create(image: params[:image], parent: event)
             render jsonapi: event, include: ['coffee_shop']
         else
             raise ErrorHandling::Errors::Event::DataBaseUpdate.new({params: params,event: event})           
@@ -58,6 +63,10 @@ class EventsController < ApplicationController
     private
         def event_params
             params.require(:event).permit(sanitize_params)
+        end
+
+        def clear_json_params
+            params[:event]=ActiveSupport::JSON.decode(params[:event])
         end
 
         def check_create_params
