@@ -1,6 +1,9 @@
 <template>
   <el-form :model="coffee_shop.attributes" :rules="rules" ref="createCoffeeShop" label-width="150px ">
-    
+    <el-form-item>
+      <Uploader @onImageChange="setImage"/>
+    </el-form-item>
+
     <el-form-item label="Name" prop="name" required>
       <el-input v-model="coffee_shop.attributes.name"></el-input>
     </el-form-item>
@@ -40,6 +43,7 @@
 </template>
 
 <script>
+import Uploader from '../shard/singleImageUploader'
 export default {
   data(){
     return {
@@ -48,7 +52,8 @@ export default {
           name: "",
           address: "",
           owner_id: null,
-          maintainer_id: null
+          maintainer_id: null,
+          image: null,
         }
       },
       owners:[],
@@ -75,6 +80,9 @@ export default {
       this.$coffeeShopResource.POST_coffee_shops(this.coffee_shop.attributes)
       .then((response)=> {console.log(response)})
       .then(()=>{this.$router.go(-1)})
+    },
+    setImage(file){
+      this.coffee_shop.attributes.image = file.raw
     },
     cancel(){
       console.log("cancel")
@@ -105,6 +113,9 @@ export default {
     resetForm(formName) {
       this.$refs[formName].resetFields();
     }
+  },
+  components:{
+    Uploader
   },
   computed:{
     SELECT_ROLE(){
