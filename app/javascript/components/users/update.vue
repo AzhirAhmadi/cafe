@@ -38,7 +38,7 @@
 
 <script>
 import router from '../../packs/router'
-import Uploader from './components/singleImageUploader'
+import Uploader from '../shard/singleImageUploader'
 
 export default {
   props:['id'],

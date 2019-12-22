@@ -35,7 +35,7 @@
 </template>
 
 <script> 
-import Uploader from './components/singleImageUploader'
+import Uploader from '../shard/singleImageUploader'
 import apiClient from '../../resources/apiClient'
 
 export default {
