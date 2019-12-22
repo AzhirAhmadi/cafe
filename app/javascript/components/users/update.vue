@@ -1,8 +1,8 @@
 <template>
-    <el-form :model="user.attributes" :rules="rules" ref="createUser" label-width="150px ">
+  <el-form v-if="load" :model="user.attributes" :rules="rules" ref="createUser" label-width="150px ">
     
     <el-form-item>
-      <Uploader @onImageChange="setImage" :image="user.attributes.avatar.image"/>
+      <Uploader @onImageChange="setImage" :image="user.attributes.avatar"/>
     </el-form-item>
 
     <el-form-item label="Email" prop="email" required>
@@ -55,6 +55,7 @@ export default {
       }
     };
     return {
+      load: true,
       user:{
         attributes:{
           email:"",
@@ -115,8 +116,10 @@ export default {
     },
     callGET_User(){
       console.log("callUsers")
-       this.$userResource.GET_user(this.id)
-       .then(response => {this.user = response.data.data})
+      this.load = false
+      this.$userResource.GET_user(this.id)
+      .then(response => {this.user = response.data.data})
+      .then(() => {this.load = true})
     },
     setImage(file){
       this.user.attributes.image = file.raw
