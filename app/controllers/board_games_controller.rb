@@ -51,8 +51,10 @@ class BoardGamesController < ApplicationController
         authorize board_game
 
         if board_game.update(board_game_params)
-            board_game.avatar.destroy if board_game.avatar
-            Image.create(image: params[:image], parent: board_game)
+            unless(params[:image] == "undefined")
+                board_game.avatar.destroy if board_game.avatar
+                Image.create(image: params[:image], parent: board_game)
+            end
             render jsonapi: board_game, include: ['coffee_shop']
         else
             raise ErrorHandling::Errors::BoardGame::DataBaseUpdate.new({params: params,board_game: board_game})           

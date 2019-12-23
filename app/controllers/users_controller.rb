@@ -45,8 +45,11 @@ class UsersController < ApplicationController
         user = User.find(params[:id])
         authorize user
         if user.update(user_params)
-            user.avatar.destroy if user.avatar
-            Image.create(image: params[:image], parent: user)
+            puts params[:image]
+            unless(params[:image] == "undefined")
+                user.avatar.destroy if user.avatar
+                Image.create(image: params[:image], parent: user)
+            end
             render jsonapi: user
         else
             raise ErrorHandling::Errors::User::DataBaseCreation.new({params: params,user: user})          

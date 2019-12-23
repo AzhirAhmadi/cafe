@@ -43,8 +43,10 @@ class CoffeeShopsController < ApplicationController
         coffee_shop.update(coffee_shop_params)
         
         if coffee_shop.save
-            coffee_shop.avatar.destroy if coffee_shop.avatar
-            Image.create(image: params[:image], parent: coffee_shop)
+            unless(params[:image] == "undefined")
+                coffee_shop.avatar.destroy if coffee_shop.avatar
+                Image.create(image: params[:image], parent: coffee_shop)
+            end
             render jsonapi: coffee_shop, include: ['owner', 'creator', 'maintainer']
         else
             raise ErrorHandling::Errors::User::DataBaseCreation.new({params: params,coffee_shop: coffee_shop})

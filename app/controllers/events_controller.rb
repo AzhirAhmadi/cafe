@@ -38,8 +38,10 @@ class EventsController < ApplicationController
         authorize event
 
         if event.update(event_params)
-            event.avatar.destroy if event.avatar
-            Image.create(image: params[:image], parent: event)
+            unless(params[:image] == "undefined")
+                event.avatar.destroy if event.avatar
+                Image.create(image: params[:image], parent: event)
+            end
             render jsonapi: event, include: ['coffee_shop']
         else
             raise ErrorHandling::Errors::Event::DataBaseUpdate.new({params: params,event: event})           
