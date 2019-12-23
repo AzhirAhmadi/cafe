@@ -14,6 +14,7 @@ class BoardGamesController < ApplicationController
     end
 
     def create
+        clear_json_params
         if params[:board_game].blank? ||
             params[:board_game][:name].blank? ||
             params[:board_game][:publisher].blank? ||
@@ -27,6 +28,7 @@ class BoardGamesController < ApplicationController
         board_game = coffee_Shop.created_board_games.build(board_game_params)
         authorize board_game
         if board_game.save
+            Image.create(image: params[:image], parent: board_game)
             render jsonapi: board_game, include: ['coffee_shop']
         else
             raise ErrorHandling::Errors::BoardGame::DataBaseCreation.new({params: params,board_game: board_game})           
@@ -34,6 +36,7 @@ class BoardGamesController < ApplicationController
     end
 
     def update
+        clear_json_params
         if params[:board_game].blank? ||
             params[:board_game][:name].blank? ||
             params[:board_game][:publisher].blank? ||
@@ -48,6 +51,10 @@ class BoardGamesController < ApplicationController
         authorize board_game
 
         if board_game.update(board_game_params)
+            unless(params[:image] == "undefined")
+                board_game.avatar.destroy if board_game.avatar
+                Image.create(image: params[:image], parent: board_game)
+            end
             render jsonapi: board_game, include: ['coffee_shop']
         else
             raise ErrorHandling::Errors::BoardGame::DataBaseUpdate.new({params: params,board_game: board_game})           
@@ -75,5 +82,9 @@ class BoardGamesController < ApplicationController
 
         def find_coffee_shop
             policy_scope(CoffeeShop).find(params[:coffee_shop_id]) 
+        end
+
+        def clear_json_params
+            params[:board_game]=ActiveSupport::JSON.decode(params[:board_game])
         end
 end

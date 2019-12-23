@@ -1,6 +1,10 @@
 <template>
-  <el-form :model="temp_event" :rules="rules" ref="createEvent" label-width="150px">
+  <el-form v-if="load" :model="temp_event" :rules="rules" ref="createEvent" label-width="150px">
     
+    <el-form-item>
+      <Uploader @onImageChange="setImage" :image="event.attributes.avatar"/>
+    </el-form-item>
+
     <el-form-item label="Event name" prop="name" required>
       <el-input v-model="temp_event.name"></el-input>
     </el-form-item>
@@ -115,6 +119,7 @@
 
 <script>
 import error_handler from '../../services/error_handler'
+import Uploader from '../shard/singleImageUploader'
 
 export default {
   props:['coffee_shop_id', 'id'],
@@ -240,6 +245,7 @@ export default {
     };
   
     return {
+      load: true,
       event:{
         attributes:{
           name:"",
@@ -390,9 +396,14 @@ export default {
       this.temp_event.event_end_time = this.event.attributes.event_end_time
       this.temp_event.closed_at_time = this.event.attributes.closed_at
     },
+    setImage(file){
+      this.event.attributes.image = file.raw
+    },
     callGET_coffee_shop_event(){
+      this.load = false
       this.$eventResource.GET_coffee_shop_event(this.coffee_shop_id, this.id)
       .then((response) => { this.setData(response.data.data)})
+      .then(() => {this.load = true})
     },
     callPUT_coffee_shop_event(){
       console.log("callCoffeeShopCreate")
@@ -444,6 +455,9 @@ export default {
       this.$refs[formName].resetFields();
     }
   },
+  components:{
+    Uploader,
+  },
   computed:{
     SELECT_ROLE(){
       return this.current_user !== null && this.current_user.attributes.role !== "player"
@@ -454,7 +468,7 @@ export default {
   },
   created(){
     console.log("events#uppdate.created")
-    this.$store.dispatch('updatePageHeader', 'Create Event');
+    this.$store.dispatch('updatePageHeader', 'Update Event');
     this.callGET_coffee_shop_event();
   }
 }

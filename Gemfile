@@ -65,3 +65,5 @@ gem 'rename'
 gem 'colorize'
 
 gem 'webpacker'
+
+gem 'carrierwave'

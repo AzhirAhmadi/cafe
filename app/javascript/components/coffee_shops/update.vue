@@ -1,6 +1,10 @@
 <template>
-  <el-form :model="coffee_shop.attributes" :rules="rules" ref="updateCoffeeShop" label-width="150px ">
+  <el-form v-if="load" :model="coffee_shop.attributes" :rules="rules" ref="updateCoffeeShop" label-width="150px ">
     
+    <el-form-item>
+      <Uploader @onImageChange="setImage" :image="coffee_shop.attributes.avatar"/>
+    </el-form-item>
+
     <el-form-item label="Name" prop="name" required>
       <el-input v-model="coffee_shop.attributes.name"></el-input>
     </el-form-item>
@@ -40,16 +44,19 @@
 </template>
 
 <script>
+import Uploader from '../shard/singleImageUploader'
 export default {
   props:['id'],
   data(){
     return {
+      load: true,
       coffee_shop:{
         attributes:{
           name: "",
           address: "",
           owner_id: null,
-          maintainer_id: null
+          maintainer_id: null,
+          image: null,
         }
       },
       owners:[],
@@ -72,33 +79,40 @@ export default {
     }
   },
   methods:{
-    callCoffeeShopUpdate(){
-      console.log("callCoffeeShopUpdate")
+    callPUT_CoffeeShopUpdate(){
+      console.log("callPUT_CoffeeShopUpdate")
       this.$coffeeShopResource.PUT_coffee_shop(this.id,this.coffee_shop.attributes)
       .then((response)=> {console.log(response)})
       .then(()=>{this.$router.go(-1)})
     },
-    callUsers(){
-      console.log("callUsers")
+    callGET_Users(){
+      console.log("callGET_Users")
        this.$userResource.GET_users("?role=coffee_owner&free=true")
        .then(response => {this.owners = response.data.data})
        this.$userResource.GET_users("?role=sys_expert")
        .then(response => {this.maintainers = response.data.data})
     },
     callGET_coffee_shop(){
+      this.load = false
       this.$coffeeShopResource.GET_coffee_shop(this.id)
       .then((response)=>{ this.set_coofee_shop_data(response.data.data)})
+      .then(() => {this.load = true})
     },
     set_coofee_shop_data(data){
       console.log(data)
       console.log(data.relationships.owner.data.id)
       this.coffee_shop.attributes.name = data.attributes.name
       this.coffee_shop.attributes.address = data.attributes.address
+      this.coffee_shop.attributes.avatar = data.attributes.avatar
+
       this.coffee_shop.attributes.owner_id = data.relationships.owner.data.id
       this.coffee_shop.attributes.maintainer_id = data.relationships.maintainer.data.id
-      
+
       this.$userResource.GET_user(this.coffee_shop.attributes.owner_id)
       .then(response => {this.owners.push(response.data.data)})
+    },
+    setImage(file){
+      this.coffee_shop.attributes.image = file.raw
     },
     cancel(){
       console.log("cancel")
@@ -107,7 +121,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.callCoffeeShopUpdate()
+          this.callPUT_CoffeeShopUpdate()
           alert('submit!');
         } else {
           alert('error submit!!');
@@ -118,6 +132,9 @@ export default {
     resetForm(formName) {
       this.$refs[formName].resetFields();
     }
+  },
+  components:{
+    Uploader,
   },
   computed:{
     SELECT_ROLE(){
@@ -140,7 +157,7 @@ export default {
   created(){
     console.log("coffee_shops#create.created")
     this.$store.dispatch('updatePageHeader', 'Update CoffeeShop');
-    this.callUsers();
+    this.callGET_Users();
     this.callGET_coffee_shop();
   }
 }

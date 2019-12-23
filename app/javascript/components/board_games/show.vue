@@ -2,7 +2,8 @@
   <div v-if="load">
     <el-row>
         <el-col :span="6">
-            <el-avatar class="temp" :size="200 " :src="'/img/img4.jpg'"></el-avatar>
+          <el-avatar v-if="board_game.attributes.avatar" :size="200" :src="board_game.attributes.avatar.image.url"></el-avatar>
+          <el-avatar  v-else :size="200" :src="'/img/baordGameDefultAvatar.jpg'"></el-avatar>
         </el-col>
         <el-col style="text-align: left;" :span="6" >
             <strong style="font-size: 1.5em;">Name: {{board_game.attributes.name}}</strong>

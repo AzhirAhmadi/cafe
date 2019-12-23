@@ -1,8 +1,11 @@
 <template>
   <tr>
     <td style="width:25px"><strong>{{board_game.id}}</strong></td>
-    <td style="width:80px">
-        <el-avatar :size="50" :src="'/img/img4.jpg'"></el-avatar>
+    <td v-if="board_game.attributes.avatar" style="width:80px">
+        <el-avatar :size="50" :src="board_game.attributes.avatar.image.url"></el-avatar>
+    </td>
+    <td v-else style="width:80px">
+        <el-avatar :size="50" :src="'/img/baordGameDefultAvatar.jpg'"></el-avatar>
     </td>
     <td style="text-align: left;">{{board_game.attributes.name}}</td>
     <td style="width:100px">{{coffee_shop.attributes.name}}</td>

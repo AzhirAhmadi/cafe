@@ -20,6 +20,8 @@ class UsersController < ApplicationController
     end
     
     def create
+        clear_json_params
+        
         if params[:user].blank? || params[:user][:email].blank? || params[:user][:password].blank? || params[:user][:role].blank?
             raise ErrorHandling::Errors::User::CreationParams.new({params: params})          
         end
@@ -27,6 +29,7 @@ class UsersController < ApplicationController
         user =User.new(user_params)
         authorize user
         if user.save
+            Image.create(image: params[:image], parent: user)
             render jsonapi: user
         else
             raise ErrorHandling::Errors::User::DataBaseCreation.new({params: params,user: user})          
@@ -34,6 +37,7 @@ class UsersController < ApplicationController
     end
 
     def update
+        clear_json_params
         if params[:user].blank?|| params[:user][:email].blank? | params[:user][:password].blank? || params[:user][:role].blank?
             raise ErrorHandling::Errors::User::UpdateParams.new({params: params})          
         end
@@ -41,6 +45,11 @@ class UsersController < ApplicationController
         user = User.find(params[:id])
         authorize user
         if user.update(user_params)
+            puts params[:image]
+            unless(params[:image] == "undefined")
+                user.avatar.destroy if user.avatar
+                Image.create(image: params[:image], parent: user)
+            end
             render jsonapi: user
         else
             raise ErrorHandling::Errors::User::DataBaseCreation.new({params: params,user: user})          
@@ -65,5 +74,8 @@ class UsersController < ApplicationController
         # enum role: [:sys_master, :sys_admin, :sys_expert, :coffee_owner,:player]
         def user_params
             params.require(:user).permit(sanitize_params)
+        end
+        def clear_json_params
+            params[:user]=ActiveSupport::JSON.decode(params[:user])
         end
 end

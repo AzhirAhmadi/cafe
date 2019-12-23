@@ -1,8 +1,11 @@
 <template>
   <tr>
     <td style="width:25px"><strong>{{coffee_shop.id}}</strong></td>
-    <td style="width:80px">
-        <el-avatar :size="50" :src="'/img/img2.jpg'"></el-avatar>
+    <td v-if="coffee_shop.attributes.avatar" style="width:80px">
+        <el-avatar :size="50" :src="coffee_shop.attributes.avatar.image.url"></el-avatar>
+    </td>
+    <td v-else style="width:80px">
+        <el-avatar :size="50" :src="'/img/coffeeShopDefultAvatar.jpg'"></el-avatar>
     </td>
     <td style="width:100px">{{coffee_shop.attributes.name}}</td>
     <td style="text-align: left;">{{coffee_shop.attributes.address}}</td>

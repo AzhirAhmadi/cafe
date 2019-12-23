@@ -1,8 +1,9 @@
 <template>
   <div v-if="load">
     <el-row>
-        <el-col class="temp" :span="6" >
-            <el-avatar :size="200 " :src="'/img/img2.jpg'"></el-avatar>
+        <el-col :span="6" >
+          <el-avatar v-if="coffee_shop.attributes.avatar" :size="200" :src="coffee_shop.attributes.avatar.image.url"></el-avatar>
+          <el-avatar  v-else :size="200" :src="'/img/coffeeShopDefultAvatar.jpg'"></el-avatar>
         </el-col>
         <el-col style="text-align: left;" :span="18" >
             <strong style="font-size: 1.5em;">Name: {{coffee_shop.attributes.name}}</strong>
@@ -10,7 +11,6 @@
             <strong >Address: {{coffee_shop.attributes.address}}</strong><br>
             <strong >Owner: {{owner.attributes.email}}</strong><br>
             <strong >Maintainer: {{maintainer.attributes.email}}</strong><br>
-            <p class="temp">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
         </el-col>
     </el-row>
     <el-row>

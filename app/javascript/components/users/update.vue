@@ -1,6 +1,10 @@
 <template>
-     <el-form :model="user.attributes" :rules="rules" ref="createUser" label-width="150px ">
+  <el-form v-if="load" :model="user.attributes" :rules="rules" ref="createUser" label-width="150px ">
     
+    <el-form-item>
+      <Uploader @onImageChange="setImage" :image="user.attributes.avatar"/>
+    </el-form-item>
+
     <el-form-item label="Email" prop="email" required>
       <el-input v-model="user.attributes.email"></el-input>
     </el-form-item>
@@ -34,6 +38,7 @@
 
 <script>
 import router from '../../packs/router'
+import Uploader from '../shard/singleImageUploader'
 
 export default {
   props:['id'],
@@ -50,11 +55,14 @@ export default {
       }
     };
     return {
+      load: true,
       user:{
         attributes:{
           email:"",
           password: "",
-          role: ""
+          role: "player",
+          confirm: "",
+          image: null
         }
       },
       roles:[
@@ -97,6 +105,9 @@ export default {
       },
     }
   },
+  components:{
+    Uploader,
+  },
   methods:{
     callUserUpdate(){
       console.log("callUserUpdate")
@@ -105,8 +116,13 @@ export default {
     },
     callGET_User(){
       console.log("callUsers")
-       this.$userResource.GET_user(this.id)
-       .then(response => {this.user = response.data.data})
+      this.load = false
+      this.$userResource.GET_user(this.id)
+      .then(response => {this.user = response.data.data})
+      .then(() => {this.load = true})
+    },
+    setImage(file){
+      this.user.attributes.image = file.raw
     },
     cancel(){
       console.log("cancel")
@@ -115,7 +131,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.callUserCreate()
+          this.callUserUpdate()
           alert('submit!');
         } else {
           alert('error submit!!');

@@ -38,6 +38,7 @@ class User < ApplicationRecord
   has_many :owened_coffee_shop, class_name: "CoffeeShop", foreign_key: "owner_id", dependent: :destroy
   has_many :enrolments
   has_many :enroled_tables, through: :enrolments, source: :table
+  has_one :avatar, :as => :parent, class_name: "Image", dependent: :destroy
 
   # has_many :created_coffee_shops, class_name: "CoffeeShop", foreign_key: "creator_id"
   # has_many :maintained_coffee_shops, class_name: "CoffeeShop", foreign_key: "maintainer_id"

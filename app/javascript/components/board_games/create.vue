@@ -1,6 +1,10 @@
 <template>
   <el-form :model="board_game.attributes" :rules="rules" ref="createBoardGame" label-width="200px">
-    
+
+    <el-form-item>
+      <Uploader @onImageChange="setImage"/>
+    </el-form-item>
+
     <el-form-item label="BoardGame name" prop="name" required>
       <el-input v-model="board_game.attributes.name"></el-input>
     </el-form-item>
@@ -34,6 +38,8 @@
 </template>
 
 <script>
+import Uploader from '../shard/singleImageUploader'
+
 export default {
   props:["coffee_shop_id"],
   data(){
@@ -46,6 +52,7 @@ export default {
           min_player: null,
           max_player: null,
           play_time: null,
+          image: null
         }
       },
       rules: {
@@ -74,6 +81,9 @@ export default {
       .then((response)=> {console.log(response)})
       .then(()=>{this.$router.go(-1)})
     },
+    setImage(file){
+      this.board_game.attributes.image = file.raw
+    },
     cancel(){
       console.log("cancel")
       this.$router.go(-1)
@@ -90,6 +100,9 @@ export default {
     resetForm(formName) {
       this.$refs[formName].resetFields();
     }
+  },
+  components:{
+    Uploader
   },
   computed:{
   },

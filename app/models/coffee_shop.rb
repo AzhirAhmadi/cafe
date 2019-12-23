@@ -32,4 +32,5 @@ class CoffeeShop < ApplicationRecord
 
     has_many :created_board_games, class_name: "BoardGame", foreign_key: "coffee_shop_id"
     has_many :created_events, class_name: "Event", foreign_key: "coffee_shop_id"
+    has_one :avatar, :as => :parent, class_name: "Image", dependent: :destroy
 end
