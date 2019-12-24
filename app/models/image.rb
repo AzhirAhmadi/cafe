@@ -19,7 +19,7 @@ class Image < ApplicationRecord
     include Scopes::Image
     include Validations::Image
 
-    belongs_to :parent, :polymorphic => true
+    belongs_to :parent, polymorphic: true
 
     mount_uploader :image, AvatarUploader
 end

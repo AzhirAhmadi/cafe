@@ -27,8 +27,8 @@ class BoardGame < ApplicationRecord
     include Scopes::BoardGame
     include Validations::BoardGame
 
-    belongs_to :coffee_shop, class_name: "CoffeeShop"
+    belongs_to :coffee_shop
 
-    has_many :created_tables, class_name: "Table", foreign_key: "board_game_id"
-    has_one :avatar, :as => :parent, class_name: "Image", dependent: :destroy
+    has_many :created_tables, class_name: 'Table', foreign_key: 'board_game_id'
+    has_one :avatar, as: :parent, class_name: 'Image', dependent: :destroy
 end
