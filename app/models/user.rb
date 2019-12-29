@@ -33,16 +33,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
   
-  has_many :created_coffee_shop, class_name: "CoffeeShop", foreign_key: "creator_id"
-  has_many :maintained_coffee_shop, class_name: "CoffeeShop", foreign_key: "maintainer_id"
-  has_many :owened_coffee_shop, class_name: "CoffeeShop", foreign_key: "owner_id", dependent: :destroy
+  has_many :created_coffee_shop, class_name: 'CoffeeShop', foreign_key: 'creator_id'
+  has_many :maintained_coffee_shop, class_name: 'CoffeeShop', foreign_key: 'maintainer_id'
+  has_many :owened_coffee_shop, class_name: 'CoffeeShop', foreign_key: 'owner_id', dependent: :destroy
   has_many :enrolments
   has_many :enroled_tables, through: :enrolments, source: :table
-  has_one :avatar, :as => :parent, class_name: "Image", dependent: :destroy
+  has_one :avatar, as: :parent, class_name: 'Image', dependent: :destroy
 
-  # has_many :created_coffee_shops, class_name: "CoffeeShop", foreign_key: "creator_id"
-  # has_many :maintained_coffee_shops, class_name: "CoffeeShop", foreign_key: "maintainer_id"
-  # has_one :owened_coffee_shop, class_name: "CoffeeShop", foreign_key: "owner_id"
   #JWT config
   before_create :add_jti
   def add_jti

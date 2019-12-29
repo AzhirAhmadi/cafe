@@ -28,8 +28,8 @@ class Event < ApplicationRecord
     include Scopes::Event
     include Validations::Event
 
-    belongs_to :coffee_shop, class_name: "CoffeeShop"
+    belongs_to :coffee_shop
 
-    has_many :created_tables, class_name: "Table", foreign_key: "event_id"
-    has_one :avatar, :as => :parent, class_name: "Image", dependent: :destroy
+    has_many :created_tables, class_name: 'Table', foreign_key: 'event_id'
+    has_one :avatar, as: :parent, class_name: 'Image', dependent: :destroy
 end

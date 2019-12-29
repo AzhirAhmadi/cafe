@@ -14,12 +14,10 @@
 #  index_images_on_parent_type_and_parent_id  (parent_type,parent_id)
 #
 
-class Image < ApplicationRecord
-    include Methods::Image
-    include Scopes::Image
-    include Validations::Image
 
-    belongs_to :parent, polymorphic: true
-
-    mount_uploader :image, AvatarUploader
+FactoryBot.define do
+    factory :picture, class: Image do
+        image { Rack::Test::UploadedFile.new(Rails.root.join('spec/support/defultAvatar.jpg')) }
+        parent {|a| a.association(:player)}
+    end
 end

@@ -29,6 +29,6 @@ FactoryBot.define do
     play_time { 30 }
     description { "Description Text" }
 
-    association :coffee_shop, factory: :coffee_shop
+    coffee_shop {|a| a.association(:coffee_shop) }
   end
 end
