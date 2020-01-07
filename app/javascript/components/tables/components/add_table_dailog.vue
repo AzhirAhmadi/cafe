@@ -1,5 +1,5 @@
 <template>
-  <el-dialog title="Add Table" :visible.sync="dialogFormVisible">
+  <el-dialog v-if="load" title="Add Table" :visible.sync="dialogFormVisible">
     <el-form :model="table.attributes" :rules="rules" ref="createTable">
       <el-form-item label="" prop="table_code" required >
           <el-input v-model="table.attributes.table_code" placeholder="Table Code"></el-input>
@@ -46,6 +46,7 @@ export default {
       }
     };
     return {
+      load: true,
       table: {
         attributes:{
           capacity: 0,
