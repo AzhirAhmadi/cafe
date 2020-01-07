@@ -3,7 +3,8 @@ class EnrolmentsController < ApplicationController
 
     def index
         enrolments = policy_scope(Enrolment).in_coffee_shop(find_coffee_shop).in_event(find_event).for_table(find_table)
-        render jsonapi: enrolments
+        
+        render jsonapi: enrolments, include: ['user', 'table']
     rescue
         render jsonapi: []
     end
