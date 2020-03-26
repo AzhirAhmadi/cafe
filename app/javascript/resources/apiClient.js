@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-    baseURL: 'http://localhost:3000/api',
+    baseURL: 'https://cafe-emecenter.herokuapp.com/api',
     withCredentials: false,
     headers: {
         Accept: 'application/json',
