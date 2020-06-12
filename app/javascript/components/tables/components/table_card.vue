@@ -1,5 +1,9 @@
 <template>
-  <el-card v-if="load" class="box-card">
+  <el-card v-if="load" class="box-card"
+  shadow="always"
+  :body-style="{ padding: '5px' }"
+  style = "height: 250px"
+  >
         <div slot="header" class="clearfix">
           <span>{{board_game.attributes.name}} {{table.id}}</span>
             <el-switch
@@ -15,9 +19,24 @@
               >
             </el-switch>
         </div>
-        <div v-for="o in 4" :key="o" class="text item">
-          {{'List item ' + o }}
-        </div>
+            <el-row>
+              <el-col  :span="6">
+                <el-avatar :size="100" :src="board_game.attributes.avatar.image.url"></el-avatar>
+              </el-col>
+
+              <el-col :span="18">
+                <el-row>
+
+                  <el-col v-for="(item, index) in enrolments" :key="index" :span="6">
+                    <div  class="text item">
+                      <div style="text-align: center; margin: 0">
+                        <div class="block"><el-avatar  :src="item.user.avatar.image.url"></el-avatar></div>
+                      </div>
+                    </div>
+                  </el-col>
+                </el-row>
+              </el-col>
+            </el-row>
     <div v-if="current_user">
       <el-button v-if="editAble     && EDIT"     @click="call_on_update_table"    type="primary" icon="el-icon-edit"         circle style="margin: auto;"></el-button>
       <el-button v-if="reActiveAble && reACTIVE" @click="call_reActive"      type="warning" icon="el-icon-refresh-left" circle style="margin: auto;"></el-button>
@@ -29,6 +48,7 @@
 <script>
 import RolePower from '../../../services/role_pwoer'
 import router from '../../../packs/router'
+import { deserialize } from 'json-api-deserialize';
 
 export default {
   props: ['coffee_shop', 'event', 'table', 'editAble', 'deleteAble', 'reActiveAble'],
@@ -42,7 +62,7 @@ export default {
     }
   },
   methods:{
-    
+
     callGET_CoffeeShopBoardGame(){
       console.log("callGET_CoffeeShopBoardGame")
       this.load = false;
@@ -54,15 +74,15 @@ export default {
       console.log("callGET_CoffeeShopEventTableEnrolments")
       this.load = false;
       this.$enrolmentResource.GET_coffee_shop_event_table_enrolments(this.coffee_shop.id, this.event.id, this.table.id)
-      .then( response => {this.enrolments = response.data.data})
+      .then( response => { this.enrolments = deserialize(response.data).data})
       .then(() => {this.load = true})
       .then(() => {this.test()})
     },
     callDELETE_SoffeeShopEventTableDeactivate(){
-      console.log("callDELETE_SoffeeShopEventTableDeactivate")  
+      console.log("callDELETE_SoffeeShopEventTableDeactivate")
       this.$tableResource.DELETE_coffee_shop_event_table(this.coffee_shop.id, this.event.id, this.table.id)
       .then(response => {console.log(response)})
-      .then(()=>{this.$emit('onDeleteTable', this.table.id)})    
+      .then(()=>{this.$emit('onDeleteTable', this.table.id)})
       .catch(error => {error_handler._401("get#users")})
     },
     callPOST_CoffeeShopEventTableEnrolments(){
@@ -77,7 +97,7 @@ export default {
         return item.attributes.user.id == this.current_user.id
       })
       console.log(temp.id)
-      this.$enrolmentResource.DELETE_coffee_shop_event_table_enrolment(this.coffee_shop.id, this.event.id, this.table.id, temp.id) 
+      this.$enrolmentResource.DELETE_coffee_shop_event_table_enrolment(this.coffee_shop.id, this.event.id, this.table.id, temp.id)
       .then(response => {console.log(response)})
       .then(()=>{this.callGET_CoffeeShopEventTableEnrolments()})
     },
@@ -92,7 +112,7 @@ export default {
     },
     test(){
       this.enrolment = this.enrolments.some(item =>{
-        return item.attributes.user.id == this.current_user.id
+        return item.user.id == this.current_user.id
       })+""
     },
     call_on_update_table(){
@@ -144,7 +164,7 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #eee;
-  
+
 }
 
   .box {
@@ -171,6 +191,7 @@ tr:nth-child(even) {
 
     .item {
       margin: 4px;
+
     }
 
     .left .el-tooltip__popper,

@@ -2,9 +2,12 @@
   <div>
     <el-row>
       <el-col :span="6" >
-        <div style="text-align: center; margin: 0">
-          <div class="block"><el-avatar :size="50" :src="'/img/img1.jpg'"></el-avatar></div>
-        </div>
+        <td v-if="user.attributes.avatar" style="width:80px">
+          <el-avatar :size="50" :src="user.attributes.avatar.image.url"></el-avatar>
+        </td>
+        <td v-else style="width:80px">
+          <el-avatar :size="50" :src="'/img/defultAvatar.jpg'"></el-avatar>
+        </td>
       </el-col>
       <el-col :span="11">
         <div style="text-align: left; margin: 0">

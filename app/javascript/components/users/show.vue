@@ -1,9 +1,13 @@
 <template>
-  <div>
+  <div v-if="load">
     <el-row>
-        <el-col :span="6" >
+        <el-col v-if="user.attributes.avatar" :span="6" >
             <el-avatar :size="200" :src="user.attributes.avatar.image.url"></el-avatar>
         </el-col>
+        <el-col v-else :span="6">
+          <el-avatar :size="200" :src="'/img/defultAvatar.jpg'"></el-avatar>
+        </el-col>
+
         <el-col style="text-align: left;" :span="18" >
             <strong style="font-size: 1.5em;">{{user.attributes.email}}</strong>
             <br>
@@ -68,6 +72,7 @@ export default {
   props: ['id'],
   data: function () {
     return {
+      load: true,
       user: {}
     }
   },
@@ -80,11 +85,13 @@ export default {
       console.log("callUsers")
        this.$userResource.GET_user(this.id)
        .then(response => {this.user = response.data.data})
+       .then(() => {this.load = true})
     }
   },
   created(){
     console.log("users#show.created")
     this.$store.dispatch('updatePageHeader', 'User Show')
+    this.load = false
     this.callGET_User()
   }
 }
