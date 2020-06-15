@@ -208,8 +208,9 @@ GEM
       rspec-support (~> 3.8.0)
     rspec-support (3.8.2)
     ruby_dep (1.5.0)
-    rvm-capistrano (1.5.0)
-      capistrano (>= 2.15.4)
+    rvm1-capistrano3 (1.4.0)
+      capistrano (~> 3.0)
+      sshkit (>= 1.2)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -268,7 +269,7 @@ DEPENDENCIES
   rails (~> 5.2.3)
   rename
   rspec-rails
-  rvm-capistrano
+  rvm1-capistrano3
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
