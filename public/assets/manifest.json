@@ -1,0 +1,36 @@
+{
+  "application.js": "/packs/js/application-50f5069fdc3e4fcdf8d9.js",
+  "application.js.map": "/packs/js/application-50f5069fdc3e4fcdf8d9.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-50f5069fdc3e4fcdf8d9.js"
+      ],
+      "js.map": [
+        "/packs/js/application-50f5069fdc3e4fcdf8d9.js.map"
+      ]
+    },
+    "router": {
+      "js": [
+        "/packs/js/router-56038f01fc8d39890229.js"
+      ],
+      "js.map": [
+        "/packs/js/router-56038f01fc8d39890229.js.map"
+      ]
+    },
+    "store": {
+      "js": [
+        "/packs/js/store-c64743ae8dc57a1f22a1.js"
+      ],
+      "js.map": [
+        "/packs/js/store-c64743ae8dc57a1f22a1.js.map"
+      ]
+    }
+  },
+  "media/fonts/element-icons.ttf": "/packs/media/fonts/element-icons-732389de.ttf",
+  "media/fonts/element-icons.woff": "/packs/media/fonts/element-icons-535877f5.woff",
+  "router.js": "/packs/js/router-56038f01fc8d39890229.js",
+  "router.js.map": "/packs/js/router-56038f01fc8d39890229.js.map",
+  "store.js": "/packs/js/store-c64743ae8dc57a1f22a1.js",
+  "store.js.map": "/packs/js/store-c64743ae8dc57a1f22a1.js.map"
+}
