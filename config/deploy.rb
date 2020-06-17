@@ -61,3 +61,4 @@ namespace :deploy do
     end
   end
 end
+Rake::Task["deploy:assets:backup_manifest"].clear_actions
