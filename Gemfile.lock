@@ -254,11 +254,11 @@ DEPENDENCIES
   annotate
   bootsnap (>= 1.1.0)
   byebug
-  capistrano (~> 3.11)
-  capistrano-passenger (~> 0.2.0)
-  capistrano-rails (~> 1.4)
-  capistrano-rbenv (~> 2.1, >= 2.1.4)
-  capistrano-rbenv-install (~> 1.2.0)
+  capistrano
+  capistrano-passenger
+  capistrano-rails
+  capistrano-rbenv
+  capistrano-rbenv-install
   carrierwave
   colorize
   devise
