@@ -39,7 +39,7 @@ set :repo_url, "git@github.com:AzhirAhmadi/cafe.git"
 # set :ssh_options, verify_host_key: :secure
 
 # Deploy to the user's home directory
-set :deploy_to, "/home/deploy/#{fetch :application}"
+set :deploy_to, "/home/azhir/#{fetch :application}"
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 

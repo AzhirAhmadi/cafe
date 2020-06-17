@@ -20,7 +20,7 @@ require 'capistrano/passenger'
 require 'capistrano/rbenv'
 
 set :rbenv_type, :user
-set :rbenv_ruby, '2.7.1'
+set :rbenv_ruby, '2.6.3'
 
 # Include tasks from other gems included in your Gemfile
 #
