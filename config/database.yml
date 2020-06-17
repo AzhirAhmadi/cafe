@@ -83,5 +83,5 @@ test:
 production:
   <<: *default
   database: cafe_board_game_production
-  username: cafe_board_game
-  password: <%= ENV['cafe_DATABASE_PASSWORD'] %>
+  username: azhir
+  password: 
