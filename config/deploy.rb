@@ -1,6 +1,9 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.14.1"
 
+set :application, "cafe"
+set :repo_url, "git@github.com:AzhirAhmadi/cafe.git"
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
@@ -35,13 +38,8 @@ lock "~> 3.14.1"
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
-
-
-set :application, "cafe"
-set :repo_url, "git@github.com:AzhirAhmadi/cafe.git"
-
 # Deploy to the user's home directory
-set :deploy_to, "/home/azhir/#{fetch :application}"
+set :deploy_to, "/home/deploy/#{fetch :application}"
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
@@ -51,17 +49,3 @@ set :keep_releases, 2
 # Optionally, you can symlink your database.yml and/or secrets.yml file from the shared directory during deploy
 # This is useful if you don't want to use ENV variables
 # append :linked_files, 'config/database.yml', 'config/secrets.yml'
-
-
-set :rvm_ruby_string, :local        # use the same ruby as used locally for deployment
-
-
-namespace :app do
-    task :update_rvm_key do
-        execute :gpg, "--keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3"
-    end
-end
-before "rvm1:install:rvm", "app:update_rvm_key"
-
-before 'deploy', 'rvm1:install:ruby'  # install/update Ruby
-before 'deploy', 'rvm1:install:gems'  # install/update gems from Gemfile into gemset

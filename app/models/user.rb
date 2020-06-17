@@ -10,9 +10,7 @@
 #  remember_created_at    :datetime
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  jti                    :string           not null
-#  role                   :integer
-#  deleted_at             :datetime
+#  jti                    :string
 #
 # Indexes
 #
