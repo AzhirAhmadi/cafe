@@ -267,7 +267,7 @@ DEPENDENCIES
   faker
   figaro
   jsonapi-rails
-  listen (>= 3.0.5, < 3.2)
+  listen
   pg (>= 0.18, < 2.0)
   puma (~> 3.12)
   pundit
